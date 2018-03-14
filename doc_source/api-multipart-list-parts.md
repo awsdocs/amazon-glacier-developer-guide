@@ -32,7 +32,7 @@ The `AccountId` value is the AWS account ID of the account that owns the vault\.
 
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
-| limit  |  The maximum number of parts to be returned\. The default limit is 10\. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `10`\.  |  No  | 
+| limit  |  The maximum number of parts to be returned\. The default limit is 1000\. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `1000`\.  |  No  | 
 |  marker  |  An opaque string used for pagination\. `marker` specifies the part at which the listing of parts should begin\. Get the `marker` value from the response of a previous List Parts response\. You need only include the `marker` if you are continuing the pagination of results started in a previous List Parts request\. Type: String Constraints: None  |  No | 
 
 ### Request Headers<a name="api-multipart-list-parts-requests-headers"></a>
