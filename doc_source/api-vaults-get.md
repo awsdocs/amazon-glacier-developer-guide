@@ -4,7 +4,7 @@
 
 This operation lists all vaults owned by the calling user’s account\. The list returned in the response is ASCII\-sorted by vault name\. 
 
-By default, this operation returns up to 1,000 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon Glacier returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
+By default, this operation returns up to 10 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon Glacier returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
 
 ## Requests<a name="api-vaults-get-requests"></a>
 
@@ -30,7 +30,7 @@ This operation uses the following request parameters\.
 
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
-|  limit  |  The maximum number of vaults to be returned\. The default limit is 1000\. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit\. Type: String Constraints: Minimum integer value of 1\. Maximum integer value of 1000\.  |  No  | 
+|  limit  |  The maximum number of vaults to be returned\. The default limit is 10\. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit\. Type: String Constraints: Minimum integer value of 1\. Maximum integer value of 10\.  |  No  | 
 |  marker  |  A string used for pagination\. `marker` specifies the vault ARN after which the listing of vaults should begin\. \(The vault specified by `marker` is not included in the returned list\.\) Get the `marker` value from a previous List Vaults response\. You need to include the `marker` only if you are continuing the pagination of results started in a previous List Vaults request\. Specifying an empty value \(""\) for the marker returns a list of vaults starting from the first vault\. Type: String Constraints: None  |  No  | 
 
 ### Request Headers<a name="api-vaults-get-requests-headers"></a>
@@ -116,7 +116,7 @@ For information about Amazon Glacier exceptions and error messages, see [Error R
 
 ### Example: List All Vaults<a name="api-vaults-get-example1"></a>
 
-The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 1,000 vaults are returned\.
+The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 10 vaults are returned\.
 
 #### Example Request<a name="api-vaults-get-example1-request"></a>
 
