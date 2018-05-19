@@ -18,7 +18,7 @@ The optional description for the job\.
 
 **Format**  
 \(Optional\) The output format, when initiating a job to retrieve a vault inventory\. If you are initiating an inventory job and don't specify a `Format` field, JSON is the default format\.  
-*Valid Values*: `CSV` | `JSON`   
+*Valid Values*: `CSV` \| `JSON`   
 *Type*: String  
 *Required*: no
 
@@ -51,16 +51,15 @@ The SNS topic must exist\. If it doesn't, Amazon Glacier doesn't create it for y
 
 **Tier**  
 The tier to use for a select or an archive retrieval job\. `Standard` is the default value used\.  
-*Valid Values*: `Expedited` | `Standard` | `Bulk`  
+*Valid Values*: `Expedited` \| `Standard` \| `Bulk`  
 *Type*: String  
 *Required*: no 
 
 **Type**  
 The job type\. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault\.  
-*Valid Values*: `select` | `archive-retrieval` | `inventory-retrieval`   
+*Valid Values*: `select` \| `archive-retrieval` \| `inventory-retrieval`   
 *Type*: String  
 *Required*: yes
 
 ## More Info<a name="more-info-api-jobParameters"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

@@ -1,8 +1,8 @@
 # Deleting a Vault in Amazon Glacier Using the AWS SDK for \.NET<a name="deleting-vaults-sdk-dotnet"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for \.NET provide a method to delete a vault\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to delete a vault\.
 
-
+**Topics**
 + [Deleting a Vault Using the High\-Level API of the AWS SDK for \.NET](#deleting-vault-sdk-dotnet-high-level)
 + [Deleting a Vault Using the Low\-Level API of the AWS SDK for \.NET](#deleting-vault-sdk-dotnet-low-level)
 

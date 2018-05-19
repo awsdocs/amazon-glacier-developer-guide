@@ -1,6 +1,10 @@
 # List Provisioned Capacity \(GET provisioned\-capacity\)<a name="api-ListProvisionedCapacity"></a>
 
-This operation lists the provisioned capacity for the specified AWS account\. 
+This operation lists the provisioned capacity units for the specified AWS account\. For more information about provisioned capacity, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\. 
+
+A provisioned capacity unit lasts for one month starting at the date and time of purchase, which is the start date\. The unit expires on the expiration date, which is exactly one month after the start date to the nearest second\. 
+
+If the start date is on the 31st day of a month, the expiration date is the last day of the next month\. For example, if the start date is August 31, the expiration date is September 30\. If the start date is January 31, the expiration date is February 28\. You can see this functionality in the [Example Response](#api-ListProvisionedCapacity-example1-response)\.
 
 ## Request Syntax<a name="api-ListProvisionedCapacity-RequestSyntax"></a>
 
@@ -59,7 +63,7 @@ This operation uses only response headers that are common to most responses\. Fo
 
 The response body contains the following JSON fields\.
 
-**CapacityId**  
+**CapacityId**  <a name="Glacier-ListProvisionedCapacity-response"></a>
 The ID that identifies the provisioned capacity unit\.  
  *Type*: String\.
 
@@ -86,7 +90,7 @@ In this example, a GET request is sent to retrieve a list of the provisioned cap
 ```
 1. GET /123456789012/priority-capacity HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -95,10 +99,12 @@ In this example, a GET request is sent to retrieve a list of the provisioned cap
 
 If the request was successful, Amazon Glacier returns a `HTTP 200 OK` with a list of provisioned capacity units for the account as shown in the following example\.
 
+ The provisioned capacity unit listed first is an example of a unit with a start date of January 31, 2017 and expiration date of February 28, 2017\. As stated earlier, if the start date is on the 31st day of a month, the expiration date is the last day of the next month\.
+
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:02:00 GMT
  4. Content-Type: application/json
  5. Content-Length: length
  6. 
@@ -106,18 +112,17 @@ If the request was successful, Amazon Glacier returns a `HTTP 200 OK` with a lis
  8.    "ProvisionedCapacityList",
  9.       {
 10.          "CapacityId": "zSaq7NzHFQDANTfQkDen4V7z",
-11.          "StartDate": "2016-11-11T20:11:51.095Z",
-12.          "ExpirationDate": "2016-12-12T00:00:00.000Z",
+11.          "StartDate": "2017-01-31T14:26:33.031Z",
+12.          "ExpirationDate": "2017-02-28T14:26:33.000Z",
 13.       },
 14.       {
 15.          "CapacityId": "yXaq7NzHFQNADTfQkDen4V7z",
 16.          "StartDate": "2016-12-13T20:11:51.095Z"",
-17.          "ExpirationDate": "2017-01-15T00:00:00.000Z"",
+17.          "ExpirationDate": "2017-01-13T20:11:51.000Z" ",
 18.       },
 19.       ...
 20. }
 ```
 
 ## Related Sections<a name="api-ListProvisionedCapacity-related-sections"></a>
-
 + [Purchase Provisioned Capacity \(POST provisioned\-capacity\)](api-PurchaseProvisionedCapacity.md)

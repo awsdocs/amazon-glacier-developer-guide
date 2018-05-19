@@ -1,14 +1,11 @@
 # Initiate Job \(POST jobs\)<a name="api-initiate-job-post"></a>
 
 This operation initiates the following types of Amazon Glacier jobs: 
-
 + `select`— Perform a select query on an archive
-
 + `archive-retrieval`— Retrieve an archive
-
 + `inventory-retrieval`— Inventory a vault
 
-
+**Topics**
 + [Working with Amazon Glacier Select Jobs](#api-initiate-select-job)
 + [Initializing an Archive or Vault Inventory Retrieval Job](#api-initiate-job-post-description)
 + [Requests](#api-initiate-job-post-requests)
@@ -18,54 +15,40 @@ This operation initiates the following types of Amazon Glacier jobs:
 
 ## Working with Amazon Glacier Select Jobs<a name="api-initiate-select-job"></a>
 
-You use an Amazon Glacier select job to perform SQL queries on archive objects\. The archive objects being queried by the select job must be formatted as uncompressed comma\-separated values \(CSV\) files\. For overview information about Amazon Glacier select jobs, see [Querying Archives with Amazon Glacier Select](glacier-select.md)\.
+You use an Amazon Glacier Select job to perform SQL queries on archive objects\. The archive objects being queried by the select job must be formatted as uncompressed comma\-separated values \(CSV\) files\. For overview information about Amazon Glacier Select jobs, see [Querying Archives with Amazon Glacier Select](glacier-select.md)\.
 
 When initiating a select job, you do the following:
-
 + Define an output location for the output of your select query\. This location must be an Amazon S3 bucket in the same AWS Region as the vault containing the archive object being queried\. The AWS account that initiates the job must have permissions to write to the S3 bucket\. You can specify the storage class and encryption for the output objects stored in Amazon S3\. When setting [S3Location](api-S3Location.md), it might be helpful to read the following topics in the Amazon S3 documentation:
-
   + [PUT Object](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html) in the *Amazon Simple Storage Service API Reference*
-
   + [Managing Access with ACLs](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) in the *Amazon Simple Storage Service Developer Guide*
-
   + [Protecting Data Using Server\-Side Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*
-
 + Define the SQL expression to use for the SELECT for your query in [SelectParameters](api-SelectParameters.md)\. For example, you can use expressions like the following examples:
-
   + The following example expression returns all records from the specified object\.
 
     ```
     SELECT * FROM archive
     ```
-
   + Assuming you are not using any headers for data stored in the object, you can specify columns using positional headers\.
 
     ```
     SELECT s._1, s._2 FROM archive s WHERE s._3 > 100
     ```
-
   + If you have headers and you set the `fileHeaderInfo` in [CSVInput](api-CSVInput.md) to `Use`, you can specify headers in the query\. \(If you set the `fileHeaderInfo` field to `Ignore`, the first row is skipped for the query\.\) You cannot mix ordinal positions with header column names\. 
 
     ```
     SELECT s.Id, s.FirstName, s.SSN FROM archive s
     ```
 
-For more information about using SQL with Amazon Glacier select, see [Amazon Glacier Select SQL Reference](glacier-select-sql-reference.md)\.
+For more information about using SQL with Amazon Glacier Select, see [SQL Reference for Amazon S3 Select and Amazon Glacier Select](s3-glacier-select-sql-reference.md)\.
 
 When initiating a select job, you can also do the following:
-
 + Specify the `Expedited` tier to expedite your queries\. For more information, see [Expedited, Standard, and Bulk Tiers](#api-initiate-job-expedited-bulk)\.
-
 + Specify details about the data serialization format of both the input object being queried and the serialization of the CSV\-encoded query results\.
-
 + Specify an Amazon Simple Notification Service \(Amazon SNS\) topic to which Amazon Glacier can post a notification after the job is completed\. You can specify an SNS topic for each job request\. The notification is sent only after Amazon Glacier completes the job\.
-
 + You can use [Describe Job \(GET JobID\)](api-describe-job-get.md) to obtain job status information while a job is in progress\. However, it is more efficient to use an Amazon SNS notification to determine when a job is complete\.
 
 When working with a select job, you cannot do the following:
-
 +  Call the **GetJobOutput** operation\. Job output is written to the output location\.
-
 +  Use ranged selection\.
 
 For an example of initiating a select job, see [Example Request: Initiate a select job](#api-initiate-job-post-example-select-request)\.
@@ -83,9 +66,7 @@ A data retrieval policy can cause your initiate retrieval job request to fail wi
 The retrieval request is executed asynchronously\. When you initiate a retrieval job, Amazon Glacier creates a job and returns a job ID in the response\. When Amazon Glacier completes the job, you can get the job output \(archive or inventory data\)\. For information about getting job output, see the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 
 The job must complete before you can get its output\. To determine when a job is complete, you have the following options:
-
 + **Use an Amazon SNS notification—** You can specify an Amazon SNS topic to which Amazon Glacier can post a notification after the job is completed\. You can specify an SNS topic per job request\. The notification is sent only after Amazon Glacier completes the job\. In addition to specifying an SNS topic per job request, you can configure vault notifications for a vault so that job notifications are sent for all retrievals\. For more information, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. 
-
 + **Get job details—** You can make a [Describe Job \(GET JobID\)](api-describe-job-get.md) request to obtain job status information while a job is in progress\. However, it is more efficient to use an Amazon SNS notification to determine when a job is complete\.
 
 **Note**  
@@ -120,11 +101,8 @@ You can initiate archive retrieval for the whole archive or a range of the archi
 ### Expedited, Standard, and Bulk Tiers<a name="api-initiate-job-expedited-bulk"></a>
 
 When initiating a select or an archive retrieval job, you can specify one of the following options in the `Tier` field of the request body: 
-
 + **`Expedited`** – Expedited allows you to quickly access your data when occasional urgent requests for a subset of archives are required\. For all but the largest archives \(250 MB\+\), data accessed using the Expedited tier is typically made available within 1–5 minutes\.
-
 + **`Standard`** – Standard allows you to access any of your archives within several hours\. Data accessed using the Standard tier typically made available within 3–5 hours\. This option is the default one for job requests that don't specify the tier option\.
-
 + **`Bulk`** – Bulk is Amazon Glacier's lowest\-cost tier, enabling you to retrieve large amounts, even petabytes, of data inexpensively in a day\. Data accessed using the Bulk tier is typically made available within 5–12 hours\.
 
 For more information about expedited and bulk retrievals, see [Retrieving Amazon Glacier Archives](downloading-an-archive-two-steps.md)\.
@@ -276,7 +254,7 @@ This operation includes the following error or errors, in addition to the possib
 ```
  1. POST /-/vaults/examplevault/jobs HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-glacier-version: 2012-06-01
  5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
  6. 
@@ -307,7 +285,7 @@ The following is an example of the body of a request that specifies a range of t
 ```
 1. HTTP/1.1 202 Accepted
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Location: /111122223333/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 5. x-amz-job-id: HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 ```
@@ -319,7 +297,7 @@ The following request initiates an inventory retrieval job to get a list of arch
 ```
  1. POST /-/vaults/examplevault/jobs HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. Content-Type: application/x-www-form-urlencoded
  5. x-amz-glacier-version: 2012-06-01
  6. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
@@ -337,7 +315,7 @@ The following request initiates an inventory retrieval job to get a list of arch
 ```
 1. HTTP/1.1 202 Accepted
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT 
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT 
 4. Location: /111122223333/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 5. x-amz-job-id: HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 ```
@@ -388,7 +366,7 @@ The following request initiates a select job\.
 ```
  1. POST /-/vaults/examplevault/jobs HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. Content-Type: application/x-www-form-urlencoded
  5. x-amz-glacier-version: 2012-06-01
  6. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
@@ -444,18 +422,14 @@ The following request initiates a select job\.
 ```
 1. HTTP/1.1 202 Accepted
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT 
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT 
 4. Location: /111122223333/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 5. x-amz-job-id: HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 6. x-amz-job-output-path: test/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID/
 ```
 
 ## Related Sections<a name="more-info-api-initiate-job-post"></a>
-
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
-
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-
-+ [Amazon Glacier Select SQL Reference](glacier-select-sql-reference.md)
-
++ [SQL Reference for Amazon S3 Select and Amazon Glacier Select](s3-glacier-select-sql-reference.md)
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

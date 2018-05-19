@@ -5,20 +5,17 @@ Amazon Glacier requires that you authenticate every request you send by signing 
 After receiving your request, Amazon Glacier recalculates the signature using the same hash function and input that you used to sign the request\. If the resulting signature matches the signature in the request, Amazon Glacier processes the request\. Otherwise, the request is rejected\. 
 
 Amazon Glacier supports authentication using [AWS Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\. The process for calculating a signature can be broken into three tasks:
-
 +   [Task 1: Create a Canonical Request](http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html)
 
   Rearrange your HTTP request into a canonical format\. Using a canonical form is necessary because Amazon Glacier uses the same canonical form when it recalculates a signature to compare with the one you sent\. 
-
 +   [Task 2: Create a String to Sign](http://docs.aws.amazon.com/general/latest/gr/sigv4-create-string-to-sign.html)
 
   Create a string that you will use as one of the input values to your cryptographic hash function\. The string, called the *string to sign*, is a concatenation of the name of the hash algorithm, the request date, a *credential scope* string, and the canonicalized request from the previous task\. The *credential scope* string itself is a concatenation of date, region, and service information\.
-
 +   [Task 3: Create a Signature](http://docs.aws.amazon.com/general/latest/gr/sigv4-calculate-signature.html)
 
   Create a signature for your request by using a cryptographic hash function that accepts two input strings: your *string to sign* and a *derived key*\. The *derived key* is calculated by starting with your secret access key and using the *credential scope* string to create a series of hash\-based message authentication codes \(HMACs\)\. Note that the hash function used in this signing step is not the tree\-hash algorithm used in Amazon Glacier APIs that upload data\.
 
-
+**Topics**
 + [Example Signature Calculation](#example-signature-calculation)
 + [Calculating Signatures for the Streaming Operations](#signature-calculation-streaming)
 
@@ -27,9 +24,7 @@ Amazon Glacier supports authentication using [AWS Signature Version 4](http://do
 The following example walks you through the details of creating a signature for [Create Vault \(PUT vault\)](api-vault-put.md)\. The example could be used as a reference to check your signature calculation method\. Other reference calculations are included in the [Signature Version 4 Test Suite](http://docs.aws.amazon.com/general/latest/gr/signature-v4-test-suite.html) of the Amazon Web Services Glossary\.
 
 The example assumes the following:
-
 + The time stamp of the request is `Fri, 25 May 2012 00:24:53 GMT`\.
-
 + The endpoint is US East \(N\. Virginia\) Region ` us-east-1`\. 
 
 The general request syntax \(including the JSON body\) is: 
@@ -42,7 +37,7 @@ Authorization: SignatureToBeCalculated
 x-amz-glacier-version: 2012-06-01
 ```
 
-The canonical form of the request calculated for Task 1: Create a Canonical Request is:
+The canonical form of the request calculated for [Task 1: Create a Canonical Request](#SignatureCalculationTask1) is:
 
 ```
 PUT
@@ -58,7 +53,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 The last line of the canonical request is the hash of the request body\. Also, note the empty third line in the canonical request\. This is because there are no query parameters for this API\. 
 
-The *string to sign* for Task 2: Create a String to Sign is:
+The *string to sign* for [Task 2: Create a String to Sign](#SignatureCalculationTask2) is:
 
 ```
 AWS4-HMAC-SHA256
@@ -67,9 +62,9 @@ AWS4-HMAC-SHA256
 5f1da1a2d0feb614dd03d71e87928b8e449ac87614479332aced3a701f916743
 ```
 
-The first line of the *string to sign* is the algorithm, the second line is the time stamp, the third line is the *credential scope*, and the last line is a hash of the canonical request from Task 1: Create a Canonical Request\. The service name to use in the credential scope is `glacier`\.
+The first line of the *string to sign* is the algorithm, the second line is the time stamp, the third line is the *credential scope*, and the last line is a hash of the canonical request from [Task 1: Create a Canonical Request](#SignatureCalculationTask1)\. The service name to use in the credential scope is `glacier`\.
 
-For Task 3: Create a Signature, the *derived key* can be represented as:
+For [Task 3: Create a Signature](#SignatureCalculationTask3), the *derived key* can be represented as:
 
 ```
 derived key = HMAC(HMAC(HMAC(HMAC("AWS4" + YourSecretAccessKey,"20120525"),"us-east-1"),"glacier"),"aws4_request")
@@ -126,11 +121,8 @@ public static byte[] CalculateSHA256Hash(byte[] payload)
 ### Example Signature Calculation for Streaming API<a name="example-signature-calculation-streaming"></a>
 
 The following example walks you through the details of creating a signature for [Upload Archive \(POST archive\)](api-archive-post.md), one of the two streaming APIs in Amazon Glacier\. The example assumes the following:
-
 + The time stamp of the request is `Mon, 07 May 2012 00:00:00 GMT`\.
-
 + The endpoint is the US East \(N\. Virginia\) Region, us\-east\-1\.
-
 + The content payload is a string "Welcome to Amazon Glacier\." 
 
 The general request syntax \(including the JSON body\) is shown in the example below\. Note that the` x-amz-content-sha256` header is included\. In this simplified example, the `x-amz-sha256-tree-hash` and `x-amz-content-sha256` are the same value\. However, for archive uploads greater than 1 MB, this is not the case\.
@@ -146,7 +138,7 @@ Authorization: SignatureToBeCalculated
 x-amz-glacier-version: 2012-06-01
 ```
 
-The canonical form of the request calculated for Task 1: Create a Canonical Request is shown below\. Note that the streaming header `x-amz-content-sha256` is included with its value\. This means you must read the payload and calculate the SHA256 hash first and then compute the signature\.
+The canonical form of the request calculated for [Task 1: Create a Canonical Request](#SignatureCalculationTask1) is shown below\. Note that the streaming header `x-amz-content-sha256` is included with its value\. This means you must read the payload and calculate the SHA256 hash first and then compute the signature\.
 
 ```
 POST

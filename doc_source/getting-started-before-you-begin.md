@@ -13,7 +13,7 @@ If you already have an AWS account, go ahead and skip to the next section: [Down
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -28,15 +28,11 @@ The getting started exercise provides examples in Java and C\#\.
 ### Downloading the AWS SDK for Java<a name="getting-started-download-sdk-java"></a>
 
 To test the Java examples in this developer guide, you need the AWS SDK for Java\. You have the following download options: 
-
 + If you are using Eclipse, you can download and install the AWS Toolkit for Eclipse using the update site [http://aws\.amazon\.com/eclipse/](http://aws.amazon.com/eclipse/)\. For more information, go to [AWS Toolkit for Eclipse](http://aws.amazon.com/eclipse/)\.
-
 + If you are using any other IDE to create your application, download the [ AWS SDK for Java ](http://aws.amazon.com/sdkforjava)\. 
 
 ### Downloading the AWS SDK for \.NET<a name="getting-started-download-sdk-dotnet"></a>
 
 To test the C\# examples in this developer guide, you need the AWS SDK for \.NET\. You have the following download options:
-
 + If you are using Visual Studio, you can install both the AWS SDK for \.NET and the AWS Toolkit for Visual Studio\. The toolkit provides AWS Explorer for Visual Studio and project templates that you can use for development\. Go to [http://aws\.amazon\.com/sdkfornet](http://aws.amazon.com/sdkfornet/) and click **Download AWS SDK for \.NET**\. By default, the installation script installs both the AWS SDK and the AWS Toolkit for Visual Studio\. To learn more about the toolkit, go to [AWS Toolkit for Visual Studio User Guide](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/)\. 
-
 + If you are using any other IDE to create your application, you can use the same link provided in the preceding step and install only the AWS SDK for \.NET\. 

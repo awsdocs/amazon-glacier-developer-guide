@@ -1,6 +1,12 @@
 # Purchase Provisioned Capacity \(POST provisioned\-capacity\)<a name="api-PurchaseProvisionedCapacity"></a>
 
-This operation purchases a provisioned capacity unit for an AWS account\.
+This operation purchases a provisioned capacity unit for an AWS account\. 
+
+A provisioned capacity unit lasts for one month starting at the date and time of purchase, which is the start date\. The unit expires on the expiration date, which is exactly one month after the start date to the nearest second\. 
+
+If the start date is on the 31st day of a month, the expiration date is the last day of the next month\. For example, if the start date is August 31, the expiration date is September 30\. If the start date is January 31, the expiration date is February 28\.
+
+Provisioned capacity guarantees that your retrieval capacity for expedited retrievals is available when you need it\. Each unit of capacity ensures that at least three expedited retrievals can be performed every five minutes and provides up to 150 MB/s of retrieval throughput\. For more information about provisioned capacity, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\. 
 
 ## Requests<a name="api-PurchaseProvisionedCapacity-requests"></a>
 
@@ -50,7 +56,7 @@ A successful response includes the following response headers, in addition to th
 
 |  Name  |  Description | 
 | --- | --- | 
-| `x-amz-capacity-id`  | The ID that identifies the provisioned capacity unit\. Type: String | 
+|  `x-amz-capacity-id`   |  The ID that identifies the provisioned capacity unit\. Type: String  | 
 
 ### Response Body<a name="api-PurchaseProvisionedCapacity-responses-elements"></a>
 
@@ -76,7 +82,7 @@ The following example sends an HTTP POST request to purchase a provisioned capac
 ```
 1. POST /123456789012/provisioned-capacity HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 5. Content-Length: length
 6. x-amz-glacier-version: 2012-06-01
@@ -89,10 +95,9 @@ If the request was successful, Amazon Glacier returns an `HTTP 201 Created` resp
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 4. x-amz-capacity-id: zSaq7NzHFQDANTfQkDen4V7z
 ```
 
 ## Related Sections<a name="api-PurchaseProvisionedCapacity-related-sections"></a>
-
 + [List Provisioned Capacity \(GET provisioned\-capacity\)](api-ListProvisionedCapacity.md)

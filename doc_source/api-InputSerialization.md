@@ -10,5 +10,4 @@ An object that describes the serialization of a CSV\-encoded object\.
 *Required*: no
 
 ## More Info<a name="more-info-api-InputSerialization"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

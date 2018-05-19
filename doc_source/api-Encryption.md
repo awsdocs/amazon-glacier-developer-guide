@@ -7,7 +7,7 @@ Contains information about the encryption used to store the job results in Amazo
 **Encryption**  
 The server\-side encryption algorithm used when storing job results in Amazon S3\. The default is no encryption\.  
 *Type*: String  
-*Valid Values*: `aws:kms` | `AES256`  
+*Valid Values*: `aws:kms` \| `AES256`  
 *Required*: no
 
 **KMSContext**  
@@ -21,5 +21,4 @@ The AWS Key Management Service \(AWS KMS\) key ID to use for object encryption\.
 *Required*: no
 
 ## More Info<a name="more-info-api-Encryption"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

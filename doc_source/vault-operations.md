@@ -2,7 +2,7 @@
 
 The following are the vault operations available in Amazon Glacier\.
 
-
+**Topics**
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Add Tags To Vault \(POST tags add\)](api-AddTagsToVault.md)
 + [Create Vault \(PUT vault\)](api-vault-put.md)

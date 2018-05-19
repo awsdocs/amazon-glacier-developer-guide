@@ -149,7 +149,7 @@ This example retrieves data prepared by Amazon Glacier in response to your initi
 ```
 1. GET /-/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID/output HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -162,7 +162,7 @@ The following is an example response of an archive retrieval job\. Note that the
 1. HTTP/1.1 200 OK
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
 3. x-amz-sha256-tree-hash: beb0fe31a1c7ca8c6c04d574ea906e3f97b31fdca7571defb5b44dca89b5af60
-4. Date: Sun, 23 Nov 2014 12:00:00 GMT
+4. Date: Wed, 10 Feb 2017 12:00:00 GMT
 5. Content-Type: application/octet-stream
 6. Content-Length: 1048576
 7. 
@@ -174,7 +174,7 @@ The following is an example response of an inventory retrieval job\. Note that t
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 906
  6. 
@@ -209,7 +209,7 @@ This example retrieves only a portion of the archive prepared by Amazon Glacier 
 ```
 1. GET /-/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID/output HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. Range: bytes=0-1023	
 5. x-amz-glacier-version: 2012-06-01
 6. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
@@ -222,7 +222,7 @@ The following successful response shows the `206 Partial Content` response\. In 
 ```
 1. HTTP/1.1 206 Partial Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Content-Range: bytes 0-1023/8388608
 5. Content-Type: application/octet-stream
 6. Content-Length: 1024
@@ -231,9 +231,6 @@ The following successful response shows the `206 Partial Content` response\. In 
 ```
 
 ## Related Sections<a name="related-sections-job-output-archive-retrieval"></a>
-
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

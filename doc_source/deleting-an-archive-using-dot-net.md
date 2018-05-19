@@ -1,8 +1,8 @@
 # Deleting an Archive in Amazon Glacier Using the AWS SDK for \.NET<a name="deleting-an-archive-using-dot-net"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for \.NET provide a method to delete an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to delete an archive\.
 
-
+**Topics**
 + [Deleting an Archive Using the High\-Level API of the AWS SDK for \.NET](#delete-archive-using-dot-net-high-level)
 + [Deleting an Archive Using the Low\-Level API AWS SDK for \.NET](#delete-archive-using-dot-net-low-level)
 

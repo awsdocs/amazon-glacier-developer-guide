@@ -9,7 +9,7 @@ Amazon Glacier provides a management console\. You can use the console to create
 
 This getting started exercise provides code examples in Java and C\# for you to upload and download an archive\. The last section of the getting started provides steps where you can learn more about the developer experience with Amazon Glacier\.
 
-
+**Topics**
 + [Step 1: Before You Begin with Amazon Glacier](getting-started-before-you-begin.md)
 + [Step 2: Create a Vault in Amazon Glacier](getting-started-create-vault.md)
 + [Step 3: Upload an Archive to a Vault in Amazon Glacier](getting-started-upload-archive.md)

@@ -11,13 +11,10 @@ A data retrieval policy can cause your initiate retrieval job request to fail wi
 For example, retrieving an archive or a vault inventory requires you to first initiate a retrieval job\. The job request is executed asynchronously\. When you initiate a retrieval job, Amazon Glacier creates a job and returns a job ID in the response\. When Amazon Glacier completes the job, you can get the job output, the archive bytes, or the vault inventory data\. 
 
 The job must complete before you can get its output\. To determine the status of the job, you have the following options:
-
 + **Wait for job completion notification**—You can specify an Amazon Simple Notification Service \(Amazon SNS\) topic to which Amazon Glacier can post a notification after the job is completed\. You can specify Amazon SNS topic using the following methods: 
-
   + Specify an Amazon SNS topic per job basis\. 
 
     When you initiate a job, you can optionally specify an Amazon SNS topic\.
-
   + Set notification configuration on the vault\.
 
     You can set notification configuration for specific events on the vault \(see [Configuring Vault Notifications in Amazon Glacier](configuring-notifications.md)\)\. Amazon Glacier sends a message to the specified SNS topic any time the specific event occur\.
@@ -25,13 +22,12 @@ The job must complete before you can get its output\. To determine the status of
   If you have notification configuration set on the vault and you also specify an Amazon SNS topic when you initiate a job, Amazon Glacier sends job completion message to both the topics\. 
 
   You can configure the SNS topic to notify you via email or store the message in an Amazon Simple Queue Service \(Amazon SQS\) that your application can poll\. When a message appears in the queue, you can check if the job is completed successfully and then download the job output\. 
-
 + **Request job information explicitly**—Amazon Glacier also provides a describe job operation \([Describe Job \(GET JobID\)](api-describe-job-get.md)\) that enables you to poll for job information\. You can periodically send this request to obtain job information\. However, using Amazon SNS notifications is the recommended option\.
 
 **Note**  
 The information you get via SNS notification is the same as what you get by calling Describe Job\. 
 
-
+**Topics**
 + [About the Inventory](#vault-inventory-about)
 + [Downloading a Vault Inventory in Amazon Glacier Using the AWS SDK for Java](retrieving-vault-inventory-java.md)
 + [Downloading a Vault Inventory in Amazon Glacier Using the AWS SDK for \.NET](retrieving-vault-inventory-sdk-dotnet.md)

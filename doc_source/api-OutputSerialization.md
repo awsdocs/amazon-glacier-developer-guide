@@ -10,5 +10,4 @@ An object that describes the serialization of the comma\-separated values \(CSV\
 *Required*: no
 
 ## More Info<a name="more-info-api-OutputSerialization"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

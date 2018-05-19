@@ -2,7 +2,7 @@
 
 Amazon Web Services provides SDKs for you to develop applications for Amazon Glacier\. The SDK libraries wrap the underlying Amazon Glacier API, simplifying your programming tasks\. For example, for each request sent to Amazon Glacier, you must include a signature to authenticate your requests\. When you use the SDK libraries, you need to provide only your AWS security credentials in your code and the libraries compute the necessary signature and include it in the request sent to Amazon Glacier\. The AWS SDKs provide libraries that map to the underlying REST API and provide objects that you can use to easily construct requests and process responses\. 
 
-
+**Topics**
 + [AWS SDKs that Support Amazon Glacier](#using-aws-sdk-with-glacier)
 + [AWS SDK Libraries for Java and \.NET](#java-.net-sdk-libraries)
 + [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)
@@ -11,21 +11,13 @@ Amazon Web Services provides SDKs for you to develop applications for Amazon Gla
 ## AWS SDKs that Support Amazon Glacier<a name="using-aws-sdk-with-glacier"></a>
 
 Amazon Glacier is supported by the following AWS SDKs: 
-
 + [AWS SDK for C\+\+](https://aws.amazon.com/sdk-for-cpp/) 
-
 +  [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/)
-
 + [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/) 
-
 + [AWS SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-node-js/) 
-
 + [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/) 
-
 + [AWS SDK for PHP](https://aws.amazon.com/sdk-for-php/) 
-
 + [AWS SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/) 
-
 + [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) 
 
 You can find examples of working with Amazon Glacier using the Java and \.NET SDKs throughout this developer guide\. For libraries and sample code in all languages, see [Sample Code & Libraries](https://aws.amazon.com/code/)\. 
@@ -45,9 +37,7 @@ For information about these SDK libraries, see [Using the AWS SDK for Java with 
 ### What Is the High\-Level API?<a name="what-is-high-level-api"></a>
 
 To further simplify application development, these libraries offer a higher\-level abstraction for some of the operations\. For example, 
-
 + Uploading an archive—To upload an archive using the low\-level API in addition to the file name and the vault name where you want to save the archive, You need to provide a checksum \(SHA\-256 tree hash\) of the payload\. However, the high\-level API computes the checksum for you\.
-
 + Downloading an archive or vault inventory—To download an archive using the low\-level API you first initiate a job, wait for the job to complete, and then get the job output\. You need to write additional code to set up an Amazon Simple Notification Service \(Amazon SNS\) topic for Amazon Glacier to notify you when the job is complete\. You also need some polling mechanism to check if a job completion message was posted to the topic\. The high\-level API provides a method to download an archive that takes care of all these steps\. You only specify an archive ID and a folder path where you want to save the downloaded data\. 
 
 For information about these SDK libraries, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md) and [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\.

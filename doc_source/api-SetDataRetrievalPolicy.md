@@ -64,7 +64,7 @@ The policy rule\. Although this is a list type, currently there must be only one
 The type of data retrieval policy to set\.  
 *Type*: String  
 *Required*: Yes  
-Valid values: `BytesPerHour`|`FreeTier`|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Responses<a name="api-SetDataRetrievalPolicy-responses"></a>
 
@@ -97,7 +97,7 @@ The following example sends an HTTP PUT request with the Strategy field set to `
 ```
  1. PUT /-/policies/data-retrieval HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-glacier-version: 2012-06-01
  5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
  6. 			
@@ -119,7 +119,7 @@ The following example sends an HTTP PUT request with the Strategy field set to `
 ```
  1. PUT /-/policies/data-retrieval HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-glacier-version: 2012-06-01
  5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
  6. 			
@@ -140,7 +140,7 @@ The following example sends an HTTP PUT request with the Strategy field set to `
 ```
  1. PUT /-/policies/data-retrieval HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-glacier-version: 2012-06-01
  5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
  6. 			
@@ -163,11 +163,9 @@ If the request was successful Amazon Glacier sets the policy and returns a `HTTP
 ```
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-SetDataRetrievalPolicy"></a>
-
 + [Get Data Retrieval Policy \(GET policy\)](api-GetDataRetrievalPolicy.md)
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

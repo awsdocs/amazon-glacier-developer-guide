@@ -76,7 +76,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `acc
 ```
 1. PUT /-/vaults/examplevault/access-policy HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 5. Content-Length: length
 6. x-amz-glacier-version: 2012-06-01
@@ -91,11 +91,9 @@ If the request was successful, Amazon Glacier returns a `HTTP 204 No Content` as
 ```
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-SetVaultAccessPolicy"></a>
-
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
-
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)

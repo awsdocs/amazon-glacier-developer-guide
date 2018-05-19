@@ -9,7 +9,7 @@ Amazon Glacier retains recently completed jobs for a period before deleting them
 
 The `List Jobs` operation supports pagination\. You should always check the response `Marker` field\. If there are no more jobs to list, the `Marker` field is set to `null`\. If there are more jobs to list, the `Marker` field is set to a non\-null value, which you can use to continue the pagination of the list\. To return a list of jobs that begins at a specific job, set the `marker` request parameter to the `Marker` value for that job that you obtained from a previous `List Jobs` request\.
 
-You can set a maximum limit for the number of jobs returned in the response by specifying the `limit` parameter in the request\. The default limit is 1,000\. The number of jobs returned might be fewer than the limit, but the number of returned jobs never exceeds the limit\.
+You can set a maximum limit for the number of jobs returned in the response by specifying the `limit` parameter in the request\. The default limit is 50\. The number of jobs returned might be fewer than the limit, but the number of returned jobs never exceeds the limit\.
 
 Additionally, you can filter the jobs list returned by specifying the optional `statuscode` parameter or `completed` parameter, or both\. Using the `statuscode` parameter, you can specify to return only jobs that match either the `InProgress`, `Succeeded`, or `Failed` status\. Using the `completed` parameter, you can specify to return only jobs that were completed \(`true`\) or jobs that were not completed \(`false`\)\.
 
@@ -36,7 +36,7 @@ The `AccountId` value is the AWS account ID of the account that owns the vault\.
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
 | completed  |  The state of the jobs to return\. You can specify `true` or `false`\. Type: Boolean Constraints: None  |  No  | 
-|  limit  |  The maximum number of jobs to be returned\. The default limit is 1,000\. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit\. Type: String Constraints: Minimum integer value of 1\. Maximum integer value of 1,000\.  |  No | 
+|  limit  |  The maximum number of jobs to be returned\. The default limit is 50\. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit\. Type: String Constraints: Minimum integer value of 1\. Maximum integer value of 50\.  |  No | 
 | marker  |  An opaque string used for pagination that specifies the job at which the listing of jobs should begin\. You get the `marker` value from a previous `List Jobs` response\. You only need to include the `marker` if you are continuing the pagination of the results started in a previous `List Jobs` request\.  Type: String Constraints: None  |  No  | 
 | statuscode  |  The type of job status to return\.  Type: String Constraints: One of the values `InProgress`, `Succeeded`, or `Failed`\.  |  No  | 
 
@@ -181,7 +181,7 @@ The following `GET` request returns the jobs for a vault\.
 ```
 1. GET /-/vaults/examplevault/jobs  HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -193,7 +193,7 @@ The following response includes an archive retrieval job and an inventory retrie
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT 
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT 
  4. Content-Type: application/json
  5. Content-Length: 1444
  6. 
@@ -256,7 +256,7 @@ The following `GET` request returns the job specified by the `marker` parameter\
 ```
 1. GET /-/vaults/examplevault/jobs?marker=HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID&limit=2  HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -268,7 +268,7 @@ The following response shows two jobs returned and the `Marker` field set to a n
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT 
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT 
  4. Content-Type: application/json
  5. Content-Length: 1744
  6. 
@@ -318,7 +318,5 @@ The following response shows two jobs returned and the `Marker` field set to a n
 ```
 
 ## Related Sections<a name="related-sections-list-jobs"></a>
-
 +  [Describe Job \(GET JobID\)](api-describe-job-get.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md) 

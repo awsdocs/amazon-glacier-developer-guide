@@ -98,7 +98,7 @@ The following example shows a request to upload an archive\.
 ```
  1. POST /-/vaults/examplevault/archives HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-sha256-tree-hash: beb0fe31a1c7ca8c6c04d574ea906e3f97b31fdca7571defb5b44dca89b5af60
  5. x-amz-content-sha256: 7f2fe580edb35154041fa3d4b41dd6d3adaef0c85d2ff6309f1d4b520eeecda3
  6. Content-Length: 2097152
@@ -115,18 +115,14 @@ The successful response below has a `Location` header where you can get the ID t
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. x-amz-sha256-tree-hash: beb0fe31a1c7ca8c6c04d574ea906e3f97b31fdca7571defb5b44dca89b5af60
 5. Location: /111122223333/vaults/examplevault/archives/NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId
 6. x-amz-archive-id: NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId
 ```
 
 ## Related Sections<a name="related-sections-api-archive-post"></a>
-
 + [Working with Archives in Amazon Glacier](working-with-archives.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 + [Delete Archive \(DELETE archive\)](api-archive-delete.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

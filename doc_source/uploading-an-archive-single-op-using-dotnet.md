@@ -1,8 +1,8 @@
 # Uploading an Archive in a Single Operation Using the AWS SDK for \.NET in Amazon Glacier<a name="uploading-an-archive-single-op-using-dotnet"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for \.NET provide a method to upload an archive in a single operation\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to upload an archive in a single operation\.
 
-
+**Topics**
 + [Uploading an Archive Using the High\-Level API of the AWS SDK for \.NET](#uploading-an-archive-single-op-highlevel-using-dotnet)
 + [Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for \.NET](#uploading-an-archive-single-op-lowlevel-using-dotnet)
 

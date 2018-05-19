@@ -9,6 +9,6 @@ An Amazon Glacier vault can have one vault access policy and one Vault Lock poli
 
 For more information, see the following topics\.
 
-
+**Topics**
 + [Amazon Glacier Access Control with Vault Access Policies](vault-access-policy.md)
 + [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)

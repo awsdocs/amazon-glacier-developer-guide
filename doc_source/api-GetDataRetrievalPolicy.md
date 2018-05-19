@@ -76,7 +76,7 @@ The policy rule\. Although this is a list type, currently there will be only one
 **Strategy**  
 The type of data retrieval policy\.  
 *Type*: String  
-Valid values: `BytesPerHour`|`FreeTier`|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ### Errors<a name="api-GetDataRetrievalPolicy-responses-errors"></a>
 
@@ -93,7 +93,7 @@ In this example, a `GET` request is sent to the URI of a policy's location\.
 ```
 1. GET /-/policies/data-retrieval HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -105,7 +105,7 @@ A successful response shows the data retrieval policy in the body of the respons
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 85
  6.  
@@ -123,7 +123,5 @@ A successful response shows the data retrieval policy in the body of the respons
 ```
 
 ## Related Sections<a name="related-sections-GetDataRetrievalPolicy"></a>
-
 + [Set Data Retrieval Policy \(PUT policy\)](api-SetDataRetrievalPolicy.md)
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

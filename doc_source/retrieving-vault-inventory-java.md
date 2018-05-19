@@ -29,7 +29,7 @@ Note that if an inventory has not been completed for the vault an error is retur
 
 1. Wait for the job to complete\.
 
-   Most Amazon Glacier jobs take about four hours to complete\. You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault, or specified an Amazon Simple Notification Service \(Amazon SNS\) topic when you initiated the job, Amazon Glacier sends a message to the topic after it completes the job\. 
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault, or specified an Amazon Simple Notification Service \(Amazon SNS\) topic when you initiated the job, Amazon Glacier sends a message to the topic after it completes the job\. 
 
    You can also poll Amazon Glacier by calling the `describeJob` method to determine job completion status\. However, using an Amazon SNS topic for notification is the recommended approach\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
 
@@ -56,27 +56,19 @@ For information about the job related underlying REST API, see [Job Operations](
 
 The following Java code example retrieves the vault inventory for the specified vault\.
 
-**Note**  
-It takes about four hours for most jobs to complete\.
-
 The example performs the following tasks: 
-
 + Creates an Amazon Simple Notification Service \(Amazon SNS\) topic\.
 
   Amazon Glacier sends notification to this topic after it completes the job\. 
-
 + Creates an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages to the queue\.
-
 + Initiates a job to download the specified archive\.
 
   In the job request, the Amazon SNS topic that was created is specified so that Amazon Glacier can publish a notification to the topic after it completes the job\.
-
 + Checks the Amazon SQS queue for a message that contains the job ID\.
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. 
-
 + Cleans up by deleting the Amazon SNS topic and the Amazon SQS queue that it created\.
 
 ```

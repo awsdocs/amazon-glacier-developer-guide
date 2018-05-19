@@ -6,11 +6,8 @@ This topic provides examples of identity\-based policies in which an account adm
  We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your Amazon Glacier resources\. For more information, see [Overview of Managing Access Permissions to Your Amazon Glacier Resources](access-control-overview.md)\.
 
 The sections in this topic cover the following:
-
 + [Permissions Required to Use the Amazon Glacier Console](#additional-console-required-permissions) 
-
 + [AWS Managed Policies \(Predefined Policies\) for Amazon Glacier](#access-policy-examples-aws-managed) 
-
 + [Customer Managed Policy Examples](#access-policy-examples-for-sdk-cli) 
 
 The following shows an example of a permissions policy\.
@@ -62,9 +59,7 @@ Both of the Amazon Glacier AWS Managed policies discussed in the next section gr
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to Amazon Glacier:
-
 + **AmazonGlacierReadOnlyAccess** – Grants read only access to Amazon Glacier through the AWS Management Console\.
-
 + **AmazonGlacierFullAccess** – Grants full access to Amazon Glacier through the AWS Management Console\. 
 
 **Note**  
@@ -79,7 +74,7 @@ In this section, you can find example user policies that grant permissions for v
 **Note**  
 All examples use the US West \(Oregon\) Region \(`us-west-2`\) and contain fictitious account IDs\.
 
-
+**Topics**
 + [Example 1: Allow a User to Download Archives from a Vault](#vault-access-policy-example-init-jobs)
 + [Example 2: Allow a User to Create a Vault and Configure Notifications](#vault-access-policy-example-create-vault)
 + [Example 3: Allow a User to Upload Archives to a Specific Vault](#vault-access-policy-example-upload-archives)

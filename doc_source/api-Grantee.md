@@ -22,7 +22,7 @@ The canonical user ID of the grantee\.
 **Type**  
 The type of the grantee\.  
 *Type*: String  
-*Valid Values*: `AmazonCustomerByEmail` | `CanonicalUser` | `Group`   
+*Valid Values*: `AmazonCustomerByEmail` \| `CanonicalUser` \| `Group`   
 *Required*: no
 
 **URI**  
@@ -31,5 +31,4 @@ The URI of the grantee group\.
 *Required*: no
 
 ## More Info<a name="more-info-api-Grantee"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

@@ -116,14 +116,14 @@ For information about Amazon Glacier exceptions and error messages, see [Error R
 
 ### Example: List All Vaults<a name="api-vaults-get-example1"></a>
 
-The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 10 vaults are returned\.
+The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 1,000 vaults are returned\.
 
 #### Example Request<a name="api-vaults-get-example1-request"></a>
 
 ```
 1. GET /-/vaults HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -135,7 +135,7 @@ The `Marker` is `null` indicating there are no more vaults to list\.
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:02:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 497	
  6. 
@@ -179,7 +179,7 @@ The following example returns two vaults starting at the vault specified by the 
 ```
 1. GET /-/vaults?limit=2&marker=arn:aws:glacier:us-west-2:012345678901:vaults/examplevault1 HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -191,7 +191,7 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:02:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 497	
  6. 
@@ -219,11 +219,7 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 ```
 
 ## Related Sections<a name="related-sections-vaults-get"></a>
-
 + [Create Vault \(PUT vault\)](api-vault-put.md)
-
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

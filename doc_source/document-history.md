@@ -3,15 +3,13 @@
 The following table describes the important changes since the last release of the *Amazon Glacier Developer Guide*\.
 
 **Relevant Dates to this History:**
-
 + **Current product version:** 2012\-06\-01
-
 + **Last documentation update:** November 29, 2017
 
 
 | Change | Description | Release Date | 
 | --- | --- | --- | 
-|  Querying archives with SQL  |  Amazon Glacier now supports querying data archives with SQL\. For more information, see [Querying Archives with Amazon Glacier Select](glacier-select.md)\. The following APIs are updated accordingly:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/document-history.html)  |  In this release   | 
+|  Querying archives with SQL  |  Amazon Glacier now supports querying data archives with SQL\. For more information, see [Querying Archives with Amazon Glacier Select](glacier-select.md)\. The following APIs are updated accordingly:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/document-history.html)  |  November 29, 2017  | 
 |  Expedited and Bulk Data Retrievals  |  Amazon Glacier now supports Expedited and Bulk data retrievals in addition to Standard retrievals\. For more information, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\.   |  November 21, 2016  | 
 |  Vault Lock  |  Amazon Glacier now supports Vault Lock, which allows you to easily deploy and enforce compliance controls on individual Amazon Glacier vaults with a Vault Lock policy\. For more information, see [Amazon Glacier Vault Lock](vault-lock.md) and [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.   |  July 8, 2015  | 
 |  Vault tagging  |  Amazon Glacier now allows you to tag your Amazon Glacier vaults for easier resource and cost management\. Tags are labels that you can define and associate with your vaults, and using tags adds filtering capabilities to operations such as AWS cost reports\. For more information, see [Tagging Amazon Glacier Resources](tagging.md) and [Tagging Your Amazon Glacier Vaults](tagging-vaults.md)\.  |  June 22, 2015  | 

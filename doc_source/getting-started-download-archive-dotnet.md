@@ -1,16 +1,13 @@
 # Download an Archive from a Vault in Amazon Glacier Using the AWS SDK for \.NET<a name="getting-started-download-archive-dotnet"></a>
 
 The following C\# code example uses the high\-level API of the AWS SDK for \.NET to download the archive you uploaded previously in [Upload an Archive to a Vault in Amazon Glacier Using the AWS SDK for \.NET](getting-started-upload-archive-dotnet.md)\. In the code example, note the following:
-
 + The example creates an instance of the `ArchiveTransferManager` class for the specified Amazon Glacier region endpoint\.
-
 + The code example uses the US West \(Oregon\) region \(`us-west-2`\) to match the location where you created the vault previously in [Step 2: Create a Vault in Amazon Glacier](getting-started-create-vault.md)\. 
-
-+ The example uses the `Download` method of the `ArchiveTransferManager` class to upload your archive\. The `Download` method creates an Amazon SNS topic, and an Amazon SQS queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. This polling takes about 4 hours\. Once the archive is available, download will begin\. 
++ The example uses the `Download` method of the `ArchiveTransferManager` class to download your archive\. The `Download` method creates an Amazon SNS topic, and an Amazon SQS queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. When the archive is available, download begins\. For information about retrieval times, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)
 
 For step\-by\-step instructions on how to run this example, see [Running Code Examples](using-aws-sdk-for-dot-net.md#setting-up-and-testing-sdk-dotnet)\. You need to update the code as shown with the archive ID of the file you uploaded in [Step 3: Upload an Archive to a Vault in Amazon Glacier](getting-started-upload-archive.md)\. 
 
-**Example — Download an Archive Using the High\-Level API of the AWS SDK for \.NET**  
+**Example — Download an Archive Using the High\-Level API of the AWS SDK for \.NET**  <a name="GS_ExampleDownloadArchiveDotNet"></a>
 
 ```
 using System;
@@ -36,7 +33,7 @@ namespace glacier.amazon.com.docsamples
                 options.StreamTransferProgress += ArchiveDownloadHighLevel_GettingStarted.progress;
                 // Download an archive.
                 Console.WriteLine("Intiating the archive retrieval job and then polling SQS queue for the archive to be available.");
-                Console.WriteLine("This polling takes about 4 hours. Once the archive is available, downloading will begin.");
+                Console.WriteLine("Once the archive is available, downloading will begin.");
                 manager.Download(vaultName, archiveId, downloadFilePath, options);
                 Console.WriteLine("To continue, press Enter");
                 Console.ReadKey();
@@ -58,5 +55,5 @@ namespace glacier.amazon.com.docsamples
             }
         }
     }
-}
+}bb celan
 ```

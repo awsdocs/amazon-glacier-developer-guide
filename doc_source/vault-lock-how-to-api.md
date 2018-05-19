@@ -9,13 +9,8 @@ To lock your vault with the Amazon Glacier API, you first call [Initiate Vault L
  After you validate the vault lock policy, you can call [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md) with the most recent lock ID to complete the vault locking process\. Your vault transitions to a locked state where the vault lock policy is unchangeable and can no longer be removed by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\.
 
 ## Related Sections<a name="related-sections-vault-lock-how-to-api"></a>
-
 + [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)
-
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
-
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
-
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
-
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)

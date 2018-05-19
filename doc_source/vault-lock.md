@@ -2,7 +2,7 @@
 
 The following topics describe how to lock a vault in Amazon Glacier and how to use Vault Lock policies\.
 
-
+**Topics**
 + [Vault Locking Overview](#vault-lock-overview)
 + [Locking a Vault by Using the Amazon Glacier API](vault-lock-how-to-api.md)
 

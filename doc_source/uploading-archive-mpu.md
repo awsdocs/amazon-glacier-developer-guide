@@ -1,6 +1,6 @@
 # Uploading Large Archives in Parts \(Multipart Upload\)<a name="uploading-archive-mpu"></a>
 
-
+**Topics**
 + [Multipart Upload Process](#MPUprocess)
 + [Quick Facts](#qfacts)
 + [Uploading Large Archives in Parts Using the AWS SDK for Java](uploading-an-archive-mpu-using-java.md)
@@ -27,16 +27,14 @@ You don't need to know the overall archive size when using the Multipart Upload\
 
 1. **Complete \(or Abort\) Multipart Upload**
 
-   After uploading all the archive parts, you use the complete operation\. Again, you must specify the upload ID in your request\. Amazon Glacier creates an archive by concatenating parts in ascending order based on the content range you provided\. Amazon Glacier response to a Complete Multipart Upload request includes an archive ID for the newly created archive\. If you provided an optional archive description in the Initiate Multipart Upload request, Amazon Glacier associates it with assembled archive\. After you successfully complete a multipart upload, you cannot refer to the multipart upload ID\. That means you cannot access parts associated with the multipart upload ID\.
+   After uploading all the archive parts, you use the complete operation\. Again, you must specify the upload ID in your request\. Amazon Glacier creates an archive by concatenating parts in ascending order based on the content range you provided\. Amazon Glacier response to a Complete Multipart Upload request includes an archive ID for the newly created archive\. If you provided an optional archive description in the Initiate Multipart Upload request, Amazon Glacier associates it with the assembled archive\. After you successfully complete a multipart upload, you cannot refer to the multipart upload ID\. That means you cannot access parts associated with the multipart upload ID\.
 
    If you abort a multipart upload, you cannot upload any more parts using that multipart upload ID\. All storage consumed by any parts associated with the aborted multipart upload is freed\. If any part uploads were in\-progress, they can still succeed or fail even after you abort\.
 
 ### Additional Multipart Upload Operations<a name="additional-mpu-operations"></a>
 
 Amazon Glacier provides the following additional multipart upload API calls\.
-
 + **List Parts**—Using this operation, you can list the parts of a specific multipart upload\. It returns information about the parts that you have uploaded for a multipart upload\. For each list parts request, Amazon Glacier returns information for up to 1,000 parts\. If there are more parts to list for the multipart upload, the result is paginated and a marker is returned in the response at which to continue the list\. You need to send additional requests to retrieve subsequent parts\. Note that the returned list of parts doesn't include parts that haven't completed uploading\.
-
 + **List Multipart Uploads**—Using this operation, you can obtain a list of multipart uploads in progress\. An in\-progress multipart upload is an upload that you have initiated, but have not yet completed or aborted\. For each list multipart uploads request, Amazon Glacier returns up to 1,000 multipart uploads\. If there are more multipart uploads to list, then the result is paginated and a marker is returned in the response at which to continue the list\. You need to send additional requests to retrieve the remaining multipart uploads\.
 
 ## Quick Facts<a name="qfacts"></a>

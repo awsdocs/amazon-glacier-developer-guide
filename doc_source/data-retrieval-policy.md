@@ -3,9 +3,9 @@
  With Amazon Glacier data retrieval policies, you can easily set data retrieval limits and manage the data retrieval activities across your AWS account in each region\. For more information about Amazon Glacier data retrieval charges, see [Amazon Glacier pricing](https://aws.amazon.com/glacier/pricing/)\.
 
 **Important**  
-A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to Amazon Glacier\. It does not manage data restore requests for Amazon S3's `GLACIER` storage class\. For more information, see [GLACIER Storage Class: Additional Lifecycle Configuration Considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-archival.html)\.
+A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to Amazon Glacier\. It does not manage data restore requests for the Amazon Simple Storage Service \(Amazon S3\) GLACIER storage class\. For more information about the GLACIER storage class, see [GLACIER Storage Class](http://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) and [Transitioning Objects](http://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
-
+**Topics**
 + [Choosing an Amazon Glacier Data Retrieval Policy](#data-retrieval-policy-details)
 + [Using the Amazon Glacier Console to Set Up a Data Retrieval Policy](#data-retrieval-policy-using-console)
 + [Using the Amazon Glacier API to Set Up a Data Retrieval Policy](#data-retrieval-policy-using-api)
@@ -17,13 +17,9 @@ You can choose from three types of Amazon Glacier data retrieval policies: *Free
 With both Free Tier Only and Max Retrieval Rate policies, data retrieval requests that would exceed the retrieval limits you specified will not be accepted\. If you use a Free Tier Only policy, Amazon Glacier will synchronously reject retrieval requests that would exceed your free tier allowance\. If you use a Max Retrieval Rate policy, Amazon Glacier will reject retrieval requests that would cause the peak retrieval rate of the in progress jobs to exceed the bytes\-per\-hour limit set by the policy\. These policies help you simplify data retrieval cost management\. 
 
 The following are some useful facts about data retrieval policies:
-
-+  Data retrieval policy settings do not change the 3 to 5 hour period that it takes to retrieve data from Amazon Glacier\.
-
++  Data retrieval policy settings do not change the 3 to 5 hour period that it takes to retrieve data from Amazon Glacier using standard retrievals\.
 + Setting a new data retrieval policy does not affect previously accepted retrieval jobs that are already in progress\. 
-
 +  If a retrieval job request is rejected because of a data retrieval policy, you will not be charged for the job or the request\. 
-
 + You can set one data retrieval policy for each AWS region, which will govern all data retrieval activities in the region under your account\. A data retrieval policy is region\-specific because data retrieval costs vary across AWS regions\. For more information, see [Amazon Glacier pricing](https://aws.amazon.com/glacier/pricing/)\.
 
 ### Free Tier Only Policy<a name="data-retrieval-policy-free-tier-only"></a>

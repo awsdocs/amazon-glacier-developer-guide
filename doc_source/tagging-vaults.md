@@ -4,7 +4,7 @@ You can assign your own metadata to Amazon Glacier vaults in the form of tags\. 
 
 The following topics describe how you can add, list, and remove tags for vaults\.
 
-
+**Topics**
 + [Tagging Vaults Using the Amazon Glacier Console](#tagging-console)
 + [Tagging Vaults Using the Amazon Glacier API](#tagging-api)
 + [Related Sections](#related-sections-tagging-vaults)
@@ -59,5 +59,4 @@ Lists the tags for the specified vault\.
 Removes tags from the specified vault\.
 
 ## Related Sections<a name="related-sections-tagging-vaults"></a>
-
 + [Tagging Amazon Glacier Resources](tagging.md)

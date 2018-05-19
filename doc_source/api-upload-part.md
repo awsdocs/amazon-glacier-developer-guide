@@ -9,15 +9,11 @@ For information about multipart upload, see [Uploading Large Archives in Parts \
  
 
 Amazon Glacier rejects your upload part request if any of the following conditions is true:
-
 + **SHA256 tree hash does not match—**To ensure that part data is not corrupted in transmission, you compute a SHA256 tree hash of the part and include it in your request\. Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash\. If the two hash values don't match, the operation fails\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\.
-
 + **SHA256 linear hash does not match—**Required for authorization, you compute a SHA256 linear hash of the entire uploaded payload and include it in your request\. For information about computing a SHA256 linear hash, see [Computing Checksums](checksum-calculations.md)\.
-
 + **Part size does not match—**The size of each part except the last must match the size that is specified in the corresponding [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request\. The size of the last part must be the same size as, or smaller than, the specified size\.
 **Note**  
 If you upload a part whose size is smaller than the part size you specified in your initiate multipart upload request and that part is not the last part, then the upload part request will succeed\. However, the subsequent Complete Multipart Upload request will fail\.
-
 + **Range does not align—**The byte range value in the request does not align with the part size specified in the corresponding initiate request\. For example, if you specify a part size of 4194304 bytes \(4 MB\), then 0 to 4194303 bytes \(4 MB —1\) and 4194304 \(4 MB\) to 8388607 \(8 MB —1\) are valid part ranges\. However, if you set a range value of 2 MB to 6 MB, the range does not align with the part size and the upload will fail\.
 
 This operation is idempotent\. If you upload the same part multiple times, the data included in the most recent request overwrites the previously uploaded data\.
@@ -101,7 +97,7 @@ The example sends an HTTP `PUT` request to upload a 4 MB part\. The request is s
 ```
 1. PUT /-/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Content-Range:bytes 0-4194303/*
 5. x-amz-sha256-tree-hash:c06f7cd4baacb087002a99a5f48bf953
 6. x-amz-contentsha256:726e392cb4d09924dbad1cc0ba3b00c3643d03d14cb4b823e2f041cff612a628
@@ -114,7 +110,7 @@ To upload the next part, the procedure is the same; however, you must calculate 
 ```
 1. PUT /-/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Content-Range:bytes 4194304-8388607/*
 5. Content-Length: 4194304
 6. x-amz-sha256-tree-hash:f10e02544d651e2c3ce90a4307427493
@@ -131,23 +127,15 @@ The parts can be uploaded in any order; Amazon Glacier uses the range specificat
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
 3. x-amz-sha256-tree-hash: c06f7cd4baacb087002a99a5f48bf953
-4. Date: Sun, 23 Nov 2014 12:00:00 GMT
+4. Date: Wed, 10 Feb 2017 12:00:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-upload-part"></a>
-
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
-
 + [Upload Part \(PUT uploadID\)](#api-upload-part)
-
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)
-
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
-
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
-
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

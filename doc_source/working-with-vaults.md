@@ -7,7 +7,7 @@ You can store an unlimited number of archives in a vault\.
 **Important**  
 Amazon Glacier provides a management console\. You can use the console to create and delete vaults\. However, all other interactions with Amazon Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using Amazon Glacier with the AWS CLI, go to [AWS CLI Reference for Amazon Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
-
+**Topics**
 + [Vault Operations in Amazon Glacier](#vault-operations-quick-intro)
 + [Creating a Vault in Amazon Glacier](creating-vaults.md)
 + [Retrieving Vault Metadata in Amazon Glacier](retrieving-vault-info.md)

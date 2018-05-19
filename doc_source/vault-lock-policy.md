@@ -6,7 +6,7 @@ As an example of a Vault Lock policy, suppose that you are required to retain ar
 
 You can use the Amazon Glacier API, AWS SDKs, AWS CLI, or the Amazon Glacier console to create and manage Vault Lock policies\. For a list of Amazon Glacier actions allowed for vault resource\-based policies, see [Amazon Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
-
+**Topics**
 + [Example 1: Deny Deletion Permissions for Archives Less Than 365 Days Old](#vault-lock-policy-example-deny-delete-archive-age)
 + [Example 2: Deny Deletion Permissions Based on a Tag](#vault-lock-policy-example-legal-hold-tag)
 
@@ -41,9 +41,7 @@ Suppose that you have a regulatory requirement to retain archives for up to one 
 Suppose that you have a time\-based retention rule that an archive can be deleted if it is less than a year old\. At the same time, suppose that you need to place a legal hold on your archives to prevent deletion or modification for an indefinite duration during a legal investigation\. In this case, the legal hold takes precedence over the time\-based retention rule specified in the Vault Lock policy\. 
 
 To put these two rules in place, the following example policy has two statements:
-
 + The first statement denies deletion permissions to everyone, locking the vault\. This lock is performed by using the `LegalHold` tag\.
-
 + The second statement grants deletion permissions when the archive is less than 365 days old\. But even when archives are less than 365 days old, no one can delete them because the vault has been locked by the first statement\.
 
 ```
@@ -90,13 +88,8 @@ To put these two rules in place, the following example policy has two statements
 ```
 
 ### Related Sections<a name="related-sections-vault-lock-policy-examples"></a>
-
 + [Amazon Glacier Vault Lock](vault-lock.md)
-
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
-
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
-
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
-
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)

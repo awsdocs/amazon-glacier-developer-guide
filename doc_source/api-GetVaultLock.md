@@ -3,13 +3,9 @@
 ## Description<a name="api-GetVaultLock-description"></a>
 
 This operation retrieves the following attributes from the `lock-policy` subresource set on the specified vault: 
-
 + The vault lock policy set on the vault\.
-
 + The state of the vault lock, which is either `InProgess` or `Locked`\.
-
 + When the lock ID expires\. The lock ID is used to complete the vault locking process\.
-
 + When the vault lock was initiated and put into the `InProgress` state\.
 
 A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can abort the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. For more information about the vault locking process, see [Amazon Glacier Vault Lock](vault-lock.md)\.
@@ -106,7 +102,7 @@ In this example, a `GET` request is sent to the URI of a vault's `lock-policy` s
 ```
 1. GET /-/vaults/examplevault/lock-policy HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -118,7 +114,7 @@ If the request was successful, Amazon Glacier returns the vault access policy as
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: length
  6. 
@@ -153,9 +149,6 @@ If the request was successful, Amazon Glacier returns the vault access policy as
 ```
 
 ## Related Sections<a name="related-sections-GetVaultLock"></a>
-
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
-
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
-
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)

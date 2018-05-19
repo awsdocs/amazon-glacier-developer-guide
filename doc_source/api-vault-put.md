@@ -5,9 +5,7 @@
 This operation creates a new vault with the specified name\.  The name of the vault must be unique within a region for an AWS account\. You can create up to 1,000 vaults per account\. For information on creating more vaults, go to the [Amazon Glacier product detail page](http://aws.amazon.com/glacier)\.
 
 You must use the following guidelines when naming a vault\. 
-
 +  Names can be between 1 and 255 characters long\. 
-
 + Allowed characters are a–z, A–Z, 0–9, '\_' \(underscore\), '\-' \(hyphen\), and '\.' \(period\)\.
 
 This operation is idempotent, you can send the same request multiple times and it has no further effect after the first time Amazon Glacier creates the specified vault\.
@@ -79,7 +77,7 @@ The following example sends an HTTP PUT request to create a vault named `example
 ```
 1. PUT /-/vaults/examplevault HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Content-Length: 0
 6. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
@@ -92,14 +90,11 @@ Amazon Glacier creates the vault and returns the relative URI path of the vault 
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 4. Location: /111122223333/vaults/examplevault
 ```
 
 ## Related Sections<a name="related-sections-vault-put"></a>
-
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
-
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

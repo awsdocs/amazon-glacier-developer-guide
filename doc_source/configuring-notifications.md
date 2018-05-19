@@ -8,7 +8,7 @@ Retrieving anything from Amazon Glacier, such as an archive from a vault or a va
 
 You can set a notification configuration on a vault so that when a job completes a message is sent to an Amazon Simple Notification Service \(Amazon SNS\) topic\. 
 
-
+**Topics**
 + [Configuring Vault Notifications in Amazon Glacier: General Concepts](#configuring-notifications.general)
 + [Configuring Vault Notifications in Amazon Glacier Using the AWS SDK for Java](configuring-notifications-sdk-java.md)
 + [Configuring Vault Notifications in Amazon Glacier Using the AWS SDK for \.NET](configuring-notifications-sdk-dotnet.md)

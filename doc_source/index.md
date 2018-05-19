@@ -1,7 +1,7 @@
 # Amazon Glacier Developer Guide
 
 -----
-*****Copyright &copy; 2017 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -152,6 +152,16 @@ Amazon's trademarks and trade dress may not be used in
       + [List Provisioned Capacity (GET provisioned-capacity)](api-ListProvisionedCapacity.md)
       + [Purchase Provisioned Capacity (POST provisioned-capacity)](api-PurchaseProvisionedCapacity.md)
       + [Set Data Retrieval Policy (PUT policy)](api-SetDataRetrievalPolicy.md)
-+ [Amazon Glacier Select SQL Reference](glacier-select-sql-reference.md)
++ [SQL Reference for Amazon S3 Select and Amazon Glacier Select](s3-glacier-select-sql-reference.md)
+   + [SELECT Command](s3-glacier-select-sql-reference-select.md)
+   + [Data Types](s3-glacier-select-sql-reference-data-types.md)
+   + [Operators](s3-glacier-select-sql-reference-operators.md)
+   + [Reserved Keywords](s3-glacier-select-sql-reference-keyword-list.md)
+   + [SQL Functions](s3-glacier-select-sql-reference-sql-functions.md)
+      + [Aggregate Functions (Amazon S3 Select only)](s3-glacier-select-sql-reference-aggregate.md)
+      + [Conditional Functions](s3-glacier-select-sql-reference-conditional.md)
+      + [Conversion Functions](s3-glacier-select-sql-reference-conversion.md)
+      + [Date Functions](s3-glacier-select-sql-reference-date.md)
+      + [String Functions](s3-glacier-select-sql-reference-string.md)
 + [Document History](document-history.md)
 + [AWS Glossary](glossary.md)

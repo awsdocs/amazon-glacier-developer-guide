@@ -21,7 +21,7 @@ A single character used for escaping the quotation\-mark character inside an alr
 
 **QuoteFields**  
 A value that indicates whether all output fields should be contained within quotation marks\.  
-*Valid Values*: `ALWAYS` | `ASNEEDED`  
+*Valid Values*: `ALWAYS` \| `ASNEEDED`  
 *Type*: String  
 *Required*: no
 
@@ -31,5 +31,4 @@ A single character used to separate individual records from each other\.
 *Required*: no
 
 ## More Info<a name="more-info-api-CSVOutput"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

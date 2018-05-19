@@ -88,7 +88,7 @@ In this example, an HTTP POST request is sent to the URI that was returned by an
 ```
 1. POST /-/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. z-amz-Date: 20141123T120000Z
+3. z-amz-Date: 20170210T120000Z
 4. x-amz-sha256-tree-hash:1ffc0f54dd5fdd66b62da70d25edacd0
 5. x-amz-archive-size:8388608
 6. x-amz-glacier-version: 2012-06-01
@@ -102,7 +102,7 @@ The following example response shows that Amazon Glacier successfully created an
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Location: /111122223333/vaults/examplevault/archives/NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId
 5. x-amz-archive-id: NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId
 ```
@@ -110,19 +110,11 @@ The following example response shows that Amazon Glacier successfully created an
 You can now send HTTP requests to the URI of the newly added resource/archive\. For example, you can send a GET request to retrieve the archive\. 
 
 ## Related Sections<a name="related-sections-complete-mpu"></a>
-
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
-
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
-
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
-
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
-
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 +  [Delete Archive \(DELETE archive\)](api-archive-delete.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

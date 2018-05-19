@@ -2,7 +2,7 @@
 
 The Amazon Glacier data model core concepts include vaults and archives\. Amazon Glacier is a REST\-based web service\. In terms of REST, vaults and archives are the resources\. In addition, the Amazon Glacier data model includes job and notification\-configuration resources\. These resources complement the core resources\.
 
-
+**Topics**
 + [Vault](#data-model-vault)
 + [Archive](#data-model-archive)
 + [Job](#data-model-job)
@@ -25,13 +25,9 @@ https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault
 ```
 
 In the URI, 
-
 + `glacier.us-west-2.amazonaws.com` identifies the US West \(Oregon\) Region\. 
-
 + `111122223333` is the AWS account ID that owns the vault\.
-
 + `vaults` refers to the collection of vaults owned by the AWS account\.
-
 + `examplevault` identifies a specific vault in the vaults collection\.
 
 An AWS account can create vaults in any supported AWS Region\. For list of supported AWS Regions, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\. Within a Region, an account must use unique vault names\. An AWS account can create same\-named vaults in different Regions\.
@@ -62,7 +58,7 @@ In addition, the Amazon Glacier data model includes job and notification\-config
 
 ## Job<a name="data-model-job"></a>
 
-Amazon Glacier jobs can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job providing a SQL query and list of Amazon Glacier archive objects\. Amazon Glacier select runs the query in place and writes the output results to Amazon S3\.
+Amazon Glacier jobs can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job providing a SQL query and list of Amazon Glacier archive objects\. Amazon Glacier Select runs the query in place and writes the output results to Amazon S3\.
 
 Retrieving an archive and vault inventory \(list of archives\) are asynchronous operations in Amazon Glacier in which you first initiate a job, and then download the job output after Amazon Glacier completes the job\. 
 

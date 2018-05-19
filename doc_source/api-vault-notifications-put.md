@@ -2,14 +2,12 @@
 
 ## Description<a name="api-vault-notifications-put-description"></a>
 
-Retrieving an archive and a vault inventory are asynchronous operations in Amazon Glacier for which you must first initiate a job and wait for the job to complete before you can download the job output\. Most Amazon Glacier jobs take about four hours to complete\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon Glacier](configuring-notifications.md)\.  
+Retrieving an archive and a vault inventory are asynchronous operations in Amazon Glacier for which you must first initiate a job and wait for the job to complete before you can download the job output\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon Glacier](configuring-notifications.md)\.  
 
 To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want Amazon Glacier to send notifications to the topic\.
 
 You can configure a vault to publish a notification for the following vault events:
-
 + **`ArchiveRetrievalCompleted`—** This event occurs when a job that was initiated for an archive retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
-
 + **`InventoryRetrievalCompleted`—** This event occurs when a job that was initiated for an inventory retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
 
 Amazon SNS topics must grant permission to the vault to be allowed to publish notifications to the topic\.
@@ -50,7 +48,7 @@ This operation uses only request headers that are common to all operations\. For
 
 **Events**  
 An array of one or more events for which you want Amazon Glacier to send notification\.  
-*Valid Values*: `ArchiveRetrievalCompleted` | `InventoryRetrievalCompleted`   
+*Valid Values*: `ArchiveRetrievalCompleted` \| `InventoryRetrievalCompleted`   
 *Required*: yes  
 *Type*: Array
 
@@ -94,7 +92,7 @@ The following request sets the `examplevault` notification configuration so that
 ```
  1. PUT /-/vaults/examplevault/notification-policy HTTP/1.1
  2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20141123T120000Z
+ 3. x-amz-Date: 20170210T120000Z
  4. x-amz-glacier-version: 2012-06-01
  5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
  6. 
@@ -111,13 +109,10 @@ A successful response returns a `204 No Content`\.
 ```
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-vault-notifications-put"></a>
-
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
-
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

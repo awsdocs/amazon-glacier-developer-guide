@@ -1,8 +1,8 @@
 # Uploading an Archive in a Single Operation Using the AWS SDK for Java<a name="uploading-an-archive-single-op-using-java"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for Java provide a method to upload an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to upload an archive\.
 
-
+**Topics**
 + [Uploading an Archive Using the High\-Level API of the AWS SDK for Java](#uploading-an-archive-single-op-high-level-using-java)
 + [Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for Java](#uploading-an-archive-single-op-low-level-using-java)
 
@@ -62,7 +62,7 @@ public class ArchiveUploadHighLevel {
 
 ## Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for Java<a name="uploading-an-archive-single-op-low-level-using-java"></a>
 
-The low\-level API provides methods for all the archive operations\. The following are the steps to upload an archive using the AWS SDK for \.NET\.
+The low\-level API provides methods for all the archive operations\. The following are the steps to upload an archive using the AWS SDK for Java\.
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 

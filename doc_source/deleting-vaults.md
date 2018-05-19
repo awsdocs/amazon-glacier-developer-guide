@@ -5,7 +5,7 @@ Amazon Glacier deletes a vault only if there are no archives in the vault as of 
 **Note**  
 Amazon Glacier prepares an inventory for each vault periodically, every 24 hours\. Because the inventory might not reflect the latest information, Amazon Glacier ensures the vault is indeed empty by checking if there were any write operations since the last vault inventory\. 
 
-
+**Topics**
 + [Deleting a Vault in Amazon Glacier Using the AWS SDK for Java](deleting-vaults-sdk-java.md)
 + [Deleting a Vault in Amazon Glacier Using the AWS SDK for \.NET](deleting-vaults-sdk-dotnet.md)
 + [Deleting a Vault in Amazon Glacier Using the REST API](deleting-vault-rest-api.md)

@@ -7,6 +7,6 @@ Any archive operation, such as upload, download, or deletion, requires that you 
 
 An archive is any object, such as a photo, video, or document that you store in a vault\. It is a base unit of storage in Amazon Glacier\. You can upload an archive in a single request\. For large archives, Amazon Glacier provides a multipart upload API that enables you to upload an archive in parts\. In this getting started section, you upload a sample archive in a single request\. For this exercise, you specify a file that is smaller in size\. For larger files, multipart upload is suitable\. For more information, see [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)\.
 
-
+**Topics**
 + [Upload an Archive to a Vault in Amazon Glacier Using the AWS SDK for Java](getting-started-upload-archive-java.md)
 + [Upload an Archive to a Vault in Amazon Glacier Using the AWS SDK for \.NET](getting-started-upload-archive-dotnet.md)

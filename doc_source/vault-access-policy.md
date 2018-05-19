@@ -6,7 +6,7 @@ You can create one vault access policy for each vault to manage *permissions*\. 
 
 You can use the Amazon Glacier API, AWS SDKs, AWS CLI, or the Amazon Glacier console to create and manage vault access policies\. For a list of Amazon Glacier operations allowed for vault access resource\-based policies, see [Amazon Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
-
+**Topics**
 + [Example 1: Grant Cross\-Account Permissions for Specific Amazon Glacier Actions](#vault-access-policy-example-multiple-accounts)
 + [Example 2: Grant Read\-Only Permissions to All AWS Accounts](#vault-access-policy-example-read-only-all-aws-accounts)
 + [Example 3: Grant Cross\-Account Permissions for MFA Delete Operations](#vault-access-policy-example-mfa-authentication)
@@ -104,9 +104,6 @@ The example policy grants an AWS account with temporary credentials permission t
 ```
 
 ### Related Sections<a name="related-sections-vault-access-policy"></a>
-
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
-
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)
-
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)

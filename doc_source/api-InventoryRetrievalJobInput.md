@@ -12,7 +12,7 @@ The end of the date range, in UTC time, for a vault inventory retrieval that inc
 
 **Format**  
  The output format for the vault inventory list, which is set by the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) request when initiating a job to retrieve a vault inventory\.  
-*Valid Values*: `CSV` | `JSON`   
+*Valid Values*: `CSV` \| `JSON`   
 *Required*: no  
 *Type*: String
 
@@ -34,5 +34,4 @@ The start of the date range, in UTC time, for a vault inventory retrieval that i
 *Required*: no
 
 ## More Info<a name="more-info-api-InventoryRetrievalJobInput"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

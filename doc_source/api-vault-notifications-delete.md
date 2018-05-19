@@ -66,7 +66,7 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 ```
 1. DELETE /111122223333/vaults/examplevault/notification-configuration HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z 
+3. x-amz-Date: 20170210T120000Z 
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -76,13 +76,10 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 ```
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-vault-notifications-delete"></a>
-
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
-
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

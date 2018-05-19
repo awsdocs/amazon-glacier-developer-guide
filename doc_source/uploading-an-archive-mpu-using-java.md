@@ -1,14 +1,12 @@
 # Uploading Large Archives in Parts Using the AWS SDK for Java<a name="uploading-an-archive-mpu-using-java"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for Java provide a method to upload a large archive \(see [Uploading an Archive in Amazon Glacier](uploading-an-archive.md)\)\. 
-
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to upload a large archive \(see [Uploading an Archive in Amazon Glacier](uploading-an-archive.md)\)\. 
 + The high\-level API provides a method that you can use to upload archives of any size\. Depending on the file you are uploading, the method either uploads an archive in a single operation or uses the multipart upload support in Amazon Glacier to upload the archive in parts\.
-
 + The low\-level API maps close to the underlying REST implementation\. Accordingly, it provides a method to upload smaller archives in one operation and a group of methods that support multipart upload for larger archives\. This section explains uploading large archives in parts using the low\-level API\.
 
 For more information about the high\-level and low\-level APIs, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\.
 
-
+**Topics**
 + [Uploading Large Archives in Parts Using the High\-Level API of the AWS SDK for Java](#uploading-an-archive-in-parts-highlevel-using-java)
 + [Upload Large Archives in Parts Using the Low\-Level API of the AWS SDK for Java](#uploading-an-archive-mpu-using-java-lowlevel)
 

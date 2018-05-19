@@ -1,8 +1,8 @@
 # Downloading an Archive in Amazon Glacier Using the AWS SDK for Java<a name="downloading-an-archive-using-java"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for Java provide a method to download an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to download an archive\.
 
-
+**Topics**
 + [Downloading an Archive Using the High\-Level API of the AWS SDK for Java](#downloading-an-archive-using-java-highlevel-api)
 + [Downloading an Archive Using the Low\-Level API of the AWS SDK for Java](#downloading-an-archive-using-java-lowlevel-api)
 
@@ -11,7 +11,7 @@ Both the high\-level and low\-level APIs provided by the AWS SDK for Java provid
 The `ArchiveTransferManager` class of the high\-level API provides the `download` method you can use to download an archive\. 
 
 **Important**  
-The `ArchiveTransferManager` class creates an Amazon Simple Notification Service \(Amazon SNS\) topic, and an Amazon Simple Queue Service \(Amazon SQS\) queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. This polling takes about 4 hours\. Once the archive is available, download will begin\.
+The `ArchiveTransferManager` class creates an Amazon Simple Notification Service \(Amazon SNS\) topic, and an Amazon Simple Queue Service \(Amazon SQS\) queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. When the archive is available, download begins\. For information about retrieval times, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\.
 
 ### Example: Downloading an Archive Using the High\-Level API of the AWS SDK for Java<a name="download-archives-java-highlevel-example"></a>
 
@@ -116,7 +116,7 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
 
 1. Wait for the job to complete\.
 
-   Most Amazon Glacier jobs take about four hours to complete\. You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. 
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. 
 
    You can also poll Amazon Glacier by calling the `describeJob` method to determine the job completion status\. Although, using an Amazon SNS topic for notification is the recommended approach\.
 
@@ -154,27 +154,19 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
 
 The following Java code example downloads an archive from the specified vault\. After the job completes, the example downloads the entire output in a single `getJobOutput` call\. For an example of downloading output in chunks, see [Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for Java—Download Output in Chunks ](#downloading-an-archive-with-range-using-java-example)\.
 
-**Important**  
-Note that it takes about four hours for most jobs to complete\. 
-
 The example performs the following tasks:
-
 + Creates an Amazon Simple Notification Service \(Amazon SNS\) topic\.
 
   Amazon Glacier sends a notification to this topic after it completes the job\. 
-
 + Creates an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages to the queue\.
-
 + Initiates a job to download the specified archive\.
 
   In the job request, the Amazon SNS topic that was created is specified so that Amazon Glacier can publish a notification to the topic after it completes the job\.
-
 + Periodically checks the Amazon SQS queue for a message that contains the job ID\.
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. 
-
 + Cleans up by deleting the Amazon SNS topic and the Amazon SQS queue that it created\.
 
 ```

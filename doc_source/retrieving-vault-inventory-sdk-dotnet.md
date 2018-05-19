@@ -29,7 +29,7 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 
 1. Wait for the job to complete\.
 
-   Most Amazon Glacier jobs take about four hours to complete\. You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic, or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic, or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
 
    You can also poll Amazon Glacier by calling the `DescribeJob` method to determine job completion status\. Although using Amazon SNS topic for notification is the recommended approach\. 
 
@@ -62,27 +62,19 @@ For information about the job related underlying REST API, see [Job Operations](
 
 The following C\# code example retrieves the vault inventory for the specified vault\. 
 
-**Important**  
-Note that it takes about four hours for most jobs to complete\. 
-
 The example performs the following tasks:
-
 + Set up an Amazon SNS topic\.
 
   Amazon Glacier sends notification to this topic after it completes the job\. 
-
 + Set up an Amazon SQS queue\. 
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages\. 
-
 + Initiate a job to download the specified archive\.
 
   In the job request, the example specifies the Amazon SNS topic so that Amazon Glacier can send a message after it completes the job\.
-
 + Periodically check the Amazon SQS queue for a message\. 
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. The code example uses the JSON\.NET library \(see [JSON\.NET](http://json.codeplex.com/)\) to parse the JSON\.
-
 + Clean up by deleting the Amazon SNS topic and the Amazon SQS queue it created\.
 
 **Example**  

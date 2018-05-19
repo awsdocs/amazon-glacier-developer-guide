@@ -17,7 +17,7 @@ The name of the Amazon S3 bucket where the job results are stored\. The bucket m
 **CannedACL**  
 The canned access control list \(ACL\) to apply to the job results\.  
 *Type*: String  
-*Valid Values*: `private` | `public-read` | `public-read-write` | `aws-exec-read` | `authenticated-read` | `bucket-owner-read` | `bucket-owner-full-control`  
+*Valid Values*: `private` \| `public-read` \| `public-read-write` \| `aws-exec-read` \| `authenticated-read` \| `bucket-owner-read` \| `bucket-owner-full-control`  
 *Required*: no
 
 **Encryption**  
@@ -33,7 +33,7 @@ The prefix that is prepended to the results for this request\. The maximum lengt
 **StorageClass**  
 The class of storage used to store the job results\.  
 *Type*: String  
-*Valid Values*: `STANDARD` | `REDUCED_REDUNDANCY` | `STANDARD_IA`  
+*Valid Values*: `STANDARD` \| `REDUCED_REDUNDANCY` \| `STANDARD_IA`  
 *Required*: no
 
 **Tagging**  
@@ -47,5 +47,4 @@ A map  of metadata to store with the job results in Amazon S3\.
 *Required*: no
 
 ## More Info<a name="more-info-api-S3Location"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

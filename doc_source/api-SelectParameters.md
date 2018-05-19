@@ -26,5 +26,4 @@ Describes how the results of the select job are serialized\.
 *Type*: [OutputSerialization](api-OutputSerialization.md) object
 
 ## More Info<a name="more-info-api-SelectParameters"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

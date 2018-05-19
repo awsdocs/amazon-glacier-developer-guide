@@ -5,7 +5,7 @@ The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon Gla
 **Note**  
 The AWS SDK for Java provides thread\-safe clients for accessing Amazon Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
 
-
+**Topics**
 + [Using the Low\-Level API](#about-low-level-java-api)
 + [Using the High\-Level API](#about-high-level-java-api)
 + [Running Java Examples for Amazon Glacier Using Eclipse](#setting-up-and-testing-sdk-java)

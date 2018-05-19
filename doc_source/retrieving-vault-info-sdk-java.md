@@ -1,6 +1,6 @@
 # Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for Java<a name="retrieving-vault-info-sdk-java"></a>
 
-
+**Topics**
 + [Retrieve Vault Metadata for a Vault](#retrieve-vault-info-sdk-java-lowlevel-one-vault)
 + [Retrieve Vault Metadata for All Vaults in a Region](#retrieve-vault-info-sdk-java-lowlevel-all-vaults)
 + [Example: Retrieving Vault Metadata Using the AWS SDK for Java](#retrieving-vault-info-sdk-java-example)

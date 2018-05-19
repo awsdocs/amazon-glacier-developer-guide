@@ -207,13 +207,9 @@ An object that contains information about the parameters used for a select\.
 The SHA256 tree hash value for the requested range of an archive\. If the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) request for an archive specified a tree\-hash aligned range, then this field returns a value\. For more information about tree\-hash alignment for archive range retrievals, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.  
 For the specific case when the whole archive is retrieved, this value is the same as the `ArchiveSHA256TreeHash` value\.   
 This field is `null` in the following situations:  
-
 + Archive retrieval jobs that specify a range that is not tree\-hash aligned\.
-
 + Archival jobs that specify a range that is equal to the whole archive and the job status is `InProgress`\. 
-
 + Inventory jobs\.
-
 + Select jobs\.
 *Type*: String
 
@@ -223,7 +219,7 @@ An Amazon SNS topic that receives notification\.
 
 **StatusCode**  
 The code indicating the status of the job\.  
-*Valid Values*: `InProgress` | `Succeeded` | `Succeeded`  
+*Valid Values*: `InProgress` \| `Succeeded` \| `Succeeded`  
 *Type*: String
 
 **StatusMessage**  
@@ -232,7 +228,7 @@ A friendly message that describes the job status\.
 
 **Tier**  
 The data access tier to use for the select or archive retrieval\.  
-*Valid Values*: `Bulk` | `Expedited` | `Standard`  
+*Valid Values*: `Bulk` \| `Expedited` \| `Standard`  
 *Type*: String
 
 **VaultARN**  
@@ -252,7 +248,7 @@ The following example shows the request for a job that retrieves an archive\.
 ```
 1. GET /-/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -260,23 +256,17 @@ The following example shows the request for a job that retrieves an archive\.
 ### Example Response<a name="api-describe-job-get-example-response"></a>
 
 The response body includes JSON that describes the specified job\. Note that for both the inventory retrieval and archive retrieval jobs, the JSON fields are the same\. However, when a field doesn't apply to the type of job, its value is `null`\. The following is an example response for an archive retrieval job\. Note the following:
-
 + The `Action` field value is `ArchiveRetrieval`\. 
-
 + The `ArchiveSizeInBytes` field shows the size of the archive requested in the archive retrieval job\. 
-
 + The `ArchiveSHA256TreeHash` field shows the SHA256 tree hash for the entire archive\.
-
 + The `RetrievalByteRange` field shows the range requested in the Initiate Job request\. In this example, the whole archive is requested\.
-
 + The `SHA256TreeHash` field shows the SHA256 tree hash for the range requested in the Initiate Job request\. In this example, it is the same as the `ArchiveSHA256TreeHash` field, which means that the whole archive was requested\.
-
 + The `InventorySizeInBytes` field value is `null` because it does not apply to an archive retrieval job\.
 
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 419
  6. {
@@ -301,11 +291,8 @@ The response body includes JSON that describes the specified job\. Note that for
 ```
 
 The following is an example response for an inventory retrieval job\. Note the following:
-
 + The `Action` field value is `InventoryRetrieval`\. 
-
 + The `ArchiveSizeInBytes`, `ArchiveSHA256TreeHash`, and `RetrievalByteRange` field values are null because these fields do not apply to an inventory retrieval job\. 
-
 + The `InventorySizeInBytes` field value is `null` because the job is still in progress, and has not fully prepared the inventory for download\. If the job was completed before your describe job request, this field would give you the size of the output\.
 
 ```
@@ -362,7 +349,5 @@ The following is an example response for a completed inventory retrieval job tha
 ```
 
 ## Related Sections<a name="related-sections-describe-job-get"></a>
-
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

@@ -33,7 +33,7 @@ Suppose you send a [Describe Job \(GET JobID\)](api-describe-job-get.md) request
 ```
 1. GET /-/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVEXAMPLEbadJobID HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. Date: 20141123T120000Z
+3. Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -45,7 +45,7 @@ HTTP/1.1 404 Not Found
 x-amzn-RequestId: AAABaZ9N92Iiyv4N7sru3ABEpSQkuFtmH3NP6aAC51ixfjg
 Content-Type: application/json
 Content-Length: 185
-Date: Sun, 23 Nov 2014 12:00:00 GMT
+Date: Wed, 10 Feb 2017 12:00:00 GMT
 {
   "code": "ResourceNotFoundException",
   "message": "The job ID was not found: HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVEXAMPLEbadJobID",
@@ -68,11 +68,8 @@ The source of the error\. The field can be one of the following values: `Client`
 *Type*: String\.
 
 Note the following in the preceding response:
-
 + For the error response, Amazon Glacier returns status code values of `4xx` and `5xx`\. In this example, the status code is `404 Not Found`\. 
-
 + The `Content-Type` header value `application/json` indicates JSON in the body
-
 + The JSON in the body provides the error information\.
 
 In the previous request, instead of a bad job ID, suppose you specify a vault that does not exist\. The response returns a different message\.
@@ -82,7 +79,7 @@ HTTP/1.1 404 Not Found
 x-amzn-RequestId: AAABBeC9Zw0rp_5D0L8VfB3FA_WlTupqTKAUehMcPhdgni0
 Content-Type: application/json
 Content-Length: 154
-Date: Sun, 23 Nov 2014 12:00:00 GMT
+Date: Wed, 10 Feb 2017 12:00:00 GMT
 {
   "code": "ResourceNotFoundException",
   "message": "Vault not found for ARN: arn:aws:glacier:us-west-2:012345678901:vaults/examplevault",
@@ -97,7 +94,7 @@ In this example you send a [List Jobs \(GET jobs\)](api-jobs-get.md) request to 
 ```
 GET /-/vaults/examplevault/jobs?statuscode=finished HTTP/1.1 
 Host: glacier.us-west-2.amazonaws.com 
-Date: 20141123T120000Z
+Date: 20170210T120000Z
 x-amz-glacier-version: 2012-06-01
 Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -109,7 +106,7 @@ HTTP/1.1 400 Bad Request
 x-amzn-RequestId: AAABaZ9N92Iiyv4N7sru3ABEpSQkuFtmH3NP6aAC51ixfjg
 Content-Type: application/json
 Content-Length: 141
-Date: Sun, 23 Nov 2014 12:00:00 GMT
+Date: Wed, 10 Feb 2017 12:00:00 GMT
 {
   "code": "InvalidParameterValueException",
   "message": "The job status code is not valid: finished",

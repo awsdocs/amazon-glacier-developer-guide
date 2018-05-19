@@ -1,6 +1,6 @@
 # Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for \.NET<a name="retrieving-vault-info-sdk-dotnet"></a>
 
-
+**Topics**
 + [Retrieve Vault Metadata for a Vault](#retrieve-vault-info-sdk-dotnet-lowlevel-one-vault)
 + [Retrieve Vault Metadata for All Vaults in a Region](#retrieve-vault-info-sdk-dotnet-lowlevel-all-vaults)
 + [Example: Retrieving Vault Metadata Using the Low\-Level API of the AWS SDK for \.NET](#creating-vaults-sdk-dotnet-example)

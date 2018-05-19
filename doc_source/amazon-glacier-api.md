@@ -8,7 +8,7 @@ If an error occurs, you need to know what Amazon Glacier sends in an error respo
 
 You can either use the REST API calls directly or use the AWS SDKs that provide wrapper libraries to simplify your coding task\. These libraries sign each request you send and compute the checksum of the payload in your request\. Therefore, using the AWS SDKs simplifies your coding task\. This developer guide provides working examples of basic Amazon Glacier operations using the AWS SDK for Java and \.NET\. For more information see, [Using the AWS SDKs with Amazon Glacier](using-aws-sdk.md)\.
 
-
+**Topics**
 + [Common Request Headers](api-common-request-headers.md)
 + [Common Response Headers](api-common-response-headers.md)
 + [Signing Requests](amazon-glacier-signing-requests.md)

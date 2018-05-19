@@ -10,5 +10,4 @@ An object that describes an Amazon S3 location to receive the results of the res
 *Required*: yes
 
 ## More Info<a name="more-info-api-OutputLocation"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

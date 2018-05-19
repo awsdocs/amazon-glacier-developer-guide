@@ -7,7 +7,7 @@ An *account administrator* \(or administrator user\) is a user with administrato
 
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific actions that you want to allow on those resources\.
 
-
+**Topics**
 + [Amazon Glacier Resources and Operations](#access-control-resources)
 + [Understanding Resource Ownership](#access-control-resource-ownership)
 + [Managing Access to Resources](#access-control-manage-access-intro)
@@ -34,11 +34,8 @@ Amazon Glacier provides a set of operations to work with the Amazon Glacier reso
 ## Understanding Resource Ownership<a name="access-control-resource-ownership"></a>
 
 A *resource owner* is the AWS account that created the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
-
 + If you use the root account credentials of your AWS account to create an Amazon Glacier vault, your AWS account is the owner of the resource \(in Amazon Glacier, the resource is the Amazon Glacier vault\)\.
-
 + If you create an IAM user in your AWS account and grant permissions to create an Amazon Glacier vault to that user, the user can create an Amazon Glacier vault\. However, your AWS account, to which the user belongs, owns the Amazon Glacier vault resource\.
-
 + If you create an IAM role in your AWS account with permissions to create an Amazon Glacier vault, anyone who can assume the role can create an Amazon Glacier vault\. Your AWS account, to which the role belongs, owns the Amazon Glacier vault resource\. 
 
 ## Managing Access to Resources<a name="access-control-manage-access-intro"></a>
@@ -50,16 +47,14 @@ This section discusses using IAM in the context of Amazon Glacier\. It doesn't p
 
 Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM polices\) and policies attached to a resource are referred to as *resource\-based* policies\. Amazon Glacier supports both identity\-based \(IAM policies\) and resource\-based policies\.
 
-
+**Topics**
 + [Identity\-Based Policies \(IAM policies\)](#access-control-manage-access-intro-iam-policies)
 + [Resource\-Based Policies \(Amazon Glacier Vault Policies\)](#access-control-manage-access-intro-resource-policies)
 
 ### Identity\-Based Policies \(IAM policies\)<a name="access-control-manage-access-intro-iam-policies"></a>
 
  You can attach policies to IAM identities\. For example you can do the following:
-
 + **Attach a permissions policy to a user or a group in your account –** An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create an Amazon Glacier vault\. 
-
 + **Attach a permissions policy to a role \(grant cross\-account permissions\) –** You can attach an identity\-based permissions policy to an IAM role to grant cross\-account permissions\. For example, the administrator in Account A can create a role to grant cross\-account permissions to another AWS account \(for example, Account B\) or an AWS service as follows:
 
   1. Account A administrator creates an IAM role and attaches a permissions policy to the role that grants permissions on resources in Account A\.
@@ -103,9 +98,7 @@ For more information about using identity\-based policies with Amazon Glacier, s
 Each Amazon Glacier vault can have resource\-based permissions policies associated with it\. For Amazon Glacier, a Amazon Glacier vault is the primary resource and resource\-based policies are referred to as *vault policies*\. 
 
 You use Amazon Glacier vault policies to manage permissions in the following ways:
-
 + Manage user permissions in your account in a single vault policy, instead of individual user policies\.
-
 + Manage cross\-account permissions as an alternative to using IAM roles\.
 
 An Amazon Glacier vault can have one vault access policy and one Vault Lock policy associated with it\. An Amazon Glacier *vault access policy* is a resource\-based policy that you can use to manage permissions to your vault\. A *Vault Lock policy* is a vault access policy that can be locked\. After you lock a Vault Lock policy, the policy cannot be changed\. You can use a Vault Lock policy to enforce compliance controls\.
@@ -143,15 +136,11 @@ For more information about using vault policies with Amazon Glacier, see [Using 
 For each type of Amazon Glacier resource, the service defines a set of API operations \(see [API Reference for Amazon Glacier](amazon-glacier-api.md)\)\. To grant permissions for these API operations Amazon Glacier defines a set of actions that you can specify in a policy\. Note that, performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
 
 The following are the most basic policy elements:
-
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [Amazon Glacier Resources and Operations](#access-control-resources)\. 
-
 + **Actions** – You use action keywords to identify resource operations that you want to allow or deny\. 
 
   For example, the `glacier:CreateVault` permission allows the user permissions to perform the Amazon Glacier `Create Vault` operation\. 
-
 + **Effect** – You specify the effect when the user requests the specific action—this can be either allow or deny\. If you don't explicitly grant access to \(allow\) a resource, access is implicitly denied\. You can also explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
-
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. For resource\-based policies, you specify the user, account, service, or other entity that you want to receive permissions \(applies to resource\-based policies only\)\. 
 
 To learn more about the IAM policy syntax, and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
@@ -174,9 +163,6 @@ In addition, Amazon Glacier also provides its own condition keys that you can in
 For examples of using the Amazon Glacier–specific condition keys, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
 Related Topics
-
 + [Using Identity\-Based Policies for Amazon Glacier \(IAM Policies\)](access-control-identity-based.md)
-
 + [Using Resource\-Based Policies for Amazon Glacier \(Vault Policies\)](access-control-resource-based.md)
-
 + [Amazon Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)

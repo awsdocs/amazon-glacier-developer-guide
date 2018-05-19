@@ -3,11 +3,8 @@
 ## Description<a name="api-InitiateVaultLock-description"></a>
 
 This operation initiates the vault locking process by doing the following: 
-
 + Installing a vault lock policy on the specified vault\.
-
 + Setting the lock state of vault lock to `InProgress`\.
-
 + Returning a lock ID, which is used to complete the vault locking process\. 
 
 You can set one vault lock policy for each vault and this policy can be up to 20 KB in size\. For more information about vault lock policies, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
@@ -99,7 +96,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `loc
 ```
 1. PUT /-/vaults/examplevault/lock-policy HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 5. Content-Length: length
 6. x-amz-glacier-version: 2012-06-01
@@ -114,14 +111,11 @@ If the request was successful, Amazon Glacier returns an `HTTP 201 Created` resp
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 4. x-amz-lock-id: AE863rKkWZU53SLW5be4DUcW
 ```
 
 ## Related Sections<a name="related-sections-InitiateVaultLock"></a>
-
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
-
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
-
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)

@@ -4,7 +4,7 @@ You can retrieve vault information such as the vault creation date, number of ar
 
 If you retrieve a vault list, Amazon Glacier returns the list sorted by the ASCII values of the vault names\. The list contains up to 1,000 vaults\. You should always check the response for a marker at which to continue the list; if there are no more items the marker field is `null`\. You can optionally limit the number of vaults returned in the response\. If there are more vaults than are returned in the response, the result is paginated\. You need to send additional requests to fetch the next set of vaults\. 
 
-
+**Topics**
 + [Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for Java](retrieving-vault-info-sdk-java.md)
 + [Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for \.NET](retrieving-vault-info-sdk-dotnet.md)
 + [Retrieving Vault Metadata Using the REST API](listing-vaults-rest-api.md)

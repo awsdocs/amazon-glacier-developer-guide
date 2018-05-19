@@ -1,8 +1,8 @@
 # Downloading an Archive in Amazon Glacier Using the AWS SDK for \.NET<a name="downloading-an-archive-using-dotnet"></a>
 
-Both the high\-level and low\-level APIs provided by the AWS SDK for \.NET provide a method to download an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to download an archive\.
 
-
+**Topics**
 + [Downloading an Archive Using the High\-Level API of the AWS SDK for \.NET](#downloading-an-archive-using-dotnet-highlevel-api)
 + [Downloading an Archive Using the Low\-Level API of the AWS SDK for \.NET](#downloading-an-archive-using-dotnet-lowlevel-api)
 
@@ -11,7 +11,7 @@ Both the high\-level and low\-level APIs provided by the AWS SDK for \.NET provi
 The `ArchiveTransferManager` class of the high\-level API provides the `Download` method you can use to download an archive\. 
 
 **Important**  
-The `ArchiveTransferManager` class creates an Amazon Simple Notification Service \(Amazon SNS\) topic, and an Amazon Simple Queue Service \(Amazon SQS\) queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. This polling takes about 4 hours\. Once the archive is available, download will begin\.
+The `ArchiveTransferManager` class creates an Amazon Simple Notification Service \(Amazon SNS\) topic, and an Amazon Simple Queue Service \(Amazon SQS\) queue that is subscribed to that topic\. It then initiates the archive retrieval job and polls the queue for the archive to be available\. When the archive is available, download begins\. For information about retrieval times, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)
 
 ### Example: Downloading an Archive Using the High\-Level API of the AWS SDK for \.NET<a name="download-archives-dotnet-highlevel-example"></a>
 
@@ -43,7 +43,7 @@ namespace glacier.amazon.com.docsamples
         options.StreamTransferProgress += ArchiveDownloadHighLevel.progress;
         // Download an archive.
         Console.WriteLine("Intiating the archive retrieval job and then polling SQS queue for the archive to be available.");
-        Console.WriteLine("This polling takes about 4 hours. Once the archive is available, downloading will begin.");
+        Console.WriteLine("Once the archive is available, downloading will begin.");
         manager.Download(vaultName, archiveId, downloadFilePath, options);
         Console.WriteLine("To continue, press Enter");
         Console.ReadKey();
@@ -126,7 +126,7 @@ The following are the steps for downloading an Amazon Glacier archive using the 
 
 1. Wait for the job to complete\.
 
-   Most Amazon Glacier jobs take about four hours to complete\. You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
 
    You can also poll Amazon Glacier by calling the `DescribeJob` method to determine the job completion status\. Although, using an Amazon SNS topic for notification is the recommended approach \. 
 
@@ -174,27 +174,19 @@ The following are the steps for downloading an Amazon Glacier archive using the 
 
 The following C\# code example downloads an archive from the specified vault\. After the job completes, the example downloads the entire output in a single `GetJobOutput` call\. For an example of downloading output in chunks, see [Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for \.NET—Download Output in Chunks](#creating-vaults-sdk-dotnet-example2)\.
 
-**Important**  
-Note that it takes about four hours for most jobs to complete\. 
-
 The example performs the following tasks:
-
 + Sets up an Amazon Simple Notification Service \(Amazon SNS\) topic 
 
   Amazon Glacier sends a notification to this topic after it completes the job\. 
-
 + Sets up an Amazon Simple Queue Service \(Amazon SQS\) queue\. 
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages\. 
-
 + Initiates a job to download the specified archive\.
 
   In the job request, the example specifies the Amazon SNS topic so that Amazon Glacier can send a message after it completes the job\.
-
 + Periodically checks the Amazon SQS queue for a message\. 
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. The code example uses the JSON\.NET library \(see [JSON\.NET](http://json.codeplex.com/)\) to parse the JSON\.
-
 + Cleans up by deleting the Amazon SNS topic and the Amazon SQS queue it created\.
 
 ```

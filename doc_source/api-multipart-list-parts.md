@@ -32,7 +32,7 @@ The `AccountId` value is the AWS account ID of the account that owns the vault\.
 
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
-| limit  |  The maximum number of parts to be returned\. The default limit is 1000\. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `1000`\.  |  No  | 
+| limit  |  The maximum number of parts to be returned\. The default limit is 50\. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `50`\.  |  No  | 
 |  marker  |  An opaque string used for pagination\. `marker` specifies the part at which the listing of parts should begin\. Get the `marker` value from the response of a previous List Parts response\. You need only include the `marker` if you are continuing the pagination of results started in a previous List Parts request\. Type: String Constraints: None  |  No | 
 
 ### Request Headers<a name="api-multipart-list-parts-requests-headers"></a>
@@ -130,7 +130,7 @@ The following example lists all the parts of an upload\. The example sends an HT
 ```
 1. GET /-/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -142,7 +142,7 @@ In the response, Amazon Glacier returns a list of uploaded parts associated with
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 412
  6.       
@@ -174,7 +174,7 @@ The following example demonstrates how to use pagination to get a limited number
 ```
 1. GET /-/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE?marker=1001&limit=1 HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -186,7 +186,7 @@ In the response, Amazon Glacier returns a list of uploaded parts that are associ
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: text/json
  5. Content-Length: 412
  6.       
@@ -206,17 +206,10 @@ In the response, Amazon Glacier returns a list of uploaded parts that are associ
 ```
 
 ## Related Sections<a name="related-sections-api-multipart-list-parts"></a>
-
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
-
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
-
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)
-
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
-
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

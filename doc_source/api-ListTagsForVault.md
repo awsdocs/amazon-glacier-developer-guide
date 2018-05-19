@@ -58,7 +58,7 @@ This operation uses only response headers that are common to most responses\. Fo
 
 The response body contains the following JSON fields\.
 
-**Tags**  
+**Tags**  <a name="Glacier-ListTagsForVault-response-Tags"></a>
 The tags attached to the vault\. Each tag is composed of a key and a value\.  
  *Type:* String to String map   
  *Required:* Yes 
@@ -80,7 +80,7 @@ In this example, a GET request is sent to retrieve a list of tags from the speci
 ```
 1. GET /-/vaults/examplevault/tags HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -92,7 +92,7 @@ If the request was successful, Amazon Glacier returns a `HTTP 200 OK` with a lis
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:02:00 GMT
  4. Content-Type: application/json
  5. Content-Length: length
  6. 
@@ -106,7 +106,5 @@ If the request was successful, Amazon Glacier returns a `HTTP 200 OK` with a lis
 ```
 
 ## Related Sections<a name="related-sections-ListTagsForVault"></a>
-
 + [Add Tags To Vault \(POST tags add\)](api-AddTagsToVault.md)
-
 + [Remove Tags From Vault \(POST tags remove\)](api-RemoveTagsFromVault.md)

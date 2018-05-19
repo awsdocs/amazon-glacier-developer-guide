@@ -17,6 +17,6 @@ The access time of your request depends on the retrieval option you choose: Expe
 
 The code examples shown in the following topics initiate the job, wait for it to complete, and then download the archive's data\. 
 
-
+**Topics**
 + [Download an Archive from a Vault in Amazon Glacier Using the AWS SDK for Java](getting-started-download-archive-java.md)
 + [Download an Archive from a Vault in Amazon Glacier Using the AWS SDK for \.NET](getting-started-download-archive-dotnet.md)

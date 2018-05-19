@@ -69,13 +69,9 @@ An object that contains information about the parameters used for a select\.
 The SHA256 tree hash value for the requested range of an archive\. If the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) request for an archive specified a tree\-hash aligned range, then this field returns a value\. For more information about tree\-hash alignment for archive range retrievals, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.  
 For the specific case in which the whole archive is retrieved, this value is the same as the `ArchiveSHA256TreeHash` value\.   
 This field is `null` in the following situations:  
-
 + Archive retrieval jobs that specify a range that is not tree\-hash aligned\.
-
 + Archival jobs that specify a range that is equal to the whole archive and the job status is `InProgress`\. 
-
 + Inventory jobs\.
-
 + Select jobs\.
 *Type*: String
 
@@ -85,7 +81,7 @@ The Amazon Resource Name \(ARN\) that represents an Amazon SNS topic where notif
 
 **StatusCode**  
 The code indicating the status of the job\.  
-*Valid Values*: `InProgress` | `Succeeded` | `Succeeded`  
+*Valid Values*: `InProgress` \| `Succeeded` \| `Succeeded`  
 *Type*: String
 
 **StatusMessage**  
@@ -94,7 +90,7 @@ The job status message\.
 
 **Tier**  
 The data access tier to use for the select or archive retrieval\.  
-*Valid Values*: `Expedited` | `Standard` | `Bulk`  
+*Valid Values*: `Expedited` \| `Standard` \| `Bulk`  
 *Type*: String
 
 **VaultARN**  
@@ -102,5 +98,4 @@ The ARN of the vault of which the job is a subresource\.
 *Type*: String
 
 ## More Info<a name="more-info-api-GlacierJobDescription"></a>
-
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

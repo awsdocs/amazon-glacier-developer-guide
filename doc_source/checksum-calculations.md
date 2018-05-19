@@ -3,9 +3,7 @@
 When uploading an archive, you must include both the `x-amz-sha256-tree-hash` and `x-amz-content-sha256` headers\. The `x-amz-sha256-tree-hash` header is a checksum of the payload in your request body\. This topic describes how to calculate the `x-amz-sha256-tree-hash` header\. The `x-amz-content-sha256` header is a hash of the entire payload and is required for authorization\. For more information, see [Example Signature Calculation for Streaming API](amazon-glacier-signing-requests.md#example-signature-calculation-streaming)\. 
 
 The payload of your request can be an:
-
 + **Entire archive—** When uploading an archive in a single request using the Upload Archive API, you send the entire archive in the request body\. In this case, you must include the checksum of the entire archive\. 
-
 + **Archive part—** When uploading an archive in parts using the multipart upload API, you send only a part of the archive in the request body\. In this case, you include the checksum of the archive part\. And after you upload all the parts, you send a Complete Multipart Upload request, which must include the checksum of the entire archive\.
 
 The checksum of the payload is a SHA\-256 tree hash\. It is called a tree hash because in the process of computing the checksum you compute a tree of SHA\-256 hash values\. The hash value at the root is the checksum for the entire archive\. 
@@ -25,7 +23,7 @@ You compute the SHA\-256 tree hash as follows:
 
 1. Repeat step 2 until the resulting tree has a root\. The root of the tree provides a hash of the entire archive and a root of the appropriate subtree provides the hash for the part in a multipart upload\. 
 
-
+**Topics**
 + [Tree Hash Example 1: Uploading an archive in a single request](#checksum-calculations-upload-archive-in-single-payload)
 + [Tree Hash Example 2: Uploading an archive using a multipart upload](#checksum-calculations-upload-archive-using-mpu)
 + [Computing the Tree Hash of a File](#checksum-calculations-examples)

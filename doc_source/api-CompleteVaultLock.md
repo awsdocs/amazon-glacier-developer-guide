@@ -71,7 +71,7 @@ The following example sends an HTTP POST request with the lock ID to complete th
 ```
 1. POST /-/vaults/examplevault/lock-policy/AE863rKkWZU53SLW5be4DUcW HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 5. Content-Length: length
 6. x-amz-glacier-version: 2012-06-01
@@ -84,13 +84,10 @@ If the request was successful, Amazon Glacier returns an `HTTP 204 No Content` r
 ```
 1. HTTP/1.1 204 No Content
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:02:00 GMT
+3. Date: Wed, 10 Feb 2017 12:02:00 GMT
 ```
 
 ## Related Sections<a name="related-sections-CompleteVaultLock"></a>
-
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
-
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
-
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)

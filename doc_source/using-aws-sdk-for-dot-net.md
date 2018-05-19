@@ -5,7 +5,7 @@ The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about d
 **Note**  
 The low\-level API and high\-level API provide thread\-safe clients for accessing Amazon Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
 
-
+**Topics**
 + [Using the Low\-Level API](#about-low-level-dotnet-api)
 + [Using the High\-Level API](#about-high-level-dotnet-api)
 + [Running Code Examples](#setting-up-and-testing-sdk-dotnet)

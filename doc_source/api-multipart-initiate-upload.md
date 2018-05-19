@@ -91,7 +91,7 @@ The following example initiates a multipart upload by sending an HTTP `POST` req
 ```
 1. POST /-/vaults/examplevault/multipart-uploads 
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-archive-description: MyArchive-101
 5. x-amz-part-size: 4194304
 6. x-amz-glacier-version: 2012-06-01
@@ -105,7 +105,7 @@ Amazon Glacier creates a multipart upload resource and adds it to the `multipart
 ```
 1. HTTP/1.1 201 Created
 2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
-3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+3. Date: Wed, 10 Feb 2017 12:00:00 GMT
 4. Location: /111122223333/vaults/examplevault/multipart-uploads/OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE
 5. x-amz-multipart-upload-id: OW2fM5iVylEpFEMM9_HpKowRapC3vn5sSL39_396UW9zLFUWVrnRHaPjUJddQ5OxSHVXjYtrN47NBZ-khxOjyEXAMPLE
 ```
@@ -113,19 +113,11 @@ Amazon Glacier creates a multipart upload resource and adds it to the `multipart
 For information about uploading individual parts, see [Upload Part \(PUT uploadID\)](api-upload-part.md)\.
 
 ## Related Sections<a name="related-sections-initiate-mpu"></a>
-
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
-
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)
-
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
-
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
-
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
-
 + [Delete Archive \(DELETE archive\)](api-archive-delete.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)

@@ -4,7 +4,7 @@
 
 This multipart upload operation lists in\-progress multipart uploads for the specified vault\. An in\-progress multipart upload is a multipart upload that has been initiated by an [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request, but has not yet been completed or aborted\. The list returned in the List Multipart Upload response has no guaranteed order\.
 
-The List Multipart Uploads operation supports pagination\. By default, this operation returns up to 1,000 multipart uploads in the response\. You should always check the `marker` field in the response body for a marker at which to continue the list; if there are no more items the `marker` field is `null`\. 
+The List Multipart Uploads operation supports pagination\. By default, this operation returns up to 50 multipart uploads in the response\. You should always check the `marker` field in the response body for a marker at which to continue the list; if there are no more items the `marker` field is `null`\. 
 
 If the `marker` is not null, to fetch the next set of multipart uploads you sent another List Multipart Uploads request with the `marker` request parameter set to the marker value Amazon Glacier returned in response to your previous List Multipart Uploads request\.
 
@@ -34,7 +34,7 @@ The `AccountId` value is the AWS account ID of the account that owns the vault\.
 
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
-|  limit  |  Specifies the maximum number of uploads returned in the response body\. If not specified, the List Uploads operation returns up to 1,000 uploads\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `1000`\.  |  No | 
+|  limit  |  Specifies the maximum number of uploads returned in the response body\. If not specified, the List Uploads operation returns up to 50 uploads\. Type: String Constraints: Minimum integer value of `1`\. Maximum integer value of `50`\.  |  No | 
 | marker  |  An opaque string used for pagination\. `marker` specifies the upload at which the listing of uploads should begin\. Get the `marker` value from a previous List Uploads response\. You need only include the `marker` if you are continuing the pagination of results started in a previous List Uploads request\. Type: String Constraints: None  |  No  | 
 
 ### Request Headers<a name="api-multipart-list-uploads-requests-headers"></a>
@@ -122,7 +122,7 @@ The following example lists all the multipart uploads in progress for the vault\
 ```
 1. GET /-/vaults/examplevault/multipart-uploads HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -134,7 +134,7 @@ In the response Amazon Glacier returns a list of all in\-progress multipart uplo
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 1054
  6.       
@@ -175,7 +175,7 @@ The following example demonstrates how to use pagination to get a limited number
 ```
 1. GET /-/vaults/examplevault/multipart-uploads?limit=1&marker=xsQdFIRsfJr20CW2AbZBKpRZAFTZSJIMtL2hYf8mvp8dM0m4RUzlaqoEye6g3h3ecqB_zqwB7zLDMeSWhwo65re4C4Ev HTTP/1.1
 2. Host: glacier.us-west-2.amazonaws.com
-3. x-amz-Date: 20141123T120000Z
+3. x-amz-Date: 20170210T120000Z
 4. x-amz-glacier-version: 2012-06-01
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
@@ -187,7 +187,7 @@ In the response, Amazon Glacier returns a list of no more than two in\-progress 
 ```
  1. HTTP/1.1 200 OK
  2. x-amzn-RequestId: AAABZpJrTyioDC_HsOmHae8EZp_uBSJr6cnGOLKp_XJCl-Q
- 3. Date: Sun, 23 Nov 2014 12:00:00 GMT
+ 3. Date: Wed, 10 Feb 2017 12:00:00 GMT
  4. Content-Type: application/json
  5. Content-Length: 470
  6. 
@@ -206,17 +206,10 @@ In the response, Amazon Glacier returns a list of no more than two in\-progress 
 ```
 
 ## Related Sections<a name="related-sections-multipart-list-uploads"></a>
-
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
-
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
-
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)
-
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
-
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
-
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-
 + [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
