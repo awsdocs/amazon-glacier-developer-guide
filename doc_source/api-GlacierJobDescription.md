@@ -1,6 +1,6 @@
 # GlacierJobDescription<a name="api-GlacierJobDescription"></a>
 
-Contains the description of an Amazon Glacier job\.
+Contains the description of an Amazon S3 Glacier \(Glacier\) job\.
 
 ## Contents<a name="api-GlacierJobDescription-contents"></a>
 
@@ -46,7 +46,7 @@ The job description that you provided when you initiated the job\.
 *Type*: String
 
 **JobId**  
-The ID that identifies the job in Amazon Glacier\.  
+The ID that identifies the job in Glacier\.  
 *Type*: String
 
 **JobOutputPath**  

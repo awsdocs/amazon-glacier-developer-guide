@@ -1,19 +1,19 @@
 # Signing Requests<a name="amazon-glacier-signing-requests"></a>
 
-Amazon Glacier requires that you authenticate every request you send by signing the request\. To sign a request, you calculate a digital signature using a cryptographic hash function\. A cryptographic hash is a function that returns a unique hash value based on the input\. The input to the hash function includes the text of your request and your secret access key\. The hash function returns a hash value that you include in the request as your signature\. The signature is part of the `Authorization` header of your request\. 
+Glacier requires that you authenticate every request you send by signing the request\. To sign a request, you calculate a digital signature using a cryptographic hash function\. A cryptographic hash is a function that returns a unique hash value based on the input\. The input to the hash function includes the text of your request and your secret access key\. The hash function returns a hash value that you include in the request as your signature\. The signature is part of the `Authorization` header of your request\. 
 
-After receiving your request, Amazon Glacier recalculates the signature using the same hash function and input that you used to sign the request\. If the resulting signature matches the signature in the request, Amazon Glacier processes the request\. Otherwise, the request is rejected\. 
+After receiving your request, Glacier recalculates the signature using the same hash function and input that you used to sign the request\. If the resulting signature matches the signature in the request, Glacier processes the request\. Otherwise, the request is rejected\. 
 
-Amazon Glacier supports authentication using [AWS Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\. The process for calculating a signature can be broken into three tasks:
-+   [Task 1: Create a Canonical Request](http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html)
+Glacier supports authentication using [AWS Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\. The process for calculating a signature can be broken into three tasks:
++   [Task 1: Create a Canonical Request](https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html)
 
-  Rearrange your HTTP request into a canonical format\. Using a canonical form is necessary because Amazon Glacier uses the same canonical form when it recalculates a signature to compare with the one you sent\. 
-+   [Task 2: Create a String to Sign](http://docs.aws.amazon.com/general/latest/gr/sigv4-create-string-to-sign.html)
+  Rearrange your HTTP request into a canonical format\. Using a canonical form is necessary because Glacier uses the same canonical form when it recalculates a signature to compare with the one you sent\. 
++   [Task 2: Create a String to Sign](https://docs.aws.amazon.com/general/latest/gr/sigv4-create-string-to-sign.html)
 
   Create a string that you will use as one of the input values to your cryptographic hash function\. The string, called the *string to sign*, is a concatenation of the name of the hash algorithm, the request date, a *credential scope* string, and the canonicalized request from the previous task\. The *credential scope* string itself is a concatenation of date, region, and service information\.
-+   [Task 3: Create a Signature](http://docs.aws.amazon.com/general/latest/gr/sigv4-calculate-signature.html)
++   [Task 3: Create a Signature](https://docs.aws.amazon.com/general/latest/gr/sigv4-calculate-signature.html)
 
-  Create a signature for your request by using a cryptographic hash function that accepts two input strings: your *string to sign* and a *derived key*\. The *derived key* is calculated by starting with your secret access key and using the *credential scope* string to create a series of hash\-based message authentication codes \(HMACs\)\. Note that the hash function used in this signing step is not the tree\-hash algorithm used in Amazon Glacier APIs that upload data\.
+  Create a signature for your request by using a cryptographic hash function that accepts two input strings: your *string to sign* and a *derived key*\. The *derived key* is calculated by starting with your secret access key and using the *credential scope* string to create a series of hash\-based message authentication codes \(HMACs\)\. Note that the hash function used in this signing step is not the tree\-hash algorithm used in Glacier APIs that upload data\.
 
 **Topics**
 + [Example Signature Calculation](#example-signature-calculation)
@@ -21,7 +21,7 @@ Amazon Glacier supports authentication using [AWS Signature Version 4](http://do
 
 ## Example Signature Calculation<a name="example-signature-calculation"></a>
 
-The following example walks you through the details of creating a signature for [Create Vault \(PUT vault\)](api-vault-put.md)\. The example could be used as a reference to check your signature calculation method\. Other reference calculations are included in the [Signature Version 4 Test Suite](http://docs.aws.amazon.com/general/latest/gr/signature-v4-test-suite.html) of the Amazon Web Services Glossary\.
+The following example walks you through the details of creating a signature for [Create Vault \(PUT vault\)](api-vault-put.md)\. The example could be used as a reference to check your signature calculation method\. Other reference calculations are included in the [Signature Version 4 Test Suite](https://docs.aws.amazon.com/general/latest/gr/signature-v4-test-suite.html) of the Amazon Web Services Glossary\.
 
 The example assumes the following:
 + The time stamp of the request is `Fri, 25 May 2012 00:24:53 GMT`\.
@@ -120,10 +120,10 @@ public static byte[] CalculateSHA256Hash(byte[] payload)
 
 ### Example Signature Calculation for Streaming API<a name="example-signature-calculation-streaming"></a>
 
-The following example walks you through the details of creating a signature for [Upload Archive \(POST archive\)](api-archive-post.md), one of the two streaming APIs in Amazon Glacier\. The example assumes the following:
+The following example walks you through the details of creating a signature for [Upload Archive \(POST archive\)](api-archive-post.md), one of the two streaming APIs in Glacier\. The example assumes the following:
 + The time stamp of the request is `Mon, 07 May 2012 00:00:00 GMT`\.
 + The endpoint is the US East \(N\. Virginia\) Region, us\-east\-1\.
-+ The content payload is a string "Welcome to Amazon Glacier\." 
++ The content payload is a string "Welcome to Glacier\." 
 
 The general request syntax \(including the JSON body\) is shown in the example below\. Note that the` x-amz-content-sha256` header is included\. In this simplified example, the `x-amz-sha256-tree-hash` and `x-amz-content-sha256` are the same value\. However, for archive uploads greater than 1 MB, this is not the case\.
 

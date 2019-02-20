@@ -1,4 +1,4 @@
-# Creating a Vault in Amazon Glacier Using the AWS SDK for Java<a name="creating-vaults-sdk-java"></a>
+# Creating a Vault in Amazon S3 Glacier Using the AWS SDK for Java<a name="creating-vaults-sdk-java"></a>
 
 The low\-level API provides methods for all the vault operations, including creating and deleting vaults, getting a vault description, and getting a list of vaults created in a specific region\. The following are the steps to create a vault using the AWS SDK for Java\. 
 
@@ -8,11 +8,11 @@ The low\-level API provides methods for all the vault operations, including crea
 
 1. Provide request information by creating an instance of the `CreateVaultRequest` class\.
 
-   Amazon Glacier requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is used\. For more information, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\. 
+   Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is used\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\. 
 
 1. Execute the `createVault` method by providing the request object as a parameter\. 
 
-   The response Amazon Glacier returns is available in the `CreateVaultResult` object\.
+   The response Glacier returns is available in the `CreateVaultResult` object\.
 
 The following Java code snippet illustrates the preceding steps\. The snippet creates a vault in the `us-west-2` region\. The `Location` it prints is the relative URI of the vault that includes your account ID, the region, and the vault name\.
 
@@ -32,9 +32,9 @@ For information about the underlying REST API, see [Create Vault \(PUT vault\)](
 
 ## Example: Creating a Vault Using the AWS SDK for Java<a name="creating-vaults-sdk-java-example"></a>
 
-The following Java code example creates a vault in the `us-west-2` region \(for more information on regions, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\)\. In addition, the code example retrieves the vault information, lists all vaults in the same region, and then deletes the vault created\. 
+The following Java code example creates a vault in the `us-west-2` region \(for more information on regions, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\)\. In addition, the code example retrieves the vault information, lists all vaults in the same region, and then deletes the vault created\. 
 
-For step\-by\-step instructions on how to run the following example, see [Running Java Examples for Amazon Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. 
+For step\-by\-step instructions on how to run the following example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. 
 
 **Example**  
 

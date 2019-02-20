@@ -4,7 +4,7 @@
 
 This operation sets and then enacts a data retrieval policy in the region specified in the `PUT` request\. You can set one policy per region for an AWS account\. The policy is enacted within a few minutes of a successful `PUT` operation\. 
 
- The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted\. For more information about data retrieval policies, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\. 
+ The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. 
 
 ## Requests<a name="api-SetDataRetrievalPolicy-requests"></a>
 
@@ -34,7 +34,7 @@ To set a data retrieval policy, send an HTTP PUT request to the data retrieval p
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-SetDataRetrievalPolicy-requests-parameters"></a>
 
@@ -64,7 +64,7 @@ The policy rule\. Although this is a list type, currently there must be only one
 The type of data retrieval policy to set\.  
 *Type*: String  
 *Required*: Yes  
-Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Responses<a name="api-SetDataRetrievalPolicy-responses"></a>
 
@@ -86,7 +86,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-SetDataRetrievalPolicy-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-SetDataRetrievalPolicy-examples"></a>
 
@@ -158,7 +158,7 @@ The following example sends an HTTP PUT request with the Strategy field set to `
 
 ### Example Response<a name="api-SetDataRetrievalPolicy-example-response"></a>
 
-If the request was successful Amazon Glacier sets the policy and returns a `HTTP 204 No Content` as shown in the following example\.
+If the request was successful Amazon S3 Glacier \(Glacier\) sets the policy and returns a `HTTP 204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

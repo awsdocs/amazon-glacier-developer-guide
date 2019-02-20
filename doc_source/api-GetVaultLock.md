@@ -8,9 +8,9 @@ This operation retrieves the following attributes from the `lock-policy` subreso
 + When the lock ID expires\. The lock ID is used to complete the vault locking process\.
 + When the vault lock was initiated and put into the `InProgress` state\.
 
-A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can abort the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. For more information about the vault locking process, see [Amazon Glacier Vault Lock](vault-lock.md)\.
+A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can abort the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\.
 
-If there is no vault lock policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault lock policies, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
+If there is no vault lock policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
 ## Requests<a name="api-GetVaultLock-requests"></a>
 
@@ -27,7 +27,7 @@ To return the current vault lock policy and other attributes, send an HTTP `GET`
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-GetVaultLock-requests-parameters"></a>
 
@@ -43,7 +43,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-GetVaultLock-responses"></a>
 
-In response, Amazon Glacier returns the vault access policy in JSON format in the body of the response\. 
+In response, Amazon S3 Glacier \(Glacier\) returns the vault access policy in JSON format in the body of the response\. 
 
 ### Syntax<a name="api-GetVaultLock-responses-syntax"></a>
 
@@ -89,7 +89,7 @@ The UTC date and time at which the vault lock was put into the `InProgress` stat
 
 ### Errors<a name="api-GetVaultLock-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-GetVaultLock-examples"></a>
 
@@ -109,7 +109,7 @@ In this example, a `GET` request is sent to the URI of a vault's `lock-policy` s
 
 ### Example Response<a name="api-GetVaultLock-example-response"></a>
 
-If the request was successful, Amazon Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md) example request\. However, the following example shows the returned JSON string without escape characters for readability\. 
+If the request was successful, Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md) example request\. However, the following example shows the returned JSON string without escape characters for readability\. 
 
 ```
  1. HTTP/1.1 200 OK

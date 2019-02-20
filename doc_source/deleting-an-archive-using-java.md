@@ -1,4 +1,4 @@
-# Deleting an Archive in Amazon Glacier Using the AWS SDK for Java<a name="deleting-an-archive-using-java"></a>
+# Deleting an Archive in Amazon S3 Glacier Using the AWS SDK for Java<a name="deleting-an-archive-using-java"></a>
 
 The following are the steps to delete an archive using the AWS SDK for Java low\-level API\.
 
@@ -8,7 +8,7 @@ The following are the steps to delete an archive using the AWS SDK for Java low\
 
 1. Provide request information by creating an instance of the `DeleteArchiveRequest` class\.
 
-   You need to provide an archive ID, a vault name, and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\.
+   You need to provide an archive ID, a vault name, and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\.
 
 1. Execute the `deleteArchive` method by providing the request object as a parameter\. 
 
@@ -29,7 +29,7 @@ For information about the underlying REST API, see [Delete Archive \(DELETE arch
 
 ## Example: Deleting an Archive Using the AWS SDK for Java<a name="deleting-an-archive-using-java-example"></a>
 
-The following Java code example uses the AWS SDK for Java to delete an archive\. For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with a vault name and the archive ID of the archive you want to delete\.
+The following Java code example uses the AWS SDK for Java to delete an archive\. For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with a vault name and the archive ID of the archive you want to delete\.
 
 **Example**  
 

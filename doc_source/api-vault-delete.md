@@ -2,14 +2,14 @@
 
 ## Description<a name="api-vault-delete-description"></a>
 
-This operation deletes a vault\. Amazon Glacier will delete a vault only if there are no archives in the vault as per the last inventory and there have been no writes to the vault since the last inventory\. If either of these conditions is not satisfied, the vault deletion fails \(that is, the vault is not removed\) and Amazon Glacier returns an error\. 
+This operation deletes a vault\. Amazon S3 Glacier \(Glacier\) will delete a vault only if there are no archives in the vault as per the last inventory and there have been no writes to the vault since the last inventory\. If either of these conditions is not satisfied, the vault deletion fails \(that is, the vault is not removed\) and Glacier returns an error\. 
 
-You can use the [Describe Vault \(GET vault\)](api-vault-get.md) operation that provides vault information, including the number of archives in the vault; however, the information is based on the vault inventory Amazon Glacier last generated\.
+You can use the [Describe Vault \(GET vault\)](api-vault-get.md) operation that provides vault information, including the number of archives in the vault; however, the information is based on the vault inventory Glacier last generated\.
 
 This operation is idempotent\.
 
 **Note**  
-When you delete a vault, the vault access policy attached to the vault is also deleted\. For more information about vault access policies, see [Amazon Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
+When you delete a vault, the vault access policy attached to the vault is also deleted\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
 
 ## Requests<a name="api-vault-delete-requests"></a>
 
@@ -26,7 +26,7 @@ To delete a vault, send a `DELETE` request to the vault resource URI\.
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-delete-requests-parameters"></a>
 
@@ -60,7 +60,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-vault-delete-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-delete-examples"></a>
 
@@ -88,4 +88,4 @@ The following example deletes a vault named `examplevault`\. The example request
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

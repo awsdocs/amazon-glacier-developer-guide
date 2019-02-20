@@ -15,9 +15,9 @@ You can use the `upload` method to upload small or large archives\. Depending on
 
 ### Example: Uploading an Archive Using the High\-Level API of the AWS SDK for Java<a name="upload-archive-high-level-java-example"></a>
 
-The following Java code example uploads an archive to a vault \(`examplevault`\) in the US West \(Oregon\) region \(`us-west-2`\)\. For a list of supported regions and endpoints, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\. 
+The following Java code example uploads an archive to a vault \(`examplevault`\) in the US West \(Oregon\) region \(`us-west-2`\)\. For a list of supported regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
 
-For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the vault you want to upload to and the name of the file you want to upload\.
+For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the vault you want to upload to and the name of the file you want to upload\.
 
 **Example**  
 
@@ -72,11 +72,11 @@ The low\-level API provides methods for all the archive operations\. The followi
 
    In addition to the data you want to upload, you need to provide a checksum \(SHA\-256 tree hash\) of the payload, the vault name, the content length of the data, and your account ID\. 
 
-   If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\. 
+   If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\. 
 
 1. Execute the `uploadArchive` method by providing the request object as a parameter\. 
 
-   In response, Amazon Glacier returns an archive ID of the newly uploaded archive\. 
+   In response, Amazon S3 Glacier \(Glacier\) returns an archive ID of the newly uploaded archive\. 
 
 The following Java code snippet illustrates the preceding steps\. 
 
@@ -96,7 +96,7 @@ System.out.println("Location (includes ArchiveID): " + uploadArchiveResult.getLo
 
 ### Example: Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for Java<a name="uploding-single-archive-using-java-example"></a>
 
-The following Java code example uses the AWS SDK for Java to upload an archive to a vault \(`examplevault`\)\. For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the vault you want to upload to and the name of the file you want to upload\.
+The following Java code example uses the AWS SDK for Java to upload an archive to a vault \(`examplevault`\)\. For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the vault you want to upload to and the name of the file you want to upload\.
 
 ```
 import java.io.ByteArrayInputStream;

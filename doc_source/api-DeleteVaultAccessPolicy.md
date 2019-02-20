@@ -2,9 +2,9 @@
 
 ## Description<a name="api-DeleteVaultAccessPolicy-description"></a>
 
-This operation deletes the access policy associated with the specified vault\. The operation is eventually consistent—that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request\. 
+This operation deletes the access policy associated with the specified vault\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(Glacier\) to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request\. 
 
-This operation is idempotent\. You can invoke delete multiple times, even if there is no policy associated with the vault\. For more information about vault access policies, see [Amazon Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
+This operation is idempotent\. You can invoke delete multiple times, even if there is no policy associated with the vault\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
 
 ## Requests<a name="api-DeleteVaultAccessPolicy-requests"></a>
 
@@ -21,7 +21,7 @@ To delete the current vault access policy, send an HTTP `DELETE` request to the 
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-DeleteVaultAccessPolicy-requests-parameters"></a>
 
@@ -37,7 +37,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-DeleteVaultAccessPolicy-responses"></a>
 
-In response, Amazon Glacier returns `204 No Content` if the policy is successfully deleted\.
+In response, Glacier returns `204 No Content` if the policy is successfully deleted\.
 
 ### Syntax<a name="api-DeleteVaultAccessPolicy-responses-syntax"></a>
 
@@ -57,7 +57,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-DeleteVaultAccessPolicy-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-DeleteVaultAccessPolicy-examples"></a>
 
@@ -77,7 +77,7 @@ In this example, a `DELETE` request is sent to the `access-policy` subresource o
 
 ### Example Response<a name="api-DeleteVaultAccessPolicy-example-response"></a>
 
-In response, if the policy is successfully deleted Amazon Glacier returns a `204 No Content` as shown in the following example\.
+In response, if the policy is successfully deleted Glacier returns a `204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

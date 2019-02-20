@@ -2,7 +2,7 @@
 
 ## Description<a name="api-SetVaultAccessPolicy-description"></a>
 
-This operation configures an access policy for a vault and will overwrite an existing policy\. To configure a vault access policy, send a `PUT` request to the `access-policy` subresource of the vault\. You can set one access policy per vault and the policy can be up to 20 KB in size\. For more information about vault access policies, see [Amazon Glacier Access Control with Vault Access Policies](vault-access-policy.md)\. 
+This operation configures an access policy for a vault and will overwrite an existing policy\. To configure a vault access policy, send a `PUT` request to the `access-policy` subresource of the vault\. You can set one access policy per vault and the policy can be up to 20 KB in size\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\. 
 
 ## Requests<a name="api-SetVaultAccessPolicy-requests"></a>
 
@@ -24,7 +24,7 @@ To set a vault access policy, send an HTTP `PUT` request to the URI of the vault
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-SetVaultAccessPolicy-requests-parameters"></a>
 
@@ -45,7 +45,7 @@ The vault access policy as a JSON string, which uses "\\" as an escape character
 
 ## Responses<a name="api-SetVaultAccessPolicy-responses"></a>
 
-In response, Amazon Glacier returns `204 No Content` if the policy is accepted\.
+In response, Glacier returns `204 No Content` if the policy is accepted\.
 
 ### Syntax<a name="api-SetVaultAccessPolicy-response-syntax"></a>
 
@@ -65,7 +65,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-SetVaultAccessPolicy-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-SetVaultAccessPolicy-examples"></a>
 
@@ -86,7 +86,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `acc
 
 ### Example Response<a name="api-SetVaultAccessPolicy-example-response"></a>
 
-If the request was successful, Amazon Glacier returns a `HTTP 204 No Content` as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

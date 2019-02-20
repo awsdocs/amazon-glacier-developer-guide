@@ -1,6 +1,6 @@
 # Archive Operations<a name="archive-operations"></a>
 
-The following are the archive operations available for use in Amazon Glacier\.
+The following are the archive operations available for use in Glacier\.
 
 **Topics**
 + [Delete Archive \(DELETE archive\)](api-archive-delete.md)

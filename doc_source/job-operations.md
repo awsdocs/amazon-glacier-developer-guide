@@ -1,6 +1,6 @@
 # Job Operations<a name="job-operations"></a>
 
-The following are the job operations available in Amazon Glacier\.
+The following are the job operations available in Glacier\.
 
 **Topics**
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)

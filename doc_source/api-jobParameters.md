@@ -6,7 +6,7 @@ Provides options for defining a job\.
 
 **ArchiveId**  
 The ID of the archive that you want\. This field is required if the `Type` field is set to `select` or `archive-retrieval`\. An error occurs if you specify this field for an inventory retrieval job request\.   
-*Valid Values*: Must be a valid archive ID that you obtained from a previous request to Amazon Glacier\.  
+*Valid Values*: Must be a valid archive ID that you obtained from a previous request to Amazon S3 Glacier \(Glacier\)\.  
 *Type*: String  
 *Required*: Yes when `Type` is set to `select` or `archive-retrieval`\.
 
@@ -44,8 +44,8 @@ An object that contains information about the parameters used for a select\.
 *Required*: no
 
 **SNSTopic**  
-The Amazon Resource Name \(ARN\) of the Amazon SNS topic where Amazon Glacier sends a notification when the job is completed and output is ready for you to download\. The specified topic publishes the notification to its subscribers\.   
-The SNS topic must exist\. If it doesn't, Amazon Glacier doesn't create it for you\. Additionally, the SNS topic must have a policy that allows the account that created the job to publish messages to the topic\. For information about SNS topic names, see [CreateTopic](http://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html) in the *Amazon Simple Notification Service* *API Reference*\.  
+The Amazon Resource Name \(ARN\) of the Amazon SNS topic where Glacier sends a notification when the job is completed and output is ready for you to download\. The specified topic publishes the notification to its subscribers\.   
+The SNS topic must exist\. If it doesn't, Glacier doesn't create it for you\. Additionally, the SNS topic must have a policy that allows the account that created the job to publish messages to the topic\. For information about SNS topic names, see [CreateTopic](https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html) in the *Amazon Simple Notification Service* *API Reference*\.  
 *Type*: String  
 *Required*: no
 

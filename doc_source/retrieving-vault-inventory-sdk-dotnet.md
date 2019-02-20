@@ -1,4 +1,4 @@
-# Downloading a Vault Inventory in Amazon Glacier Using the AWS SDK for \.NET<a name="retrieving-vault-inventory-sdk-dotnet"></a>
+# Downloading a Vault Inventory in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="retrieving-vault-inventory-sdk-dotnet"></a>
 
 The following are the steps to retrieve a vault inventory using the low\-level API of the AWS SDK for \.NET\. The high\-level API does not support retrieving a vault inventory\.
 
@@ -8,7 +8,7 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 
 1. Initiate an inventory retrieval job by executing the `InitiateJob` method\.
 
-   You provide job information in an `InitiateJobRequest` object\. Amazon Glacier returns a job ID in response\. The response is available in an instance of the `InitiateJobResponse` class\.
+   You provide job information in an `InitiateJobRequest` object\. Amazon S3 Glacier \(Glacier\) returns a job ID in response\. The response is available in an instance of the `InitiateJobResponse` class\.
 
    ```
    AmazonGlacierClient client;
@@ -29,15 +29,15 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 
 1. Wait for the job to complete\.
 
-   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic, or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic, or specified an Amazon SNS topic when you initiated a job, Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Glacier to publish a message\.
 
-   You can also poll Amazon Glacier by calling the `DescribeJob` method to determine job completion status\. Although using Amazon SNS topic for notification is the recommended approach\. 
+   You can also poll Glacier by calling the `DescribeJob` method to determine job completion status\. Although using Amazon SNS topic for notification is the recommended approach\. 
 
 1. Download the job output \(vault inventory data\) by executing the `GetJobOutput` method\.
 
-   You provide your account ID, vault name, and the job ID information by creating an instance of the `GetJobOutputRequest` class\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\. 
+   You provide your account ID, vault name, and the job ID information by creating an instance of the `GetJobOutputRequest` class\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
-   The output that Amazon Glacier returns is available in the `GetJobOutputResponse` object\. 
+   The output that Glacier returns is available in the `GetJobOutputResponse` object\. 
 
    ```
    GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest()
@@ -65,13 +65,13 @@ The following C\# code example retrieves the vault inventory for the specified v
 The example performs the following tasks:
 + Set up an Amazon SNS topic\.
 
-  Amazon Glacier sends notification to this topic after it completes the job\. 
+  Glacier sends notification to this topic after it completes the job\. 
 + Set up an Amazon SQS queue\. 
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages\. 
 + Initiate a job to download the specified archive\.
 
-  In the job request, the example specifies the Amazon SNS topic so that Amazon Glacier can send a message after it completes the job\.
+  In the job request, the example specifies the Amazon SNS topic so that Glacier can send a message after it completes the job\.
 + Periodically check the Amazon SQS queue for a message\. 
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. The code example uses the JSON\.NET library \(see [JSON\.NET](http://json.codeplex.com/)\) to parse the JSON\.

@@ -1,10 +1,10 @@
-# Amazon Glacier API Permissions: Actions, Resources, and Conditions Reference<a name="glacier-api-permissions-ref"></a>
+# Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference<a name="glacier-api-permissions-ref"></a>
 
-When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing a permissions policy that you can attach to an IAM identity \(identity\-based policies\) or a resource \(resource\-based policies\), you can use the following table as a reference\. The table lists each Amazon Glacier API operation, the corresponding actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\.
+When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing a permissions policy that you can attach to an IAM identity \(identity\-based policies\) or a resource \(resource\-based policies\), you can use the following table as a reference\. The table lists each Glacier API operation, the corresponding actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\.
 
 You specify the actions in the policy's `Action` element, and you specify the resource value in the policy's `Resource` element\. Also, you can use the IAM policy language `Condition` element to specify when a policy should take effect\.
 
-To specify an action, use the `glacier:` prefix followed by the API operation name \(for example, `glacier:CreateVault`\)\. For most Amazon Glacier actions, `Resource` is the vault on which you want to grant the permissions\. You specify a vault as the `Resource` value by using the vault ARN\. To express conditions, you use predefined condition keys\. For more information, see [Overview of Managing Access Permissions to Your Amazon Glacier Resources](access-control-overview.md)\.
+To specify an action, use the `glacier:` prefix followed by the API operation name \(for example, `glacier:CreateVault`\)\. For most Glacier actions, `Resource` is the vault on which you want to grant the permissions\. You specify a vault as the `Resource` value by using the vault ARN\. To express conditions, you use predefined condition keys\. For more information, see [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)\.
 
 The following table lists actions that can be used with identity\-based policies and resource\-based policies\. 
 
@@ -14,9 +14,9 @@ Some actions can only be used with identity\-based policies\. These actions are 
 If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, you can open the table in a new window\. To close the window, choose the close button \(**X**\) in the lower\-right corner\.
 
 
-**Amazon Glacier API and Required Permissions for Actions**  
+**Amazon S3 Glacier API and Required Permissions for Actions**  
 
-| Amazon Glacier API Operations | Required Permissions \(API Actions\) | Resources | Condition Keys | 
+| Glacier API Operations | Required Permissions \(API Actions\) | Resources | Condition Keys | 
 | --- | --- | --- | --- | 
 | [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)  | glacier:AbortMultipartUpload |  `arn:aws:glacier:region:account-id:vaults/vault-name` `arn:aws:glacier:region:account-id:vaults/example*` `arn:aws:glacier:region:account-id:vaults/*`  |  | 
 | [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)  | glacier:AbortVaultLock |   |  | 

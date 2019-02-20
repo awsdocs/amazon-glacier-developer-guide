@@ -24,7 +24,7 @@ To purchase provisioned capacity unit for an AWS account send an HTTP `POST` req
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-PurchaseProvisionedCapacity-requestParameters"></a>
 
@@ -64,7 +64,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-PurchaseProvisionedCapacity-responses-errors"></a>
 
-This operation includes the following error or errors, in addition to the possible errors common to all Amazon Glacier operations\. For information about Amazon Glacier errors and a list of error codes, see [Error Responses](api-error-responses.md)\.
+This operation includes the following error or errors, in addition to the possible errors common to all Amazon S3 Glacier operations\. For information about Amazon S3 Glacier errors and a list of error codes, see [Error Responses](api-error-responses.md)\.
 
 
 | Code | Description | HTTP Status Code | Type | 
@@ -90,7 +90,7 @@ The following example sends an HTTP POST request to purchase a provisioned capac
 
 ### Example Response<a name="api-PurchaseProvisionedCapacity-example-response"></a>
 
-If the request was successful, Amazon Glacier returns an `HTTP 201 Created` response, as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(Glacier\) returns an `HTTP 201 Created` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 201 Created

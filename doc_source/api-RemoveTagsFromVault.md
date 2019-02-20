@@ -1,6 +1,6 @@
 # Remove Tags From Vault \(POST tags remove\)<a name="api-RemoveTagsFromVault"></a>
 
-This operation removes one or more tags from the set of tags attached to a vault\. For more information about tags, see [Tagging Amazon Glacier Resources](tagging.md)\.
+This operation removes one or more tags from the set of tags attached to a vault\. For more information about tags, see [Tagging Amazon S3 Glacier Resources](tagging.md)\.
 
 This operation is idempotent\. The operation will be successful, even if there are no tags attached to the vault\. 
 
@@ -24,7 +24,7 @@ x-amz-glacier-version: 2012-06-01
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ## Request Parameters<a name="api-RemoveTagsFromVault-RequestParameters"></a>
 
@@ -69,7 +69,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-RemoveTagsFromVault-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-RemoveTagsFromVault-examples"></a>
 
@@ -95,7 +95,7 @@ The following example sends an HTTP POST request to remove the specified tags\.
 
 ### Example Response<a name="api-RemoveTagsFromVault-example-response"></a>
 
-If the request was successful Amazon Glacier returns a `HTTP 204 No Content` as shown in the following example\.
+If the request was successful Amazon S3 Glacier \(Glacier\) returns a `HTTP 204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

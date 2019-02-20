@@ -1,4 +1,4 @@
-# Creating a Vault in Amazon Glacier Using the AWS SDK for \.NET<a name="creating-vaults-dotnet-sdk"></a>
+# Creating a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="creating-vaults-dotnet-sdk"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to create a vault\.
 
@@ -12,7 +12,7 @@ The `ArchiveTransferManager` class of the high\-level API provides the `CreateVa
 
 ### Example: Vault Operations Using the High\-Level API of the AWS SDK for \.NET<a name="vault-operations-example-dotnet-highlevel"></a>
 
-The following C\# code example creates and delete a vault in the US West \(Oregon\) Region\. For a list of AWS regions in which you can create vaults, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\. 
+The following C\# code example creates and delete a vault in the US West \(Oregon\) Region\. For a list of AWS regions in which you can create vaults, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
 
 For step\-by\-step instructions on how to run the following example, see [Running Code Examples](using-aws-sdk-for-dot-net.md#setting-up-and-testing-sdk-dotnet)\. You need to update the code as shown with a vault name\. 
 
@@ -62,11 +62,11 @@ The low\-level API provides methods for all the vault operations, including crea
 
 1. Provide request information by creating an instance of the `CreateVaultRequest` class\.
 
-   Amazon Glacier requires you to provide a vault name and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\. 
+    Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
 1. Execute the `CreateVault` method by providing the request object as a parameter\. 
 
-   The response Amazon Glacier returns is available in the `CreateVaultResponse` object\.
+   The response Glacier returns is available in the `CreateVaultResponse` object\.
 
 ### Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET<a name="vault-operations-example-dotnet-lowlevel"></a>
 

@@ -2,9 +2,9 @@
 
 ## Description<a name="api-vault-notifications-put-description"></a>
 
-Retrieving an archive and a vault inventory are asynchronous operations in Amazon Glacier for which you must first initiate a job and wait for the job to complete before you can download the job output\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon Glacier](configuring-notifications.md)\.  
+Retrieving an archive and a vault inventory are asynchronous operations in Amazon S3 Glacier \(Glacier\) for which you must first initiate a job and wait for the job to complete before you can download the job output\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\.  
 
-To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want Amazon Glacier to send notifications to the topic\.
+To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want Glacier to send notifications to the topic\.
 
 You can configure a vault to publish a notification for the following vault events:
 + **`ArchiveRetrievalCompleted`—** This event occurs when a job that was initiated for an archive retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
@@ -32,7 +32,7 @@ To set notification configuration on your vault, send a PUT request to the URI o
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-notifications-put-requests-parameters"></a>
 
@@ -47,19 +47,19 @@ This operation uses only request headers that are common to all operations\. For
  The JSON in the request body contains the following fields\. 
 
 **Events**  
-An array of one or more events for which you want Amazon Glacier to send notification\.  
+An array of one or more events for which you want Glacier to send notification\.  
 *Valid Values*: `ArchiveRetrievalCompleted` \| `InventoryRetrievalCompleted`   
 *Required*: yes  
 *Type*: Array
 
 **SNSTopic**  
-The Amazon SNS topic ARN\. For more information, go to [Getting Started with Amazon SNS](http://docs.aws.amazon.com/sns/latest/gsg/Welcome.html) in the *Amazon Simple Notification Service Getting Started Guide*\.  
+The Amazon SNS topic ARN\. For more information, go to [Getting Started with Amazon SNS](https://docs.aws.amazon.com/sns/latest/gsg/Welcome.html) in the *Amazon Simple Notification Service Getting Started Guide*\.  
 *Required*: yes  
 *Type*: String
 
 ## Responses<a name="api-vault-notifications-put-responses"></a>
 
-In response, Amazon Glacier returns `204 No Content` if the notification configuration is accepted\.
+In response, Amazon S3 Glacier \(Glacier\) returns `204 No Content` if the notification configuration is accepted\.
 
 ### Syntax<a name="api-vault-notifications-put-responses-elements"></a>
 
@@ -79,7 +79,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-vault-notifications-put-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-notifications-put-examples"></a>
 
@@ -115,4 +115,4 @@ A successful response returns a `204 No Content`\.
 ## Related Sections<a name="related-sections-vault-notifications-put"></a>
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

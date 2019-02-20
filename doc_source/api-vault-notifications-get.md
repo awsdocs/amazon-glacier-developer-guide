@@ -2,7 +2,7 @@
 
 ## Description<a name="api-vault-notifications-get-description"></a>
 
-This operation retrieves the `notification-configuration` subresource set on the vault \(see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. If notification configuration for a vault is not set, the operation returns a `404 Not Found` error\. For more information about vault notifications, see [Configuring Vault Notifications in Amazon Glacier](configuring-notifications.md)\. 
+This operation retrieves the `notification-configuration` subresource set on the vault \(see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. If notification configuration for a vault is not set, the operation returns a `404 Not Found` error\. For more information about vault notifications, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\. 
 
 ## Requests<a name="api-vault-notifications-get-requests"></a>
 
@@ -19,7 +19,7 @@ To retrieve the notification configuration information, send a `GET` request to 
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-notifications-get-requests-parameters"></a>
 
@@ -61,16 +61,16 @@ This operation uses only response headers that are common to most responses\. Fo
 The response body contains the following JSON fields\.
 
 **Events**  
-A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic\. For information about vault events for which you can configure a vault to publish notifications, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\.  
+A list of one or more events for which Amazon S3 Glacier \(Glacier\) will send a notification to the specified Amazon SNS topic\. For information about vault events for which you can configure a vault to publish notifications, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\.  
 *Type*: Array
 
 **SNSTopic**  
-The Amazon Simple Notification Service \(Amazon SNS\) topic Amazon Resource Name \(ARN\)\. For more information, see [Getting Started with Amazon SNS](http://docs.aws.amazon.com/sns/latest/gsg/Welcome.html) in the *Amazon Simple Notification Service Getting Started Guide*\.  
+The Amazon Simple Notification Service \(Amazon SNS\) topic Amazon Resource Name \(ARN\)\. For more information, see [Getting Started with Amazon SNS](https://docs.aws.amazon.com/sns/latest/gsg/Welcome.html) in the *Amazon Simple Notification Service Getting Started Guide*\.  
 *Type*: String
 
 ### Errors<a name="api-vault-notifications-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-notifications-get-examples"></a>
 
@@ -111,4 +111,4 @@ A successful response shows the audit logging configuration document in the body
 ## Related Sections<a name="related-sections-vault-notifications-get"></a>
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

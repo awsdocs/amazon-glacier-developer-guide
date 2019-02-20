@@ -1,4 +1,4 @@
-# Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for Java<a name="retrieving-vault-info-sdk-java"></a>
+# Retrieving Vault Metadata in Amazon S3 Glacier Using the AWS SDK for Java<a name="retrieving-vault-info-sdk-java"></a>
 
 **Topics**
 + [Retrieve Vault Metadata for a Vault](#retrieve-vault-info-sdk-java-lowlevel-one-vault)
@@ -15,11 +15,11 @@ You can retrieve metadata for a specific vault or all the vaults in a specific r
 
 1. Provide request information by creating an instance of the `DescribeVaultRequest` class\.
 
-   Amazon Glacier requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\.
+   Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\.
 
 1. Execute the `describeVault` method by providing the request object as a parameter\. 
 
-   The vault metadata information that Amazon Glacier returns is available in the `DescribeVaultResult` object\.
+   The vault metadata information that Glacier returns is available in the `DescribeVaultResult` object\.
 
 The following Java code snippet illustrates the preceding steps\. 
 
@@ -72,7 +72,7 @@ do {
 } while (marker != null);
 ```
 
-In the preceding code segment, if you don't specify the `Limit` value in the request, Amazon Glacier returns up to 1,000 vaults, as set by the Amazon Glacier API\. If there are more vaults to list, the response `marker` field contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new request; otherwise, the `marker` field is null\. 
+In the preceding code segment, if you don't specify the `Limit` value in the request, Glacier returns up to 10 vaults, as set by the Glacier API\. If there are more vaults to list, the response `marker` field contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new request; otherwise, the `marker` field is null\. 
 
 Note that the information returned for each vault in the list is the same as the information you get by calling the `describeVault` method for a specific vault\. 
 

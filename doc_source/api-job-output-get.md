@@ -6,11 +6,11 @@ This operation downloads the output of the job you initiated using [Initiate Job
 
 You can download all the job output or download a portion of the output by specifying a byte range\. For both archive and inventory retrieval jobs, you should verify the downloaded size against the size returned in the headers from the **Get Job Output** response\.
 
-For archive retrieval jobs, you should also verify that the size is what you expected\. If you download a portion of the output, the expected size is based on the range of bytes you specified\. For example, if you specify a range of `bytes=0-1048575`, you should verify your download size is 1,048,576 bytes\. If you download an entire archive, the expected size is the size of the archive when you uploaded it to Amazon Glacier\. The expected size is also returned in the headers from the **Get Job Output** response\.
+For archive retrieval jobs, you should also verify that the size is what you expected\. If you download a portion of the output, the expected size is based on the range of bytes you specified\. For example, if you specify a range of `bytes=0-1048575`, you should verify your download size is 1,048,576 bytes\. If you download an entire archive, the expected size is the size of the archive when you uploaded it to Amazon S3 Glacier \(Glacier\)\. The expected size is also returned in the headers from the **Get Job Output** response\.
 
-In the case of an archive retrieval job, depending on the byte range you specify, Amazon Glacier returns the checksum for the portion of the data\. To ensure the portion you downloaded is the correct data, compute the checksum on the client, verify that the values match, and verify that the size is what you expected\.
+In the case of an archive retrieval job, depending on the byte range you specify, Glacier returns the checksum for the portion of the data\. To ensure the portion you downloaded is the correct data, compute the checksum on the client, verify that the values match, and verify that the size is what you expected\.
 
-A job ID does not expire for at least 24 hours after Amazon Glacier completes the job\. That is, you can download the job output within the 24\-hour period after Amazon Glacier completes the job\.
+A job ID does not expire for at least 24 hours after Glacier completes the job\. That is, you can download the job output within the 24\-hour period after Glacier completes the job\.
 
 ## Requests<a name="api-job-output-get-requests"></a>
 
@@ -28,7 +28,7 @@ To retrieve a job output, you send the HTTP `GET` request to the URI of the `out
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-job-output-get-requests-parameters"></a>
 
@@ -69,13 +69,13 @@ For a retrieval request that returns all of the job data, the job output respons
 
 |  Header  |  Description  | 
 | --- | --- | 
-| Content\-Range  |  The range of bytes returned by Amazon Glacier\. If only partial output is downloaded, the response provides the range of bytes Amazon Glacier returned\.  For example, `bytes 0-1048575/8388608` returns the first 1 MB from 8 MB\. For more information about the `Content-Range` header, go to [Content\-Range Header Field Definition](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16)\. Type: String  | 
+| Content\-Range  |  The range of bytes returned by Glacier\. If only partial output is downloaded, the response provides the range of bytes Glacier returned\.  For example, `bytes 0-1048575/8388608` returns the first 1 MB from 8 MB\. For more information about the `Content-Range` header, go to [Content\-Range Header Field Definition](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16)\. Type: String  | 
 | Content\-Type  |  The Content\-Type depends on whether the job output is an archive or a vault inventory\.  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
 | x\-amz\-sha256\-tree\-hash​ |  The checksum of the data in the response\. This header is returned only when retrieving the output for an archive retrieval job\. Furthermore, this header appears when the retrieved data range requested in the Initiate Job request is tree hash aligned and the range to download in the Get Job Output is also tree hash aligned\. For more information about tree hash aligned ranges, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.  For example, if in your Initiate Job request you specified a tree hash aligned range to retrieve \(which includes the whole archive\), then you will receive the checksum of the data you download under the following conditions: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
 
 ### Response Body<a name="api-job-output-get-responses-elements"></a>
 
-Amazon Glacier returns the job output in the response body\. Depending on the job type, the output can be the archive contents or the vault inventory\. In case of a vault inventory, by default the inventory list is returned as the following JSON body\. 
+Glacier returns the job output in the response body\. Depending on the job type, the output can be the archive contents or the vault inventory\. In case of a vault inventory, by default the inventory list is returned as the following JSON body\. 
 
 ```
  1. {
@@ -117,7 +117,7 @@ The UTC date and time the archive was created\.
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **InventoryDate**  
-The UTC date and time of the last inventory for the vault that was completed after changes to the vault\. Even though Amazon Glacier prepares a vault inventory once a day, the inventory date is only updated if there have been archive additions or deletions to the vault since the last inventory\.   
+The UTC date and time of the last inventory for the vault that was completed after changes to the vault\. Even though Glacier prepares a vault inventory once a day, the inventory date is only updated if there have been archive additions or deletions to the vault since the last inventory\.   
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **SHA256TreeHash**  
@@ -134,7 +134,7 @@ The Amazon Resource Name \(ARN\) resource from which the archive retrieval was r
 
 ### Errors<a name="api-job-output-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-job-output-get-examples"></a>
 
@@ -142,7 +142,7 @@ The following example shows the request for a job that retrieves an archive\.
 
 ### Example 1: Download output<a name="api-job-output-get-examplesEx1"></a>
 
-This example retrieves data prepared by Amazon Glacier in response to your initiate archive retrieval job request\.
+This example retrieves data prepared by Glacier in response to your initiate archive retrieval job request\.
 
 #### Example Request<a name="api-job-output-get-example-request"></a>
 
@@ -202,7 +202,7 @@ The following is an example response of an inventory retrieval job\. Note that t
 
 ### Example 2: Download only partial output<a name="api-job-output-get-examples2"></a>
 
-This example retrieves only a portion of the archive prepared by Amazon Glacier in response to your initiate archive retrieval job request\. The request uses the optional `Range` header to retrieve only the first 1,024 bytes\.
+This example retrieves only a portion of the archive prepared by Glacier in response to your initiate archive retrieval job request\. The request uses the optional `Range` header to retrieve only the first 1,024 bytes\.
 
 #### Example Request<a name="api-job-output-get-example-request2"></a>
 
@@ -217,7 +217,7 @@ This example retrieves only a portion of the archive prepared by Amazon Glacier 
 
 #### Example Response<a name="api-job-output-get-example-response2"></a>
 
-The following successful response shows the `206 Partial Content` response\. In this case, the response also includes a `Content-Range` header that specifies the range of bytes Amazon Glacier returns\.
+The following successful response shows the `206 Partial Content` response\. In this case, the response also includes a `Content-Range` header that specifies the range of bytes Glacier returns\.
 
 ```
 1. HTTP/1.1 206 Partial Content
@@ -233,4 +233,4 @@ The following successful response shows the `206 Partial Content` response\. In 
 ## Related Sections<a name="related-sections-job-output-archive-retrieval"></a>
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

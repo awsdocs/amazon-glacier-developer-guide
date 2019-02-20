@@ -1,4 +1,4 @@
-# Deleting a Vault in Amazon Glacier Using the AWS SDK for \.NET<a name="deleting-vaults-sdk-dotnet"></a>
+# Deleting a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="deleting-vaults-sdk-dotnet"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to delete a vault\.
 
@@ -24,11 +24,11 @@ The following are the steps to delete a vault using the AWS SDK for \.NET\.
 
 1. Provide request information by creating an instance of the `DeleteVaultRequest` class\.
 
-   You need to provide the vault name and account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\. 
+   You need to provide the vault name and account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
 1. Execute the `DeleteVault` method by providing the request object as a parameter\. 
 
-   Amazon Glacier deletes the vault only if it is empty\. For more information, see [Delete Vault \(DELETE vault\)](api-vault-delete.md)\.
+   Amazon S3 Glacier \(Glacier\) deletes the vault only if it is empty\. For more information, see [Delete Vault \(DELETE vault\)](api-vault-delete.md)\.
 
 The following C\# code snippet illustrates the preceding steps\. The snippet retrieves metadata information of a vault that exists in the default AWS region\. 
 

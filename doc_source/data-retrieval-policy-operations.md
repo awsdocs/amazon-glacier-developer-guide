@@ -1,6 +1,6 @@
 # Data Retrieval Operations<a name="data-retrieval-policy-operations"></a>
 
-The following are the data retrieval–related operations available in Amazon Glacier\.
+The following are the data retrieval–related operations available in Glacier\.
 
 **Topics**
 + [Get Data Retrieval Policy \(GET policy\)](api-GetDataRetrievalPolicy.md)

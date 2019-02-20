@@ -2,15 +2,15 @@
 
 ## Description<a name="api-archive-delete-description"></a>
 
-This operation deletes an archive from a vault\. You can delete one archive at a time from a vault\. To delete the archive you must provide its archive ID in the delete request\. You can get the archive ID by downloading the vault inventory for the vault that contains the archive\. For more information about downloading the vault inventory, see [Downloading a Vault Inventory in Amazon Glacier](vault-inventory.md)\.
+This operation deletes an archive from a vault\. You can delete one archive at a time from a vault\. To delete the archive you must provide its archive ID in the delete request\. You can get the archive ID by downloading the vault inventory for the vault that contains the archive\. For more information about downloading the vault inventory, see [Downloading a Vault Inventory in Amazon S3 Glacier](vault-inventory.md)\.
 
 After you delete an archive, you might still be able to make a successful request to initiate a job to retrieve the deleted archive, but the archive retrieval job will fail\. 
 
 Archive retrievals that are in progress for an archive ID when you delete the archive might or might not succeed according to the following scenarios:
-+ If the archive retrieval job is actively preparing the data for download when Amazon Glacier receives the delete archive request, the archival retrieval operation might fail\. 
-+ If the archive retrieval job has successfully prepared the archive for download when Amazon Glacier receives the delete archive request, you will be able to download the output\. 
++ If the archive retrieval job is actively preparing the data for download when Amazon S3 Glacier \(Glacier\) receives the delete archive request, the archival retrieval operation might fail\. 
++ If the archive retrieval job has successfully prepared the archive for download when Glacier receives the delete archive request, you will be able to download the output\. 
 
-For more information about archive retrieval, see [Downloading an Archive in Amazon Glacier](downloading-an-archive.md)\. 
+For more information about archive retrieval, see [Downloading an Archive in Amazon S3 Glacier](downloading-an-archive.md)\. 
 
 This operation is idempotent\. Attempting to delete an already\-deleted archive does not result in an error\. 
 
@@ -29,7 +29,7 @@ To delete an archive you send a `DELETE` request to the archive resource URI\.
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-archive-delete-requests-parameters"></a>
 
@@ -63,7 +63,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-archive-delete-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-archive-delete-examples"></a>
 
@@ -83,7 +83,7 @@ The ID of the archive to be deleted is specified as a subresource of `archives`\
 
 ### Example Response<a name="api-archive-delete-example-response"></a>
 
-If the request is successful, Amazon Glacier responds with `204 No Content` to indicate that the archive is deleted\.
+If the request is successful, Glacier responds with `204 No Content` to indicate that the archive is deleted\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -94,4 +94,4 @@ If the request is successful, Amazon Glacier responds with `204 No Content` to i
 ## Related Sections<a name="related-sections-archive-delete"></a>
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Archive \(POST archive\)](api-archive-post.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

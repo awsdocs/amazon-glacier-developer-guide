@@ -4,9 +4,9 @@
 
 This multipart upload operation lists the parts of an archive that have been uploaded in a specific multipart upload identified by an upload ID\. For information about multipart upload, see [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)\.
 
-You can make this request at any time during an in\-progress multipart upload before you complete the multipart upload\. Amazon Glacier returns the part list sorted by range you specified in each part upload\. If you send a List Parts request after completing the multipart upload, Amazon Glacier returns an error\. 
+You can make this request at any time during an in\-progress multipart upload before you complete the multipart upload\. Glacier returns the part list sorted by range you specified in each part upload\. If you send a List Parts request after completing the multipart upload, Amazon S3 Glacier \(Glacier\) returns an error\. 
 
-The List Parts operation supports pagination\. You should always check the `Marker` field in the response body for a marker at which to continue the list\. if there are no more items the `marker` field is `null`\. If the `marker` is not null, to fetch the next set of parts you sent another List Parts request with the `marker` request parameter set to the marker value Amazon Glacier returned in response to your previous List Parts request\.
+The List Parts operation supports pagination\. You should always check the `Marker` field in the response body for a marker at which to continue the list\. if there are no more items the `marker` field is `null`\. If the `marker` is not null, to fetch the next set of parts you sent another List Parts request with the `marker` request parameter set to the marker value Glacier returned in response to your previous List Parts request\.
 
 You can also limit the number of parts returned in the response by specifying the `limit` parameter in the request\. 
 
@@ -25,7 +25,7 @@ To list the parts of an in\-progress multipart upload, you send a `GET` request 
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-multipart-list-parts-requests-parameters"></a>
 
@@ -108,7 +108,7 @@ The byte range of a part, inclusive of the upper value of the range\.
 *Type*: String
 
 **SHA256TreeHash**   
-The SHA256 tree hash value that Amazon Glacier calculated for the part\. This field is never `null`\.  
+The SHA256 tree hash value that Glacier calculated for the part\. This field is never `null`\.  
 *Type*: String
 
 **VaultARN**  
@@ -117,7 +117,7 @@ The Amazon Resource Name \(ARN\) of the vault to which the multipart upload was 
 
 ### Errors<a name="api-multipart-list-parts-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-multipart-list-parts-examples"></a>
 
@@ -137,7 +137,7 @@ The following example lists all the parts of an upload\. The example sends an HT
 
 #### Example Response<a name="api-multipart-list-parts-example-response"></a>
 
-In the response, Amazon Glacier returns a list of uploaded parts associated with the specified multipart upload ID\. In this example, there are only two parts\. The returned `Marker` field is `null` indicating that there are no more parts of the multipart upload\.
+In the response, Glacier returns a list of uploaded parts associated with the specified multipart upload ID\. In this example, there are only two parts\. The returned `Marker` field is `null` indicating that there are no more parts of the multipart upload\.
 
 ```
  1. HTTP/1.1 200 OK
@@ -181,7 +181,7 @@ The following example demonstrates how to use pagination to get a limited number
 
 #### Example Response<a name="api-multipart-list-parts-example-response-two"></a>
 
-In the response, Amazon Glacier returns a list of uploaded parts that are associated with the specified in\-progress multipart upload ID\.
+In the response, Glacier returns a list of uploaded parts that are associated with the specified in\-progress multipart upload ID\.
 
 ```
  1. HTTP/1.1 200 OK
@@ -212,4 +212,4 @@ In the response, Amazon Glacier returns a list of uploaded parts that are associ
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

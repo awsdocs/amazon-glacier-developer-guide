@@ -2,18 +2,18 @@
 
 ## Description<a name="api-describe-job-get-description"></a>
 
-This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message, and the Amazon Simple Notification Service \(Amazon SNS\) topic to notify after Amazon Glacier completes the job\. For more information about initiating a job, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. 
+This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message, and the Amazon Simple Notification Service \(Amazon SNS\) topic to notify after Amazon S3 Glacier \(Glacier\) completes the job\. For more information about initiating a job, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. 
 
 **Note**  
-This operation enables you to check the status of your job\. However, we strongly recommend that you set up an Amazon SNS topic and specify it in your initiate job request so that Amazon Glacier can notify the topic after it completes the job\. 
+This operation enables you to check the status of your job\. However, we strongly recommend that you set up an Amazon SNS topic and specify it in your initiate job request so that Glacier can notify the topic after it completes the job\. 
 
-A job ID will not expire for at least 24 hours after Amazon Glacier completes the job\. 
+A job ID will not expire for at least 24 hours after Glacier completes the job\. 
 
 ## Requests<a name="api-describe-job-get-requests"></a>
 
 ### Syntax<a name="api-describe-job-get-requests-syntax"></a>
 
-To obtain information about a job, you use the HTTP `GET` method and scope the request to the specific job\. Note that the relative URI path is the same one that Amazon Glacier returned to you when you initiated the job\. 
+To obtain information about a job, you use the HTTP `GET` method and scope the request to the specific job\. Note that the relative URI path is the same one that Glacier returned to you when you initiated the job\. 
 
 ```
 1. GET /AccountID/vaults/VaultName/jobs/JobID HTTP/1.1
@@ -24,7 +24,7 @@ To obtain information about a job, you use the HTTP `GET` method and scope the r
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 **Note**  
 In the request, if you omit the `JobID`, the response returns a list of all active jobs on the specified vault\. For more information about listing jobs, see [List Jobs \(GET jobs\)](api-jobs-get.md)\.
@@ -184,7 +184,7 @@ The job description you provided when you initiated the job\.
 *Type*: String
 
 **JobId**  
-The ID that identifies the job in Amazon Glacier\.  
+The ID that identifies the job in Glacier\.  
 *Type*: String
 
 **JobOutputPath**  
@@ -237,7 +237,7 @@ The Amazon Resource Name \(ARN\) of the vault of which the job is a subresource\
 
 ### Errors<a name="api-describe-job-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-describe-job-get-examples"></a>
 
@@ -350,4 +350,4 @@ The following is an example response for a completed inventory retrieval job tha
 
 ## Related Sections<a name="related-sections-describe-job-get"></a>
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

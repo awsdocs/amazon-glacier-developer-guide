@@ -2,7 +2,7 @@
 
 ## Description<a name="api-CompleteVaultLock-description"></a>
 
-This operation completes the vault locking process by transitioning the vault lock from the `InProgress` state to the `Locked` state, which causes the vault lock policy to become unchangeable\. A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. You can obtain the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon Glacier Vault Lock](vault-lock.md)\. 
+This operation completes the vault locking process by transitioning the vault lock from the `InProgress` state to the `Locked` state, which causes the vault lock policy to become unchangeable\. A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. You can obtain the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\. 
 
 This operation is idempotent\. This request is always successful if the vault lock is in the `Locked` state and the provided lock ID matches the lock ID originally used to lock the vault\.
 
@@ -24,7 +24,7 @@ To complete the vault locking process, send an HTTP `POST` request to the URI of
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
  The `lockId` value is the lock ID obtained from a [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md) request\.
 
@@ -60,7 +60,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-CompleteVaultLock-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-CompleteVaultLock-examples"></a>
 
@@ -79,7 +79,7 @@ The following example sends an HTTP POST request with the lock ID to complete th
 
 ### Example Response<a name="api-CompleteVaultLock-example-response"></a>
 
-If the request was successful, Amazon Glacier returns an `HTTP 204 No Content` response, as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(Glacier\) returns an `HTTP 204 No Content` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

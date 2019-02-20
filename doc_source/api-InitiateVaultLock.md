@@ -7,14 +7,14 @@ This operation initiates the vault locking process by doing the following:
 + Setting the lock state of vault lock to `InProgress`\.
 + Returning a lock ID, which is used to complete the vault locking process\. 
 
-You can set one vault lock policy for each vault and this policy can be up to 20 KB in size\. For more information about vault lock policies, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
+You can set one vault lock policy for each vault and this policy can be up to 20 KB in size\. For more information about vault lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
 You must complete the vault locking process within 24 hours after the vault lock enters the `InProgress` state\. After the 24 hour window ends, the lock ID expires, the vault automatically exits the `InProgress` state, and the vault lock policy is removed from the vault\. You call [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md) to complete the vault locking process by setting the state of the vault lock to `Locked`\. 
 
 **Note**  
 After a vault lock is in the `Locked` state, you cannot initiate a new vault lock for the vault\.
 
-You can abort the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. You can get the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon Glacier Vault Lock](vault-lock.md)\.
+You can abort the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. You can get the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\.
 
 If this operation is called when the vault lock is in the `InProgress` state, the operation returns an `AccessDeniedException` error\. When the vault lock is in the `InProgress` state you must call [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md) before you can initiate a new vault lock policy\. 
 
@@ -38,7 +38,7 @@ To initiate the vault locking process, send an HTTP `POST` request to the URI of
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-InitiateVaultLock-requests-parameters"></a>
 
@@ -59,7 +59,7 @@ The vault lock policy as a JSON string, which uses "\\" as an escape character\.
 
 ## Responses<a name="api-InitiateVaultLock-responses"></a>
 
-Amazon Glacier returns an `HTTP 201 Created` response, if the policy is accepted\.
+Amazon S3 Glacier \(Glacier\) returns an `HTTP 201 Created` response, if the policy is accepted\.
 
 ### Syntax<a name="api-InitiateVaultLock-response-syntax"></a>
 
@@ -85,7 +85,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-InitiateVaultLock-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-InitiateVaultLock-examples"></a>
 
@@ -106,7 +106,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `loc
 
 ### Example Response<a name="api-InitiateVaultLock-example-response"></a>
 
-If the request was successful, Amazon Glacier returns an `HTTP 201 Created` response, as shown in the following example\.
+If the request was successful, Glacier returns an `HTTP 201 Created` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 201 Created

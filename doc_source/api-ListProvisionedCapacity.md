@@ -19,7 +19,7 @@ To list the provisioned retrieval capacity for an account, send an HTTP GET requ
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ## Request Parameters<a name="api-ListProvisionedCapacity-RequestParameters"></a>
 
@@ -77,7 +77,7 @@ The date that the provisioned capacity unit expires, in Coordinated Universal Ti
 
 ### Errors<a name="api-ListProvisionedCapacity-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-ListProvisionedCapacity-examples"></a>
 
@@ -97,7 +97,7 @@ In this example, a GET request is sent to retrieve a list of the provisioned cap
 
 ### Example Response<a name="api-ListProvisionedCapacity-example1-response"></a>
 
-If the request was successful, Amazon Glacier returns a `HTTP 200 OK` with a list of provisioned capacity units for the account as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 200 OK` with a list of provisioned capacity units for the account as shown in the following example\.
 
  The provisioned capacity unit listed first is an example of a unit with a start date of January 31, 2017 and expiration date of February 28, 2017\. As stated earlier, if the start date is on the 31st day of a month, the expiration date is the last day of the next month\.
 

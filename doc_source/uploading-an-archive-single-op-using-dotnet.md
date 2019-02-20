@@ -1,4 +1,4 @@
-# Uploading an Archive in a Single Operation Using the AWS SDK for \.NET in Amazon Glacier<a name="uploading-an-archive-single-op-using-dotnet"></a>
+# Uploading an Archive in a Single Operation Using the AWS SDK for \.NET in Amazon S3 Glacier<a name="uploading-an-archive-single-op-using-dotnet"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to upload an archive in a single operation\.
 
@@ -67,11 +67,11 @@ The low\-level API provides methods for all the archive operations\. The followi
 
    In addition to the data you want to upload, You need to provide a checksum \(SHA\-256 tree hash\) of the payload, the vault name, and your account ID\. 
 
-   If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\. 
+   If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
 1. Execute the `UploadArchive` method by providing the request object as a parameter\. 
 
-   In response, Amazon Glacier returns an archive ID of the newly uploaded archive\. 
+   In response, Glacier returns an archive ID of the newly uploaded archive\. 
 
 ### Example: Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for \.NET<a name="upload-archive-single-op-lowlevel-dotnet"></a>
 

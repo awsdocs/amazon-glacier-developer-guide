@@ -4,7 +4,7 @@
 
 This operation aborts the vault locking process if the vault lock is not in the `Locked` state\. If the vault lock is in the `Locked` state when this operation is requested, the operation returns an `AccessDeniedException` error\. Aborting the vault locking process removes the vault lock policy from the specified vault\. 
 
-A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can get the state of a vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon Glacier Vault Lock](vault-lock.md)\. For more information about vault lock policies, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
+A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can get the state of a vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\. For more information about vault lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
 This operation is idempotent\. You can successfully invoke this operation multiple times, if the vault lock is in the `InProgress` state or if there is no policy associated with the vault\.
 
@@ -23,7 +23,7 @@ To delete the vault lock policy, send an HTTP `DELETE` request to the URI of the
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-AbortVaultLock-requests-parameters"></a>
 
@@ -39,7 +39,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-AbortVaultLock-responses"></a>
 
-If the policy is successfully deleted, Amazon Glacier returns an `HTTP 204 No Content` response\.
+If the policy is successfully deleted, Glacier returns an `HTTP 204 No Content` response\.
 
 ### Syntax<a name="api-AbortVaultLock-responses-syntax"></a>
 
@@ -59,7 +59,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-AbortVaultLock-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-AbortVaultLock-examples"></a>
 
@@ -79,7 +79,7 @@ In this example, a `DELETE` request is sent to the `lock-policy` subresource of 
 
 ### Example Response<a name="api-AbortVaultLock-example-response"></a>
 
-If the policy is successfully deleted Amazon Glacier returns an `HTTP 204 No Content` response, as shown in the following example\.
+If the policy is successfully deleted Glacier returns an `HTTP 204 No Content` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content

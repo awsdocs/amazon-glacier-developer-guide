@@ -1,4 +1,4 @@
-# Configuring Vault Notifications in Amazon Glacier Using the AWS SDK for Java<a name="configuring-notifications-sdk-java"></a>
+# Configuring Vault Notifications in Amazon S3 Glacier Using the AWS SDK for Java<a name="configuring-notifications-sdk-java"></a>
 
 The following are the steps to configure notifications on a vault using the low\-level API of the AWS SDK for Java\.
 
@@ -12,7 +12,7 @@ The following are the steps to configure notifications on a vault using the low\
 
 1. Execute the `setVaultNotifications` method by providing the request object as a parameter\. 
 
-The following Java code snippet illustrates the preceding steps\. The snippet sets a notification configuration on a vault\. The configuration requests Amazon Glacier to send a notification to the specified Amazon SNS topic when either the `ArchiveRetrievalCompleted` event or the `InventoryRetrievalCompleted` event occurs\.
+The following Java code snippet illustrates the preceding steps\. The snippet sets a notification configuration on a vault\. The configuration requests Amazon S3 Glacier \(Glacier\) to send a notification to the specified Amazon SNS topic when either the `ArchiveRetrievalCompleted` event or the `InventoryRetrievalCompleted` event occurs\.
 
 ```
 SetVaultNotificationsRequest request = new SetVaultNotificationsRequest()
@@ -31,7 +31,7 @@ For information about the underlying REST API, see [Vault Operations](vault-oper
 
 ## Example: Setting the Notification Configuration on a Vault Using the AWS SDK for Java<a name="configuring-notifications-sdk-java-example"></a>
 
-The following Java code example sets a vault's notifications configuration, deletes the configuration, and then restores the configuration\. For step\-by\-step instructions on how to run the following example, see [Using the AWS SDK for Java with Amazon Glacier](using-aws-sdk-for-java.md)\. 
+The following Java code example sets a vault's notifications configuration, deletes the configuration, and then restores the configuration\. For step\-by\-step instructions on how to run the following example, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\. 
 
 **Example**  
 

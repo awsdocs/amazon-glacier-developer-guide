@@ -1,10 +1,10 @@
-# Configuring Vault Notifications Using the Amazon Glacier Console<a name="configuring-notifications-console"></a>
+# Configuring Vault Notifications Using the Amazon S3 Glacier Console<a name="configuring-notifications-console"></a>
 
-This section describes how to configure vault notifications using the Amazon Glacier console\. When you configure notifications, you specify job completion events that trigger notification to an Amazon Simple Notification Service \(Amazon SNS\) topic\. In addition to configuring notifications for the vault, you can also specify a topic to publish notification to when you initiate a job\. If your vault is configured to notify for a specific event and you specify notification in the job initiation request, then two notifications are sent\. 
+This section describes how to configure vault notifications using the Amazon S3 Glacier \(Glacier\) console\. When you configure notifications, you specify job completion events that trigger notification to an Amazon Simple Notification Service \(Amazon SNS\) topic\. In addition to configuring notifications for the vault, you can also specify a topic to publish notification to when you initiate a job\. If your vault is configured to notify for a specific event and you specify notification in the job initiation request, then two notifications are sent\. 
 
 **To configure a vault notification**
 
-1. Sign into the AWS Management Console and open the Amazon Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign into the AWS Management Console and open the Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
 
 1. Select a vault in the vault list\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications05.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
@@ -24,4 +24,4 @@ This section describes how to configure vault notifications using the Amazon Gla
 
 1. Click **Save**\.
 **Important**  
-By default, a new topic does not have any subscriptions associated with it\. To receive notifications published to this topic, you must subscribe to the topic\. Follow the steps in [Subscribe to a Topic](http://docs.aws.amazon.com/sns/latest/gsg/Subscribe.html) in the *Amazon Simple Notification Service Getting Started Guide* to subscribe to a new topic\.
+By default, a new topic does not have any subscriptions associated with it\. To receive notifications published to this topic, you must subscribe to the topic\. Follow the steps in [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/gsg/Subscribe.html) in the *Amazon Simple Notification Service Getting Started Guide* to subscribe to a new topic\.

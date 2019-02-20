@@ -1,4 +1,4 @@
-# Downloading an Archive in Amazon Glacier Using the AWS SDK for \.NET<a name="downloading-an-archive-using-dotnet"></a>
+# Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="downloading-an-archive-using-dotnet"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to download an archive\.
 
@@ -70,7 +70,7 @@ namespace glacier.amazon.com.docsamples
 
 ## Downloading an Archive Using the Low\-Level API of the AWS SDK for \.NET<a name="downloading-an-archive-using-dotnet-lowlevel-api"></a>
 
-The following are the steps for downloading an Amazon Glacier archive using the low\-level API of the AWS SDK for \.NET\. 
+The following are the steps for downloading an Amazon S3 Glacier \(Glacier\) archive using the low\-level API of the AWS SDK for \.NET\. 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
@@ -78,7 +78,7 @@ The following are the steps for downloading an Amazon Glacier archive using the 
 
 1. Initiate an `archive-retrieval` job by executing the `InitiateJob` method\.
 
-   You provide job information, such as the archive ID of the archive you want to download and the optional Amazon SNS topic to which you want Amazon Glacier to post a job completion message, by creating an instance of the `InitiateJobRequest` class\. Amazon Glacier returns a job ID in response\. The response is available in an instance of the `InitiateJobResponse` class\.
+   You provide job information, such as the archive ID of the archive you want to download and the optional Amazon SNS topic to which you want Glacier to post a job completion message, by creating an instance of the `InitiateJobRequest` class\. Glacier returns a job ID in response\. The response is available in an instance of the `InitiateJobResponse` class\.
 
    ```
    AmazonGlacierClient client;
@@ -99,7 +99,7 @@ The following are the steps for downloading an Amazon Glacier archive using the 
    string jobId = initJobResponse.JobId;
    ```
 
-   You can optionally specify a byte range to request Amazon Glacier to prepare only a portion of the archive as shown in the following request\. The request specifies Amazon Glacier to prepare only the 1 MB to 2 MB portion of the archive\.
+   You can optionally specify a byte range to request Glacier to prepare only a portion of the archive as shown in the following request\. The request specifies Glacier to prepare only the 1 MB to 2 MB portion of the archive\.
 
    ```
    AmazonGlacierClient client;
@@ -126,13 +126,13 @@ The following are the steps for downloading an Amazon Glacier archive using the 
 
 1. Wait for the job to complete\.
 
-   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Amazon Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Amazon Glacier to publish a message\.
+   You must wait until the job output is ready for you to download\. If you have either set a notification configuration on the vault identifying an Amazon Simple Notification Service \(Amazon SNS\) topic or specified an Amazon SNS topic when you initiated a job, Glacier sends a message to that topic after it completes the job\. The code example given in the following section uses Amazon SNS for Glacier to publish a message\.
 
-   You can also poll Amazon Glacier by calling the `DescribeJob` method to determine the job completion status\. Although, using an Amazon SNS topic for notification is the recommended approach \. 
+   You can also poll Glacier by calling the `DescribeJob` method to determine the job completion status\. Although, using an Amazon SNS topic for notification is the recommended approach \. 
 
 1. Download the job output \(archive data\) by executing the `GetJobOutput` method\.
 
-   You provide the request information such as the job ID and vault name by creating an instance of the `GetJobOutputRequest` class\. The output that Amazon Glacier returns is available in the `GetJobOutputResponse` object\. 
+   You provide the request information such as the job ID and vault name by creating an instance of the `GetJobOutputRequest` class\. The output that Glacier returns is available in the `GetJobOutputResponse` object\. 
 
    ```
    GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest()
@@ -162,11 +162,11 @@ The following are the steps for downloading an Amazon Glacier archive using the 
    getJobOutputRequest.SetRange(0, 1048575); // Download only the first 1 MB chunk of the output.
    ```
 
-   In response to your `GetJobOutput` call, Amazon Glacier returns the checksum of the portion of the data you downloaded, if certain conditions are met\. For more information, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.
+   In response to your `GetJobOutput` call, Glacier returns the checksum of the portion of the data you downloaded, if certain conditions are met\. For more information, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.
 
-   To verify there are no errors in the download, you can then compute the checksum on the client\-side and compare it with the checksum Amazon Glacier sent in the response\. 
+   To verify there are no errors in the download, you can then compute the checksum on the client\-side and compare it with the checksum Glacier sent in the response\. 
 
-   For an archive retrieval job with the optional range specified, when you get the job description, it includes the checksum of the range you are retrieving \(SHA256TreeHash\)\.You can use this value to further verify the accuracy of the entire byte range that you later download\. For example, if you initiate a job to retrieve a tree\-hash aligned archive range and then download output in chunks such that each of your `GetJobOutput` requests return a checksum, then you can compute checksum of each portion you download on the client\-side and then compute the tree hash\. You can compare it with the checksum Amazon Glacier returns in response to your describe job request to verify that the entire byte range you have downloaded is the same as the byte range that is stored in Amazon Glacier\. 
+   For an archive retrieval job with the optional range specified, when you get the job description, it includes the checksum of the range you are retrieving \(SHA256TreeHash\)\.You can use this value to further verify the accuracy of the entire byte range that you later download\. For example, if you initiate a job to retrieve a tree\-hash aligned archive range and then download output in chunks such that each of your `GetJobOutput` requests return a checksum, then you can compute checksum of each portion you download on the client\-side and then compute the tree hash\. You can compare it with the checksum Glacier returns in response to your describe job request to verify that the entire byte range you have downloaded is the same as the byte range that is stored in Glacier\. 
 
    For a working example, see [Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for \.NET—Download Output in Chunks](#creating-vaults-sdk-dotnet-example2)\.
 
@@ -177,13 +177,13 @@ The following C\# code example downloads an archive from the specified vault\. A
 The example performs the following tasks:
 + Sets up an Amazon Simple Notification Service \(Amazon SNS\) topic 
 
-  Amazon Glacier sends a notification to this topic after it completes the job\. 
+  Glacier sends a notification to this topic after it completes the job\. 
 + Sets up an Amazon Simple Queue Service \(Amazon SQS\) queue\. 
 
   The example attaches a policy to the queue to enable the Amazon SNS topic to post messages\. 
 + Initiates a job to download the specified archive\.
 
-  In the job request, the example specifies the Amazon SNS topic so that Amazon Glacier can send a message after it completes the job\.
+  In the job request, the example specifies the Amazon SNS topic so that Glacier can send a message after it completes the job\.
 + Periodically checks the Amazon SQS queue for a message\. 
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. The code example uses the JSON\.NET library \(see [JSON\.NET](http://json.codeplex.com/)\) to parse the JSON\.
@@ -390,7 +390,7 @@ namespace glacier.amazon.com.docsamples
 
 ### Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for \.NET—Download Output in Chunks<a name="creating-vaults-sdk-dotnet-example2"></a>
 
-The following C\# code example retrieves an archive from Amazon Glacier\. The code example downloads the job output in chunks by specifying the byte range in a `GetJobOutputRequest` object\.
+The following C\# code example retrieves an archive from Glacier\. The code example downloads the job output in chunks by specifying the byte range in a `GetJobOutputRequest` object\.
 
 ```
 using System;

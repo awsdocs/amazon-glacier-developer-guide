@@ -2,13 +2,13 @@
 
 ## Description<a name="api-vault-put-description"></a>
 
-This operation creates a new vault with the specified name\.  The name of the vault must be unique within a region for an AWS account\. You can create up to 1,000 vaults per account\. For information on creating more vaults, go to the [Amazon Glacier product detail page](http://aws.amazon.com/glacier)\.
+This operation creates a new vault with the specified name\.  The name of the vault must be unique within a region for an AWS account\. You can create up to 1,000 vaults per account\. For information on creating more vaults, go to the [Amazon S3 Glacier product detail page](http://aws.amazon.com/glacier)\.
 
 You must use the following guidelines when naming a vault\. 
 +  Names can be between 1 and 255 characters long\. 
 + Allowed characters are a–z, A–Z, 0–9, '\_' \(underscore\), '\-' \(hyphen\), and '\.' \(period\)\.
 
-This operation is idempotent, you can send the same request multiple times and it has no further effect after the first time Amazon Glacier creates the specified vault\.
+This operation is idempotent, you can send the same request multiple times and it has no further effect after the first time Amazon S3 Glacier \(Glacier\) creates the specified vault\.
 
 ## Requests<a name="api-vault-put-requests"></a>
 
@@ -26,7 +26,7 @@ To create a vault, send an HTTP PUT request to the URI of the vault to be create
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-put-requests-parameters"></a>
 
@@ -66,7 +66,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-vault-put-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-put-examples"></a>
 
@@ -85,7 +85,7 @@ The following example sends an HTTP PUT request to create a vault named `example
 
 ### Example Response<a name="api-vault-put-example-response"></a>
 
-Amazon Glacier creates the vault and returns the relative URI path of the vault in the `Location` header\. The account ID is always displayed in the `Location` header regardless of whether the account ID or a hyphen \('`-`'\) was specified in the request\.
+Glacier creates the vault and returns the relative URI path of the vault in the `Location` header\. The account ID is always displayed in the `Location` header regardless of whether the account ID or a hyphen \('`-`'\) was specified in the request\.
 
 ```
 1. HTTP/1.1 201 Created
@@ -97,4 +97,4 @@ Amazon Glacier creates the vault and returns the relative URI path of the vault 
 ## Related Sections<a name="related-sections-vault-put"></a>
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

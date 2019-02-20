@@ -1,15 +1,15 @@
-# Step 6: Delete a Vault in Amazon Glacier<a name="getting-started-delete-vault"></a>
+# Step 6: Delete a Vault in Amazon S3 Glacier<a name="getting-started-delete-vault"></a>
 
-A vault is a container for storing archives\. You can delete an Amazon Glacier vault only if there are no archives in the vault as of the last inventory that Amazon Glacier computed and there have been no writes to the vault since the last inventory\. 
+A vault is a container for storing archives\. You can delete an Amazon S3 Glacier \(Glacier\) vault only if there are no archives in the vault as of the last inventory that Glacier computed and there have been no writes to the vault since the last inventory\. 
 
 **Note**  
-Amazon Glacier prepares an inventory for each vault periodically, every 24 hours\. Because the inventory might not reflect the latest information, Amazon Glacier ensures the vault is indeed empty by checking if there were any write operations since the last vault inventory\.
+Glacier prepares an inventory for each vault periodically, every 24 hours\. Because the inventory might not reflect the latest information, Glacier ensures the vault is indeed empty by checking if there were any write operations since the last vault inventory\.
 
-You can delete a vault programmatically or by using the Amazon Glacier console\. This section uses the console to delete a vault\. For information about deleting a vault programmatically, see [Deleting a Vault in Amazon Glacier](deleting-vaults.md)\.
+You can delete a vault programmatically or by using the Glacier console\. This section uses the console to delete a vault\. For information about deleting a vault programmatically, see [Deleting a Vault in Amazon S3 Glacier](deleting-vaults.md)\.
 
 **To delete a vault**
 
-1. Sign into the AWS Management Console and open the Amazon Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign into the AWS Management Console and open the Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
 
 1. From the region selector, select the AWS region where the vault exists that you want to delete\.
 

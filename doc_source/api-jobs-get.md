@@ -5,7 +5,7 @@
 This operation lists jobs for a vault, including jobs that are in\-progress and jobs that have recently finished\. 
 
 **Note**  
-Amazon Glacier retains recently completed jobs for a period before deleting them; however, it eventually removes completed jobs\. The output of completed jobs can be retrieved\. Retaining completed jobs for a period of time after they have completed enables you to get a job output in the event you miss the job completion notification, or your first attempt to download it fails\. For example, suppose that you start an archive retrieval job to download an archive\. After the job completes, you start to download the archive but encounter a network error\. In this scenario, you can retry and download the archive while the job exists\. 
+Amazon S3 Glacier \(Glacier\) retains recently completed jobs for a period before deleting them; however, it eventually removes completed jobs\. The output of completed jobs can be retrieved\. Retaining completed jobs for a period of time after they have completed enables you to get a job output in the event you miss the job completion notification, or your first attempt to download it fails\. For example, suppose that you start an archive retrieval job to download an archive\. After the job completes, you start to download the archive but encounter a network error\. In this scenario, you can retry and download the archive while the job exists\. 
 
 The `List Jobs` operation supports pagination\. You should always check the response `Marker` field\. If there are no more jobs to list, the `Marker` field is set to `null`\. If there are more jobs to list, the `Marker` field is set to a non\-null value, which you can use to continue the pagination of the list\. To return a list of jobs that begins at a specific job, set the `marker` request parameter to the `Marker` value for that job that you obtained from a previous `List Jobs` request\.
 
@@ -28,7 +28,7 @@ Additionally, you can filter the jobs list returned by specifying the optional `
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-jobs-get-requests-parameters"></a>
 
@@ -166,7 +166,7 @@ An opaque string that represents where to continue pagination of the results\. Y
 
 ### Errors<a name="api-jobs-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-jobs-get-examples"></a>
 
@@ -319,4 +319,4 @@ The following response shows two jobs returned and the `Marker` field set to a n
 
 ## Related Sections<a name="related-sections-list-jobs"></a>
 +  [Describe Job \(GET JobID\)](api-describe-job-get.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md) 
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md) 

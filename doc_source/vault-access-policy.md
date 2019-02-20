@@ -1,19 +1,19 @@
-# Amazon Glacier Access Control with Vault Access Policies<a name="vault-access-policy"></a>
+# Amazon S3 Glacier Access Control with Vault Access Policies<a name="vault-access-policy"></a>
 
-An Amazon Glacier *vault access policy* is a resource\-based policy that you can use to manage permissions to your vault\. For information about the different permissions policy options available, see [Managing Access to Resources](access-control-overview.md#access-control-manage-access-intro)\.
+An Amazon S3 Glacier vault access policy is a resource\-based policy that you can use to manage permissions to your vault\. For information about the different permissions policy options available, see [Managing Access to Resources](access-control-overview.md#access-control-manage-access-intro)\.
 
-You can create one vault access policy for each vault to manage *permissions*\. You can modify permissions in a vault access policy at any time\. Amazon Glacier also supports a Vault Lock policy on each vault that, after you lock it, cannot be altered\. For more information about working with Vault Lock policies, see [Amazon Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\. 
+You can create one vault access policy for each vault to manage *permissions*\. You can modify permissions in a vault access policy at any time\. Glacier also supports a Vault Lock policy on each vault that, after you lock it, cannot be altered\. For more information about working with Vault Lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\. 
 
-You can use the Amazon Glacier API, AWS SDKs, AWS CLI, or the Amazon Glacier console to create and manage vault access policies\. For a list of Amazon Glacier operations allowed for vault access resource\-based policies, see [Amazon Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
+You can use the Glacier API, AWS SDKs, AWS CLI, or the Glacier console to create and manage vault access policies\. For a list of operations allowed for vault access resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
 **Topics**
-+ [Example 1: Grant Cross\-Account Permissions for Specific Amazon Glacier Actions](#vault-access-policy-example-multiple-accounts)
++ [Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions](#vault-access-policy-example-multiple-accounts)
 + [Example 2: Grant Read\-Only Permissions to All AWS Accounts](#vault-access-policy-example-read-only-all-aws-accounts)
 + [Example 3: Grant Cross\-Account Permissions for MFA Delete Operations](#vault-access-policy-example-mfa-authentication)
 
-## Example 1: Grant Cross\-Account Permissions for Specific Amazon Glacier Actions<a name="vault-access-policy-example-multiple-accounts"></a>
+## Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions<a name="vault-access-policy-example-multiple-accounts"></a>
 
-The following example policy grants cross\-account permissions to two AWS accounts for a set of Amazon Glacier operations on a vault named `examplevault`\.
+The following example policy grants cross\-account permissions to two AWS accounts for a set of Glacier operations on a vault named `examplevault`\.
 
 **Note**  
 The account that owns the vault is billed for all costs associated with the vault\. All requests, data transfer, and retrieval costs made by allowed external accounts are billed to the account that owns the vault\.
@@ -47,7 +47,7 @@ The account that owns the vault is billed for all costs associated with the vaul
 
 ## Example 2: Grant Read\-Only Permissions to All AWS Accounts<a name="vault-access-policy-example-read-only-all-aws-accounts"></a>
 
-The following example policy grants permissions that allow all AWS accounts to perform Amazon Glacier operations to retrieve any archive in a vault named `examplevault`\. The retrieved archives will be read\-only for these accounts\.
+The following example policy grants permissions that allow all AWS accounts to perform Glacier operations to retrieve any archive in a vault named `examplevault`\. The retrieved archives will be read\-only for these accounts\.
 
 ```
  1. {
@@ -71,9 +71,9 @@ The following example policy grants permissions that allow all AWS accounts to p
 
 ## Example 3: Grant Cross\-Account Permissions for MFA Delete Operations<a name="vault-access-policy-example-mfa-authentication"></a>
 
-You can use multi\-factor authentication \(MFA\) to protect your Amazon Glacier resources\. To provide an extra level of security, MFA requires users to prove physical possession of an MFA device by providing a valid MFA code\. For more information about configuring MFA access, see [Configuring MFA\-Protected API Access](http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html) in the *IAM User Guide*\. 
+You can use multi\-factor authentication \(MFA\) to protect your Glacier resources\. To provide an extra level of security, MFA requires users to prove physical possession of an MFA device by providing a valid MFA code\. For more information about configuring MFA access, see [Configuring MFA\-Protected API Access](https://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html) in the *IAM User Guide*\. 
 
-The example policy grants an AWS account with temporary credentials permission to delete archives from a vault named examplevault, provided the request is authenticated with an MFA device\. The policy uses the `aws:MultiFactorAuthPresent` condition key to specify this additional requirement\. For more information, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
+The example policy grants an AWS account with temporary credentials permission to delete archives from a vault named examplevault, provided the request is authenticated with an MFA device\. The policy uses the `aws:MultiFactorAuthPresent` condition key to specify this additional requirement\. For more information, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
 
 ```
  1. {

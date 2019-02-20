@@ -2,7 +2,7 @@
 
 ## Description<a name="api-GetDataRetrievalPolicy-description"></a>
 
-This operation returns the current data retrieval policy for the account and region specified in the `GET` request\. For more information about data retrieval policies, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+This operation returns the current data retrieval policy for the account and region specified in the `GET` request\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Requests<a name="api-GetDataRetrievalPolicy-requests"></a>
 
@@ -19,7 +19,7 @@ To return the current data retrieval policy, send an HTTP `GET` request to the d
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-GetDataRetrievalPolicy-requests-parameters"></a>
 
@@ -76,11 +76,11 @@ The policy rule\. Although this is a list type, currently there will be only one
 **Strategy**  
 The type of data retrieval policy\.  
 *Type*: String  
-Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ### Errors<a name="api-GetDataRetrievalPolicy-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-GetDataRetrievalPolicy-examples"></a>
 

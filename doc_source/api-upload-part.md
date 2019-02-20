@@ -8,8 +8,8 @@ For information about multipart upload, see [Uploading Large Archives in Parts \
 
  
 
-Amazon Glacier rejects your upload part request if any of the following conditions is true:
-+ **SHA256 tree hash does not match—**To ensure that part data is not corrupted in transmission, you compute a SHA256 tree hash of the part and include it in your request\. Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash\. If the two hash values don't match, the operation fails\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\.
+Amazon S3 Glacier \(Glacier\) rejects your upload part request if any of the following conditions is true:
++ **SHA256 tree hash does not match—**To ensure that part data is not corrupted in transmission, you compute a SHA256 tree hash of the part and include it in your request\. Upon receiving the part data, Glacier also computes a SHA256 tree hash\. If the two hash values don't match, the operation fails\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\.
 + **SHA256 linear hash does not match—**Required for authorization, you compute a SHA256 linear hash of the entire uploaded payload and include it in your request\. For information about computing a SHA256 linear hash, see [Computing Checksums](checksum-calculations.md)\.
 + **Part size does not match—**The size of each part except the last must match the size that is specified in the corresponding [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request\. The size of the last part must be the same size as, or smaller than, the specified size\.
 **Note**  
@@ -20,7 +20,7 @@ This operation is idempotent\. If you upload the same part multiple times, the d
 
 ## Requests<a name="api-job-get-requests"></a>
 
-You send this HTTP `PUT` request to the URI of the upload ID that was returned by your Initiate Multipart Upload request\. Amazon Glacier uses the upload ID to associate part uploads with a specific multipart upload\. The request must include a SHA256 tree hash of the part data \(`x-amz-SHA256-tree-hash` header\), a SHA256 linear hash of the entire payload \(`x-amz-content-sha256` header\), the byte range \(`Content-Range` header\), and the length of the part in bytes \(`Content-Length` header\)\. 
+You send this HTTP `PUT` request to the URI of the upload ID that was returned by your Initiate Multipart Upload request\. Glacier uses the upload ID to associate part uploads with a specific multipart upload\. The request must include a SHA256 tree hash of the part data \(`x-amz-SHA256-tree-hash` header\), a SHA256 linear hash of the entire payload \(`x-amz-content-sha256` header\), the byte range \(`Content-Range` header\), and the length of the part in bytes \(`Content-Length` header\)\. 
 
 ### Syntax<a name="api-job-get-requests-syntax"></a>
 
@@ -38,7 +38,7 @@ You send this HTTP `PUT` request to the URI of the upload ID that was returned b
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-upload-part-requests-parameters"></a>
 
@@ -52,7 +52,7 @@ This operation uses the following request headers, in addition to the request he
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
 | Content\-Length  |  Identifies the length of the part in bytes\.  Type: String Default: None Constraints: None  |  No | 
-| Content\-Range  |  Identifies the range of bytes in the assembled archive that will be uploaded in this part\. Amazon Glacier uses this information to assemble the archive in the proper sequence\. The format of this header follows [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16)\. An example header is `Content-Range:bytes 0-4194303/*`\. Type: String Default: None Constraints: The range cannot be greater than the part size that you specified when you initiated the multipart upload\.   |  Yes | 
+| Content\-Range  |  Identifies the range of bytes in the assembled archive that will be uploaded in this part\. Glacier uses this information to assemble the archive in the proper sequence\. The format of this header follows [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16)\. An example header is `Content-Range:bytes 0-4194303/*`\. Type: String Default: None Constraints: The range cannot be greater than the part size that you specified when you initiated the multipart upload\.   |  Yes | 
 |  x\-amz\-content\-sha256  |  The SHA256 checksum \(a linear hash\) of the uploaded payload\. This is not the same value as you specify in the `x-amz-sha256-tree-hash` header\. Type: String Default: None Constraints: None  |  Yes | 
 |  x\-amz\-sha256\-tree\-hash​  |  Specifies a SHA256 tree hash of the data being uploaded\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\. Type: String Default: None Constraints: None  |  Yes | 
 
@@ -62,7 +62,7 @@ This operation uses the following request headers, in addition to the request he
 
 ## Responses<a name="api-job-get-responses"></a>
 
-Upon a successful part upload, Amazon Glacier returns a `204 No Content` response\. 
+Upon a successful part upload, Glacier returns a `204 No Content` response\. 
 
 ### Syntax<a name="api-job-get-response-syntax"></a>
 
@@ -80,7 +80,7 @@ A successful response includes the following response headers, in addition to th
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  x\-amz\-sha256\-tree\-hash​  |  The SHA256 tree hash that Amazon Glacier computed for the uploaded part\. Type: String  | 
+|  x\-amz\-sha256\-tree\-hash​  |  The SHA256 tree hash that Glacier computed for the uploaded part\. Type: String  | 
 
 ### Response Body<a name="api-job-get-responses-elements"></a>
 
@@ -119,7 +119,7 @@ To upload the next part, the procedure is the same; however, you must calculate 
 9. Authorization: Authorization=AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20120525/us-west-2/glacier/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-glacier-version, Signature=16b9a9e220a37e32f2e7be196b4ebb87120ca7974038210199ac5982e792cace
 ```
 
-The parts can be uploaded in any order; Amazon Glacier uses the range specification for each part to determine the order in which to assemble them\.
+The parts can be uploaded in any order; Glacier uses the range specification for each part to determine the order in which to assemble them\.
 
 ### Example Response<a name="api-job-get-examples-sample-response"></a>
 
@@ -138,4 +138,4 @@ The parts can be uploaded in any order; Amazon Glacier uses the range specificat
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

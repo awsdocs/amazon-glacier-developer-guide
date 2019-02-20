@@ -25,7 +25,7 @@ To abort a multipart upload, send an HTTP `DELETE` request to the URI of the `mu
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-multipart-abort-upload-requests-parameters"></a>
 
@@ -59,7 +59,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-multipart-abort-upload-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Example<a name="api-multipart-abort-upload-examples"></a>
 
@@ -90,4 +90,4 @@ In the following example, a `DELETE` request is sent to the URI of a multipart u
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

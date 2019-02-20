@@ -1,6 +1,6 @@
-# Tagging Amazon Glacier Resources<a name="tagging"></a>
+# Tagging Amazon S3 Glacier Resources<a name="tagging"></a>
 
-A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *key* and a *value*, both of which you define\. You can assign the tags that you define to Amazon Glacier vault resources\. Using tags is a simple yet powerful way to manage AWS resources and organize data, including billing data\. 
+A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *key* and a *value*, both of which you define\. You can assign the tags that you define to Amazon S3 Glacier \(Glacier\) vault resources\. Using tags is a simple yet powerful way to manage AWS resources and organize data, including billing data\. 
 
 **Topics**
 + [Tagging Basics](#tagging-basics)
@@ -11,12 +11,12 @@ A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *
 
 ## Tagging Basics<a name="tagging-basics"></a>
 
-You use the Amazon Glacier console, AWS Command Line Interface \(AWS CLI\), or Amazon Glacier API to complete the following tasks:
+You use the Glacier console, AWS Command Line Interface \(AWS CLI\), or Glacier API to complete the following tasks:
 + Adding tags to a vault
 + Listing the tags for a vault
 + Removing tags from a vault
 
-For information about how to add, list, and remove tags, see [Tagging Your Amazon Glacier Vaults](tagging-vaults.md)\.
+For information about how to add, list, and remove tags, see [Tagging Your Amazon S3 Glacier Vaults](tagging-vaults.md)\.
 
 You can use tags to categorize your vaults\. For example, you can categorize vaults by purpose, owner, or environment\. Because you define the key and value for each tag, you can create a custom set of categories to meet your specific needs\. For example, you might define a set of tags that helps you track vaults by owner and purpose for the vault\. Following are a few examples of tags:
 + Owner: Name
@@ -41,11 +41,11 @@ Tag value restrictions are as follows:
 
 ## Tracking Costs Using Tagging<a name="tagging-billing"></a>
 
-You can use tags to categorize and track your AWS costs\. When you apply tags to any AWS resources, including vaults, your AWS cost allocation report includes usage and costs aggregated by tags\. You can apply tags that represent business categories \(such as cost centers, application names, and owners\) to organize your costs across multiple services\. For more information, see [Use Cost Allocation Tags for Custom Billing Reports](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
+You can use tags to categorize and track your AWS costs\. When you apply tags to any AWS resources, including vaults, your AWS cost allocation report includes usage and costs aggregated by tags\. You can apply tags that represent business categories \(such as cost centers, application names, and owners\) to organize your costs across multiple services\. For more information, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
 
 ## Managing Access Control with Tagging<a name="tagging-access-control"></a>
 
 You can use tags as a condition in an access policy statement\. For example, you can set up a legal hold tag and include it as a condition in a data retention policy that states that “archive deletion from everyone will be denied if the legal hold tag value is set to `True`\.” You can deploy the data retention policy and set the legal hold tag to `False` under normal conditions\. If your data must be put on hold to assist an investigation, you can easily turn on the legal hold by setting the tag value to `True` and removing the hold in a similar way later on\. For an example, see [Example 2: Deny Deletion Permissions Based on a Tag](vault-lock-policy.md#vault-lock-policy-example-legal-hold-tag)\.
 
 ## Related Sections<a name="related-sections-tagging"></a>
-+ [Tagging Your Amazon Glacier Vaults](tagging-vaults.md)
++ [Tagging Your Amazon S3 Glacier Vaults](tagging-vaults.md)

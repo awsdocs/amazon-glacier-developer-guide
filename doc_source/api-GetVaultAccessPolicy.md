@@ -2,7 +2,7 @@
 
 ## Description<a name="api-GetVaultAccessPolicy-description"></a>
 
-This operation retrieves the `access-policy` subresource set on the vault—for more information on setting this subresource, see [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)\. If there is no access policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault access policies, see [Amazon Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
+This operation retrieves the `access-policy` subresource set on the vault—for more information on setting this subresource, see [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)\. If there is no access policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
 
 ## Requests<a name="api-GetVaultAccessPolicy-requests"></a>
 
@@ -19,7 +19,7 @@ To return the current vault access policy, send an HTTP `GET` request to the URI
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-GetVaultAccessPolicy-requests-parameters"></a>
 
@@ -35,7 +35,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-GetVaultAccessPolicy-responses"></a>
 
-In response, Amazon Glacier returns the vault access policy in JSON format in the body of the response\. 
+In response, Amazon S3 Glacier \(Glacier\) returns the vault access policy in JSON format in the body of the response\. 
 
 ### Syntax<a name="api-GetVaultAccessPolicy-responses-syntax"></a>
 
@@ -65,7 +65,7 @@ The vault access policy as a JSON string, which uses "\\" as an escape character
 
 ### Errors<a name="api-GetVaultAccessPolicy-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-GetVaultAccessPolicy-examples"></a>
 
@@ -85,7 +85,7 @@ In this example, a `GET` request is sent to the URI of a vault's `access-policy`
 
 ### Example Response<a name="api-GetVaultAccessPolicy-example-response"></a>
 
-If the request was successful, Amazon Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md) examples\. However, the following example shows the returned JSON string without escape characters for readability\. 
+If the request was successful, Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md) examples\. However, the following example shows the returned JSON string without escape characters for readability\. 
 
 ```
  1. HTTP/1.1 200 OK

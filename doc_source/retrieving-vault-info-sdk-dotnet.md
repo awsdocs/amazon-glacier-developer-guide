@@ -1,4 +1,4 @@
-# Retrieving Vault Metadata in Amazon Glacier Using the AWS SDK for \.NET<a name="retrieving-vault-info-sdk-dotnet"></a>
+# Retrieving Vault Metadata in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="retrieving-vault-info-sdk-dotnet"></a>
 
 **Topics**
 + [Retrieve Vault Metadata for a Vault](#retrieve-vault-info-sdk-dotnet-lowlevel-one-vault)
@@ -15,11 +15,11 @@ You can retrieve metadata for a specific vault or all the vaults in a specific r
 
 1. Provide request information by creating an instance of the `DescribeVaultRequest` class\.
 
-   Amazon Glacier requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon Glacier](using-aws-sdk-for-dot-net.md)\.
+   Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\.
 
 1. Execute the `DescribeVault` method by providing the request object as a parameter\. 
 
-   The vault metadata information that Amazon Glacier returns is available in the `DescribeVaultResult` object\.
+   The vault metadata information that Glacier returns is available in the `DescribeVaultResult` object\.
 
 The following C\# code snippet illustrates the preceding steps\. The snippet retrieves metadata information of an existing vault in the US West \(Oregon\) Region\. 
 
@@ -75,7 +75,7 @@ do
 } while (lastMarker != null);
 ```
 
-In the preceding code segment, if you don't specify the `Limit` value in the request, Amazon Glacier returns up to 1,000 vaults, as set by the Amazon Glacier API\. 
+In the preceding code segment, if you don't specify the `Limit` value in the request, Glacier returns up to 10 vaults, as set by the Glacier API\. 
 
 Note that the information returned for each vault in the list is the same as the information you get by calling the `DescribeVault` method for a specific vault\. 
 

@@ -1,21 +1,21 @@
-# Using the AWS SDK for Java with Amazon Glacier<a name="using-aws-sdk-for-java"></a>
+# Using the AWS SDK for Java with Amazon S3 Glacier<a name="using-aws-sdk-for-java"></a>
 
-The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon Glacier as described in [Using the AWS SDKs with Amazon Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [AWS SDK for Java](http://aws.amazon.com/sdkforjava/)\.
+The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon S3 Glacier \(Glacier\) as described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [AWS SDK for Java](http://aws.amazon.com/sdkforjava/)\.
 
 **Note**  
-The AWS SDK for Java provides thread\-safe clients for accessing Amazon Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
+The AWS SDK for Java provides thread\-safe clients for accessing Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
 
 **Topics**
 + [Using the Low\-Level API](#about-low-level-java-api)
 + [Using the High\-Level API](#about-high-level-java-api)
-+ [Running Java Examples for Amazon Glacier Using Eclipse](#setting-up-and-testing-sdk-java)
++ [Running Java Examples for Amazon S3 Glacier Using Eclipse](#setting-up-and-testing-sdk-java)
 + [Setting the Endpoint](#setting-sdk-java-endpoint)
 
 ## Using the Low\-Level API<a name="about-low-level-java-api"></a>
 
-The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Amazon Glacier \( [API Reference for Amazon Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return the Amazon Glacier response to the operation\. 
+The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Glacier \( [API Reference for Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return the Glacier response to the operation\. 
 
-For example, the `AmazonGlacierClient` class provides the `createVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultResult` object that receives the Amazon Glacier response as shown in the following Java code snippet:
+For example, the `AmazonGlacierClient` class provides the `createVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultResult` object that receives the Glacier response as shown in the following Java code snippet:
 
 ```
 AmazonGlacierClient client = new AmazonGlacierClient(credentials);
@@ -30,7 +30,7 @@ CreateVaultResult result = client.createVault(createVaultRequest);
 All the low\-level samples in the guide use this pattern\. 
 
 **Note**  
-The preceding code segment specifies `AccountID` when creating the request\. However, when using the AWS SDK for Java, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for Java, if you don't provide the account ID, the library sets the account ID to '\-'\. 
+The preceding code segment specifies `AccountID` when creating the request\. However, when using the AWS SDK for Java, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for Java, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
 ## Using the High\-Level API<a name="about-high-level-java-api"></a>
 
@@ -53,7 +53,7 @@ All the high\-level examples in this guide use this pattern\.
 **Note**  
 The high\-level `ArchiveTransferManager` class can be constructed with an `AmazonGlacierClient` instance or an `AWSCredentials` instance\.
 
-## Running Java Examples for Amazon Glacier Using Eclipse<a name="setting-up-and-testing-sdk-java"></a>
+## Running Java Examples for Amazon S3 Glacier Using Eclipse<a name="setting-up-and-testing-sdk-java"></a>
 
 The easiest way to get started with the Java code examples is to install the latest AWS Toolkit for Eclipse\. For information on installing or updating to the latest toolkit, go to [http://aws\.amazon\.com/eclipse](http://aws.amazon.com/eclipse)\. The following tasks guide you through the creation and testing of the Java code examples provided in this section\.
 
@@ -95,4 +95,4 @@ snsClient.setEndpoint("sns.us-west-2.amazonaws.com");
 ArchiveTransferManager atm = new ArchiveTransferManager(glacierClient, sqsClient, snsClient);
 ```
 
-For a list of supported regions and endpoints, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\.
+For a list of supported regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\.

@@ -2,7 +2,7 @@
 
 ## Description<a name="api-vault-get-description"></a>
 
-This operation returns information about a vault, including the vault Amazon Resource Name \(ARN\), the date the vault was created, the number of archives contained within the vault, and the total size of all the archives in the vault\. The number of archives and their total size are as of the last vault inventory Amazon Glacier generated \(see [Working with Vaults in Amazon Glacier](working-with-vaults.md)\)\. Amazon Glacier generates vault inventories approximately daily\. This means that if you add or remove an archive from a vault, and then immediately send a Describe Vault request, the response might not reflect the changes\. 
+This operation returns information about a vault, including the vault Amazon Resource Name \(ARN\), the date the vault was created, the number of archives contained within the vault, and the total size of all the archives in the vault\. The number of archives and their total size are as of the last vault inventory Amazon S3 Glacier \(Glacier\) generated \(see [Working with Vaults in Amazon S3 Glacier](working-with-vaults.md)\)\. Glacier generates vault inventories approximately daily\. This means that if you add or remove an archive from a vault, and then immediately send a Describe Vault request, the response might not reflect the changes\. 
 
 ## Requests<a name="api-vault-get-requests"></a>
 
@@ -19,7 +19,7 @@ To get information about a vault, send a `GET` request to the URI of the specifi
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-get-requests-parameters"></a>
 
@@ -67,7 +67,7 @@ The UTC date when the vault was created\.
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **LastInventoryDate**  
-The UTC date when Amazon Glacier completed the last vault inventory\. For information about initiating an inventory for a vault, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\.  
+The UTC date when Glacier completed the last vault inventory\. For information about initiating an inventory for a vault, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\.  
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **NumberOfArchives**  
@@ -88,7 +88,7 @@ The vault name that was specified at creation time\. The vault name is also incl
 
 ### Errors<a name="api-vault-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-get-examples"></a>
 
@@ -128,4 +128,4 @@ Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

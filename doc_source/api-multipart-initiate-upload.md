@@ -2,16 +2,16 @@
 
 ## Description<a name="api-multipart-initiate-upload-description"></a>
 
-This operation initiates a multipart upload \(see [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)\)\. Amazon Glacier creates a multipart upload resource and returns its ID in the response\. You use this Upload ID in subsequent multipart upload operations\.
+This operation initiates a multipart upload \(see [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)\)\. Amazon S3 Glacier \(Glacier\) creates a multipart upload resource and returns its ID in the response\. You use this Upload ID in subsequent multipart upload operations\.
 
 When you initiate a multipart upload, you specify the part size in number of bytes\. The part size must be a megabyte \(1024 KB\) multiplied by a power of 2—for example, 1048576 \(1 MB\), 2097152 \(2 MB\), 4194304 \(4 MB\), 8388608 \(8 MB\), and so on\. The minimum allowable part size is 1 MB, and the maximum is 4 GB\.
 
 Every part you upload using this upload ID, except the last one, must have the same size\. The last one can be the same size or smaller\. For example, suppose you want to upload a 16\.2 MB file\. If you initiate the multipart upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part of 0\.2 MB\. 
 
 **Note**  
-You don't need to know the size of the archive when you start a multipart upload because Amazon Glacier does not require you to specify the overall archive size\.
+You don't need to know the size of the archive when you start a multipart upload because Glacier does not require you to specify the overall archive size\.
 
-After you complete the multipart upload, Amazon Glacier removes the multipart upload resource referenced by the ID\. Amazon Glacier will also remove the multipart upload resource if you cancel the multipart upload or it may be removed if there is no activity for a period of 24 hours\. The ID may still be available after 24 hours, but applications should not expect this behavior\.
+After you complete the multipart upload, Glacier removes the multipart upload resource referenced by the ID\. Glacier will also remove the multipart upload resource if you cancel the multipart upload or it may be removed if there is no activity for a period of 24 hours\. The ID may still be available after 24 hours, but applications should not expect this behavior\.
 
 ## Requests<a name="api-multipart-initiate-upload-requests"></a>
 
@@ -30,7 +30,7 @@ To initiate a multipart upload, you send an HTTP `POST` request to the URI of th
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-archive-post-requests-parameters1"></a>
 
@@ -52,7 +52,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-multipart-initiate-upload-responses"></a>
 
-In the response, Amazon Glacier creates a multipart upload resource identified by an ID and returns the relative URI path of the multipart upload ID\. 
+In the response, Glacier creates a multipart upload resource identified by an ID and returns the relative URI path of the multipart upload ID\. 
 
 ### Syntax<a name="api-multipart-initiate-upload-response-syntax"></a>
 
@@ -71,7 +71,7 @@ A successful response includes the following response headers, in addition to th
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Location  |  The relative URI path of the multipart upload ID Amazon Glacier created\. You use this URI path to scope your requests to upload parts, and to complete the multipart upload\.  Type: String  | 
+|  Location  |  The relative URI path of the multipart upload ID Glacier created\. You use this URI path to scope your requests to upload parts, and to complete the multipart upload\.  Type: String  | 
 |  x\-amz\-multipart\-upload\-id  |  The ID of the multipart upload\. This value is also included as part of the `Location` header\.  Type: String  | 
 
 ### Response Body<a name="api-archive-post-responses-elements1"></a>
@@ -80,7 +80,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-archive-post-responses-errors1"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Example<a name="initiate-mpu-api-example"></a>
 
@@ -100,7 +100,7 @@ The following example initiates a multipart upload by sending an HTTP `POST` req
 
 ### Example Response<a name="api-multipart-initiate-upload-example-response"></a>
 
-Amazon Glacier creates a multipart upload resource and adds it to the `multipart-uploads` subresource of the vault\. The `Location` response header includes the relative URI path to the multipart upload ID\. 
+Glacier creates a multipart upload resource and adds it to the `multipart-uploads` subresource of the vault\. The `Location` response header includes the relative URI path to the multipart upload ID\. 
 
 ```
 1. HTTP/1.1 201 Created
@@ -120,4 +120,4 @@ For information about uploading individual parts, see [Upload Part \(PUT uploadI
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
 + [Delete Archive \(DELETE archive\)](api-archive-delete.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

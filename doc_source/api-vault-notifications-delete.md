@@ -2,7 +2,7 @@
 
 ## Description<a name="api-vault-notifications-delete-description"></a>
 
-This operation deletes the notification configuration set for a vault [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. The operation is eventually consistent—that is, it might take some time for Amazon Glacier to completely disable the notifications, and you might still receive some notifications for a short time after you send the delete request\. 
+This operation deletes the notification configuration set for a vault [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(Glacier\) to completely disable the notifications, and you might still receive some notifications for a short time after you send the delete request\. 
 
 ## Requests<a name="api-vault-notifications-delete-requests"></a>
 
@@ -19,7 +19,7 @@ To delete a vault's notification configuration, send a `DELETE` request to the v
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vault-notifications-delete-requests-parameters"></a>
 
@@ -53,7 +53,7 @@ This operation does not return a response body\.
 
 ### Errors<a name="api-vault-notifications-delete-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vault-notifications-delete-examples"></a>
 
@@ -82,4 +82,4 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 ## Related Sections<a name="related-sections-vault-notifications-delete"></a>
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)

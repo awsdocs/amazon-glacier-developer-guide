@@ -1,9 +1,9 @@
-# Using the AWS SDK for \.NET with Amazon Glacier<a name="using-aws-sdk-for-dot-net"></a>
+# Using the AWS SDK for \.NET with Amazon S3 Glacier<a name="using-aws-sdk-for-dot-net"></a>
 
-The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the AWS SDKs with Amazon Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
+The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
 
 **Note**  
-The low\-level API and high\-level API provide thread\-safe clients for accessing Amazon Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
+The low\-level API and high\-level API provide thread\-safe clients for accessing Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
 
 **Topics**
 + [Using the Low\-Level API](#about-low-level-dotnet-api)
@@ -13,9 +13,9 @@ The low\-level API and high\-level API provide thread\-safe clients for accessin
 
 ## Using the Low\-Level API<a name="about-low-level-dotnet-api"></a>
 
-The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Amazon Glacier \( [API Reference for Amazon Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return an Amazon Glacier response to the operation\. 
+The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Amazon S3 Glacier \(Glacier\) \( [API Reference for Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return a Glacier response to the operation\. 
 
-For example, the `AmazonGlacierClient` class provides the `CreateVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultRequest` and `CreateVaultResponse` classes to provide request information and receive an Amazon Glacier response as shown in the following C\# code snippet:
+For example, the `AmazonGlacierClient` class provides the `CreateVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultRequest` and `CreateVaultResponse` classes to provide request information and receive a Glacier response as shown in the following C\# code snippet:
 
 ```
 AmazonGlacierClient client;
@@ -33,7 +33,7 @@ CreateVaultResponse response = client.CreateVault(request);
 All the low\-level samples in the guide use this pattern\. 
 
 **Note**  
-The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
+The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
 ## Using the High\-Level API<a name="about-high-level-dotnet-api"></a>
 
@@ -88,4 +88,4 @@ The following snippet shows how to set the endpoint to the US West \(Oregon\) re
 var manager = new ArchiveTransferManager(Amazon.RegionEndpoint.USWest2);
 ```
 
-For a current list of supported regions and endpoints, see [Accessing Amazon Glacier](amazon-glacier-accessing.md)\.
+For a current list of supported regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\.

@@ -4,7 +4,7 @@
 
 This operation lists all vaults owned by the calling user’s account\. The list returned in the response is ASCII\-sorted by vault name\. 
 
-By default, this operation returns up to 10 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon Glacier returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
+By default, this operation returns up to 10 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon S3 Glacier \(Glacier\) returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
 
 ## Requests<a name="api-vaults-get-requests"></a>
 
@@ -21,7 +21,7 @@ To get a list of vaults, you send a `GET` request to the *vaults* resource\.
 ```
 
 **Note**  
-The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
+The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
 ### Request Parameters<a name="api-vaults-get-requests-parameters"></a>
 
@@ -110,13 +110,13 @@ The vault name\.
 
 ### Errors<a name="api-vaults-get-responses-errors"></a>
 
-For information about Amazon Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
+For information about Amazon S3 Glacier exceptions and error messages, see [Error Responses](api-error-responses.md)\.
 
 ## Examples<a name="api-vaults-get-examples"></a>
 
 ### Example: List All Vaults<a name="api-vaults-get-example1"></a>
 
-The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 1,000 vaults are returned\.
+The following example lists vaults\. Because the `marker` and `limit` parameters are not specified in the request, up to 10 vaults are returned\.
 
 #### Example Request<a name="api-vaults-get-example1-request"></a>
 
@@ -222,4 +222,4 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon Glacier](auth-and-access-control.md)
++ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
