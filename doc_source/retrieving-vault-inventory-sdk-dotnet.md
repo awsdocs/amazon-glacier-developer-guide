@@ -112,7 +112,7 @@ namespace glacier.amazon.com.docsamples
         "        {" +
         "            \"Sid\" : \"sns-rule\"," +
         "            \"Effect\" : \"Allow\"," +
-        "            \"Principal\" : \"*\"," +
+        "            \"Principal\" : {\"AWS\" : \"arn:aws:iam::123456789012:root\" }," +
         "            \"Action\"    : \"sqs:SendMessage\"," +
         "            \"Resource\"  : \"{QuernArn}\"," +
         "            \"Condition\" : {" +

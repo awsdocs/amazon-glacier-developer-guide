@@ -124,9 +124,9 @@ If the request was successful, Glacier returns the vault access policy as a JSON
 10.       "Version": "2012-10-17",
 11.       "Statement": [
 12.         {
-13.           "Sid": "example-vault-lock-policy",
+13.           "Sid": "Define-vault-lock",
 14.           "Principal": {
-15.             "AWS": "*"
+15.             "AWS": "arn:aws:iam::999999999999:root"
 16.           },
 17.           "Effect": "Deny",
 18.           "Action": "glacier:DeleteArchive",

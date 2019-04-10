@@ -41,15 +41,15 @@ Suppose that you have a regulatory requirement to retain archives for up to one 
 Suppose that you have a time\-based retention rule that an archive can be deleted if it is less than a year old\. At the same time, suppose that you need to place a legal hold on your archives to prevent deletion or modification for an indefinite duration during a legal investigation\. In this case, the legal hold takes precedence over the time\-based retention rule specified in the Vault Lock policy\. 
 
 To put these two rules in place, the following example policy has two statements:
-+ The first statement denies deletion permissions to everyone, locking the vault\. This lock is performed by using the `LegalHold` tag\.
-+ The second statement grants deletion permissions when the archive is less than 365 days old\. But even when archives are less than 365 days old, no one can delete them because the vault has been locked by the first statement\.
++ The first statement denies deletion permissions for everyone, locking the vault\. This lock is performed by using the `LegalHold` tag\.
++ The second statement grants deletion permissions when the archive is less than 365 days old\. But even when archives are less than 365 days old, no one can delete them when the condition in the first statement is met\.
 
 ```
  1. {
  2.      "Version":"2012-10-17",
  3.      "Statement":[
  4.       {
- 5.         "Sid": "no-one-can-delete-any-archive-from-vault",
+ 5.         "Sid": "lock-vault",
  6.         "Principal": "*",
  7.         "Effect": "Deny",
  8.         "Action": [
@@ -69,22 +69,24 @@ To put these two rules in place, the following example policy has two statements
 22.       },
 23.       {
 24.         "Sid": "you-can-delete-archive-less-than-1-year-old",
-25.         "Principal": "*",
-26.         "Effect": "Allow",
-27.         "Action": [
-28.           "glacier:DeleteArchive"
-29.         ],
-30.         "Resource": [
-31.           "arn:aws:glacier:us-west-2:123456789012:vaults/examplevault"
-32.         ],
-33.         "Condition": {
-34.           "NumericLessThan": {
-35.             "glacier:ArchiveAgeInDays": "365"
-36.           }
-37.         }
-38.       }
-39.    ]
-40. }
+25.         "Principal": {
+26.             "AWS": "arn:aws:iam::123456789012:root"
+27.           },
+28.         "Effect": "Allow",
+29.         "Action": [
+30.           "glacier:DeleteArchive"
+31.         ],
+32.         "Resource": [
+33.           "arn:aws:glacier:us-west-2:123456789012:vaults/examplevault"
+34.         ],
+35.         "Condition": {
+36.           "NumericLessThan": {
+37.             "glacier:ArchiveAgeInDays": "365"
+38.           }
+39.         }
+40.       }
+41.    ]
+42. }
 ```
 
 ### Related Sections<a name="related-sections-vault-lock-policy-examples"></a>

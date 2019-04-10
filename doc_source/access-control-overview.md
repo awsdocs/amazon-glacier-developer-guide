@@ -107,28 +107,6 @@ You can use vault policies to grant permissions to all users, or you can limit a
 
 Vault policies make it easy to grant cross\-account access when you need to share your vault with other AWS accounts\. For example, you can grant read\-only access on a vault to a business partner with a different AWS account by simply including that account and allowed actions in the vault policy\. You can grant cross\-account access to multiple users in this fashion and have a single location to view all users with cross\-account access in the vault access policy\. For an example of a vault policy for cross\-account access, see [Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions](vault-access-policy.md#vault-access-policy-example-multiple-accounts)\. 
 
-The following is an example of a Glacier vault policy \(a resource\-based policy\)\. The example policy grants all AWS accounts permissions to perform the `glacier:InitiateJob` and `glacier:GetJobOutput` actions\. This policy allows any AWS account to retrieve data from the specified vault\.
-
-```
- 1. {
- 2.     "Version":"2012-10-17",
- 3.     "Statement":[
- 4.        {
- 5.           "Sid": "add-read-only-perm",
- 6.           "Principal": "*",
- 7.           "Effect": "Allow",
- 8.           "Action": [
- 9.              "glacier:InitiateJob",
-10.              "glacier:GetJobOutput"
-11.           ],
-12.           "Resource": [
-13.              "arn:aws:glacier:us-west-2:123456789012:vaults/examplevault"
-14.           ]
-15.        }
-16.     ]
-17.     }
-```
-
 For more information about using vault policies with Glacier, see [Using Resource\-Based Policies for Amazon S3 Glacier \(Vault Policies\)](access-control-resource-based.md)\. For additional information about IAM roles \(identity\-based policies\) as opposed to resource\-based policies, see [How IAM Roles Differ from Resource\-based Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html) in the *IAM User Guide*\.
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="access-control-specify-glacier-actions"></a>

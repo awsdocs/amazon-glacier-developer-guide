@@ -8,8 +8,7 @@ You can use the Glacier API, AWS SDKs, AWS CLI, or the Glacier console to create
 
 **Topics**
 + [Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions](#vault-access-policy-example-multiple-accounts)
-+ [Example 2: Grant Read\-Only Permissions to All AWS Accounts](#vault-access-policy-example-read-only-all-aws-accounts)
-+ [Example 3: Grant Cross\-Account Permissions for MFA Delete Operations](#vault-access-policy-example-mfa-authentication)
++ [Example 2: Grant Cross\-Account Permissions for MFA Delete Operations](#vault-access-policy-example-mfa-authentication)
 
 ## Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions<a name="vault-access-policy-example-multiple-accounts"></a>
 
@@ -45,31 +44,7 @@ The account that owns the vault is billed for all costs associated with the vaul
 24. }
 ```
 
-## Example 2: Grant Read\-Only Permissions to All AWS Accounts<a name="vault-access-policy-example-read-only-all-aws-accounts"></a>
-
-The following example policy grants permissions that allow all AWS accounts to perform Glacier operations to retrieve any archive in a vault named `examplevault`\. The retrieved archives will be read\-only for these accounts\.
-
-```
- 1. {
- 2.     "Version":"2012-10-17",
- 3.     "Statement":[
- 4.        {
- 5.           "Sid": "add-read-only-perm",
- 6.           "Principal": "*",
- 7.           "Effect": "Allow",
- 8.           "Action": [
- 9.              "glacier:InitiateJob",
-10.              "glacier:GetJobOutput"
-11.           ],
-12.           "Resource": [
-13.              "arn:aws:glacier:us-west-2:999999999999:vaults/examplevault"
-14.           ]
-15.        }
-16.     ]
-17. }
-```
-
-## Example 3: Grant Cross\-Account Permissions for MFA Delete Operations<a name="vault-access-policy-example-mfa-authentication"></a>
+## Example 2: Grant Cross\-Account Permissions for MFA Delete Operations<a name="vault-access-policy-example-mfa-authentication"></a>
 
 You can use multi\-factor authentication \(MFA\) to protect your Glacier resources\. To provide an extra level of security, MFA requires users to prove physical possession of an MFA device by providing a valid MFA code\. For more information about configuring MFA access, see [Configuring MFA\-Protected API Access](https://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html) in the *IAM User Guide*\. 
 

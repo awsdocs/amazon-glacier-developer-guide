@@ -45,7 +45,7 @@ You can use tags to categorize and track your AWS costs\. When you apply tags to
 
 ## Managing Access Control with Tagging<a name="tagging-access-control"></a>
 
-You can use tags as a condition in an access policy statement\. For example, you can set up a legal hold tag and include it as a condition in a data retention policy that states that “archive deletion from everyone will be denied if the legal hold tag value is set to `True`\.” You can deploy the data retention policy and set the legal hold tag to `False` under normal conditions\. If your data must be put on hold to assist an investigation, you can easily turn on the legal hold by setting the tag value to `True` and removing the hold in a similar way later on\. For an example, see [Example 2: Deny Deletion Permissions Based on a Tag](vault-lock-policy.md#vault-lock-policy-example-legal-hold-tag)\.
+You can use tags as a condition in an access policy statement\. For example, you can set up a legal hold tag and include it as a condition in a data retention policy that states that “archive deletion from everyone will be denied if the legal hold tag value is set to `True`\.” You can deploy the data retention policy and set the legal hold tag to `False` under normal conditions\. If your data must be put on hold to assist an investigation, you can easily turn on the legal hold by setting the tag value to `True` and removing the hold in a similar way later on\. 
 
 ## Related Sections<a name="related-sections-tagging"></a>
 + [Tagging Your Amazon S3 Glacier Vaults](tagging-vaults.md)
