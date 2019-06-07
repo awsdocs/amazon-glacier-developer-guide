@@ -432,4 +432,4 @@ The following request initiates a select job\.
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Get Job Output \(GET output\)](api-job-output-get.md)
 + [SQL Reference for Amazon S3 Select and Glacier Select](s3-glacier-select-sql-reference.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

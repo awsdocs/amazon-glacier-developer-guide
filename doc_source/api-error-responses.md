@@ -5,7 +5,7 @@ In the event of an error, the API returns one of the following exceptions:
 
 | Code | Description | HTTP Status Code | Type | 
 | --- | --- | --- | --- | 
-| AccessDeniedException | Returned if there was an attempt to access a resource not allowed by an AWS Identity and Access Management \(IAM\) policy, or the incorrect AWS Account ID was used in the request URI\. For more information, see [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)\. | 403 Forbidden | Client | 
+| AccessDeniedException | Returned if there was an attempt to access a resource not allowed by an AWS Identity and Access Management \(IAM\) policy, or the incorrect AWS Account ID was used in the request URI\. For more information, see [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)\. | 403 Forbidden | Client | 
 | BadRequest | Returned if the request cannot be processed\.  | 400 Bad Request | Client | 
 | ExpiredTokenException | Returned if the security token used in the request has expired\.  | 403 Forbidden | Client | 
 | InsufficientCapacityException | Returned if there is insufficient capacity to process the expedited request\. This error only applies to expedited retrievals and not to standard or bulk retrievals\. | 503 Service Unavailable | Server | 

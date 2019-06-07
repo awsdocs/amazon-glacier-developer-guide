@@ -88,4 +88,4 @@ The following example deletes a vault named `examplevault`\. The example request
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

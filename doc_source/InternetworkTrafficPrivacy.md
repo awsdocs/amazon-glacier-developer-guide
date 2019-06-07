@@ -1,0 +1,9 @@
+# Internetwork Traffic Privacy<a name="InternetworkTrafficPrivacy"></a>
+
+Access to Amazon S3 Glacier via the network is through AWS published APIs\. Clients must support Transport Layer Security \(TLS\) 1\.0\. We recommend TLS 1\.2 or later\. Clients must also support cipher suites with Perfect Forward Secrecy \(PFS\), such as Ephemeral Diffie\-Hellman \(DHE\) or Elliptic Curve Diffie\-Hellman Ephemeral \(ECDHE\)\. Most modern systems such as Java 7 and later support these modes\. Additionally, you must sign requests using an access key ID and a secret access key that are associated with an IAM principal, or you can use the [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html) to generate temporary security credentials to sign requests\.
+
+## VPC Endpoints<a name="GlacierAndEndpoints"></a>
+
+A virtual private cloud \(VPC\) endpoint enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection\. Although Glacier does not support VPC endpoints directly, you can take advantage of Amazon Simple Storage Service \(Amazon S3\) VPC endpoints if you access Glacier as a storage tier integrated with Amazon S3\. 
+
+For more information about Amazon S3 lifecycle configuration and transitioning objects to the GLACIER storage class, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about VPC endpoints, see [VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html) in the *Amazon VPC User Guide*\. 

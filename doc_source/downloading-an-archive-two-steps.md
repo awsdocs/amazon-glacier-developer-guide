@@ -20,6 +20,10 @@ Retrieving an archive from Glacier is a two\-step process\.
 **Important**  
 For Standard retrievals only, a data retrieval policy can cause your initiate retrieval job request to fail with a `PolicyEnforcedException` exception\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. For more information about the `PolicyEnforcedException` exception, see [Error Responses](api-error-responses.md)\.
 
+   When required, you can restore large segments of the data stored in the GLACIER and DEEP\_ARCHIVE Amazon S3 storage classes\. For example, you might want to restore data for a secondary copy\. However, if you need to restore a large amount of data, keep in mind that the GLACIER and DEEP\_ARCHIVE storage classes are designed for 35 random restore requests per pebibyte \(PiB\) stored per day\. 
+
+   For more information about restoring data from these storage classes, see [ Amazon S3 Storage Classes for Archiving Objects]( https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) in the *Amazon Simple Storage Service Developer Guide*\.
+
 1. After the job completes, download the bytes using the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 
    You can download all bytes or specify a byte range to download only a portion of the job output\. For larger output, downloading the output in chunks helps in the event of a download failure, such as a network failure\. If you get job output in a single request and there is a network failure, you have to restart downloading the output from the beginning\. However, if you download the output in chunks, in the event of any failure, you need only restart the download of the smaller portion and not the entire output\. 
@@ -36,11 +40,11 @@ The information you get by using SNS notification is the same as what you get by
 ## Archive Retrieval Options<a name="api-downloading-an-archive-two-steps-retrieval-options"></a>
 
 You can specify one of the following when initiating a job to retrieve an archive based on your access time and cost requirements\. For information about retrieval pricing, see the [Glacier Pricing](http://aws.amazon.com/glacier/pricing/)\.
-+ **Expedited —** Expedited retrievals allow you to quickly access your data when occasional urgent requests for a subset of archives are required\. For all but the largest archives \(250 MB\+\), data accessed using Expedited retrievals are typically made available within 1–5 minutes\.  Provisioned Capacity ensures that retrieval capacity for Expedited retrievals is available when you need it\. For more information, see [Provisioned Capacity](#api-downloading-an-archive-two-steps-retrieval-expedited-capacity)\. 
++ **Expedited —** Expedited retrievals allow you to quickly access your data when occasional urgent requests for a subset of archives are required\. For all but the largest archives \(250 MB\+\), data accessed using Expedited retrievals are typically made available within 1–5 minutes\. Provisioned Capacity ensures that retrieval capacity for Expedited retrievals is available when you need it\. For more information, see [Provisioned Capacity](#api-downloading-an-archive-two-steps-retrieval-expedited-capacity)\. 
 + **Standard —** Standard retrievals allow you to access any of your archives within several hours\. Standard retrievals typically complete within 3–5 hours\. This is the default option for retrieval requests that do not specify the retrieval option\.
 + **Bulk —** Bulk retrievals are Glacier’s lowest\-cost retrieval option, which you can use to retrieve large amounts, even petabytes, of data inexpensively in a day\. Bulk retrievals typically complete within 5–12 hours\.
 
-To make an Expedited, Standard, or Bulk retrieval, set the `Tier` parameter in the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API request to the option you want, or the equivalent in the AWS CLI or AWS SDKs\.  If you have purchased provisioned capacity, then all expedited retrievals are automatically served through your provisioned capacity\. 
+To make an Expedited, Standard, or Bulk retrieval, set the `Tier` parameter in the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API request to the option you want, or the equivalent in the AWS CLI or AWS SDKs\. If you have purchased provisioned capacity, then all expedited retrievals are automatically served through your provisioned capacity\. 
 
 ### Provisioned Capacity<a name="api-downloading-an-archive-two-steps-retrieval-expedited-capacity"></a>
 

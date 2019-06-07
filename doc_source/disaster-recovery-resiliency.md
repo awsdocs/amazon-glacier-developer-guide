@@ -1,0 +1,5 @@
+# Resilience in Amazon S3 Glacier<a name="disaster-recovery-resiliency"></a>
+
+The AWS global infrastructure is built around Regions and Availability Zones\. AWS Regions provide multiple, physically separated and isolated Availability Zones that are connected with low latency, high throughput, and highly redundant networking\. These Availability Zones offer you an effective way to design and operate applications and databases\. They are more highly available, fault tolerant, and scalable than traditional single data center infrastructures or multi\-data center infrastructures\. Amazon S3 Glacier data is automatically distributed across a minimum of three physical Availability Zones that are geographically separated within an AWS Region\.
+
+For more information about AWS Regions and Availability Zones, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.

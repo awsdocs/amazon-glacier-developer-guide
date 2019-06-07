@@ -94,4 +94,4 @@ If the request is successful, Glacier responds with `204 No Content` to indicate
 ## Related Sections<a name="related-sections-archive-delete"></a>
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Archive \(POST archive\)](api-archive-post.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

@@ -212,4 +212,4 @@ In the response, Glacier returns a list of uploaded parts that are associated wi
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)
 + [List Multipart Uploads \(GET multipart\-uploads\)](api-multipart-list-uploads.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

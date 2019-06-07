@@ -233,4 +233,4 @@ The following successful response shows the `206 Partial Content` response\. In 
 ## Related Sections<a name="related-sections-job-output-archive-retrieval"></a>
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

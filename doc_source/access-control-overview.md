@@ -131,9 +131,6 @@ When you grant permissions, you can use the IAM policy language to specify the c
 
 AWS provides a set of predefined condition keys, called *AWS\-wide condition keys*, for all AWS services that support IAM for access control\. AWS\-wide condition keys use the prefix `aws`\. Glacier supports all AWS\-wide condition keys in vault access and Vault Lock policies\. For example, you can use the `aws:MultiFactorAuthPresent` condition key to require multi\-factor authentication \(MFA\) when requesting an action\. For more information and a list of the AWS\-wide condition keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
 
-**Note**  
-Condition keys are case\-sensitive\.
-
 In addition, Glacier also provides its own condition keys that you can include in `Condition` elements in an IAM permissions policy\. Glacier–specific condition keys are applicable only when granting Glacier–specific permissions\. Glacier condition key names have the prefix `glacier:`\. The following table shows the Glacier condition keys that apply to Glacier resources\. 
 
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html)

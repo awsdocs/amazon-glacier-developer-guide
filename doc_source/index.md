@@ -1,7 +1,7 @@
 # Amazon S3 Glacier Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -82,13 +82,22 @@ Amazon's trademarks and trade dress may not be used in
 + [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)
    + [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)
    + [Using the AWS SDK for .NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
-   + [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)
-   + [Using Identity-Based Policies for Amazon S3 Glacier (IAM Policies)](access-control-identity-based.md)
-   + [Using Resource-Based Policies for Amazon S3 Glacier (Vault Policies)](access-control-resource-based.md)
-      + [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)
-      + [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)
-   + [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)
++ [Security in Amazon S3 Glacier](security.md)
+   + [Data Protection in Amazon S3 Glacier](DataDurability.md)
+      + [Data Encryption](DataEncryption.md)
+      + [Key Management](key-management.md)
+      + [Internetwork Traffic Privacy](InternetworkTrafficPrivacy.md)
+   + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+      + [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)
+      + [Using Identity-Based Policies for Amazon S3 Glacier (IAM Policies)](access-control-identity-based.md)
+      + [Using Resource-Based Policies for Amazon S3 Glacier (Vault Policies)](access-control-resource-based.md)
+         + [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)
+         + [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)
+      + [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)
+   + [Logging and Monitoring in Amazon S3 Glacier](glacier-incident-response.md)
+   + [Compliance Validation for Amazon S3 Glacier](glacier-compliance.md)
+   + [Resilience in Amazon S3 Glacier](disaster-recovery-resiliency.md)
+   + [Infrastructure Security in Amazon S3 Glacier](network-isolation.md)
 + [Querying Archives with Glacier Select](glacier-select.md)
 + [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)
 + [Tagging Amazon S3 Glacier Resources](tagging.md)

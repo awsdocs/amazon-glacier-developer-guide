@@ -125,4 +125,4 @@ The successful response below has a `Location` header where you can get the ID t
 + [Working with Archives in Amazon S3 Glacier](working-with-archives.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
 + [Delete Archive \(DELETE archive\)](api-archive-delete.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

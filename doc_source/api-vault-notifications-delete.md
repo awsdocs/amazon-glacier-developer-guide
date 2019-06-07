@@ -82,4 +82,4 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 ## Related Sections<a name="related-sections-vault-notifications-delete"></a>
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

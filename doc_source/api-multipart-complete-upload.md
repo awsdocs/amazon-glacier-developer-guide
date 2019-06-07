@@ -117,4 +117,4 @@ You can now send HTTP requests to the URI of the newly added resource/archive\. 
 + [List Parts \(GET uploadID\)](api-multipart-list-parts.md)
 + [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)
 +  [Delete Archive \(DELETE archive\)](api-archive-delete.md)
-+ [Authentication and Access Control for Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
