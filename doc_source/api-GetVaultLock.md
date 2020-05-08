@@ -43,7 +43,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-GetVaultLock-responses"></a>
 
-In response, Amazon S3 Glacier \(Glacier\) returns the vault access policy in JSON format in the body of the response\. 
+In response, Amazon S3 Glacier \(S3 Glacier\) returns the vault access policy in JSON format in the body of the response\. 
 
 ### Syntax<a name="api-GetVaultLock-responses-syntax"></a>
 
@@ -109,7 +109,7 @@ In this example, a `GET` request is sent to the URI of a vault's `lock-policy` s
 
 ### Example Response<a name="api-GetVaultLock-example-response"></a>
 
-If the request was successful, Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md) example request\. However, the following example shows the returned JSON string without escape characters for readability\. 
+If the request was successful, S3 Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md) example request\. However, the following example shows the returned JSON string without escape characters for readability\. 
 
 ```
  1. HTTP/1.1 200 OK
@@ -152,3 +152,8 @@ If the request was successful, Glacier returns the vault access policy as a JSON
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
+
+## See Also<a name="api-GetVaultLock_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/get-vault-lock.html) 

@@ -2,7 +2,7 @@
 
 ## Description<a name="api-vault-notifications-delete-description"></a>
 
-This operation deletes the notification configuration set for a vault [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(Glacier\) to completely disable the notifications, and you might still receive some notifications for a short time after you send the delete request\. 
+This operation deletes the notification configuration set for a vault [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(S3 Glacier\) to completely disable the notifications, and you might still receive some notifications for a short time after you send the delete request\. 
 
 ## Requests<a name="api-vault-notifications-delete-requests"></a>
 
@@ -83,3 +83,8 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vault-notifications-delete_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/delete-vault-notifications.html) 

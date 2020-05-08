@@ -1,6 +1,6 @@
 # Data Types Used in Job Operations<a name="api-data-types"></a>
 
-The following are data types used with the job operations in Glacier\.
+The following are data types used with the job operations in S3 Glacier\.
 
 **Topics**
 + [CSVInput](api-CSVInput.md)

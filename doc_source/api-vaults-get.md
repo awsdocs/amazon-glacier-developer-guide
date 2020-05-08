@@ -4,7 +4,7 @@
 
 This operation lists all vaults owned by the calling user’s account\. The list returned in the response is ASCII\-sorted by vault name\. 
 
-By default, this operation returns up to 10 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon S3 Glacier \(Glacier\) returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
+By default, this operation returns up to 10 items per request\. If there are more vaults to list, the `marker` field in the response body contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new List Vaults request; otherwise, the `marker` field is `null`\. In your next List Vaults request you set the `marker` parameter to the value Amazon S3 Glacier \(S3 Glacier\) returned in the responses to your previous List Vaults request\. You can also limit the number of vaults returned in the response by specifying the `limit` parameter in the request\. 
 
 ## Requests<a name="api-vaults-get-requests"></a>
 
@@ -223,3 +223,8 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vaults-get_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/list-vaults.html) 

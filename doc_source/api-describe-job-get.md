@@ -2,18 +2,18 @@
 
 ## Description<a name="api-describe-job-get-description"></a>
 
-This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message, and the Amazon Simple Notification Service \(Amazon SNS\) topic to notify after Amazon S3 Glacier \(Glacier\) completes the job\. For more information about initiating a job, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. 
+This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message, and the Amazon Simple Notification Service \(Amazon SNS\) topic to notify after Amazon S3 Glacier \(S3 Glacier\) completes the job\. For more information about initiating a job, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. 
 
 **Note**  
-This operation enables you to check the status of your job\. However, we strongly recommend that you set up an Amazon SNS topic and specify it in your initiate job request so that Glacier can notify the topic after it completes the job\. 
+This operation enables you to check the status of your job\. However, we strongly recommend that you set up an Amazon SNS topic and specify it in your initiate job request so that S3 Glacier can notify the topic after it completes the job\. 
 
-A job ID will not expire for at least 24 hours after Glacier completes the job\. 
+A job ID will not expire for at least 24 hours after S3 Glacier completes the job\. 
 
 ## Requests<a name="api-describe-job-get-requests"></a>
 
 ### Syntax<a name="api-describe-job-get-requests-syntax"></a>
 
-To obtain information about a job, you use the HTTP `GET` method and scope the request to the specific job\. Note that the relative URI path is the same one that Glacier returned to you when you initiated the job\. 
+To obtain information about a job, you use the HTTP `GET` method and scope the request to the specific job\. Note that the relative URI path is the same one that S3 Glacier returned to you when you initiated the job\. 
 
 ```
 1. GET /AccountID/vaults/VaultName/jobs/JobID HTTP/1.1
@@ -184,7 +184,7 @@ The job description you provided when you initiated the job\.
 *Type*: String
 
 **JobId**  
-The ID that identifies the job in Glacier\.  
+The ID that identifies the job in S3 Glacier\.  
 *Type*: String
 
 **JobOutputPath**  
@@ -219,7 +219,7 @@ An Amazon SNS topic that receives notification\.
 
 **StatusCode**  
 The code indicating the status of the job\.  
-*Valid Values*: `InProgress` \| `Succeeded` \| `Succeeded`  
+*Valid Values*: `InProgress` \| `Succeeded` \| `Failed`  
 *Type*: String
 
 **StatusMessage**  

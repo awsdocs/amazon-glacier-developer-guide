@@ -61,7 +61,7 @@ This operation uses only response headers that are common to most responses\. Fo
 The response body contains the following JSON fields\.
 
 **Events**  
-A list of one or more events for which Amazon S3 Glacier \(Glacier\) will send a notification to the specified Amazon SNS topic\. For information about vault events for which you can configure a vault to publish notifications, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\.  
+A list of one or more events for which Amazon S3 Glacier \(S3 Glacier\) will send a notification to the specified Amazon SNS topic\. For information about vault events for which you can configure a vault to publish notifications, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\.  
 *Type*: Array
 
 **SNSTopic**  
@@ -112,3 +112,8 @@ A successful response shows the audit logging configuration document in the body
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vault-notifications-get_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/get-vault-notifications.html) 

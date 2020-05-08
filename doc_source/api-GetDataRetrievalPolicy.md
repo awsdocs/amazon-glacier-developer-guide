@@ -2,7 +2,7 @@
 
 ## Description<a name="api-GetDataRetrievalPolicy-description"></a>
 
-This operation returns the current data retrieval policy for the account and region specified in the `GET` request\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+This operation returns the current data retrieval policy for the AWS account and AWS Region specified in the `GET` request\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Requests<a name="api-GetDataRetrievalPolicy-requests"></a>
 

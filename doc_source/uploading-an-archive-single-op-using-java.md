@@ -15,7 +15,7 @@ You can use the `upload` method to upload small or large archives\. Depending on
 
 ### Example: Uploading an Archive Using the High\-Level API of the AWS SDK for Java<a name="upload-archive-high-level-java-example"></a>
 
-The following Java code example uploads an archive to a vault \(`examplevault`\) in the US West \(Oregon\) region \(`us-west-2`\)\. For a list of supported regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
+The following Java code example uploads an archive to a vault \(`examplevault`\) in the US West \(Oregon\) Region \(`us-west-2`\)\. For a list of supported AWS Regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
 
 For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the vault you want to upload to and the name of the file you want to upload\.
 
@@ -66,7 +66,7 @@ The low\-level API provides methods for all the archive operations\. The followi
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where you want to upload the archive\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region where you want to upload the archive\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Provide request information by creating an instance of the `UploadArchiveRequest` class\.
 
@@ -76,7 +76,7 @@ The low\-level API provides methods for all the archive operations\. The followi
 
 1. Execute the `uploadArchive` method by providing the request object as a parameter\. 
 
-   In response, Amazon S3 Glacier \(Glacier\) returns an archive ID of the newly uploaded archive\. 
+   In response, Amazon S3 Glacier \(S3 Glacier\) returns an archive ID of the newly uploaded archive\. 
 
 The following Java code snippet illustrates the preceding steps\. 
 

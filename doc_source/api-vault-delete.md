@@ -2,9 +2,9 @@
 
 ## Description<a name="api-vault-delete-description"></a>
 
-This operation deletes a vault\. Amazon S3 Glacier \(Glacier\) will delete a vault only if there are no archives in the vault as per the last inventory and there have been no writes to the vault since the last inventory\. If either of these conditions is not satisfied, the vault deletion fails \(that is, the vault is not removed\) and Glacier returns an error\. 
+This operation deletes a vault\. Amazon S3 Glacier \(S3 Glacier\) will delete a vault only if there are no archives in the vault as per the last inventory and there have been no writes to the vault since the last inventory\. If either of these conditions is not satisfied, the vault deletion fails \(that is, the vault is not removed\) and S3 Glacier returns an error\. 
 
-You can use the [Describe Vault \(GET vault\)](api-vault-get.md) operation that provides vault information, including the number of archives in the vault; however, the information is based on the vault inventory Glacier last generated\.
+You can use the [Describe Vault \(GET vault\)](api-vault-get.md) operation that provides vault information, including the number of archives in the vault; however, the information is based on the vault inventory S3 Glacier last generated\.
 
 This operation is idempotent\.
 
@@ -89,3 +89,8 @@ The following example deletes a vault named `examplevault`\. The example request
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vault-delete-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/delete-vault.html) 

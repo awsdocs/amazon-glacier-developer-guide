@@ -59,7 +59,7 @@ The vault lock policy as a JSON string, which uses "\\" as an escape character\.
 
 ## Responses<a name="api-InitiateVaultLock-responses"></a>
 
-Amazon S3 Glacier \(Glacier\) returns an `HTTP 201 Created` response, if the policy is accepted\.
+Amazon S3 Glacier \(S3 Glacier\) returns an `HTTP 201 Created` response, if the policy is accepted\.
 
 ### Syntax<a name="api-InitiateVaultLock-response-syntax"></a>
 
@@ -106,7 +106,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `loc
 
 ### Example Response<a name="api-InitiateVaultLock-example-response"></a>
 
-If the request was successful, Glacier returns an `HTTP 201 Created` response, as shown in the following example\.
+If the request was successful, S3 Glacier returns an `HTTP 201 Created` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 201 Created
@@ -119,3 +119,8 @@ If the request was successful, Glacier returns an `HTTP 201 Created` response, a
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
+
+## See Also<a name="api-InitiateVaultLock_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/initiate-vault-lock.html) 

@@ -35,7 +35,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-GetVaultAccessPolicy-responses"></a>
 
-In response, Amazon S3 Glacier \(Glacier\) returns the vault access policy in JSON format in the body of the response\. 
+In response, Amazon S3 Glacier \(S3 Glacier\) returns the vault access policy in JSON format in the body of the response\. 
 
 ### Syntax<a name="api-GetVaultAccessPolicy-responses-syntax"></a>
 
@@ -85,7 +85,7 @@ In this example, a `GET` request is sent to the URI of a vault's `access-policy`
 
 ### Example Response<a name="api-GetVaultAccessPolicy-example-response"></a>
 
-If the request was successful, Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md) examples\. However, the following example shows the returned JSON string without escape characters for readability\. 
+If the request was successful, S3 Glacier returns the vault access policy as a JSON string in the body of the response\. The returned JSON string uses "\\" as an escape character, as shown in the [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md) examples\. However, the following example shows the returned JSON string without escape characters for readability\. 
 
 ```
  1. HTTP/1.1 200 OK
@@ -124,3 +124,8 @@ If the request was successful, Glacier returns the vault access policy as a JSON
 ## Related Sections<a name="related-sections-GetVaultAccessPolicy"></a>
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)
+
+## See Also<a name="api-GetVaultAccessPolicy_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/get-vault-access-policy.html) 

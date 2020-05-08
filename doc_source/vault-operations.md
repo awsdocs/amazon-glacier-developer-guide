@@ -1,6 +1,6 @@
 # Vault Operations<a name="vault-operations"></a>
 
-The following are the vault operations available in Glacier\.
+The following are the vault operations available in S3 Glacier\.
 
 **Topics**
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)

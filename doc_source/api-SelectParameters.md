@@ -5,7 +5,7 @@ Contains information about the parameters used for the select\.
 ## Contents<a name="api-SelectParameters-contents"></a>
 
 **Expression**  
-The expression that is used to select the object\. The expression must not exceed the limit of 128,000 characters\.  
+The expression that is used to select the object\. The expression must not exceed the quota of 128,000 characters\.  
 *Type*: String  
 *Required*: yes
 

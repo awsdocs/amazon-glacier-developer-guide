@@ -39,7 +39,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-AbortVaultLock-responses"></a>
 
-If the policy is successfully deleted, Glacier returns an `HTTP 204 No Content` response\.
+If the policy is successfully deleted, S3 Glacier returns an `HTTP 204 No Content` response\.
 
 ### Syntax<a name="api-AbortVaultLock-responses-syntax"></a>
 
@@ -79,7 +79,7 @@ In this example, a `DELETE` request is sent to the `lock-policy` subresource of 
 
 ### Example Response<a name="api-AbortVaultLock-example-response"></a>
 
-If the policy is successfully deleted Glacier returns an `HTTP 204 No Content` response, as shown in the following example\.
+If the policy is successfully deleted S3 Glacier returns an `HTTP 204 No Content` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -91,3 +91,8 @@ If the policy is successfully deleted Glacier returns an `HTTP 204 No Content` r
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
+
+## See Also<a name="api-AbortVaultLock-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/abort-vault-lock.html) 

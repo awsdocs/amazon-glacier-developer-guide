@@ -3,7 +3,7 @@
 The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
 
 **Note**  
-The low\-level API and high\-level API provide thread\-safe clients for accessing Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
+The low\-level API and high\-level API provide thread\-safe clients for accessing S3 Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
 
 **Topics**
 + [Using the Low\-Level API](#about-low-level-dotnet-api)
@@ -13,9 +13,9 @@ The low\-level API and high\-level API provide thread\-safe clients for accessin
 
 ## Using the Low\-Level API<a name="about-low-level-dotnet-api"></a>
 
-The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Amazon S3 Glacier \(Glacier\) \( [API Reference for Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return a Glacier response to the operation\. 
+The low\-level `AmazonGlacierClient` class provides all the methods that map to the underlying REST operations of Amazon S3 Glacier \(S3 Glacier\) \( [API Reference for Amazon S3 Glacier](amazon-glacier-api.md)\)\. When calling any of these methods, you must create a corresponding request object and provide a response object in which the method can return a S3 Glacier response to the operation\. 
 
-For example, the `AmazonGlacierClient` class provides the `CreateVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultRequest` and `CreateVaultResponse` classes to provide request information and receive a Glacier response as shown in the following C\# code snippet:
+For example, the `AmazonGlacierClient` class provides the `CreateVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultRequest` and `CreateVaultResponse` classes to provide request information and receive a S3 Glacier response as shown in the following C\# code snippet:
 
 ```
 AmazonGlacierClient client;
@@ -33,7 +33,7 @@ CreateVaultResponse response = client.CreateVault(request);
 All the low\-level samples in the guide use this pattern\. 
 
 **Note**  
-The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
+The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case S3 Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
 ## Using the High\-Level API<a name="about-high-level-dotnet-api"></a>
 
@@ -49,7 +49,7 @@ var manager = new ArchiveTransferManager(Amazon.RegionEndpoint.USEast1);
 string archiveId = manager.Upload(vaultName, "archive description", archiveToUpload).ArchiveId;
 ```
 
-Note that any operations you perform apply to the region you specified when creating the `ArchiveTransferManager` object\. All the high\-level examples in this guide use this pattern\. 
+Note that any operations you perform apply to the AWS Region you specified when creating the `ArchiveTransferManager` object\. All the high\-level examples in this guide use this pattern\. 
 
 **Note**  
 The high\-level `ArchiveTransferManager` class still needs the low\-level `AmazonGlacierClient` client, which you can pass either explicitly or the `ArchiveTransferManager` creates the client\.
@@ -72,9 +72,9 @@ The following procedure outlines steps for you to test the code examples provide
 
 ## Setting the Endpoint<a name="setting-sdk-dot-net-endpoint"></a>
 
-By default, the AWS SDK for \.NET sets the endpoint to the US West \(Oregon\) Region \(`https://glacier.us-west-2.amazonaws.com`\)\. You can set the endpoint to other regions as shown in the following C\# snippets\.
+By default, the AWS SDK for \.NET sets the endpoint to the US West \(Oregon\) Region \(`https://glacier.us-west-2.amazonaws.com`\)\. You can set the endpoint to other AWS Regions as shown in the following C\# snippets\.
 
-The following snippet shows how to set the endpoint to the US West \(Oregon\) region \(`us-west-2`\) in the low\-level API\.
+The following snippet shows how to set the endpoint to the US West \(Oregon\) Region \(`us-west-2`\) in the low\-level API\.
 
 **Example**  
 
@@ -82,10 +82,10 @@ The following snippet shows how to set the endpoint to the US West \(Oregon\) re
 AmazonGlacierClient client = new AmazonGlacierClient(Amazon.RegionEndpoint.USWest2);
 ```
 
-The following snippet shows how to set the endpoint to the US West \(Oregon\) region in the high\-level API\.
+The following snippet shows how to set the endpoint to the US West \(Oregon\) Region in the high\-level API\.
 
 ```
 var manager = new ArchiveTransferManager(Amazon.RegionEndpoint.USWest2);
 ```
 
-For a current list of supported regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\.
+For a current list of supported AWS Regions and endpoints, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\.

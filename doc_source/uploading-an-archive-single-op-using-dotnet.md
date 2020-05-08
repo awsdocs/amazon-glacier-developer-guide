@@ -61,7 +61,7 @@ The low\-level API provides methods for all the archive operations\. The followi
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where you want to upload the archive\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region where you want to upload the archive\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Provide request information by creating an instance of the `UploadArchiveRequest` class\.
 
@@ -71,7 +71,7 @@ The low\-level API provides methods for all the archive operations\. The followi
 
 1. Execute the `UploadArchive` method by providing the request object as a parameter\. 
 
-   In response, Glacier returns an archive ID of the newly uploaded archive\. 
+   In response, S3 Glacier returns an archive ID of the newly uploaded archive\. 
 
 ### Example: Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for \.NET<a name="upload-archive-single-op-lowlevel-dotnet"></a>
 

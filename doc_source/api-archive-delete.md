@@ -7,8 +7,8 @@ This operation deletes an archive from a vault\. You can delete one archive at a
 After you delete an archive, you might still be able to make a successful request to initiate a job to retrieve the deleted archive, but the archive retrieval job will fail\. 
 
 Archive retrievals that are in progress for an archive ID when you delete the archive might or might not succeed according to the following scenarios:
-+ If the archive retrieval job is actively preparing the data for download when Amazon S3 Glacier \(Glacier\) receives the delete archive request, the archival retrieval operation might fail\. 
-+ If the archive retrieval job has successfully prepared the archive for download when Glacier receives the delete archive request, you will be able to download the output\. 
++ If the archive retrieval job is actively preparing the data for download when Amazon S3 Glacier \(S3 Glacier\) receives the delete archive request, the archival retrieval operation might fail\. 
++ If the archive retrieval job has successfully prepared the archive for download when S3 Glacier receives the delete archive request, you will be able to download the output\. 
 
 For more information about archive retrieval, see [Downloading an Archive in Amazon S3 Glacier](downloading-an-archive.md)\. 
 
@@ -83,7 +83,7 @@ The ID of the archive to be deleted is specified as a subresource of `archives`\
 
 ### Example Response<a name="api-archive-delete-example-response"></a>
 
-If the request is successful, Glacier responds with `204 No Content` to indicate that the archive is deleted\.
+If the request is successful, S3 Glacier responds with `204 No Content` to indicate that the archive is deleted\.
 
 ```
 1. HTTP/1.1 204 No Content

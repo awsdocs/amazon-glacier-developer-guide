@@ -1,7 +1,7 @@
 # Uploading Large Archives in Parts Using the AWS SDK for Java<a name="uploading-an-archive-mpu-using-java"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to upload a large archive \(see [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)\)\. 
-+ The high\-level API provides a method that you can use to upload archives of any size\. Depending on the file you are uploading, the method either uploads an archive in a single operation or uses the multipart upload support in Amazon S3 Glacier \(Glacier\) to upload the archive in parts\.
++ The high\-level API provides a method that you can use to upload archives of any size\. Depending on the file you are uploading, the method either uploads an archive in a single operation or uses the multipart upload support in Amazon S3 Glacier \(S3 Glacier\) to upload the archive in parts\.
 + The low\-level API maps close to the underlying REST implementation\. Accordingly, it provides a method to upload smaller archives in one operation and a group of methods that support multipart upload for larger archives\. This section explains uploading large archives in parts using the low\-level API\.
 
 For more information about the high\-level and low\-level APIs, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\.
@@ -12,7 +12,7 @@ For more information about the high\-level and low\-level APIs, see [Using the A
 
 ## Uploading Large Archives in Parts Using the High\-Level API of the AWS SDK for Java<a name="uploading-an-archive-in-parts-highlevel-using-java"></a>
 
-You use the same methods of the high\-level API to upload small or large archives\. Based on the archive size, the high\-level API methods decide whether to upload the archive in a single operation or use the multipart upload API provided by Glacier\. For more information, see [Uploading an Archive Using the High\-Level API of the AWS SDK for Java](uploading-an-archive-single-op-using-java.md#uploading-an-archive-single-op-high-level-using-java)\.
+You use the same methods of the high\-level API to upload small or large archives\. Based on the archive size, the high\-level API methods decide whether to upload the archive in a single operation or use the multipart upload API provided by S3 Glacier\. For more information, see [Uploading an Archive Using the High\-Level API of the AWS SDK for Java](uploading-an-archive-single-op-using-java.md#uploading-an-archive-single-op-high-level-using-java)\.
 
 ## Upload Large Archives in Parts Using the Low\-Level API of the AWS SDK for Java<a name="uploading-an-archive-mpu-using-java-lowlevel"></a>
 
@@ -20,11 +20,11 @@ For granular control of the upload you can use the low\-level API where you can 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where you want to save the archive\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region where you want to save the archive\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Initiate multipart upload by calling the `initiateMultipartUpload` method\.
 
-   You need to provide vault name in which you want to upload the archive, part size you want to use to upload archive parts, and an optional description\. You provide this information by creating an instance of the `InitiateMultipartUploadRequest` class\. In response, Glacier returns an upload ID\.
+   You need to provide vault name in which you want to upload the archive, part size you want to use to upload archive parts, and an optional description\. You provide this information by creating an instance of the `InitiateMultipartUploadRequest` class\. In response, S3 Glacier returns an upload ID\.
 
 1. Upload parts by calling the `uploadMultipartPart` method\. 
 
@@ -32,14 +32,14 @@ For granular control of the upload you can use the low\-level API where you can 
 
 1. Complete multipart upload by calling the `completeMultipartUpload` method\.
 
-   You need to provide the upload ID, the checksum of the entire archive, the archive size \(combined size of all parts you uploaded\), and the vault name\. Glacier constructs the archive from the uploaded parts and returns an archive ID\.
+   You need to provide the upload ID, the checksum of the entire archive, the archive size \(combined size of all parts you uploaded\), and the vault name\. S3 Glacier constructs the archive from the uploaded parts and returns an archive ID\.
 
 ### Example: Uploading a Large Archive in a Parts Using the AWS SDK for Java<a name="upload-archive-mpu-java-example"></a>
 
 The following Java code example uses the AWS SDK for Java to upload an archive to a vault \(`examplevault`\)\. For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the file you want to upload\.
 
 **Note**  
-This example is valid for part sizes from 1 MB to 1 GB\. However, Glacier supports part sizes up to 4 GB\. 
+This example is valid for part sizes from 1 MB to 1 GB\. However, S3 Glacier supports part sizes up to 4 GB\. 
 
 **Example**  
 

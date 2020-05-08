@@ -2,7 +2,7 @@
 
 ## Description<a name="api-vault-get-description"></a>
 
-This operation returns information about a vault, including the vault Amazon Resource Name \(ARN\), the date the vault was created, the number of archives contained within the vault, and the total size of all the archives in the vault\. The number of archives and their total size are as of the last vault inventory Amazon S3 Glacier \(Glacier\) generated \(see [Working with Vaults in Amazon S3 Glacier](working-with-vaults.md)\)\. Glacier generates vault inventories approximately daily\. This means that if you add or remove an archive from a vault, and then immediately send a Describe Vault request, the response might not reflect the changes\. 
+This operation returns information about a vault, including the vault Amazon Resource Name \(ARN\), the date the vault was created, the number of archives contained within the vault, and the total size of all the archives in the vault\. The number of archives and their total size are as of the last vault inventory Amazon S3 Glacier \(S3 Glacier\) generated \(see [Working with Vaults in Amazon S3 Glacier](working-with-vaults.md)\)\. S3 Glacier generates vault inventories approximately daily\. This means that if you add or remove an archive from a vault, and then immediately send a Describe Vault request, the response might not reflect the changes\. 
 
 ## Requests<a name="api-vault-get-requests"></a>
 
@@ -67,7 +67,7 @@ The UTC date when the vault was created\.
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **LastInventoryDate**  
-The UTC date when Glacier completed the last vault inventory\. For information about initiating an inventory for a vault, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\.  
+The UTC date when S3 Glacier completed the last vault inventory\. For information about initiating an inventory for a vault, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\.  
 *Type*: A string representation in the ISO 8601 date format, for example `2013-03-20T17:03:43.221Z`\.
 
 **NumberOfArchives**  
@@ -129,3 +129,8 @@ Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vault-get_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/describe-vault.html) 

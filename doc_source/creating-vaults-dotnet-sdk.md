@@ -8,11 +8,11 @@ Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS
 
 ## Creating a Vault Using the High\-Level API of the AWS SDK for \.NET<a name="create-vault-dotnet-highlevel"></a>
 
-The `ArchiveTransferManager` class of the high\-level API provides the `CreateVault` method you can use to create a vault in an AWS region\.
+The `ArchiveTransferManager` class of the high\-level API provides the `CreateVault` method you can use to create a vault in an AWS Region\.
 
 ### Example: Vault Operations Using the High\-Level API of the AWS SDK for \.NET<a name="vault-operations-example-dotnet-highlevel"></a>
 
-The following C\# code example creates and delete a vault in the US West \(Oregon\) Region\. For a list of AWS regions in which you can create vaults, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
+The following C\# code example creates and delete a vault in the US West \(Oregon\) Region\. For a list of AWS Regions in which you can create vaults, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. 
 
 For step\-by\-step instructions on how to run the following example, see [Running Code Examples](using-aws-sdk-for-dot-net.md#setting-up-and-testing-sdk-dotnet)\. You need to update the code as shown with a vault name\. 
 
@@ -54,23 +54,23 @@ namespace glacier.amazon.com.docsamples
 
 ## Creating a Vault Using the Low\-Level API of the AWS SDK for \.NET<a name="create-vault-dotnet-lowlevel"></a>
 
-The low\-level API provides methods for all the vault operations, including create and delete vaults, get a vault description, and get a list of vaults created in a specific region\. The following are the steps to create a vault using the AWS SDK for \.NET\. 
+The low\-level API provides methods for all the vault operations, including create and delete vaults, get a vault description, and get a list of vaults created in a specific AWS Region\. The following are the steps to create a vault using the AWS SDK for \.NET\. 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region in which you want to create a vault\. All operations you perform using this client apply to that region\.
+   You need to specify an AWS Region in which you want to create a vault\. All operations you perform using this client apply to that AWS Region\.
 
 1. Provide request information by creating an instance of the `CreateVaultRequest` class\.
 
-    Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
+    Amazon S3 Glacier \(S3 Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
 1. Execute the `CreateVault` method by providing the request object as a parameter\. 
 
-   The response Glacier returns is available in the `CreateVaultResponse` object\.
+   The response S3 Glacier returns is available in the `CreateVaultResponse` object\.
 
 ### Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET<a name="vault-operations-example-dotnet-lowlevel"></a>
 
-The following C\# example illustrates the preceding steps\. The example creates a vault in the US West \(Oregon\) Region\. In addition, the code example retrieves the vault information, lists all vaults in the same region, and then deletes the vault created\. The `Location` printed is the relative URI of the vault that includes your account ID, the region, and the vault name\.
+The following C\# example illustrates the preceding steps\. The example creates a vault in the US West \(Oregon\) Region\. In addition, the code example retrieves the vault information, lists all vaults in the same AWS Region, and then deletes the vault created\. The `Location` printed is the relative URI of the vault that includes your account ID, the AWS Region, and the vault name\.
 
 **Note**  
 For information about the underlying REST API, see [Create Vault \(PUT vault\)](api-vault-put.md)\. 

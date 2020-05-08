@@ -6,7 +6,7 @@ A provisioned capacity unit lasts for one month starting at the date and time of
 
 If the start date is on the 31st day of a month, the expiration date is the last day of the next month\. For example, if the start date is August 31, the expiration date is September 30\. If the start date is January 31, the expiration date is February 28\.
 
-Provisioned capacity guarantees that your retrieval capacity for expedited retrievals is available when you need it\. Each unit of capacity ensures that at least three expedited retrievals can be performed every five minutes and provides up to 150 MB/s of retrieval throughput\. For more information about provisioned capacity, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\. 
+Provisioned capacity helps ensure that your retrieval capacity for expedited retrievals is available when you need it\. Each unit of capacity ensures that at least three expedited retrievals can be performed every five minutes and provides up to 150 MB/s of retrieval throughput\. For more information about provisioned capacity, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\. 
 
 ## Requests<a name="api-PurchaseProvisionedCapacity-requests"></a>
 
@@ -90,7 +90,7 @@ The following example sends an HTTP POST request to purchase a provisioned capac
 
 ### Example Response<a name="api-PurchaseProvisionedCapacity-example-response"></a>
 
-If the request was successful, Amazon S3 Glacier \(Glacier\) returns an `HTTP 201 Created` response, as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns an `HTTP 201 Created` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 201 Created

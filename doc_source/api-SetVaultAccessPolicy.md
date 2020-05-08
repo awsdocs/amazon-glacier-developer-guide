@@ -45,7 +45,7 @@ The vault access policy as a JSON string, which uses "\\" as an escape character
 
 ## Responses<a name="api-SetVaultAccessPolicy-responses"></a>
 
-In response, Glacier returns `204 No Content` if the policy is accepted\.
+In response, S3 Glacier returns `204 No Content` if the policy is accepted\.
 
 ### Syntax<a name="api-SetVaultAccessPolicy-response-syntax"></a>
 
@@ -86,7 +86,7 @@ The following example sends an HTTP `PUT` request to the URI of the vault's `acc
 
 ### Example Response<a name="api-SetVaultAccessPolicy-example-response"></a>
 
-If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 204 No Content` as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -97,3 +97,8 @@ If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 204
 ## Related Sections<a name="related-sections-SetVaultAccessPolicy"></a>
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)
+
+## See Also<a name="api-SetVaultAccessPolicy_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/set-vault-access-policy.html) 

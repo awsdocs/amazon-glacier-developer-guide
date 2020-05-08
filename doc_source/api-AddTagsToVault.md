@@ -98,7 +98,7 @@ The following example sends an HTTP POST request with the tags to add to the vau
 
 ### Example Response<a name="api-AddTagsToVault-example-response"></a>
 
-If the request was successful Glacier returns a `HTTP 204 No Content` as shown in the following example\.
+If the request was successful S3 Glacier returns a `HTTP 204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -109,3 +109,8 @@ If the request was successful Glacier returns a `HTTP 204 No Content` as shown i
 ## Related Sections<a name="related-sections-AddTagsToVault"></a>
 + [List Tags For Vault \(GET tags\)](api-ListTagsForVault.md)
 + [Remove Tags From Vault \(POST tags remove\)](api-RemoveTagsFromVault.md)
+
+## See Also<a name="api-AddTagsToVault-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/add-tags-to-vault.html) 

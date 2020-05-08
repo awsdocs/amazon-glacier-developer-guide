@@ -79,7 +79,7 @@ The following example sends an HTTP POST request with the lock ID to complete th
 
 ### Example Response<a name="api-CompleteVaultLock-example-response"></a>
 
-If the request was successful, Amazon S3 Glacier \(Glacier\) returns an `HTTP 204 No Content` response, as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns an `HTTP 204 No Content` response, as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -91,3 +91,8 @@ If the request was successful, Amazon S3 Glacier \(Glacier\) returns an `HTTP 20
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
+
+## See Also<a name="api-CompleteVaultLock-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/complete-vault-lock.html) 

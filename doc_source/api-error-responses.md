@@ -16,15 +16,15 @@ In the event of an error, the API returns one of the following exceptions:
 | MissingParameterValueException | Returned if a required header or parameter is missing from the request\. | 400 Bad Request | Client | 
 | PolicyEnforcedException | Returned if a retrieval job will exceed the current data policy's retrieval rate limit\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. | 400 Bad Request | Client | 
 | ResourceNotFoundException | Returned if the specified resource such as a vault, upload ID, or job ID does not exist\. | 404 Not Found | Client | 
-| RequestTimeoutException | Returned if uploading an archive and Amazon S3 Glacier \(Glacier\) times out while receiving the upload\. | 408 Request Timeout | Client | 
+| RequestTimeoutException | Returned if uploading an archive and Amazon S3 Glacier \(S3 Glacier\) times out while receiving the upload\. | 408 Request Timeout | Client | 
 | SerializationException | Returned if the body of the request is invalid\. If including a JSON payload, check that it is well\-formed\. | 400 Bad Request | Client | 
 | ServiceUnavailableException | Returned if the service cannot complete the request\. | 500 Internal Server Error | Server | 
-| ThrottlingException | Returned if you need to reduce your rate of requests to Glacier\. | 400 Bad Request | Client | 
+| ThrottlingException | Returned if you need to reduce your rate of requests to S3 Glacier\. | 400 Bad Request | Client | 
 | UnrecognizedClientException | Returned if the Access Key ID or security token is invalid\. | 400 Bad Request | Client | 
 
-Various Glacier APIs return the same exception, but with different exception messages to help you troubleshoot the specific error encountered\.
+Various S3 Glacier APIs return the same exception, but with different exception messages to help you troubleshoot the specific error encountered\.
 
-Glacier returns error information in the response body\. The following examples show some of the error responses\.
+S3 Glacier returns error information in the response body\. The following examples show some of the error responses\.
 
 ## Example 1: Describe Job request with a job ID that does not exist<a name="bad-request-error-example1"></a>
 
@@ -38,7 +38,7 @@ Suppose you send a [Describe Job \(GET JobID\)](api-describe-job-get.md) request
 5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
 
-In response, Glacier returns the following error response\. 
+In response, S3 Glacier returns the following error response\. 
 
 ```
 HTTP/1.1 404 Not Found
@@ -68,7 +68,7 @@ The source of the error\. The field can be one of the following values: `Client`
 *Type*: String\.
 
 Note the following in the preceding response:
-+ For the error response, Glacier returns status code values of `4xx` and `5xx`\. In this example, the status code is `404 Not Found`\. 
++ For the error response, S3 Glacier returns status code values of `4xx` and `5xx`\. In this example, the status code is `404 Not Found`\. 
 + The `Content-Type` header value `application/json` indicates JSON in the body
 + The JSON in the body provides the error information\.
 
@@ -99,7 +99,7 @@ x-amz-glacier-version: 2012-06-01
 Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
 ```
 
-Glacier returns the `InvalidParameterValueException` with an appropriate message\.
+S3 Glacier returns the `InvalidParameterValueException` with an appropriate message\.
 
 ```
 HTTP/1.1 400 Bad Request

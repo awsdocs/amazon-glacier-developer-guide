@@ -97,7 +97,7 @@ In this example, a GET request is sent to retrieve a list of the provisioned cap
 
 ### Example Response<a name="api-ListProvisionedCapacity-example1-response"></a>
 
-If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 200 OK` with a list of provisioned capacity units for the account as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 200 OK` with a list of provisioned capacity units for the account as shown in the following example\.
 
  The provisioned capacity unit listed first is an example of a unit with a start date of January 31, 2017 and expiration date of February 28, 2017\. As stated earlier, if the start date is on the 31st day of a month, the expiration date is the last day of the next month\.
 

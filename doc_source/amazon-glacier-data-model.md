@@ -1,6 +1,6 @@
 # Amazon S3 Glacier Data Model<a name="amazon-glacier-data-model"></a>
 
-The Amazon S3 Glacier \(Glacier\) data model core concepts include vaults and archives\. Glacier is a REST\-based web service\. In terms of REST, vaults and archives are the resources\. In addition, the Glacier data model includes job and notification\-configuration resources\. These resources complement the core resources\.
+The Amazon S3 Glacier \(S3 Glacier\) data model core concepts include vaults and archives\. S3 Glacier is a REST\-based web service\. In terms of REST, vaults and archives are the resources\. In addition, the S3 Glacier data model includes job and notification\-configuration resources\. These resources complement the core resources\.
 
 **Topics**
 + [Vault](#data-model-vault)
@@ -10,7 +10,7 @@ The Amazon S3 Glacier \(Glacier\) data model core concepts include vaults and ar
 
 ## Vault<a name="data-model-vault"></a>
 
-In Glacier, a vault is a container for storing archives\. When you create a vault, you specify a name and choose an AWS Region where you want to create the vault\.
+In S3 Glacier, a vault is a container for storing archives\. When you create a vault, you specify a name and choose an AWS Region where you want to create the vault\.
 
 Each vault resource has a unique address\. The general form is:
 
@@ -34,11 +34,11 @@ An AWS account can create vaults in any supported AWS Region\. For list of suppo
 
 You can store an unlimited number of archives in a vault\. Depending on your business or application needs, you can store these archives in one vault or multiple vaults\. 
 
-Glacier supports various vault operations\. Note that vault operations are Region specific\. For example, when you create a vault, you create it in a specific Region\. When you request a vault list, you request it from a specific AWS Region, and the resulting list only includes vaults created in that specific Region\.
+S3 Glacier supports various vault operations\. Note that vault operations are Region specific\. For example, when you create a vault, you create it in a specific Region\. When you request a vault list, you request it from a specific AWS Region, and the resulting list only includes vaults created in that specific Region\.
 
 ## Archive<a name="data-model-archive"></a>
 
-An archive can be any data such as a photo, video, or document and is a base unit of storage in Glacier\. Each archive has a unique ID and an optional description\. Note that you can only specify the optional description during the upload of an archive\. Glacier assigns the archive an ID, which is unique in the AWS Region in which it is stored\. 
+An archive can be any data such as a photo, video, or document and is a base unit of storage in S3 Glacier\. Each archive has a unique ID and an optional description\. Note that you can only specify the optional description during the upload of an archive\. S3 Glacier assigns the archive an ID, which is unique in the AWS Region in which it is stored\. 
 
 Each archive has a unique address\. The general form is as follows:
 
@@ -54,20 +54,20 @@ https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault/archive
 
 You can store an unlimited number of archives in a vault\.
 
-In addition, the Glacier data model includes job and notification\-configuration resources\. These resources complement the core vault and archive resources\.
+In addition, the S3 Glacier data model includes job and notification\-configuration resources\. These resources complement the core vault and archive resources\.
 
 ## Job<a name="data-model-job"></a>
 
-Glacier jobs can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job providing a SQL query and list of Glacier archive objects\. Glacier Select runs the query in place and writes the output results to Amazon S3\.
+S3 Glacier jobs can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job providing a SQL query and list of S3 Glacier archive objects\. S3 Glacier Select runs the query in place and writes the output results to Amazon S3\.
 
-Retrieving an archive and vault inventory \(list of archives\) are asynchronous operations in Glacier in which you first initiate a job, and then download the job output after Glacier completes the job\. 
+Retrieving an archive and vault inventory \(list of archives\) are asynchronous operations in S3 Glacier in which you first initiate a job, and then download the job output after S3 Glacier completes the job\. 
 
 **Note**  
-Glacier offers a cold storage data archival solution\. If your application needs a storage solution that requires real\-time data retrieval, you might consider using Amazon S3\. For more information, see [Amazon Simple Storage Service \(Amazon S3\)](http://aws.amazon.com/s3)\.
+S3 Glacier offers a cold storage data archival solution\. If your application needs a storage solution that requires real\-time data retrieval, you might consider using Amazon S3\. For more information, see [Amazon Simple Storage Service \(Amazon S3\)](http://aws.amazon.com/s3)\.
 
 To initiate a vault inventory job, you provide a vault name\. Select and archive retrieval jobs require that both the vault name and the archive ID\. You can also provide an optional job description to help identify the jobs\. 
 
-Select, archive retrieval, and vault inventory jobs are associated with a vault\. A vault can have multiple jobs in progress at any point in time\. When you send a job request \(initiate a job\), Glacier returns to you a job ID to track the job\. Each job is uniquely identified by a URI of the form:
+Select, archive retrieval, and vault inventory jobs are associated with a vault\. A vault can have multiple jobs in progress at any point in time\. When you send a job request \(initiate a job\), S3 Glacier returns to you a job ID to track the job\. Each job is uniquely identified by a URI of the form:
 
 ```
 https://<region-specific endpoint>/<account-id>/vaults/<vault-name>/jobs/<job-id>
@@ -79,13 +79,13 @@ The following is an example of a job associated with an `examplevault` vault\.
 https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
 ```
 
-For each job, Glacier maintains information such as job type, description, creation date, completion date, and job status\. You can obtain information about a specific job or obtain a list of all your jobs associated with a vault\. The list of jobs that Glacier returns includes all the in\-progress and recently finished jobs\. 
+For each job, S3 Glacier maintains information such as job type, description, creation date, completion date, and job status\. You can obtain information about a specific job or obtain a list of all your jobs associated with a vault\. The list of jobs that S3 Glacier returns includes all the in\-progress and recently finished jobs\. 
 
 ## Notification Configuration<a name="data-model-notification-config"></a>
 
-Because jobs take time to complete, Glacier supports a notification mechanism to notify you when a job is complete\. You can configure a vault to send notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when jobs complete\. You can specify one SNS topic per vault in the notification configuration\.
+Because jobs take time to complete, S3 Glacier supports a notification mechanism to notify you when a job is complete\. You can configure a vault to send notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when jobs complete\. You can specify one SNS topic per vault in the notification configuration\.
 
-Glacier stores the notification configuration as a JSON document\. The following is an example vault notification configuration:
+S3 Glacier stores the notification configuration as a JSON document\. The following is an example vault notification configuration:
 
 ```
 {
@@ -100,4 +100,4 @@ Note that notification configurations are associated with vaults; you can have o
 https://<region-specific endpoint>/<account-id>/vaults/<vault-name>/notification-configuration
 ```
 
-Glacier supports operations to set, get, and delete a notification configuration\. When you delete a notification configuration, no notifications are sent when any data retrieval operation on the vault is complete\.
+S3 Glacier supports operations to set, get, and delete a notification configuration\. When you delete a notification configuration, no notifications are sent when any data retrieval operation on the vault is complete\.

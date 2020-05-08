@@ -20,7 +20,7 @@ The following are the steps to delete a vault using the AWS SDK for \.NET\.
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region from where you want to delete a vault\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region from where you want to delete a vault\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Provide request information by creating an instance of the `DeleteVaultRequest` class\.
 
@@ -28,9 +28,9 @@ The following are the steps to delete a vault using the AWS SDK for \.NET\.
 
 1. Execute the `DeleteVault` method by providing the request object as a parameter\. 
 
-   Amazon S3 Glacier \(Glacier\) deletes the vault only if it is empty\. For more information, see [Delete Vault \(DELETE vault\)](api-vault-delete.md)\.
+   Amazon S3 Glacier \(S3 Glacier\) deletes the vault only if it is empty\. For more information, see [Delete Vault \(DELETE vault\)](api-vault-delete.md)\.
 
-The following C\# code snippet illustrates the preceding steps\. The snippet retrieves metadata information of a vault that exists in the default AWS region\. 
+The following C\# code snippet illustrates the preceding steps\. The snippet retrieves metadata information of a vault that exists in the default AWS Region\. 
 
 ```
 AmazonGlacier client;

@@ -87,7 +87,7 @@ In this example, a GET request is sent to retrieve a list of tags from the speci
 
 #### Example Response<a name="api-ListTagsForVault-example1-response"></a>
 
-If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 200 OK` with a list of tags for the vault as shown in the following example\.
+If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 200 OK` with a list of tags for the vault as shown in the following example\.
 
 ```
  1. HTTP/1.1 200 OK
@@ -108,3 +108,8 @@ If the request was successful, Amazon S3 Glacier \(Glacier\) returns a `HTTP 200
 ## Related Sections<a name="related-sections-ListTagsForVault"></a>
 + [Add Tags To Vault \(POST tags add\)](api-AddTagsToVault.md)
 + [Remove Tags From Vault \(POST tags remove\)](api-RemoveTagsFromVault.md)
+
+## See Also<a name="api-ListTagsForVault_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/list-tags-for-vault.html) 

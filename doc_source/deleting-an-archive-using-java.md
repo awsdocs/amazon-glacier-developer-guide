@@ -4,7 +4,7 @@ The following are the steps to delete an archive using the AWS SDK for Java low\
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where the archive you want to delete is stored\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region where the archive you want to delete is stored\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Provide request information by creating an instance of the `DeleteArchiveRequest` class\.
 

@@ -6,7 +6,7 @@ This multipart upload operation lists in\-progress multipart uploads for the spe
 
 The List Multipart Uploads operation supports pagination\. By default, this operation returns up to 50 multipart uploads in the response\. You should always check the `marker` field in the response body for a marker at which to continue the list; if there are no more items the `marker` field is `null`\. 
 
-If the `marker` is not null, to fetch the next set of multipart uploads you sent another List Multipart Uploads request with the `marker` request parameter set to the marker value Amazon S3 Glacier \(Glacier\) returned in response to your previous List Multipart Uploads request\.
+If the `marker` is not null, to fetch the next set of multipart uploads you sent another List Multipart Uploads request with the `marker` request parameter set to the marker value Amazon S3 Glacier \(S3 Glacier\) returned in response to your previous List Multipart Uploads request\.
 
 Note the difference between this operation and the [List Parts \(GET uploadID\)](api-multipart-list-parts.md)\) operation\. The List Multipart Uploads operation lists all multipart uploads for a vault\. The List Parts operation returns parts of a specific multipart upload identified by an Upload ID\.
 
@@ -129,7 +129,7 @@ The following example lists all the multipart uploads in progress for the vault\
 
 #### Example Response<a name="api-multipart-list-uploads-example-response"></a>
 
-In the response Glacier returns a list of all in\-progress multipart uploads for the specified vault\. The `marker` field is `null`, which indicates that there are no more uploads to list\. 
+In the response S3 Glacier returns a list of all in\-progress multipart uploads for the specified vault\. The `marker` field is `null`, which indicates that there are no more uploads to list\. 
 
 ```
  1. HTTP/1.1 200 OK
@@ -182,7 +182,7 @@ The following example demonstrates how to use pagination to get a limited number
 
 #### Example Response<a name="api-multipart-list-uploads-example-response-two"></a>
 
-In the response, Amazon S3 Glacier \(Glacier\) returns a list of no more than two in\-progress multipart uploads for the specified vault, starting at the specified marker and returning two results\. 
+In the response, Amazon S3 Glacier \(S3 Glacier\) returns a list of no more than two in\-progress multipart uploads for the specified vault, starting at the specified marker and returning two results\. 
 
 ```
  1. HTTP/1.1 200 OK

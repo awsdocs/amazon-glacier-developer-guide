@@ -7,19 +7,19 @@
 
 ## Retrieve Vault Metadata for a Vault<a name="retrieve-vault-info-sdk-dotnet-lowlevel-one-vault"></a>
 
-You can retrieve metadata for a specific vault or all the vaults in a specific region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the AWS SDK for \.NET\. 
+You can retrieve metadata for a specific vault or all the vaults in a specific AWS Region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the AWS SDK for \.NET\. 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where the vault resides\. All operations you perform using this client apply to that region\.
+   You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\.
 
 1. Provide request information by creating an instance of the `DescribeVaultRequest` class\.
 
-   Amazon S3 Glacier \(Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\.
+   Amazon S3 Glacier \(S3 Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\.
 
 1. Execute the `DescribeVault` method by providing the request object as a parameter\. 
 
-   The vault metadata information that Glacier returns is available in the `DescribeVaultResult` object\.
+   The vault metadata information that S3 Glacier returns is available in the `DescribeVaultResult` object\.
 
 The following C\# code snippet illustrates the preceding steps\. The snippet retrieves metadata information of an existing vault in the US West \(Oregon\) Region\. 
 
@@ -48,15 +48,15 @@ For information about the underlying REST API, see [Describe Vault \(GET vault\)
 
 ## Retrieve Vault Metadata for All Vaults in a Region<a name="retrieve-vault-info-sdk-dotnet-lowlevel-all-vaults"></a>
 
-You can also use the `ListVaults` method to retrieve metadata for all the vaults in a specific region\. 
+You can also use the `ListVaults` method to retrieve metadata for all the vaults in a specific AWS Region\. 
 
-The following C\# code snippet retrieves list of vaults in the US West \(Oregon\) Region\. The request limits the number of vaults returned in the response to 5\. The code snippet then makes a series of `ListVaults` calls to retrieve the entire vault list from the region\. 
+The following C\# code snippet retrieves list of vaults in the US West \(Oregon\) Region\. The request limits the number of vaults returned in the response to 5\. The code snippet then makes a series of `ListVaults` calls to retrieve the entire vault list from the AWS Region\. 
 
 ```
 AmazonGlacierClient client;
 client = new AmazonGlacierClient(Amazon.RegionEndpoint.USWest2);
 string lastMarker = null;
-Console.WriteLine("\n List of vaults in your account in the specific region ...");
+Console.WriteLine("\n List of vaults in your account in the specific AWS Region ...");
 do
 {
   ListVaultsRequest request = new ListVaultsRequest()
@@ -75,7 +75,7 @@ do
 } while (lastMarker != null);
 ```
 
-In the preceding code segment, if you don't specify the `Limit` value in the request, Glacier returns up to 10 vaults, as set by the Glacier API\. 
+In the preceding code segment, if you don't specify the `Limit` value in the request, S3 Glacier returns up to 10 vaults, as set by the S3 Glacier API\. 
 
 Note that the information returned for each vault in the list is the same as the information you get by calling the `DescribeVault` method for a specific vault\. 
 

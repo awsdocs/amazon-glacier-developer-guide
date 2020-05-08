@@ -2,13 +2,13 @@
 
 ## Description<a name="api-vault-put-description"></a>
 
-This operation creates a new vault with the specified name\.  The name of the vault must be unique within a region for an AWS account\. You can create up to 1,000 vaults per account\. For information on creating more vaults, go to the [Amazon S3 Glacier product detail page](http://aws.amazon.com/glacier)\.
+This operation creates a new vault with the specified name\.  The name of the vault must be unique within an AWS Region for an AWS account\. You can create up to 1,000 vaults per account\. For information on creating more vaults, go to the [Amazon S3 Glacier product detail page](http://aws.amazon.com/glacier)\.
 
 You must use the following guidelines when naming a vault\. 
 +  Names can be between 1 and 255 characters long\. 
 + Allowed characters are a–z, A–Z, 0–9, '\_' \(underscore\), '\-' \(hyphen\), and '\.' \(period\)\.
 
-This operation is idempotent, you can send the same request multiple times and it has no further effect after the first time Amazon S3 Glacier \(Glacier\) creates the specified vault\.
+This operation is idempotent, you can send the same request multiple times and it has no further effect after the first time Amazon S3 Glacier \(S3 Glacier\) creates the specified vault\.
 
 ## Requests<a name="api-vault-put-requests"></a>
 
@@ -85,7 +85,7 @@ The following example sends an HTTP PUT request to create a vault named `example
 
 ### Example Response<a name="api-vault-put-example-response"></a>
 
-Glacier creates the vault and returns the relative URI path of the vault in the `Location` header\. The account ID is always displayed in the `Location` header regardless of whether the account ID or a hyphen \('`-`'\) was specified in the request\.
+S3 Glacier creates the vault and returns the relative URI path of the vault in the `Location` header\. The account ID is always displayed in the `Location` header regardless of whether the account ID or a hyphen \('`-`'\) was specified in the request\.
 
 ```
 1. HTTP/1.1 201 Created
@@ -98,3 +98,8 @@ Glacier creates the vault and returns the relative URI path of the vault in the 
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="vault-put-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/create-vault.html) 

@@ -1,6 +1,6 @@
 # Tagging Amazon S3 Glacier Resources<a name="tagging"></a>
 
-A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *key* and a *value*, both of which you define\. You can assign the tags that you define to Amazon S3 Glacier \(Glacier\) vault resources\. Using tags is a simple yet powerful way to manage AWS resources and organize data, including billing data\. 
+A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *key* and a *value*, both of which you define\. You can assign the tags that you define to Amazon S3 Glacier \(S3 Glacier\) vault resources\. Using tags is a simple yet powerful way to manage AWS resources and organize data, including billing data\. 
 
 **Topics**
 + [Tagging Basics](#tagging-basics)
@@ -11,7 +11,7 @@ A *tag* is a label that you assign to an AWS resource\. Each tag consists of a *
 
 ## Tagging Basics<a name="tagging-basics"></a>
 
-You use the Glacier console, AWS Command Line Interface \(AWS CLI\), or Glacier API to complete the following tasks:
+You use the S3 Glacier console, AWS Command Line Interface \(AWS CLI\), or S3 Glacier API to complete the following tasks:
 + Adding tags to a vault
 + Listing the tags for a vault
 + Removing tags from a vault

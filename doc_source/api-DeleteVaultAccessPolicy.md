@@ -2,7 +2,7 @@
 
 ## Description<a name="api-DeleteVaultAccessPolicy-description"></a>
 
-This operation deletes the access policy associated with the specified vault\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(Glacier\) to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request\. 
+This operation deletes the access policy associated with the specified vault\. The operation is eventually consistent—that is, it might take some time for Amazon S3 Glacier \(S3 Glacier\) to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request\. 
 
 This operation is idempotent\. You can invoke delete multiple times, even if there is no policy associated with the vault\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
 
@@ -37,7 +37,7 @@ This operation does not have a request body\.
 
 ## Responses<a name="api-DeleteVaultAccessPolicy-responses"></a>
 
-In response, Glacier returns `204 No Content` if the policy is successfully deleted\.
+In response, S3 Glacier returns `204 No Content` if the policy is successfully deleted\.
 
 ### Syntax<a name="api-DeleteVaultAccessPolicy-responses-syntax"></a>
 
@@ -77,7 +77,7 @@ In this example, a `DELETE` request is sent to the `access-policy` subresource o
 
 ### Example Response<a name="api-DeleteVaultAccessPolicy-example-response"></a>
 
-In response, if the policy is successfully deleted Glacier returns a `204 No Content` as shown in the following example\.
+In response, if the policy is successfully deleted S3 Glacier returns a `204 No Content` as shown in the following example\.
 
 ```
 1. HTTP/1.1 204 No Content
@@ -88,3 +88,8 @@ In response, if the policy is successfully deleted Glacier returns a `204 No Con
 ## Related Sections<a name="related-sections-DeleteVaultAccessPolicy"></a>
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)
+
+## See Also<a name="api-DeleteVaultAccessPolicy-SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/delete-vault-access-policy.html) 

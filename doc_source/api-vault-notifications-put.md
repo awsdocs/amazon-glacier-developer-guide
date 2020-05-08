@@ -2,9 +2,9 @@
 
 ## Description<a name="api-vault-notifications-put-description"></a>
 
-Retrieving an archive and a vault inventory are asynchronous operations in Amazon S3 Glacier \(Glacier\) for which you must first initiate a job and wait for the job to complete before you can download the job output\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\.  
+Retrieving an archive and a vault inventory are asynchronous operations in Amazon S3 Glacier \(S3 Glacier\) for which you must first initiate a job and wait for the job to complete before you can download the job output\. You can configure a vault to post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when these jobs complete\. You can use this operation to set notification configuration on the vault\. For more information, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\.  
 
-To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want Glacier to send notifications to the topic\.
+To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want S3 Glacier to send notifications to the topic\.
 
 You can configure a vault to publish a notification for the following vault events:
 + **`ArchiveRetrievalCompleted`—** This event occurs when a job that was initiated for an archive retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
@@ -47,7 +47,7 @@ This operation uses only request headers that are common to all operations\. For
  The JSON in the request body contains the following fields\. 
 
 **Events**  
-An array of one or more events for which you want Glacier to send notification\.  
+An array of one or more events for which you want S3 Glacier to send notification\.  
 *Valid Values*: `ArchiveRetrievalCompleted` \| `InventoryRetrievalCompleted`   
 *Required*: yes  
 *Type*: Array
@@ -59,7 +59,7 @@ The Amazon SNS topic ARN\. For more information, go to [Getting Started with Ama
 
 ## Responses<a name="api-vault-notifications-put-responses"></a>
 
-In response, Amazon S3 Glacier \(Glacier\) returns `204 No Content` if the notification configuration is accepted\.
+In response, Amazon S3 Glacier \(S3 Glacier\) returns `204 No Content` if the notification configuration is accepted\.
 
 ### Syntax<a name="api-vault-notifications-put-responses-elements"></a>
 
@@ -116,3 +116,8 @@ A successful response returns a `204 No Content`\.
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
+
+## See Also<a name="api-vault-notifications-put_SeeAlso"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs, see the following:
++  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/set-vault-notifications.html) 

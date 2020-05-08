@@ -7,7 +7,7 @@ Before you can start with this exercise, you must sign up for an AWS account \(i
 + [Download the Appropriate AWS SDK](#getting-started-download-sdk)
 
 **Important**  
-Amazon S3 Glacier \(Glacier\) provides a management console, which you can use to create and delete vaults\. However, all other interactions with Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using Glacier with the AWS CLI, go to [AWS CLI Reference for Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
+Amazon S3 Glacier \(S3 Glacier\) provides a management console, which you can use to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
 ## Set Up an AWS Account and an Administrator User<a name="setup"></a>
 
@@ -19,7 +19,7 @@ To complete the setup, follow the instructions in the following topics:
 
 #### Sign up for AWS<a name="setting-up-signup"></a>
 
-When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all services in AWS, including Glacier\. You are charged only for the services that you use\. For more information about Glacier usage rates, see the [Amazon S3 Glacier product page](https://aws.amazon.com/glacier/)\.
+When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all services in AWS, including S3 Glacier\. You are charged only for the services that you use\. For more information about S3 Glacier usage rates, see the [Amazon S3 Glacier product page](https://aws.amazon.com/glacier/)\.
 
 If you already have an AWS account and you have created an IAM user for the account, skip to the next task\. If you don't have an AWS account, use the following procedure to create one\.
 
@@ -35,7 +35,7 @@ Note your AWS account ID, because you'll need it for the next step\.
 
 #### Create an IAM User<a name="setting-up-iam"></a>
 
-Services in AWS, such as Glacier, require that you provide credentials when you access them, so that the service can determine whether you have permissions to access the resources owned by that service\. The console requires your password\. You can create access keys for your AWS account to access the AWS CLI or API\. However, we don't recommend that you access AWS using the credentials for your AWS account\. Instead, we recommend that you use AWS Identity and Access Management \(IAM\)\. Create an IAM user, add the user to an IAM group with administrative permissions, and then grant administrative permissions to the IAM user that you created\. You can then access AWS using a special URL and that IAM user's credentials\.
+Services in AWS, such as S3 Glacier, require that you provide credentials when you access them, so that the service can determine whether you have permissions to access the resources owned by that service\. The console requires your password\. You can create access keys for your AWS account to access the AWS CLI or API\. However, we don't recommend that you access AWS using the credentials for your AWS account\. Instead, we recommend that you use AWS Identity and Access Management \(IAM\)\. Create an IAM user, add the user to an IAM group with administrative permissions, and then grant administrative permissions to the IAM user that you created\. You can then access AWS using a special URL and that IAM user's credentials\.
 
 If you signed up for AWS, but you haven't created an IAM user for yourself, you can create one using the IAM console\.
 
@@ -120,7 +120,7 @@ For more information about IAM, see the following:
 + [Getting Started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
 + [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
-For information about using IAM with Glacier, see [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)\.
+For information about using IAM with S3 Glacier, see [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)\.
 
 ## Download the Appropriate AWS SDK<a name="getting-started-download-sdk"></a>
 

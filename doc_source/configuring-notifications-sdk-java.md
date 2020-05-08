@@ -4,7 +4,7 @@ The following are the steps to configure notifications on a vault using the low\
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
-   You need to specify an AWS region where the vault resides\. All operations you perform using this client apply to that region\. 
+   You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\. 
 
 1. Provide notification configuration information by creating an instance of the `SetVaultNotificationsRequest` class\.
 
@@ -12,7 +12,7 @@ The following are the steps to configure notifications on a vault using the low\
 
 1. Execute the `setVaultNotifications` method by providing the request object as a parameter\. 
 
-The following Java code snippet illustrates the preceding steps\. The snippet sets a notification configuration on a vault\. The configuration requests Amazon S3 Glacier \(Glacier\) to send a notification to the specified Amazon SNS topic when either the `ArchiveRetrievalCompleted` event or the `InventoryRetrievalCompleted` event occurs\.
+The following Java code snippet illustrates the preceding steps\. The snippet sets a notification configuration on a vault\. The configuration requests Amazon S3 Glacier \(S3 Glacier\) to send a notification to the specified Amazon SNS topic when either the `ArchiveRetrievalCompleted` event or the `InventoryRetrievalCompleted` event occurs\.
 
 ```
 SetVaultNotificationsRequest request = new SetVaultNotificationsRequest()
