@@ -1,8 +1,10 @@
 # What Is Amazon S3 Glacier?<a name="introduction"></a>
 
-Welcome to the *Amazon S3 Glacier Developer Guide*\. Amazon Simple Storage Service Glacier, that is Amazon S3 Glacier \(S3 Glacier\), is a storage service optimized for infrequently used data, or "cold data\."
+Amazon S3 Glacier is a secure, durable, and extremely low\-cost Amazon S3 storage class for data archiving and long\-term backup\.
 
-S3 Glacier is an extremely low\-cost storage service that provides durable storage with security features for data archiving and backup\. With S3 Glacier, customers can store their data cost effectively for months, years, or even decades\. S3 Glacier enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure detection and recovery, or time\-consuming hardware migrations\. For more service highlights and pricing information, go to the [S3 Glacier detail page](https://aws.amazon.com/glacier)\. 
+With S3 Glacier, customers can store their data cost effectively for months, years, or even decades\. S3 Glacier enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure detection and recovery, or time\-consuming hardware migrations\. For more service highlights and pricing information, go to the [S3 Glacier detail page](https://aws.amazon.com/glacier)\.
+
+S3 Glacier is one of the many different storage classes for Amazon S3\. For an general overview of Amazon S3 core concepts, such as buckets, access points, storage classes and objects, see [What is Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/introduction.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 **Topics**
 + [Are You a First\-Time S3 Glacier User?](#are-you-a-firsttime-glacier-user)

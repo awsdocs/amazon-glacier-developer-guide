@@ -9,5 +9,5 @@ S3 Glacier prepares an inventory for each vault periodically, every 24 hours\. B
 + [Deleting a Vault in Amazon S3 Glacier Using the AWS SDK for Java](deleting-vaults-sdk-java.md)
 + [Deleting a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET](deleting-vaults-sdk-dotnet.md)
 + [Deleting a Vault in S3 Glacier Using the REST API](deleting-vault-rest-api.md)
-+ [Deleting a Vault Using the Amazon S3 Glacier Console](deleting-vaults-console.md)
++ [Deleting an Empty Vault Using the Amazon S3 Glacier Console](deleting-vaults-console.md)
 + [Deleting a Vault in Amazon S3 Glacier Using the AWS Command Line Interface](deleting-vaults-cli.md)

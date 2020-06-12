@@ -55,7 +55,7 @@ For an example of initiating a select job, see [Example Request: Initiate a sele
 
 ## Initializing an Archive or Vault Inventory Retrieval Job<a name="api-initiate-job-post-description"></a>
 
-Retrieving an archive or a vault inventory are asynchronous operations that require you to initiate a job\. Retrieval is a two\-step process:
+Retrieving an archive or a vault inventory are asynchronous operations that require you to initiate a job\. Once started, job cannot be cancelled\. Retrieval is a two\-step process:
 
 1. Initiate a retrieval job by using the [Initiate Job \(POST jobs\)](#api-initiate-job-post) operation\.
 **Important**  
@@ -260,7 +260,7 @@ This operation includes the following error or errors, in addition to the possib
  6. 
  7. {
  8.   "Type": "archive-retrieval",
- 9.   "ArchiveId": "NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId"
+ 9.   "ArchiveId": "NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId",
 10.   "Description": "My archive description",
 11.   "SNSTopic": "arn:aws:sns:us-west-2:111111111111:Glacier-ArchiveRetrieval-topic-Example",
 12.   "Tier" : "Bulk"
@@ -272,7 +272,7 @@ The following is an example of the body of a request that specifies a range of t
 ```
 {
   "Type": "archive-retrieval",
-  "ArchiveId": "NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId"
+  "ArchiveId": "NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId",
   "Description": "My archive description",
   "RetrievalByteRange": "2097152-4194303",
   "SNSTopic": "arn:aws:sns:us-west-2:111111111111:Glacier-ArchiveRetrieval-topic-Example",
