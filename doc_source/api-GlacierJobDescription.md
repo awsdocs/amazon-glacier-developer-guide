@@ -81,7 +81,7 @@ The Amazon Resource Name \(ARN\) that represents an Amazon SNS topic where notif
 
 **StatusCode**  
 The code indicating the status of the job\.  
-*Valid Values*: `InProgress` \| `Succeeded` \| `Succeeded`  
+*Valid Values*: `InProgress` \| `Succeeded` \| `Failed`  
 *Type*: String
 
 **StatusMessage**  
