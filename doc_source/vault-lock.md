@@ -18,4 +18,4 @@ Locking a vault takes two steps:
 
 1. Initiate the lock by attaching a vault lock policy to your vault, which sets the lock to an in\-progress state and returns a lock ID\. While in the in\-progress state, you have 24 hours to validate your vault lock policy before the lock ID expires\.
 
-1. Use the lock ID to complete the lock process\. If the vault lock policy doesn't work as expected, you can abort the lock and restart from the beginning\. For information on how to use the S3 Glacier API to lock a vault, see [Locking a Vault by Using the Amazon S3 Glacier API](vault-lock-how-to-api.md)\.
+1. Use the lock ID to complete the lock process\. If the vault lock policy doesn't work as expected, you can stop the lock and restart from the beginning\. For information on how to use the S3 Glacier API to lock a vault, see [Locking a Vault by Using the Amazon S3 Glacier API](vault-lock-how-to-api.md)\.

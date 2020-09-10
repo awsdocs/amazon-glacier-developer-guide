@@ -71,7 +71,7 @@ The length of an Amazon S3 object name, also referred to as the *key*, can be no
 
 S3 Glacier Select notifies you of two kinds of errors\. The first set of errors is sent to you synchronously when you submit the query in [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. These errors are sent to you as part of the HTTP response\. Another set of errors can occur after the query has been accepted successfully, but they happen during query execution\. In this case, the errors are written to the specified output location under the `errors` prefix\.
 
-S3 Glacier Select will stop executing the query after encountering an error\. To execute the query successfully, you must resolve all errors\. You can check the logs to identify which records caused a failure\. 
+S3 Glacier Select will stop executing the query after encountering an error\. To run the query successfully, you must resolve all errors\. You can check the logs to identify which records caused a failure\. 
 
 Because queries run in parallel across multiple compute nodes, the errors that you get are not in sequential order\. For example, if your query fails with an error in row 6234, it does not mean that all rows before row 6234 were successfully processed\. The next run of the query might show an error in a different row\. 
 

@@ -16,7 +16,7 @@ Retrieving an archive from S3 Glacier is a two\-step process\.
 
    1. Initiate a job requesting S3 Glacier to prepare an entire archive or a portion of the archive for subsequent download by using the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) operation\. 
 
-   When you initiate a job, S3 Glacier returns a job ID in the response and executes the job asynchronously\. \(You cannot download the job output until after the job completes as described in Step 2\.\)
+   When you initiate a job, S3 Glacier returns a job ID in the response and runs the job asynchronously\. \(You cannot download the job output until after the job completes as described in Step 2\.\)
 **Important**  
 For Standard retrievals only, a data retrieval policy can cause your initiate retrieval job request to fail with a `PolicyEnforcedException` exception\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. For more information about the `PolicyEnforcedException` exception, see [Error Responses](api-error-responses.md)\.
 

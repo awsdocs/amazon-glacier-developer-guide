@@ -8,7 +8,7 @@ A data retrieval policy can cause your initiate retrieval job request to fail wi
 
 1. After the job completes, download the bytes using the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 
-For example, retrieving an archive or a vault inventory requires you to first initiate a retrieval job\. The job request is executed asynchronously\. When you initiate a retrieval job, S3 Glacier creates a job and returns a job ID in the response\. When S3 Glacier completes the job, you can get the job output, the archive bytes, or the vault inventory data\. 
+For example, retrieving an archive or a vault inventory requires you to first initiate a retrieval job\. The job request is ran asynchronously\. When you initiate a retrieval job, S3 Glacier creates a job and returns a job ID in the response\. When S3 Glacier completes the job, you can get the job output, the archive bytes, or the vault inventory data\. 
 
 The job must complete before you can get its output\. To determine the status of the job, you have the following options:
 + **Wait for job completion notification**—You can specify an Amazon Simple Notification Service \(Amazon SNS\) topic to which S3 Glacier can post a notification after the job is completed\. You can specify Amazon SNS topic using the following methods: 

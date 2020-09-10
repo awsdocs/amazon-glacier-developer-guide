@@ -10,7 +10,7 @@ The following are the steps to configure notifications on a vault using the low\
 
    You need to provide the vault name, notification configuration information, and account ID\. In specifying a notification configuration, you provide the Amazon Resource Name \(ARN\) of an existing Amazon SNS topic and one or more events for which you want to be notified\. For a list of supported events, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\)\.
 
-1. Execute the `setVaultNotifications` method by providing the request object as a parameter\. 
+1. Run the `setVaultNotifications` method by providing the request object as a parameter\. 
 
 The following Java code snippet illustrates the preceding steps\. The snippet sets a notification configuration on a vault\. The configuration requests Amazon S3 Glacier \(S3 Glacier\) to send a notification to the specified Amazon SNS topic when either the `ArchiveRetrievalCompleted` event or the `InventoryRetrievalCompleted` event occurs\.
 

@@ -17,7 +17,7 @@ You can set a notification configuration on a vault so that when a job completes
 
 ## Configuring Vault Notifications in S3 Glacier: General Concepts<a name="configuring-notifications.general"></a>
 
-A S3 Glacier retrieval job request is executed asynchronously\. You must wait until S3 Glacier completes the job before you can get its output\. You can periodically poll S3 Glacier to determine the job status, but that is not an optimal approach\. S3 Glacier also supports notifications\. When a job completes, it can post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\. This requires you to set notification configuration on the vault\. In the configuration, you identify one or more events and an Amazon SNS topic to which you want S3 Glacier to send a message when the event occurs\. 
+A S3 Glacier retrieval job request is ran asynchronously\. You must wait until S3 Glacier completes the job before you can get its output\. You can periodically poll S3 Glacier to determine the job status, but that is not an optimal approach\. S3 Glacier also supports notifications\. When a job completes, it can post a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\. This requires you to set notification configuration on the vault\. In the configuration, you identify one or more events and an Amazon SNS topic to which you want S3 Glacier to send a message when the event occurs\. 
 
 S3 Glacier defines events specifically related to job completion \(`ArchiveRetrievalCompleted`, `InventoryRetrievalCompleted`\) that you can add to the vault's notification configuration\. When a specific job completes, S3 Glacier publishes a notification message to the SNS topic\.
 

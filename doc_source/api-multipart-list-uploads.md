@@ -2,7 +2,7 @@
 
 ## Description<a name="api-multipart-list-uploads-description"></a>
 
-This multipart upload operation lists in\-progress multipart uploads for the specified vault\. An in\-progress multipart upload is a multipart upload that has been initiated by an [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request, but has not yet been completed or aborted\. The list returned in the List Multipart Upload response has no guaranteed order\.
+This multipart upload operation lists in\-progress multipart uploads for the specified vault\. An in\-progress multipart upload is a multipart upload that has been initiated by an [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request, but has not yet been completed or stopped\. The list returned in the List Multipart Upload response has no guaranteed order\.
 
 The List Multipart Uploads operation supports pagination\. By default, this operation returns up to 50 multipart uploads in the response\. You should always check the `marker` field in the response body for a marker at which to continue the list; if there are no more items the `marker` field is `null`\. 
 

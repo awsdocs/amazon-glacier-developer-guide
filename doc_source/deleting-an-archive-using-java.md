@@ -10,7 +10,7 @@ The following are the steps to delete an archive using the AWS SDK for Java low\
 
    You need to provide an archive ID, a vault name, and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\.
 
-1. Execute the `deleteArchive` method by providing the request object as a parameter\. 
+1. Run the `deleteArchive` method by providing the request object as a parameter\. 
 
 The following Java code snippet illustrates the preceding steps\.
 

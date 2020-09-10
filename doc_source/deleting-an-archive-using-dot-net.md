@@ -59,7 +59,7 @@ The following are the steps to delete an using the AWS SDK for \.NET\.
 
    You need to provide an archive ID, a vault name, and your account ID\. If you don't provide an account ID, then account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\.
 
-1. Execute the `DeleteArchive` method by providing the request object as a parameter\. 
+1. Run the `DeleteArchive` method by providing the request object as a parameter\. 
 
 ### Example: Deleting an Archive Using the Low\-Level API of the AWS SDK for \.NET<a name="delete-archive-dot-net-low-level-example"></a>
 

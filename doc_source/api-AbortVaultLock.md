@@ -2,7 +2,7 @@
 
 ## Description<a name="api-AbortVaultLock-description"></a>
 
-This operation aborts the vault locking process if the vault lock is not in the `Locked` state\. If the vault lock is in the `Locked` state when this operation is requested, the operation returns an `AccessDeniedException` error\. Aborting the vault locking process removes the vault lock policy from the specified vault\. 
+This operation stops the vault locking process if the vault lock is not in the `Locked` state\. If the vault lock is in the `Locked` state when this operation is requested, the operation returns an `AccessDeniedException` error\. Stopping the vault locking process removes the vault lock policy from the specified vault\. 
 
 A vault lock is put into the `InProgress` state by calling [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)\. A vault lock is put into the `Locked` state by calling [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)\. You can get the state of a vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\. For more information about vault lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
@@ -63,7 +63,7 @@ For information about Amazon S3 Glacier exceptions and error messages, see [Erro
 
 ## Examples<a name="api-AbortVaultLock-examples"></a>
 
-The following example demonstrates how to abort the vault locking process\.
+The following example demonstrates how to stop the vault locking process\.
 
 ### Example Request<a name="api-AbortVaultLock-example-request"></a>
 

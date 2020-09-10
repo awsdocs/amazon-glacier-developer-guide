@@ -8,7 +8,7 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 
 1.  Initiate an inventory retrieval job by executing the `initiateJob` method\.
 
-   Execute `initiateJob` by providing job information in an `InitiateJobRequest` object\. 
+   Run `initiateJob` by providing job information in an `InitiateJobRequest` object\. 
 **Note**  
 Note that if an inventory has not been completed for the vault an error is returned\. Amazon S3 Glacier \(S3 Glacier\) prepares an inventory for each vault periodically, every 24 hours\. 
 

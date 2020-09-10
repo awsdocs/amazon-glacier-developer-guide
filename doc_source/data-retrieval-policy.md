@@ -62,7 +62,7 @@ You can view and set a data retrieval policy by using the S3 Glacier REST API\. 
 
 When using the PUT policy operation you select the data retrieval policy type by setting the JSON `Strategy` field value to `BytesPerHour`, `FreeTier`, or `None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console, `FreeTier` to selecting **Free Tier Only**, and `None` to selecting **No Retrieval Policy**\.
 
-When you use the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) operation to initiate a data retrieval job that will exceed the maximum retrieval rate set in your data retrieval policy, the Initiate Job operation will abort and throw an exception\. 
+When you use the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) operation to initiate a data retrieval job that will exceed the maximum retrieval rate set in your data retrieval policy, the Initiate Job operation will stop and throw an exception\. 
 
 ### Using the AWS SDKs to Set Up a Data Retrieval Policy<a name="data-retrieval-policy-managed-using-api-sdk"></a>
 

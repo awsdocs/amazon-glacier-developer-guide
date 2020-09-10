@@ -2,9 +2,9 @@
 
 ## Description<a name="api-multipart-abort-upload-description"></a>
 
-This multipart upload operation aborts a multipart upload identified by the upload ID\.
+This multipart upload operation stops a multipart upload identified by the upload ID\.
 
-After the Abort Multipart Upload request succeeds, you cannot use the upload ID to upload any more parts or perform any other operations\. Aborting a completed multipart upload fails\. However, aborting an already\-aborted upload will succeed, for a short time\. 
+After the Abort Multipart Upload request succeeds, you cannot use the upload ID to upload any more parts or perform any other operations\. Stopping a completed multipart upload fails\. However, stopping an already\-stopped upload will succeed, for a short time\. 
 
 This operation is idempotent\. 
 
@@ -12,7 +12,7 @@ For information about multipart upload, see [Uploading Large Archives in Parts \
 
 ## Requests<a name="api-multipart-abort-upload-requests"></a>
 
-To abort a multipart upload, send an HTTP `DELETE` request to the URI of the `multipart-uploads` subresource of the vault and identify the specific multipart upload ID as part of the URI\.
+To stop a multipart upload, send an HTTP `DELETE` request to the URI of the `multipart-uploads` subresource of the vault and identify the specific multipart upload ID as part of the URI\.
 
 ### Syntax<a name="api-multipart-abort-upload-requests-syntax"></a>
 

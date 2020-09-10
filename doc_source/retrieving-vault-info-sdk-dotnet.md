@@ -17,7 +17,7 @@ You can retrieve metadata for a specific vault or all the vaults in a specific A
 
    Amazon S3 Glacier \(S3 Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\.
 
-1. Execute the `DescribeVault` method by providing the request object as a parameter\. 
+1. Run the `DescribeVault` method by providing the request object as a parameter\. 
 
    The vault metadata information that S3 Glacier returns is available in the `DescribeVaultResult` object\.
 

@@ -10,7 +10,7 @@ The low\-level API provides methods for all the vault operations, including crea
 
    Amazon S3 Glacier \(S3 Glacier\) requires you to provide a vault name and your account ID\. If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is used\. For more information, see [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)\. 
 
-1. Execute the `createVault` method by providing the request object as a parameter\. 
+1. Run the `createVault` method by providing the request object as a parameter\. 
 
    The response S3 Glacier returns is available in the `CreateVaultResult` object\.
 

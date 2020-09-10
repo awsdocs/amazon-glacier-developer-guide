@@ -69,7 +69,7 @@ The low\-level API provides methods for all the archive operations\. The followi
 
    If you don't provide an account ID, then the account ID associated with the credentials you provide to sign the request is assumed\. For more information, see [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)\. 
 
-1. Execute the `UploadArchive` method by providing the request object as a parameter\. 
+1. Run the `UploadArchive` method by providing the request object as a parameter\. 
 
    In response, S3 Glacier returns an archive ID of the newly uploaded archive\. 
 

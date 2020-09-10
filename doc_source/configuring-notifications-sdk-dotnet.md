@@ -12,7 +12,7 @@ The following are the steps to configure notifications on a vault using the low\
 
    In specifying a notification configuration, you provide the Amazon Resource Name \(ARN\) of an existing Amazon SNS topic and one or more events for which you want to be notified\. For a list of supported events, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\)\.
 
-1. Execute the `SetVaultNotifications` method by providing the request object as a parameter\. 
+1. Run the `SetVaultNotifications` method by providing the request object as a parameter\. 
 
 1. After setting notification configuration on a vault, you can retrieve configuration information by calling the `GetVaultNotifications` method, and remove it by calling the `DeleteVaultNotifications` method provided by the client\. 
 
