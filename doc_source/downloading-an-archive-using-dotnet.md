@@ -222,9 +222,9 @@ namespace glacier.amazon.com.docsamples
         "        {" +
         "            \"Sid\" : \"sns-rule\"," +
         "            \"Effect\" : \"Allow\"," +
-        "            \"Principal\" : {\"AWS\" : \"arn:aws:iam::123456789012:root\" }," +
+        "            \"Principal\" : {\"Service\" : \"sns.amazonaws.com\" }," +
         "            \"Action\"    : \"sqs:SendMessage\"," +
-        "            \"Resource\"  : \"{QuernArn}\"," +
+        "            \"Resource\"  : \"{QueueArn}\"," +
         "            \"Condition\" : {" +
         "                \"ArnLike\" : {" +
         "                    \"aws:SourceArn\" : \"{TopicArn}\"" +
@@ -292,7 +292,7 @@ namespace glacier.amazon.com.docsamples
       });
 
       // Add policy to the queue so SNS can send messages to the queue.
-      var policy = SQS_POLICY.Replace("{TopicArn}", topicArn).Replace("{QuernArn}", queueArn);
+      var policy = SQS_POLICY.Replace("{TopicArn}", topicArn).Replace("{QueueArn}", queueArn);
 
       sqsClient.SetQueueAttributes(new SetQueueAttributesRequest()
       {
