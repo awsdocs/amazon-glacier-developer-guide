@@ -33,11 +33,11 @@ Tag key restrictions are as follows:
 + Within a set of tags for a vault, each tag key must be unique\. If you add a tag with a key that's already in use, your new tag overwrites the existing key\-value pair\. 
 + Tag keys cannot start with `aws:` because this prefix is reserved for use by AWS\. AWS can create tags that begin with this prefix on your behalf, but you can't edit or delete them\.
 + Tag keys must be from 1 to 128 Unicode characters in length\.
-+ Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: `_ . / = + - @`\.
++ Tag keys must consist of the following characters: Unicode letters, digits, spaces, and the following special characters: `_ . / = + - @`\.
 
 Tag value restrictions are as follows:
 + Tag values must be from 0 to 255 Unicode characters in length\.
-+ Tag values can be blank\. Otherwise, they must consist of the following characters: Unicode letters, digits, white space, and any of the following special characters: `_ . / = + - @`\.
++ Tag values can be blank\. Otherwise, they must consist of the following characters: Unicode letters, digits, spaces, and any of the following special characters: `_ . / = + - @`\.
 
 ## Tracking Costs Using Tagging<a name="tagging-billing"></a>
 
