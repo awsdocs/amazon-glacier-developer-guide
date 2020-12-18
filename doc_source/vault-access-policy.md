@@ -4,6 +4,8 @@ An Amazon S3 Glacier vault access policy is a resource\-based policy that you ca
 
 You can create one vault access policy for each vault to manage *permissions*\. You can modify permissions in a vault access policy at any time\. S3 Glacier also supports a Vault Lock policy on each vault that, after you lock it, cannot be altered\. For more information about working with Vault Lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\. 
 
+
+
 You can use the Glacier API, AWS SDKs, AWS CLI, or the S3 Glacier console to create and manage vault access policies\. For a list of operations allowed for vault access resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
 **Topics**
@@ -79,6 +81,8 @@ The example policy grants an AWS account with temporary credentials permission t
 ```
 
 ### Related Sections<a name="related-sections-vault-access-policy"></a>
+
+ 
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)

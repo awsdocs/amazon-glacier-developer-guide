@@ -14,17 +14,23 @@ In S3 Glacier, a vault is a container for storing archives\. When you create a v
 
 Each vault resource has a unique address\. The general form is:
 
+ 
+
 ```
 https://<region-specific endpoint>/<account-id>/vaults/<vaultname>
 ```
 
 For example, suppose that you create a vault \(`examplevault`\) in the US West \(Oregon\) Region\. This vault can then be addressed by the following URI:
 
+ 
+
 ```
 https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault
 ```
 
 In the URI, 
+
+ 
 + `glacier.us-west-2.amazonaws.com` identifies the US West \(Oregon\) Region\. 
 + `111122223333` is the AWS account ID that owns the vault\.
 + `vaults` refers to the collection of vaults owned by the AWS account\.
@@ -42,11 +48,15 @@ An archive can be any data such as a photo, video, or document and is a base uni
 
 Each archive has a unique address\. The general form is as follows:
 
+ 
+
 ```
 https://<region-specific endpoint>/<account-id>/vaults/<vault-name>/archives/<archive-id>
 ```
 
 The following is an example URI of an archive stored in the `examplevault` vault in the US West \(Oregon\) Region:
+
+ 
 
 ```
 https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault/archives/NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId
@@ -69,11 +79,15 @@ To initiate a vault inventory job, you provide a vault name\. Select and archive
 
 Select, archive retrieval, and vault inventory jobs are associated with a vault\. A vault can have multiple jobs in progress at any point in time\. When you send a job request \(initiate a job\), S3 Glacier returns to you a job ID to track the job\. Each job is uniquely identified by a URI of the form:
 
+ 
+
 ```
 https://<region-specific endpoint>/<account-id>/vaults/<vault-name>/jobs/<job-id>
 ```
 
 The following is an example of a job associated with an `examplevault` vault\.
+
+ 
 
 ```
 https://glacier.us-west-2.amazonaws.com/111122223333/vaults/examplevault/jobs/HkF9p6o7yjhFx-K3CGl6fuSm6VzW9T7esGQfco8nUXVYwS0jlb5gq1JZ55yHgt5vP54ZShjoQzQVVh7vEXAMPLEjobID
@@ -87,6 +101,8 @@ Because jobs take time to complete, S3 Glacier supports a notification mechanism
 
 S3 Glacier stores the notification configuration as a JSON document\. The following is an example vault notification configuration:
 
+ 
+
 ```
 {
    "Topic": "arn:aws:sns:us-west-2:111122223333:mytopic", 
@@ -95,6 +111,8 @@ S3 Glacier stores the notification configuration as a JSON document\. The follow
 ```
 
 Note that notification configurations are associated with vaults; you can have one for each vault\. Each notification configuration resource is uniquely identified by a URI of the form:
+
+ 
 
 ```
 https://<region-specific endpoint>/<account-id>/vaults/<vault-name>/notification-configuration

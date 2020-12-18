@@ -1,6 +1,8 @@
 # Download an Archive from a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="getting-started-download-archive-dotnet"></a>
 
 The following C\# code example uses the high\-level API of the AWS SDK for \.NET to download the archive you uploaded previously in [Upload an Archive to a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET](getting-started-upload-archive-dotnet.md)\. In the code example, note the following:
+
+ 
 + The example creates an instance of the `ArchiveTransferManager` class for the specified Amazon S3 Glacier \(S3 Glacier\) Region endpoint\.
 + The code example uses the US West \(Oregon\) Region \(`us-west-2`\) to match the location where you created the vault previously in [Step 2: Create a Vault in Amazon S3 Glacier](getting-started-create-vault.md)\. 
 + The example uses the `Download` method of the `ArchiveTransferManager` class to download your archive\. The example creates an Amazon SNS topic, and an Amazon Simple Queue Service queue that is subscribed to that topic\. If you created an IAM administrative user as instructed in [Step 1: Before You Begin with Amazon S3 Glacier](getting-started-before-you-begin.md) your user has the necessary IAM permissions for the creation and use of the Amazon SNS topic and Amazon SQS queue\.

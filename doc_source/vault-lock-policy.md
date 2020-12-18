@@ -90,6 +90,8 @@ To put these two rules in place, the following example policy has two statements
 ```
 
 ### Related Sections<a name="related-sections-vault-lock-policy-examples"></a>
+
+ 
 + [Amazon S3 Glacier Vault Lock](vault-lock.md)
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)

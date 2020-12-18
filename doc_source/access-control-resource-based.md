@@ -2,6 +2,8 @@
 
 An Amazon S3 Glacier \(S3 Glacier\) vault is the primary resource in S3 Glacier\. You can add permissions to the policy associated with a S3 Glacier vault\. Permissions policies attached to S3 Glacier vaults are referred to as *resource\-based policies* \(or *vault policies* in S3 Glacier\)\. Each S3 Glacier vault can have resource\-based permissions policies associated with it\.  For information about available permissions policy options, see [Managing Access to Resources](access-control-overview.md#access-control-manage-access-intro)\.
 
+ 
+
 **Important**  
 Before you create resource\-based policies, we recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your S3 Glacier resources\. For more information, see [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)\.
 

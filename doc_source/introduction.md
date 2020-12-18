@@ -15,12 +15,16 @@ S3 Glacier is one of the many different storage classes for Amazon S3\. For a ge
 ## Are You a First\-Time S3 Glacier User?<a name="are-you-a-firsttime-glacier-user"></a>
 
 If you are a first\-time user of S3 Glacier, we recommend that you begin by reading the following sections:
+
+ 
 + **What is Amazon S3 Glacier—**The rest of this section describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service\. 
 + **Getting Started—**The [Getting Started with Amazon S3 Glacier](amazon-glacier-getting-started.md) section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives\. 
 **Important**  
 S3 Glacier provides a console, which you can use to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(AWS CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, by using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
 Beyond the getting started section, you'll probably want to learn more about S3 Glacier operations\. The following sections provide detailed information about working with S3 Glacier using the REST API and the AWS Software Development Kits \(SDKs\) for Java and Microsoft \.NET: 
+
+ 
 + [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)
 
   This section provides an overview of the AWS SDKs used in various code examples in this guide\. A review of this section will help when reading the following sections\. It includes an overview of the high\-level and the low\-level APIs that these SDKs offer, when to use them, and common steps for running the code examples provided in this guide\. 

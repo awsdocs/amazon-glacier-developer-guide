@@ -18,6 +18,8 @@ To return the current vault access policy, send an HTTP `GET` request to the URI
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -122,7 +124,11 @@ If the request was successful, S3 Glacier returns the vault access policy as a J
 ```
 
 ## Related Sections<a name="related-sections-GetVaultAccessPolicy"></a>
+
+ 
 + [Delete Vault Access Policy \(DELETE access\-policy\)](api-DeleteVaultAccessPolicy.md)
+
+ 
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)
 
 ## See Also<a name="api-GetVaultAccessPolicy_SeeAlso"></a>

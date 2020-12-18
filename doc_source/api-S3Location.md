@@ -47,4 +47,6 @@ A map  of metadata to store with the job results in Amazon S3\.
 *Required*: no
 
 ## More Info<a name="more-info-api-S3Location"></a>
+
+ 
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

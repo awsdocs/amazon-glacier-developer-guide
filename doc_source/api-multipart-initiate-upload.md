@@ -8,6 +8,8 @@ When you initiate a multipart upload, you specify the part size in number of byt
 
 Every part you upload using this upload ID, except the last one, must have the same size\. The last one can be the same size or smaller\. For example, suppose you want to upload a 16\.2 MB file\. If you initiate the multipart upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part of 0\.2 MB\. 
 
+ 
+
 **Note**  
 You don't need to know the size of the archive when you start a multipart upload because S3 Glacier does not require you to specify the overall archive size\.
 
@@ -28,6 +30,8 @@ To initiate a multipart upload, you send an HTTP `POST` request to the URI of th
 6. x-amz-archive-description: ArchiveDescription
 7. x-amz-part-size: PartSize
 ```
+
+ 
 
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
@@ -113,6 +117,8 @@ S3 Glacier creates a multipart upload resource and adds it to the `multipart-upl
 For information about uploading individual parts, see [Upload Part \(PUT uploadID\)](api-upload-part.md)\.
 
 ## Related Sections<a name="related-sections-initiate-mpu"></a>
+
+ 
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)

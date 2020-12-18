@@ -18,6 +18,8 @@ To delete a vault's notification configuration, send a `DELETE` request to the v
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -80,6 +82,8 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 ```
 
 ## Related Sections<a name="related-sections-vault-notifications-delete"></a>
+
+ 
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

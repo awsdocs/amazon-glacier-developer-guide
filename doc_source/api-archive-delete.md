@@ -7,6 +7,8 @@ This operation deletes an archive from a vault\. You can delete one archive at a
 After you delete an archive, you might still be able to make a successful request to initiate a job to retrieve the deleted archive, but the archive retrieval job will fail\. 
 
 Archive retrievals that are in progress for an archive ID when you delete the archive might or might not succeed according to the following scenarios:
+
+ 
 + If the archive retrieval job is actively preparing the data for download when Amazon S3 Glacier \(S3 Glacier\) receives the delete archive request, the archival retrieval operation might fail\. 
 + If the archive retrieval job has successfully prepared the archive for download when S3 Glacier receives the delete archive request, you will be able to download the output\. 
 
@@ -27,6 +29,8 @@ To delete an archive you send a `DELETE` request to the archive resource URI\.
 4. Authorization: SignatureValue
 5. x-amz-glacier-version: 2012-06-01
 ```
+
+ 
 
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
@@ -92,6 +96,8 @@ If the request is successful, S3 Glacier responds with `204 No Content` to indic
 ```
 
 ## Related Sections<a name="related-sections-archive-delete"></a>
+
+ 
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Archive \(POST archive\)](api-archive-post.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

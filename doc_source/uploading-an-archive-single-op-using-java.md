@@ -10,6 +10,8 @@ Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS
 
 The `ArchiveTransferManager` class of the high\-level API provides the `upload` method, which you can use to upload an archive to a vault\.
 
+ 
+
 **Note**  
 You can use the `upload` method to upload small or large archives\. Depending on the archive size you are uploading, this method determines whether to upload it in a single operation or use the multipart upload API to upload the archive in parts\.
 
@@ -63,6 +65,8 @@ public class ArchiveUploadHighLevel {
 ## Uploading an Archive in a Single Operation Using the Low\-Level API of the AWS SDK for Java<a name="uploading-an-archive-single-op-low-level-using-java"></a>
 
 The low\-level API provides methods for all the archive operations\. The following are the steps to upload an archive using the AWS SDK for Java\.
+
+ 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 

@@ -1,6 +1,8 @@
 # Supported Operations in S3 Glacier<a name="amazon-glacier-supported-operations"></a>
 
 To work with vaults and archives \(see [Amazon S3 Glacier Data Model](amazon-glacier-data-model.md)\), Amazon S3 Glacier \(S3 Glacier\) supports a set of operations\. Among all the supported operations, only the following operations are asynchronous:
+
+ 
 + Retrieving an archive
 + Retrieving a vault inventory \(list of archives\)
 

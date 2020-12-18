@@ -18,6 +18,8 @@ To get information about a vault, send a `GET` request to the URI of the specifi
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -124,6 +126,8 @@ Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west
 ```
 
 ## Related Sections<a name="related-sections-vault-get"></a>
+
+ 
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)

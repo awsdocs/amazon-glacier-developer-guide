@@ -2,6 +2,8 @@
 
 The following are the steps to retrieve a vault inventory using the low\-level API of the AWS SDK for Java\. The high\-level API does not support retrieving a vault inventory\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
     You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\. 
@@ -13,6 +15,8 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 Note that if an inventory has not been completed for the vault an error is returned\. Amazon S3 Glacier \(S3 Glacier\) prepares an inventory for each vault periodically, every 24 hours\. 
 
    S3 Glacier returns a job ID in response\. The response is available in an instance of the `InitiateJobResult` class\.
+
+    
 
    ```
    InitiateJobRequest initJobRequest = new InitiateJobRequest()
@@ -41,6 +45,8 @@ Note that if an inventory has not been completed for the vault an error is retur
 
    The output that S3 Glacier returns is available in the `GetJobOutputResult` object\. 
 
+    
+
    ```
    GetJobOutputRequest jobOutputRequest = new GetJobOutputRequest()
            .withVaultName("*** provide vault name ***")
@@ -48,6 +54,8 @@ Note that if an inventory has not been completed for the vault an error is retur
    GetJobOutputResult jobOutputResult = client.getJobOutput(jobOutputRequest);
    // jobOutputResult.getBody(); provides the output stream.
    ```
+
+ 
 
 **Note**  
 For information about the job related underlying REST API, see [Job Operations](job-operations.md)\.

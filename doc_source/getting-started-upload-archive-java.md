@@ -1,6 +1,8 @@
 # Upload an Archive to a Vault in Amazon S3 Glacier Using the AWS SDK for Java<a name="getting-started-upload-archive-java"></a>
 
 The following Java code example uses the high\-level API of the AWS SDK for Java to upload a sample archive to the vault\. In the code example, note the following:
+
+ 
 + The example creates an instance of the `AmazonGlacierClient` class\. 
 + The example uses the `upload` method of the `ArchiveTransferManager` class from the high\-level API of the AWS SDK for Java\. 
 + The example uses the US West \(Oregon\) Region \(`us-west-2`\) to match the location where you created the vault previously in [Step 2: Create a Vault in Amazon S3 Glacier](getting-started-create-vault.md)\.

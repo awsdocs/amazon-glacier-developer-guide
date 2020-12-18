@@ -18,6 +18,8 @@ For a working code example, see [Example: Vault Operations Using the High\-Level
 
 The following are the steps to delete a vault using the AWS SDK for \.NET\.
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region from where you want to delete a vault\. All operations you perform using this client apply to that AWS Region\. 

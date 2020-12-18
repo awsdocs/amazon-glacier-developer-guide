@@ -71,6 +71,8 @@ public class ArchiveDownloadHighLevel {
 
 The following are the steps to retrieve a vault inventory using the AWS SDK for Java low\-level API\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region from where you want to download the archive\. All operations you perform using this client apply to that AWS Region\. 
@@ -78,6 +80,8 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
 1. Initiate an `archive-retrieval` job by executing the `initiateJob` method\.
 
    You provide job information, such as the archive ID of the archive you want to download and the optional Amazon SNS topic to which you want Amazon S3 Glacier \(S3 Glacier\) to post a job completion message, by creating an instance of the `InitiateJobRequest` class\. S3 Glacier returns a job ID in response\. The response is available in an instance of the `InitiateJobResult` class\.
+
+    
 
    ```
    JobParameters jobParameters = new JobParameters()
@@ -94,6 +98,8 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
    ```
 
    You can optionally specify a byte range to request S3 Glacier to prepare only a portion of the archive\. For example, you can update the preceding request by adding the following statement to request S3 Glacier to prepare only the 1 MB to 2 MB portion of the archive\.
+
+    
 
    ```
    int ONE_MEG = 1048576;
@@ -124,6 +130,8 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
 
    You provide the request information such as the job ID and vault name by creating an instance of the `GetJobOutputRequest` class\. The output that S3 Glacier returns is available in the `GetJobOutputResult` object\. 
 
+    
+
    ```
    GetJobOutputRequest jobOutputRequest = new GetJobOutputRequest()
            .withJobId("*** provide a job ID ***")
@@ -134,6 +142,8 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
    ```
 
    The preceding code snippet downloads the entire job output\. You can optionally retrieve only a portion of the output, or download the entire output in smaller chunks by specifying the byte range in your `GetJobOutputRequest`\. 
+
+    
 
    ```
    GetJobOutputRequest jobOutputRequest = new GetJobOutputRequest()
@@ -155,6 +165,8 @@ The following are the steps to retrieve a vault inventory using the AWS SDK for 
 The following Java code example downloads an archive from the specified vault\. After the job completes, the example downloads the entire output in a single `getJobOutput` call\. For an example of downloading output in chunks, see [Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for Java—Download Output in Chunks ](#downloading-an-archive-with-range-using-java-example)\.
 
 The example performs the following tasks:
+
+ 
 + Creates an Amazon Simple Notification Service \(Amazon SNS\) topic\.
 
   S3 Glacier sends a notification to this topic after it completes the job\. 
@@ -168,6 +180,8 @@ The example performs the following tasks:
 
   If there is a message, parse the JSON and check if the job completed successfully\. If it did, download the archive\. 
 + Cleans up by deleting the Amazon SNS topic and the Amazon SQS queue that it created\.
+
+ 
 
 ```
 import java.io.BufferedInputStream;
@@ -401,6 +415,8 @@ public class AmazonGlacierDownloadArchiveWithSQSPolling {
 ### Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for Java—Download Output in Chunks<a name="downloading-an-archive-with-range-using-java-example"></a>
 
 The following Java code example retrieves an archive from S3 Glacier\. The code example downloads the job output in chunks by specifying byte range in a `GetJobOutputRequest` object\.
+
+ 
 
 ```
 import java.io.BufferedInputStream;

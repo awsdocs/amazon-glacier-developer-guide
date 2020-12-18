@@ -9,6 +9,8 @@ For information about multipart upload, see [Uploading Large Archives in Parts \
  
 
 Amazon S3 Glacier \(S3 Glacier\) rejects your upload part request if any of the following conditions is true:
+
+ 
 + **SHA256 tree hash does not match—**To ensure that part data is not corrupted in transmission, you compute a SHA256 tree hash of the part and include it in your request\. Upon receiving the part data, S3 Glacier also computes a SHA256 tree hash\. If the two hash values don't match, the operation fails\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\.
 + **SHA256 linear hash does not match—**Required for authorization, you compute a SHA256 linear hash of the entire uploaded payload and include it in your request\. For information about computing a SHA256 linear hash, see [Computing Checksums](checksum-calculations.md)\.
 + **Part size does not match—**The size of each part except the last must match the size that is specified in the corresponding [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) request\. The size of the last part must be the same size as, or smaller than, the specified size\.
@@ -36,6 +38,8 @@ You send this HTTP `PUT` request to the URI of the upload ID that was returned b
  9. x-amz-content-sha256: Checksum of the entire payload			
 10. x-amz-glacier-version: 2012-06-01
 ```
+
+ 
 
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
@@ -131,6 +135,8 @@ The parts can be uploaded in any order; S3 Glacier uses the range specification 
 ```
 
 ## Related Sections<a name="related-sections-upload-part"></a>
+
+ 
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Part \(PUT uploadID\)](#api-upload-part)
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)

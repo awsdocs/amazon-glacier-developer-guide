@@ -25,6 +25,8 @@ To delete a vault, send a `DELETE` request to the vault resource URI\.
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -85,6 +87,8 @@ The following example deletes a vault named `examplevault`\. The example request
 ```
 
 ## Related Sections<a name="related-sections-vault-delete"></a>
+
+ 
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

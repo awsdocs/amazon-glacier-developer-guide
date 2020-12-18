@@ -20,6 +20,8 @@ To delete the current vault access policy, send an HTTP `DELETE` request to the 
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -86,7 +88,11 @@ In response, if the policy is successfully deleted S3 Glacier returns a `204 No 
 ```
 
 ## Related Sections<a name="related-sections-DeleteVaultAccessPolicy"></a>
+
+ 
 + [Get Vault Access Policy \(GET access\-policy\)](api-GetVaultAccessPolicy.md)
+
+ 
 + [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)
 
 ## See Also<a name="api-DeleteVaultAccessPolicy-SeeAlso"></a>

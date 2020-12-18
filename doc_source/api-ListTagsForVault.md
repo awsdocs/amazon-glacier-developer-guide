@@ -14,6 +14,8 @@ To list the tags for a vault, send an HTTP GET request to the tags URI as shown 
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -106,7 +108,11 @@ If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 
 ```
 
 ## Related Sections<a name="related-sections-ListTagsForVault"></a>
+
+ 
 + [Add Tags To Vault \(POST tags add\)](api-AddTagsToVault.md)
+
+ 
 + [Remove Tags From Vault \(POST tags remove\)](api-RemoveTagsFromVault.md)
 
 ## See Also<a name="api-ListTagsForVault_SeeAlso"></a>

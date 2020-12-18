@@ -9,6 +9,8 @@
 
 You can retrieve metadata for a specific vault or all the vaults in a specific AWS Region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the AWS SDK for Java\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\.
@@ -38,6 +40,8 @@ System.out.print(
         "\nVaultName: " + result.getVaultName());
 ```
 
+ 
+
 **Note**  
 For information about the underlying REST API, see [Describe Vault \(GET vault\)](api-vault-get.md)\. 
 
@@ -46,6 +50,8 @@ For information about the underlying REST API, see [Describe Vault \(GET vault\)
 You can also use the `listVaults` method to retrieve metadata for all the vaults in a specific AWS Region\. 
 
 The following Java code snippet retrieves list of vaults in the `us-west-2` Region\. The request limits the number of vaults returned in the response to 5\. The code snippet then makes a series of `listVaults` calls to retrieve the entire vault list from the AWS Region\. 
+
+ 
 
 ```
 AmazonGlacierClient client;
@@ -75,6 +81,8 @@ do {
 In the preceding code segment, if you don't specify the `Limit` value in the request, S3 Glacier returns up to 10 vaults, as set by the S3 Glacier API\. If there are more vaults to list, the response `marker` field contains the vault Amazon Resource Name \(ARN\) at which to continue the list with a new request; otherwise, the `marker` field is null\. 
 
 Note that the information returned for each vault in the list is the same as the information you get by calling the `describeVault` method for a specific vault\. 
+
+ 
 
 **Note**  
 The `listVaults` method calls the underlying REST API \(see [List Vaults \(GET vaults\)](api-vaults-get.md)\)\. 

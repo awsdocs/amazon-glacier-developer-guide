@@ -2,6 +2,8 @@
 
 Retrieving anything from Amazon S3 Glacier \(S3 Glacier\), such as an archive from a vault or a vault inventory, is a two\-step process\. 
 
+ 
+
 1. Initiate a retrieval job\. 
 
 1. After the job completes, download the job output\. 
@@ -32,10 +34,14 @@ S3 Glacier defines events specifically related to job completion \(`ArchiveRetri
 
 Note that you can configure only one Amazon SNS topic for a vault\. 
 
+ 
+
 **Note**  
 Adding a notification configuration to a vault causes S3 Glacier to send a notification each time the event specified in the notification configuration occurs\. You can also optionally specify an Amazon SNS topic in each job initiation request\. If you add both the notification configuration on the vault and also specify an Amazon SNS topic in your initiate job request, S3 Glacier sends both notifications\. 
 
 The job completion message S3 Glacier sends include information such as the type of job \(`InventoryRetrieval`, `ArchiveRetrieval`\), job completion status, SNS topic name, job status code, and the vault ARN\. The following is an example notification S3 Glacier sent to an SNS topic after an `InventoryRetrieval` job completed\. 
+
+ 
 
 ```
 {

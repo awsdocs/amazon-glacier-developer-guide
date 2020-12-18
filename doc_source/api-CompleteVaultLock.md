@@ -88,8 +88,14 @@ If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns an `HTTP
 ```
 
 ## Related Sections<a name="related-sections-CompleteVaultLock"></a>
+
+ 
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
+
+ 
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
+
+ 
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
 
 ## See Also<a name="api-CompleteVaultLock-SeeAlso"></a>

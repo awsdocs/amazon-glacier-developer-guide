@@ -168,6 +168,8 @@ The following are the steps for downloading an Amazon S3 Glacier \(S3 Glacier\) 
 
    For an archive retrieval job with the optional range specified, when you get the job description, it includes the checksum of the range you are retrieving \(SHA256TreeHash\)\.You can use this value to further verify the accuracy of the entire byte range that you later download\. For example, if you initiate a job to retrieve a tree\-hash aligned archive range and then download output in chunks such that each of your `GetJobOutput` requests return a checksum, then you can compute checksum of each portion you download on the client\-side and then compute the tree hash\. You can compare it with the checksum S3 Glacier returns in response to your describe job request to verify that the entire byte range you have downloaded is the same as the byte range that is stored in S3 Glacier\. 
 
+   
+
    For a working example, see [Example 2: Retrieving an Archive Using the Low\-Level API of the AWS SDK for \.NET—Download Output in Chunks](#creating-vaults-sdk-dotnet-example2)\.
 
 ### Example 1: Retrieving an Archive Using the Low\-Level API of the AWS SDK for \.NET<a name="creating-vaults-sdk-dotnet-example-retrieve"></a>

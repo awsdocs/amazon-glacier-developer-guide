@@ -18,6 +18,8 @@ To list the provisioned retrieval capacity for an account, send an HTTP GET requ
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -125,4 +127,6 @@ If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 
 ```
 
 ## Related Sections<a name="api-ListProvisionedCapacity-related-sections"></a>
+
+ 
 + [Purchase Provisioned Capacity \(POST provisioned\-capacity\)](api-PurchaseProvisionedCapacity.md)

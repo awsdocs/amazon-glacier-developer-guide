@@ -17,6 +17,8 @@ The low\-level `AmazonGlacierClient` class provides all the methods that map to 
 
 For example, the `AmazonGlacierClient` class provides the `createVault` method to create a vault\. This method maps to the underlying Create Vault REST operation \(see [Create Vault \(PUT vault\)](api-vault-put.md)\)\. To use this method, you must create instances of the `CreateVaultResult` object that receives the S3 Glacier response as shown in the following Java code snippet:
 
+ 
+
 ```
 AmazonGlacierClient client = new AmazonGlacierClient(credentials);
 client.setEndpoint("https://glacier.us-west-2.amazonaws.com/");
@@ -29,6 +31,8 @@ CreateVaultResult result = client.createVault(createVaultRequest);
 
 All the low\-level samples in the guide use this pattern\. 
 
+ 
+
 **Note**  
 The preceding code segment specifies `AccountID` when creating the request\. However, when using the AWS SDK for Java, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case S3 Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for Java, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
@@ -37,6 +41,8 @@ The preceding code segment specifies `AccountID` when creating the request\. How
 To further simplify your application development, the AWS SDK for Java provides the `ArchiveTransferManager` class that implements a higher\-level abstraction for the some of the methods in the low\-level API\. It provides useful methods, such as the `upload` and `download` methods for archive operations\. 
 
 For example, the following Java code snippet uses the `upload` high\-level method to upload an archive\. 
+
+ 
 
 ```
 String vaultName = "examplevault";
@@ -50,6 +56,8 @@ Note that any operations you perform apply to the AWS Region you specified when 
 
 All the high\-level examples in this guide use this pattern\. 
 
+ 
+
 **Note**  
 The high\-level `ArchiveTransferManager` class can be constructed with an `AmazonGlacierClient` instance or an `AWSCredentials` instance\.
 
@@ -62,7 +70,7 @@ The easiest way to get started with the Java code examples is to install the lat
 
 |  |  | 
 | --- |--- |
-| 1 |  Create a default credentials profile for your AWS credentials as described in the AWS SDK for Java topic [Providing AWS Credentials in the AWS SDK for Java](http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/credentials.html)\.   | 
+| 1 |  Create a default credentials profile for your AWS credentials as described in the AWS SDK for Java topic [Providing AWS Credentials in the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html)\.   | 
 | 2 | Create a new AWS Java project in Eclipse\. The project is pre\-configured with the AWS SDK for Java\. | 
 | 3 | Copy the code from the section you are reading to your project\.  | 
 | 4 | Update the code by providing any required data\. For example, if uploading a file, provide the file path and the bucket name\. | 
@@ -82,6 +90,8 @@ client.setEndpoint("glacier.us-west-2.amazonaws.com");
 ```
 
 The following snippet shows how to set the endpoint to the US West \(Oregon\) Region in the high\-level API\.
+
+ 
 
 ```
 glacierClient = new AmazonGlacierClient(credentials);

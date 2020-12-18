@@ -34,6 +34,8 @@ You don't need to know the overall archive size when using multipart uploads\. T
 ### Additional Multipart Upload Operations<a name="additional-mpu-operations"></a>
 
 Amazon S3 Glacier \(S3 Glacier\) provides the following additional multipart upload API calls\.
+
+ 
 + **List Parts**—Using this operation, you can list the parts of a specific multipart upload\. It returns information about the parts that you have uploaded for a multipart upload\. For each list parts request, S3 Glacier returns information for up to 1,000 parts\. If there are more parts to list for the multipart upload, the result is paginated and a marker is returned in the response at which to continue the list\. You need to send additional requests to retrieve subsequent parts\. Note that the returned list of parts doesn't include parts that haven't completed uploading\.
 + **List Multipart Uploads**—Using this operation, you can obtain a list of multipart uploads in progress\. An in\-progress multipart upload is an upload that you have initiated, but have not yet completed or stopped\. For each list multipart uploads request, S3 Glacier returns up to 1,000 multipart uploads\. If there are more multipart uploads to list, then the result is paginated and a marker is returned in the response at which to continue the list\. You need to send additional requests to retrieve the remaining multipart uploads\.
 

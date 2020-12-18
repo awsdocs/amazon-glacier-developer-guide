@@ -18,6 +18,8 @@ To retrieve the notification configuration information, send a `GET` request to 
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -59,6 +61,8 @@ This operation uses only response headers that are common to most responses\. Fo
 ### Response Body<a name="api-vault-notifications-get-responses-elements"></a>
 
 The response body contains the following JSON fields\.
+
+ 
 
 **Events**  
 A list of one or more events for which Amazon S3 Glacier \(S3 Glacier\) will send a notification to the specified Amazon SNS topic\. For information about vault events for which you can configure a vault to publish notifications, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\.  
@@ -109,6 +113,8 @@ A successful response shows the audit logging configuration document in the body
 ```
 
 ## Related Sections<a name="related-sections-vault-notifications-get"></a>
+
+ 
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
 + [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

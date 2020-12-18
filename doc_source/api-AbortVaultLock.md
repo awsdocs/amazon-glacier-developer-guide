@@ -22,6 +22,8 @@ To delete the vault lock policy, send an HTTP `DELETE` request to the URI of the
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -88,8 +90,14 @@ If the policy is successfully deleted S3 Glacier returns an `HTTP 204 No Content
 ```
 
 ## Related Sections<a name="related-sections-AbortVaultLock"></a>
+
+ 
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
+
+ 
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
+
+ 
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
 
 ## See Also<a name="api-AbortVaultLock-SeeAlso"></a>

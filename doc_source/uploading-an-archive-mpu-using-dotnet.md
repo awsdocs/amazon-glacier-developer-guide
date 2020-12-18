@@ -1,6 +1,8 @@
 # Uploading Large Archives Using the AWS SDK for \.NET<a name="uploading-an-archive-mpu-using-dotnet"></a>
 
 Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to upload large archives in parts \(see [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)\)\. 
+
+ 
 + The high\-level API provides a method that you can use to upload archives of any size\. Depending on the file you are uploading, the method either uploads archive in a single operation or uses the multipart upload support in Amazon S3 Glacier \(S3 Glacier\) to upload the archive in parts\.
 + The low\-level API maps close to the underlying REST implementation\. Accordingly, it provides a method to upload smaller archives in one operation and a group of methods that support multipart upload for larger archives\. This section explains uploading large archives in parts using the low\-level API\.
 
@@ -17,6 +19,8 @@ You use the same methods of the high\-level API to upload small or large archive
 ## Uploading Large Archives in Parts Using the Low\-Level API of the AWS SDK for \.NET<a name="uploading-an-archive-in-parts-lowlevel-using-dotnet"></a>
 
 For granular control of the upload, you can use the low\-level API, where you can configure the request and process the response\. The following are the steps to upload large archives in parts using the AWS SDK for \.NET\.
+
+ 
 
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 

@@ -2,6 +2,8 @@
 
 Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and some services \(such as Amazon S3 Glacier \(S3 Glacier\)\) also support attaching permissions policies to resources\. 
 
+ 
+
 **Note**  
 An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\. 
 
@@ -16,9 +18,13 @@ When granting permissions, you decide who is getting the permissions, the resour
 
 ## Amazon S3 Glacier Resources and Operations<a name="access-control-resources"></a>
 
+
+
 In S3 Glacier, the primary resource is a *vault*\. S3 Glacier supports policies only at the vault level\. That is, in an IAM policy, the `Resource` value that you specify can be a specific vault or a set of vaults in a specific AWS Region\. S3 Glacier doesn't support archive\-level permissions\. 
 
 For all S3 Glacier actions, `Resource` specifies the vault on which you want to grant the permissions\. These resources have unique Amazon Resource Names \(ARNs\) associated with them as shown in the following table, and you can use a wildcard character \(\*\) in the ARN to match any vault name\.
+
+
 
 
 ****  
@@ -34,6 +40,8 @@ S3 Glacier provides a set of operations to work with the S3 Glacier resources\. 
 ## Understanding Resource Ownership<a name="access-control-resource-ownership"></a>
 
 A *resource owner* is the AWS account that created the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
+
+ 
 + If you use the root account credentials of your AWS account to create a S3 Glacier vault, your AWS account is the owner of the resource \(in S3 Glacier, the resource is the S3 Glacier vault\)\.
 + If you create an IAM user in your AWS account and grant permissions to create a S3 Glacier vault to that user, the user can create a S3 Glacier vault\. However, your AWS account, to which the user belongs, owns the S3 Glacier vault resource\.
 + If you create an IAM role in your AWS account with permissions to create a S3 Glacier vault, anyone who can assume the role can create a S3 Glacier vault\. Your AWS account, to which the role belongs, owns the S3 Glacier vault resource\. 
@@ -56,6 +64,8 @@ Policies attached to an IAM identity are referred to as *identity\-based* polici
  You can attach policies to IAM identities\. For example you can do the following:
 + **Attach a permissions policy to a user or a group in your account –** An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create a S3 Glacier vault\. 
 + **Attach a permissions policy to a role \(grant cross\-account permissions\) –** You can attach an identity\-based permissions policy to an IAM role to grant cross\-account permissions\. For example, the administrator in Account A can create a role to grant cross\-account permissions to another AWS account \(for example, Account B\) or an AWS service as follows:
+
+   
 
   1. Account A administrator creates an IAM role and attaches a permissions policy to the role that grants permissions on resources in Account A\.
 
@@ -138,6 +148,8 @@ In addition, S3 Glacier also provides its own condition keys that you can includ
 For examples of using the S3 Glacier–specific condition keys, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
 
 Related Topics
+
+ 
 + [Using Identity\-Based Policies for Amazon S3 Glacier \(IAM Policies\)](access-control-identity-based.md)
 + [Using Resource\-Based Policies for Amazon S3 Glacier \(Vault Policies\)](access-control-resource-based.md)
 + [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)

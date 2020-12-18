@@ -25,6 +25,8 @@ To add tags to a vault, send an HTTP POST request to the tags URI as shown in th
 14. }
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -42,6 +44,8 @@ This operation uses only request headers that are common to all operations\. For
 ### Request Body<a name="api-AddTagsToVault-requests-elements"></a>
 
 The request body contains the following JSON fields\.
+
+ 
 
 **Tags**  
 The tags to add to the vault\. Each tag is composed of a key and a value\. The value can be an empty string\.  
@@ -107,7 +111,11 @@ If the request was successful S3 Glacier returns a `HTTP 204 No Content` as show
 ```
 
 ## Related Sections<a name="related-sections-AddTagsToVault"></a>
+
+ 
 + [List Tags For Vault \(GET tags\)](api-ListTagsForVault.md)
+
+ 
 + [Remove Tags From Vault \(POST tags remove\)](api-RemoveTagsFromVault.md)
 
 ## See Also<a name="api-AddTagsToVault-SeeAlso"></a>

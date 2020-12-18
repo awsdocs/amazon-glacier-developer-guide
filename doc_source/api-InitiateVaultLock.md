@@ -37,6 +37,8 @@ To initiate the vault locking process, send an HTTP `POST` request to the URI of
 10. }
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -116,8 +118,14 @@ If the request was successful, S3 Glacier returns an `HTTP 201 Created` response
 ```
 
 ## Related Sections<a name="related-sections-InitiateVaultLock"></a>
+
+ 
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
+
+ 
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
+
+ 
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)
 
 ## See Also<a name="api-InitiateVaultLock_SeeAlso"></a>

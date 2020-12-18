@@ -2,6 +2,8 @@
 
 The following are the steps to configure notifications on a vault using the low\-level API of the AWS SDK for \.NET\.
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\. 

@@ -19,6 +19,7 @@ A single character used to separate individual fields from each other within a r
 A value that describes what to do with the first line of the input\.   
 *Type*: String  
 *Valid Values*: `Use` \| `Ignore` \| `None`   
+  
 *Required*: no
 
 **QuoteCharacter**  
@@ -37,4 +38,6 @@ A single character used to separate individual records from each other\.
 *Required*: no
 
 ## More Info<a name="more-info-api-CSVInput"></a>
+
+ 
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

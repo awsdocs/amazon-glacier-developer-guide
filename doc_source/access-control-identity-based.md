@@ -2,10 +2,14 @@
 
 This topic provides examples of identity\-based policies in which an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\)\. 
 
+ 
+
 **Important**  
  We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your Amazon S3 Glacier \(S3 Glacier\) resources\. For more information, see [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)\.
 
 The sections in this topic cover the following:
+
+ 
 + [Permissions Required to Use the Amazon S3 Glacier Console](#additional-console-required-permissions) 
 + [AWS Managed Policies \(Predefined Policies\) for Amazon S3 Glacier](#access-policy-examples-aws-managed) 
 + [Customer Managed Policy Examples](#access-policy-examples-for-sdk-cli) 
@@ -59,8 +63,12 @@ Both of the S3 Glacier AWS Managed policies discussed in the next section grant 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to S3 Glacier:
+
+ 
 + **AmazonGlacierReadOnlyAccess** – Grants read only access to S3 Glacier through the AWS Management Console\.
 + **AmazonGlacierFullAccess** – Grants full access to S3 Glacier through the AWS Management Console\. 
+
+ 
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.
@@ -129,6 +137,8 @@ When you grant permissions to create a vault using the `glacier:CreateVault` ope
 ### Example 3: Allow a User to Upload Archives to a Specific Vault<a name="vault-access-policy-example-upload-archives"></a>
 
 The following example policy grants permissions to upload archives to a specific vault in the us\-west\-2 Region\. These permissions allow a user to upload an archive all at once using the [Upload Archive \(POST archive\)](api-archive-post.md) API operation or in parts using the [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md) API operation\.
+
+
 
 ```
 {

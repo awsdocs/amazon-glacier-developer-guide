@@ -6,12 +6,16 @@ This section describes how to configure vault notifications using the Amazon S3 
 
 1. Sign into the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
 
-1. Select a vault in the vault list\.  
+1. Select a vault in the vault list\.
+
+      
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications05.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
 
 1. Select the **Notifications** tab\.
 
-1. Select the **enabled** in the **Notifications** field\.  
+1. Select the **enabled** in the **Notifications** field\.
+
+      
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications10.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
 
 1. On the **Notifications** tab, do one of the following:    
@@ -19,9 +23,13 @@ This section describes how to configure vault notifications using the Amazon S3 
 
 1. Select the events that trigger notification\.
 
-   For example, to trigger notification when only archive retrieval jobs are complete, check only **Get Archive Job Complete**\.   
+   For example, to trigger notification when only archive retrieval jobs are complete, check only **Get Archive Job Complete**\. 
+
+      
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications30.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
 
 1. Click **Save**\.
+
+    
 **Important**  
 By default, a new topic does not have any subscriptions associated with it\. To receive notifications published to this topic, you must subscribe to the topic\. Follow the steps in [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/gsg/Subscribe.html) in the *Amazon Simple Notification Service Getting Started Guide* to subscribe to a new topic\.

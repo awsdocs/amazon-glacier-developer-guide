@@ -66,8 +66,12 @@ A data retrieval policy can cause your initiate retrieval job request to fail wi
 The retrieval request is ran asynchronously\. When you initiate a retrieval job, S3 Glacier creates a job and returns a job ID in the response\. When S3 Glacier completes the job, you can get the job output \(archive or inventory data\)\. For information about getting job output, see the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 
 The job must complete before you can get its output\. To determine when a job is complete, you have the following options:
+
+ 
 + **Use an Amazon SNS notification—** You can specify an Amazon SNS topic to which S3 Glacier can post a notification after the job is completed\. You can specify an SNS topic per job request\. The notification is sent only after S3 Glacier completes the job\. In addition to specifying an SNS topic per job request, you can configure vault notifications for a vault so that job notifications are sent for all retrievals\. For more information, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. 
 + **Get job details—** You can make a [Describe Job \(GET JobID\)](api-describe-job-get.md) request to obtain job status information while a job is in progress\. However, it is more efficient to use an Amazon SNS notification to determine when a job is complete\.
+
+ 
 
 **Note**  
 The information you get via notification is same that you get by calling [Describe Job \(GET JobID\)](api-describe-job-get.md)\. 
@@ -110,6 +114,8 @@ For more information about expedited and bulk retrievals, see [Retrieving S3 Gla
 ## Requests<a name="api-initiate-job-post-requests"></a>
 
 To initiate a job, you use the HTTP `POST` method and scope the request to the vault's `jobs` subresource\. You specify details of the job request in the JSON document of your request\. The job type is specified with the `Type` field\. Optionally, you can specify an `SNSTopic` field to indicate an Amazon SNS topic to which S3 Glacier can post notification after it completes the job\.
+
+ 
 
 **Note**  
 To post a notification to Amazon SNS, you must create the topic yourself if it doesn't already exist\. S3 Glacier doesn't create the topic for you\. The topic must have permissions to receive publications from a S3 Glacier vault\. S3 Glacier doesn't verify if the vault has permission to publish to the topic\. If the permissions are not configured appropriately, you might not receive notification even after the job completes\.
@@ -268,6 +274,8 @@ This operation includes the following error or errors, in addition to the possib
 ```
 
 The following is an example of the body of a request that specifies a range of the archive to retrieve using the `RetrievalByteRange` field\.
+
+ 
 
 ```
 {
@@ -429,6 +437,8 @@ The following request initiates a select job\.
 ```
 
 ## Related Sections<a name="more-info-api-initiate-job-post"></a>
+
+ 
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Get Job Output \(GET output\)](api-job-output-get.md)
 + [SQL Reference for Amazon S3 Select and S3 Glacier Select](s3-glacier-select-sql-reference.md)

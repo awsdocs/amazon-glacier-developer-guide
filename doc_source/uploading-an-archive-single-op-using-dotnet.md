@@ -59,6 +59,8 @@ namespace glacier.amazon.com.docsamples
 
 The low\-level API provides methods for all the archive operations\. The following are the steps to upload an archive using the AWS SDK for \.NET\.
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region where you want to upload the archive\. All operations you perform using this client apply to that AWS Region\. 

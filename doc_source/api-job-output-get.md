@@ -27,6 +27,8 @@ To retrieve a job output, you send the HTTP `GET` request to the URI of the `out
 6. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -70,12 +72,14 @@ For a retrieval request that returns all of the job data, the job output respons
 |  Header  |  Description  | 
 | --- | --- | 
 | Content\-Range  |  The range of bytes returned by S3 Glacier\. If only partial output is downloaded, the response provides the range of bytes S3 Glacier returned\.  For example, `bytes 0-1048575/8388608` returns the first 1 MB from 8 MB\. For more information about the `Content-Range` header, go to [Content\-Range Header Field Definition](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16)\. Type: String  | 
-| Content\-Type  |  The Content\-Type depends on whether the job output is an archive or a vault inventory\.  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
-| x\-amz\-sha256\-tree\-hash​ |  The checksum of the data in the response\. This header is returned only when retrieving the output for an archive retrieval job\. Furthermore, this header appears when the retrieved data range requested in the Initiate Job request is tree hash aligned and the range to download in the Get Job Output is also tree hash aligned\. For more information about tree hash aligned ranges, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.  For example, if in your Initiate Job request you specified a tree hash aligned range to retrieve \(which includes the whole archive\), then you will receive the checksum of the data you download under the following conditions: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
+| Content\-Type  |  The Content\-Type depends on whether the job output is an archive or a vault inventory\.   [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
+| x\-amz\-sha256\-tree\-hash​ |  The checksum of the data in the response\. This header is returned only when retrieving the output for an archive retrieval job\. Furthermore, this header appears when the retrieved data range requested in the Initiate Job request is tree hash aligned and the range to download in the Get Job Output is also tree hash aligned\. For more information about tree hash aligned ranges, see [Receiving Checksums When Downloading Data](checksum-calculations-range.md)\.  For example, if in your Initiate Job request you specified a tree hash aligned range to retrieve \(which includes the whole archive\), then you will receive the checksum of the data you download under the following conditions:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html) Type: String  | 
 
 ### Response Body<a name="api-job-output-get-responses-elements"></a>
 
 S3 Glacier returns the job output in the response body\. Depending on the job type, the output can be the archive contents or the vault inventory\. In case of a vault inventory, by default the inventory list is returned as the following JSON body\. 
+
+ 
 
 ```
  1. {
@@ -231,6 +235,8 @@ The following successful response shows the `206 Partial Content` response\. In 
 ```
 
 ## Related Sections<a name="related-sections-job-output-archive-retrieval"></a>
+
+ 
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

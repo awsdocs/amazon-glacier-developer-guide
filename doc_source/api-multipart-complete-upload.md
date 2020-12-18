@@ -30,6 +30,8 @@ To complete a multipart upload, you send an HTTP POST request to the URI of the 
 7. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -110,6 +112,8 @@ The following example response shows that S3 Glacier successfully created an arc
 You can now send HTTP requests to the URI of the newly added resource/archive\. For example, you can send a GET request to retrieve the archive\. 
 
 ## Related Sections<a name="related-sections-complete-mpu"></a>
+
+ 
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
 + [Abort Multipart Upload \(DELETE uploadID\)](api-multipart-abort-upload.md)

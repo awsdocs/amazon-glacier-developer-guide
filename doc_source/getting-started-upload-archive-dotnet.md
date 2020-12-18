@@ -1,6 +1,8 @@
 # Upload an Archive to a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="getting-started-upload-archive-dotnet"></a>
 
 The following C\# code example uses the high\-level API of the AWS SDK for \.NET to upload a sample archive to the vault\. In the code example, note the following:
+
+ 
 + The example creates an instance of the `ArchiveTransferManager` class for the specified Amazon S3 Glacier \(S3 Glacier\) Region endpoint\.
 + The code example uses the US West \(Oregon\) Region \(`us-west-2`\) to match the location where you created the vault previously in [Step 2: Create a Vault in Amazon S3 Glacier](getting-started-create-vault.md)\. 
 + The example uses the `Upload` method of the `ArchiveTransferManager` class to upload your archive\. For small archives, this method uploads the archive directly to S3 Glacier\. For larger archives, this method uses the multipart upload API in S3 Glacier to split the upload into multiple parts for better error recovery, if any errors are encountered while streaming the data to S3 Glacier\.

@@ -13,6 +13,8 @@ You can delete one archive at a time from a vault\. To delete the archive you mu
 After you delete an archive, you might still be able to make a successful request to initiate a job to retrieve the deleted archive, but the archive retrieval job will fail\. 
 
 Archive retrievals that are in progress for an archive ID when you delete the archive might or might not succeed according to the following scenarios:
+
+ 
 + If the archive retrieval job is actively preparing the data for download when S3 Glacier receives the delete archive request, then the archival retrieval operation might fail\. 
 + If the archive retrieval job has successfully prepared the archive for download when S3 Glacier receives the delete archive request, then you will be able to download the output\. 
 

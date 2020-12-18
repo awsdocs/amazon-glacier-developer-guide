@@ -1,6 +1,8 @@
 # Delete an Archive from a Vault in Amazon S3 Glacier Using the AWS SDK for Java<a name="getting-started-delete-archive-java"></a>
 
 The following code example uses the AWS SDK for Java to delete the archive\. In the code, note the following:
+
+ 
 + The `DeleteArchiveRequest` object describes the delete request, including the vault name where the archive is located and the archive ID\.
 + The `deleteArchive` method sends the request to Amazon S3 Glacier \(S3 Glacier\) to delete the archive\. 
 + The example uses the US West \(Oregon\) Region \(`us-west-2`\) to match the location where you created the vault in [Step 2: Create a Vault in Amazon S3 Glacier](getting-started-create-vault.md)\. 

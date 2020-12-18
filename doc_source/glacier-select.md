@@ -38,6 +38,8 @@ SELECT * FROM archive
 
 S3 Glacier Select supports a subset of the ANSI SQL language\. It supports common filtering SQL clauses like SELECT, FROM, and WHERE\. It does not support SUM, COUNT, GROUP BY, JOINS, DISTINCT, UNION, ORDER BY, and LIMIT\. For more information about support for SQL, see [SQL Reference for Amazon S3 Select and S3 Glacier Select](s3-glacier-select-sql-reference.md)\.
 
+
+
 ### S3 Glacier Select Output<a name="glacier-select-output"></a>
 
 When you initiate a select job, you define an output location for the results of your select query\. This location must be an Amazon S3 bucket in the same AWS Region as the vault that contains the archive object that is being queried\. The AWS account that initiates the job must have permissions to write to the S3 bucket\. 

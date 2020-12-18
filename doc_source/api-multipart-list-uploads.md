@@ -26,6 +26,8 @@ To list multipart uploads, send a `GET` request to the URI of the `multipart-upl
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -206,6 +208,8 @@ In the response, Amazon S3 Glacier \(S3 Glacier\) returns a list of no more than
 ```
 
 ## Related Sections<a name="related-sections-multipart-list-uploads"></a>
+
+ 
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Part \(PUT uploadID\)](api-upload-part.md)
 + [Complete Multipart Upload \(POST uploadID\)](api-multipart-complete-upload.md)

@@ -7,6 +7,8 @@ Retrieving an archive and a vault inventory are asynchronous operations in Amazo
 To configure vault notifications, send a PUT request to the `notification-configuration` subresource of the vault\. A notification configuration is specific to a vault; therefore, it is also referred to as a vault subresource\. The request should include a JSON document that provides an Amazon Simple Notification Service \(Amazon SNS\) topic and the events for which you want S3 Glacier to send notifications to the topic\.
 
 You can configure a vault to publish a notification for the following vault events:
+
+ 
 + **`ArchiveRetrievalCompleted`—** This event occurs when a job that was initiated for an archive retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
 + **`InventoryRetrievalCompleted`—** This event occurs when a job that was initiated for an inventory retrieval is completed \([Initiate Job \(POST jobs\)](api-initiate-job-post.md)\)\. The status of the completed job can be `Succeeded` or `Failed`\. The notification sent to the SNS topic is the same output as returned from [Describe Job \(GET JobID\)](api-describe-job-get.md)\.
 
@@ -30,6 +32,8 @@ To set notification configuration on your vault, send a PUT request to the URI o
  9.    "Events":[String, ...] 
 10. }
 ```
+
+ 
 
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
@@ -113,6 +117,8 @@ A successful response returns a `204 No Content`\.
 ```
 
 ## Related Sections<a name="related-sections-vault-notifications-put"></a>
+
+ 
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

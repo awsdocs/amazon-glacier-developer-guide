@@ -2,6 +2,8 @@
 
 The following are the steps to retrieve a vault inventory using the low\-level API of the AWS SDK for \.NET\. The high\-level API does not support retrieving a vault inventory\.
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\.
@@ -9,6 +11,8 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 1. Initiate an inventory retrieval job by executing the `InitiateJob` method\.
 
    You provide job information in an `InitiateJobRequest` object\. Amazon S3 Glacier \(S3 Glacier\) returns a job ID in response\. The response is available in an instance of the `InitiateJobResponse` class\.
+
+    
 
    ```
    AmazonGlacierClient client;
@@ -39,6 +43,8 @@ The following are the steps to retrieve a vault inventory using the low\-level A
 
    The output that S3 Glacier returns is available in the `GetJobOutputResponse` object\. 
 
+    
+
    ```
    GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest()
    {
@@ -55,6 +61,8 @@ The following are the steps to retrieve a vault inventory using the low\-level A
       }
    }
    ```
+
+    
 **Note**  
 For information about the job related underlying REST API, see [Job Operations](job-operations.md)\.
 
@@ -63,6 +71,8 @@ For information about the job related underlying REST API, see [Job Operations](
 The following C\# code example retrieves the vault inventory for the specified vault\. 
 
 The example performs the following tasks:
+
+ 
 + Set up an Amazon SNS topic\.
 
   S3 Glacier sends notification to this topic after it completes the job\. 

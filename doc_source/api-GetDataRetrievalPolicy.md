@@ -18,6 +18,8 @@ To return the current data retrieval policy, send an HTTP `GET` request to the d
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -63,6 +65,8 @@ This operation uses only response headers that are common to most responses\. Fo
 ### Response Body<a name="api-GetDataRetrievalPolicy-responses-elements"></a>
 
 The response body contains the following JSON fields\.
+
+ 
 
 **BytesPerHour**  
 The maximum number of bytes that can be retrieved in an hour\.  
@@ -123,5 +127,9 @@ A successful response shows the data retrieval policy in the body of the respons
 ```
 
 ## Related Sections<a name="related-sections-GetDataRetrievalPolicy"></a>
+
+ 
 + [Set Data Retrieval Policy \(PUT policy\)](api-SetDataRetrievalPolicy.md)
+
+ 
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

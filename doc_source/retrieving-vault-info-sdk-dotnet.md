@@ -9,6 +9,8 @@
 
 You can retrieve metadata for a specific vault or all the vaults in a specific AWS Region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the AWS SDK for \.NET\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region where the vault resides\. All operations you perform using this client apply to that AWS Region\.
@@ -43,6 +45,8 @@ Console.WriteLine(
    );
 ```
 
+ 
+
 **Note**  
 For information about the underlying REST API, see [Describe Vault \(GET vault\)](api-vault-get.md)\. 
 
@@ -51,6 +55,8 @@ For information about the underlying REST API, see [Describe Vault \(GET vault\)
 You can also use the `ListVaults` method to retrieve metadata for all the vaults in a specific AWS Region\. 
 
 The following C\# code snippet retrieves list of vaults in the US West \(Oregon\) Region\. The request limits the number of vaults returned in the response to 5\. The code snippet then makes a series of `ListVaults` calls to retrieve the entire vault list from the AWS Region\. 
+
+ 
 
 ```
 AmazonGlacierClient client;
@@ -78,6 +84,8 @@ do
 In the preceding code segment, if you don't specify the `Limit` value in the request, S3 Glacier returns up to 10 vaults, as set by the S3 Glacier API\. 
 
 Note that the information returned for each vault in the list is the same as the information you get by calling the `DescribeVault` method for a specific vault\. 
+
+ 
 
 **Note**  
 The `ListVaults` method calls the underlying REST API \(see [List Vaults \(GET vaults\)](api-vaults-get.md)\)\. 

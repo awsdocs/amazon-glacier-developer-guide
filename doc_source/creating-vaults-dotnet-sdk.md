@@ -56,6 +56,8 @@ namespace glacier.amazon.com.docsamples
 
 The low\-level API provides methods for all the vault operations, including create and delete vaults, get a vault description, and get a list of vaults created in a specific AWS Region\. The following are the steps to create a vault using the AWS SDK for \.NET\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region in which you want to create a vault\. All operations you perform using this client apply to that AWS Region\.

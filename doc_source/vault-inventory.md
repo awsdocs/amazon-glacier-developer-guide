@@ -2,6 +2,8 @@
 
 After you upload your first archive to your vault, Amazon S3 Glacier \(S3 Glacier\) automatically creates a vault inventory and then updates it approximately once a day\. After S3 Glacier creates the first inventory, it typically takes half a day and up to a day before that inventory is available for retrieval\. You can retrieve a vault inventory from S3 Glacier with the following two\-step process: 
 
+ 
+
 1. Initiate an inventory retrieval job by using the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) operation\.
 **Important**  
 A data retrieval policy can cause your initiate retrieval job request to fail with a `PolicyEnforcedException` exception\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. For more information about the `PolicyEnforcedException` exception, see [Error Responses](api-error-responses.md)\.
@@ -11,6 +13,8 @@ A data retrieval policy can cause your initiate retrieval job request to fail wi
 For example, retrieving an archive or a vault inventory requires you to first initiate a retrieval job\. The job request is ran asynchronously\. When you initiate a retrieval job, S3 Glacier creates a job and returns a job ID in the response\. When S3 Glacier completes the job, you can get the job output, the archive bytes, or the vault inventory data\. 
 
 The job must complete before you can get its output\. To determine the status of the job, you have the following options:
+
+ 
 + **Wait for job completion notification**—You can specify an Amazon Simple Notification Service \(Amazon SNS\) topic to which S3 Glacier can post a notification after the job is completed\. You can specify Amazon SNS topic using the following methods: 
   + Specify an Amazon SNS topic per job basis\. 
 
@@ -23,6 +27,8 @@ The job must complete before you can get its output\. To determine the status of
 
   You can configure the SNS topic to notify you via email or store the message in an Amazon Simple Queue Service \(Amazon SQS\) that your application can poll\. When a message appears in the queue, you can check if the job is completed successfully and then download the job output\. 
 + **Request job information explicitly**—S3 Glacier also provides a describe job operation \([Describe Job \(GET JobID\)](api-describe-job-get.md)\) that enables you to poll for job information\. You can periodically send this request to obtain job information\. However, using Amazon SNS notifications is the recommended option\.
+
+ 
 
 **Note**  
 The information you get via SNS notification is the same as what you get by calling Describe Job\. 

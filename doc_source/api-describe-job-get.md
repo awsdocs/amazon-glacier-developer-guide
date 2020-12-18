@@ -4,6 +4,8 @@
 
 This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message, and the Amazon Simple Notification Service \(Amazon SNS\) topic to notify after Amazon S3 Glacier \(S3 Glacier\) completes the job\. For more information about initiating a job, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\. 
 
+ 
+
 **Note**  
 This operation enables you to check the status of your job\. However, we strongly recommend that you set up an Amazon SNS topic and specify it in your initiate job request so that S3 Glacier can notify the topic after it completes the job\. 
 
@@ -23,8 +25,12 @@ To obtain information about a job, you use the HTTP `GET` method and scope the r
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
+
+ 
 
 **Note**  
 In the request, if you omit the `JobID`, the response returns a list of all active jobs on the specified vault\. For more information about listing jobs, see [List Jobs \(GET jobs\)](api-jobs-get.md)\.
@@ -256,6 +262,8 @@ The following example shows the request for a job that retrieves an archive\.
 ### Example Response<a name="api-describe-job-get-example-response"></a>
 
 The response body includes JSON that describes the specified job\. Note that for both the inventory retrieval and archive retrieval jobs, the JSON fields are the same\. However, when a field doesn't apply to the type of job, its value is `null`\. The following is an example response for an archive retrieval job\. Note the following:
+
+ 
 + The `Action` field value is `ArchiveRetrieval`\. 
 + The `ArchiveSizeInBytes` field shows the size of the archive requested in the archive retrieval job\. 
 + The `ArchiveSHA256TreeHash` field shows the SHA256 tree hash for the entire archive\.
@@ -291,6 +299,8 @@ The response body includes JSON that describes the specified job\. Note that for
 ```
 
 The following is an example response for an inventory retrieval job\. Note the following:
+
+ 
 + The `Action` field value is `InventoryRetrieval`\. 
 + The `ArchiveSizeInBytes`, `ArchiveSHA256TreeHash`, and `RetrievalByteRange` field values are null because these fields do not apply to an inventory retrieval job\. 
 + The `InventorySizeInBytes` field value is `null` because the job is still in progress, and has not fully prepared the inventory for download\. If the job was completed before your describe job request, this field would give you the size of the output\.
@@ -349,5 +359,7 @@ The following is an example response for a completed inventory retrieval job tha
 ```
 
 ## Related Sections<a name="related-sections-describe-job-get"></a>
+
+ 
 + [Get Job Output \(GET output\)](api-job-output-get.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

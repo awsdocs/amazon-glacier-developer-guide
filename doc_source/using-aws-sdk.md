@@ -37,6 +37,8 @@ For information about these SDK libraries, see [Using the AWS SDK for Java with 
 ### What Is the High\-Level API?<a name="what-is-high-level-api"></a>
 
 To further simplify application development, these libraries offer a higher\-level abstraction for some of the operations\. For example, 
+
+ 
 + Uploading an archive—To upload an archive using the low\-level API in addition to the file name and the vault name where you want to save the archive, You need to provide a checksum \(SHA\-256 tree hash\) of the payload\. However, the high\-level API computes the checksum for you\.
 + Downloading an archive or vault inventory—To download an archive using the low\-level API you first initiate a job, wait for the job to complete, and then get the job output\. You need to write additional code to set up an Amazon Simple Notification Service \(Amazon SNS\) topic for S3 Glacier to notify you when the job is complete\. You also need some polling mechanism to check if a job completion message was posted to the topic\. The high\-level API provides a method to download an archive that takes care of all these steps\. You only specify an archive ID and a folder path where you want to save the downloaded data\. 
 

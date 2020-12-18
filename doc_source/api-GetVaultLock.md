@@ -26,6 +26,8 @@ To return the current vault lock policy and other attributes, send an HTTP `GET`
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID of the account that owns the vault\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you use an account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -149,8 +151,14 @@ If the request was successful, S3 Glacier returns the vault access policy as a J
 ```
 
 ## Related Sections<a name="related-sections-GetVaultLock"></a>
+
+ 
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
+
+ 
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
+
+ 
 + [Initiate Vault Lock \(POST lock\-policy\)](api-InitiateVaultLock.md)
 
 ## See Also<a name="api-GetVaultLock_SeeAlso"></a>

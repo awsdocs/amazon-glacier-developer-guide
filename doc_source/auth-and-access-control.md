@@ -1,6 +1,10 @@
 # Identity and Access Management in Amazon S3 Glacier<a name="auth-and-access-control"></a>
 
+
+
 Access to Amazon S3 Glacier \(S3 Glacier\) requires credentials that AWS can use to authenticate your requests\. Those credentials must have permissions to access AWS resources, such as a S3 Glacier vault or an Amazon S3 bucket\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and S3 Glacier to help secure your resources by controlling who can access them:
+
+ 
 + [Authentication](#authentication)
 + [Access Control](#access-control)
 
@@ -26,11 +30,15 @@ You can access AWS as any of the following types of identities:
       
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
+    
+
 ## Access Control<a name="access-control"></a>
 
 You can have valid credentials to authenticate your requests, but unless you have permissions you cannot create or access S3 Glacier resources\. For example, you must have permissions to create a S3 Glacier vault\. 
 
 The following sections describe how to manage permissions\. We recommend that you read the overview first\.
+
+ 
 + [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)
 +  [Using Identity\-Based Policies for Amazon S3 Glacier \(IAM Policies\)](access-control-identity-based.md) 
 +  [Using Resource\-Based Policies for Amazon S3 Glacier \(Vault Policies\)](access-control-resource-based.md) 

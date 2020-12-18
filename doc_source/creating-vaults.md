@@ -3,6 +3,8 @@
 Creating a vault adds a vault to the set of vaults in your account\. An AWS account can create up to 1,000 vaults per AWS Region\. For a list of the AWS Regions supported by Amazon S3 Glacier \(S3 Glacier\), see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#glacier_region) in the *AWS General Reference*\. For information on creating more vaults, go to the [S3 Glacier product detail page](http://aws.amazon.com/glacier)\. 
 
 When you create a vault, you must provide a vault name\. The following are the vault naming requirements: 
+
+ 
 +  Names can be between 1 and 255 characters long\. 
 + Allowed characters are a–z, A–Z, 0–9, '\_' \(underscore\), '\-' \(hyphen\), and '\.' \(period\)\.
 

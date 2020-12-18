@@ -41,6 +41,8 @@ If you signed up for AWS, but you haven't created an IAM user for yourself, you 
 
 The Getting Started examples in this guide assume you have a user with administrator privileges\.
 
+
+
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
 1. Sign in to the [IAM console](https://console.aws.amazon.com/iam/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.

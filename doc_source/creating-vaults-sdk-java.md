@@ -2,6 +2,8 @@
 
 The low\-level API provides methods for all the vault operations, including creating and deleting vaults, getting a vault description, and getting a list of vaults created in a specific AWS Region\. The following are the steps to create a vault using the AWS SDK for Java\. 
 
+ 
+
 1. Create an instance of the `AmazonGlacierClient` class \(the client\)\. 
 
    You need to specify an AWS Region in which you want to create a vault\. All operations you perform using this client apply to that AWS Region\.

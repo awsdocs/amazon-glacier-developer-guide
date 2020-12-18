@@ -4,6 +4,8 @@ A vault is a container for storing archives\. When you create a vault, you speci
 
 You can store an unlimited number of archives in a vault\. 
 
+ 
+
 **Important**  
 Amazon S3 Glacier \(S3 Glacier\) provides a management console\. You can use the console to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
@@ -26,6 +28,8 @@ S3 Glacier supports various vault operations\. Vault operations are specific to 
 An AWS account can create up to 1,000 vaults per AWS Region\. For a list of the AWS Regions supported by S3 Glacier, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#glacier_region) in the *AWS General Reference*\.
 
 You can delete a vault only if there are no archives in the vault as of the last inventory that S3 Glacier computed and there have been no writes to the vault since the last inventory\. 
+
+ 
 
 **Note**  
 S3 Glacier prepares an inventory for each vault periodically, every 24 hours\. Because the inventory might not reflect the latest information, S3 Glacier ensures the vault is indeed empty by checking if there were any write operations since the last vault inventory\. 

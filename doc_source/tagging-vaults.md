@@ -59,4 +59,6 @@ Lists the tags for the specified vault\.
 Removes tags from the specified vault\.
 
 ## Related Sections<a name="related-sections-tagging-vaults"></a>
+
+ 
 + [Tagging Amazon S3 Glacier Resources](tagging.md)

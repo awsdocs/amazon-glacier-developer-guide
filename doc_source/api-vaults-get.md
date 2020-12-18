@@ -20,6 +20,8 @@ To get a list of vaults, you send a `GET` request to the *vaults* resource\.
 5. x-amz-glacier-version: 2012-06-01
 ```
 
+ 
+
 **Note**  
 The `AccountId` value is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can either specify an AWS account ID or optionally a single '`-`' \(hyphen\), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your account ID, do not include any hyphens \('\-'\) in the ID\.
 
@@ -75,6 +77,8 @@ This operation uses only response headers that are common to most responses\. Fo
 ### Response Body<a name="api-vaults-get-response-body"></a>
 
 The response body contains the following JSON fields\.
+
+ 
 
 **CreationDate**  
 The date the vault was created, in Coordinated Universal Time \(UTC\)\.  
@@ -219,6 +223,8 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 ```
 
 ## Related Sections<a name="related-sections-vaults-get"></a>
+
+ 
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)

@@ -8,6 +8,8 @@ TJgHcrOSfAkV6hdPqOATYfp_0ZaxL1pIBOc02iZ0gDPMr2ig-nhwd_PafstsdIf6HSrjHnP-3p6LCJCl
 
  Archive IDs are 138 bytes long\. When you upload an archive, you can provide an optional description\. You can retrieve an archive using its ID but not its description\.
 
+ 
+
 **Important**  
 S3 Glacier provides a management console\. You can use the console to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
@@ -26,6 +28,8 @@ S3 Glacier supports the following basic archive operations: upload, download, an
 ### Uploading an Archive in Amazon S3 Glacier<a name="uploading-an-archive-quick-intro"></a>
 
 You can upload an archive in a single operation or upload it in parts\. The API call you use to upload an archive in parts is referred as Multipart Upload\. For more information, see [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)\.
+
+ 
 
 **Important**  
 S3 Glacier provides a management console\. You can use the console to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
