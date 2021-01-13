@@ -36,7 +36,7 @@ In the URI,
 + `vaults` refers to the collection of vaults owned by the AWS account\.
 + `examplevault` identifies a specific vault in the vaults collection\.
 
-An AWS account can create vaults in any supported AWS Region\. For list of supported AWS Regions, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. Within a Region, an account must use unique vault names\. An AWS account can create same\-named vaults in different Regions\.
+An AWS account can create vaults in any supported AWS Region\. For a list of supported AWS Regions, see [Accessing Amazon S3 Glacier](amazon-glacier-accessing.md)\. Within a Region, an account must use unique vault names\. An AWS account can create same\-named vaults in different Regions\.
 
 You can store an unlimited number of archives in a vault\. Depending on your business or application needs, you can store these archives in one vault or multiple vaults\. 
 
