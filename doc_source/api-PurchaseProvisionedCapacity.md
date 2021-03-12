@@ -8,6 +8,9 @@ If the start date is on the 31st day of a month, the expiration date is the last
 
 Provisioned capacity helps ensure that your retrieval capacity for expedited retrievals is available when you need it\. Each unit of capacity ensures that at least three expedited retrievals can be performed every five minutes and provides up to 150 MB/s of retrieval throughput\. For more information about provisioned capacity, see [Archive Retrieval Options](downloading-an-archive-two-steps.md#api-downloading-an-archive-two-steps-retrieval-options)\. 
 
+**Note**  
+There is a limit of two provisioned capacity units per AWS account\.
+
 ## Requests<a name="api-PurchaseProvisionedCapacity-requests"></a>
 
 To purchase provisioned capacity unit for an AWS account send an HTTP `POST` request to the provisioned\-capacity URI\.
