@@ -90,5 +90,5 @@ In this example, a `DELETE` request is sent to the `notification-configuration` 
 
 ## See Also<a name="api-vault-notifications-delete_SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/delete-vault-notifications.html) 

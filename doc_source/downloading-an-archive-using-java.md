@@ -1,6 +1,6 @@
 # Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for Java<a name="downloading-an-archive-using-java"></a>
 
-Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to download an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the Amazon SDK for Java provide a method to download an archive\.
 
 **Topics**
 + [Downloading an Archive Using the High\-Level API of the AWS SDK for Java](#downloading-an-archive-using-java-highlevel-api)

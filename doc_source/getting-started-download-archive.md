@@ -5,7 +5,7 @@ In this step, you'll download the sample archive you uploaded previously in [Ste
  
 
 **Important**  
-Any archive operation, such as upload, download, or deletion, requires that you use the AWS Command Line Interface \(AWS CLI\) or write code\. There is no console support for archive operations\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or the AWS SDKs\. For more information about using Amazon S3 Glacier \(S3 Glacier\) with the AWS CLI, see [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, see [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
+Any archive operation, such as upload, download, or deletion, requires that you use the AWS Command Line Interface \(AWS CLI\) or write code\. There is no console support for archive operations\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or the Amazon SDKs\. For more information about using Amazon S3 Glacier \(S3 Glacier\) with the AWS CLI, see [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, see [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
 In general, retrieving your data from S3 Glacier is a two\-step process: 
 

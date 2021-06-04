@@ -1,8 +1,8 @@
 # Uploading an Archive in Amazon S3 Glacier<a name="uploading-an-archive"></a>
 
-Amazon S3 Glacier \(S3 Glacier\) provides a management console, which you can use to create and delete vaults\. However, you cannot upload archives to S3 Glacier by using the management console\. To upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, by using either the REST API directly or by using the AWS SDKs\. 
+Amazon S3 Glacier \(S3 Glacier\) provides a management console, which you can use to create and delete vaults\. However, you cannot upload archives to S3 Glacier by using the management console\. To upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, by using either the REST API directly or by using the Amazon SDKs\. 
 
-For information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\. The following **Uploading** topics describe how to upload archives to S3 Glacier by using the AWS SDK for Java, the AWS SDK for \.NET, and the REST API\.
+For information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\. The following **Uploading** topics describe how to upload archives to S3 Glacier by using the Amazon SDK for Java, the Amazon SDK for \.NET, and the REST API\.
 
 **Topics**
 + [Options for Uploading an Archive to Amazon S3 Glacier](#uploading-an-archive-overview)

@@ -4,7 +4,7 @@ With S3 Glacier Select, you can perform filtering operations using simple Struct
 
 When you perform select queries, S3 Glacier provides three data access tiers—*expedited*, *standard*, and *bulk*\. All of these tiers provide different data access times and costs, and you can choose any one of them depending on how quickly you want your data to be available\. For all but the largest archives \(250 MB\+\), data that is accessed using the expedited tier is typically made available within 1–5 minutes\. The standard tier finishes within 3–5 hours\. The bulk retrievals finish within 5–12 hours\. For information about tier pricing, see [S3 Glacier Pricing](http://aws.amazon.com/glacier/pricing/)\.
 
-You can use S3 Glacier Select with the AWS SDKs, the S3 Glacier REST API, and the AWS Command Line Interface \(AWS CLI\)\.
+You can use S3 Glacier Select with the Amazon SDKs, the S3 Glacier REST API, and the AWS Command Line Interface \(AWS CLI\)\.
 
 **Topics**
 + [S3 Glacier Select Requirements and Quotas](#glacier-select-requirements-and-limits)

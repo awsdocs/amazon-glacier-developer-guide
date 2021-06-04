@@ -54,7 +54,7 @@ You can configure a data retrieval policy for each AWS Region\. Each policy will
 
 ## Using the Amazon S3 Glacier API to Set Up a Data Retrieval Policy<a name="data-retrieval-policy-using-api"></a>
 
- You can view and set a data retrieval policy by using the S3 Glacier REST API or by using the AWS SDKs\.
+ You can view and set a data retrieval policy by using the S3 Glacier REST API or by using the Amazon SDKs\.
 
 ### Using the Amazon S3 Glacier REST API to Set Up a Data Retrieval Policy<a name="data-retrieval-policy-using-api-rest"></a>
 
@@ -64,6 +64,6 @@ When using the PUT policy operation you select the data retrieval policy type by
 
 When you use the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) operation to initiate a data retrieval job that will exceed the maximum retrieval rate set in your data retrieval policy, the Initiate Job operation will stop and throw an exception\. 
 
-### Using the AWS SDKs to Set Up a Data Retrieval Policy<a name="data-retrieval-policy-managed-using-api-sdk"></a>
+### Using the Amazon SDKs to Set Up a Data Retrieval Policy<a name="data-retrieval-policy-managed-using-api-sdk"></a>
 
-AWS provides SDKs for you to develop applications for S3 Glacier\. These SDKs provide libraries that map to underlying REST API and provide objects that enable you to easily construct requests and process responses\. For more information, see [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. 
+AWS provides SDKs for you to develop applications for S3 Glacier\. These SDKs provide libraries that map to underlying REST API and provide objects that enable you to easily construct requests and process responses\. For more information, see [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. 

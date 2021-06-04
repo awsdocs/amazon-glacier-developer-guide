@@ -107,5 +107,5 @@ S3 Glacier creates the vault and returns the relative URI path of the vault in t
 
 ## See Also<a name="vault-put-SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/create-vault.html) 

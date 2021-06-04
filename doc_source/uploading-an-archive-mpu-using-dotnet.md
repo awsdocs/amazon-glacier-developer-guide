@@ -1,6 +1,6 @@
 # Uploading Large Archives Using the AWS SDK for \.NET<a name="uploading-an-archive-mpu-using-dotnet"></a>
 
-Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to upload large archives in parts \(see [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)\)\. 
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the Amazon SDK for \.NET provide a method to upload large archives in parts \(see [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)\)\. 
 
  
 + The high\-level API provides a method that you can use to upload archives of any size\. Depending on the file you are uploading, the method either uploads archive in a single operation or uses the multipart upload support in Amazon S3 Glacier \(S3 Glacier\) to upload the archive in parts\.
@@ -38,7 +38,7 @@ For granular control of the upload, you can use the low\-level API, where you ca
 
    You need to provide the upload ID, the checksum of the entire archive, the archive size \(combined size of all parts you uploaded\), and the vault name\. S3 Glacier constructs the archive from the uploaded parts and returns an archive ID\.
 
-### Example: Uploading a Large Archive in Parts Using the AWS SDK for \.NET<a name="upload-archive-mpu-dotnet-example"></a>
+### Example: Uploading a Large Archive in Parts Using the Amazon SDK for \.NET<a name="upload-archive-mpu-dotnet-example"></a>
 
 The following C\# code example uses the AWS SDK for \.NET to upload an archive to a vault \(`examplevault`\)\. For step\-by\-step instructions on how to run this example, see [Running Code Examples](using-aws-sdk-for-dot-net.md#setting-up-and-testing-sdk-dotnet)\. You need to update the code as shown with the name of a file you want to upload\.
 

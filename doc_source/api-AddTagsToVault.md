@@ -120,5 +120,5 @@ If the request was successful S3 Glacier returns a `HTTP 204 No Content` as show
 
 ## See Also<a name="api-AddTagsToVault-SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/add-tags-to-vault.html) 

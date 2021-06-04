@@ -3,11 +3,11 @@
 **Topics**
 + [Retrieve Vault Metadata for a Vault](#retrieve-vault-info-sdk-java-lowlevel-one-vault)
 + [Retrieve Vault Metadata for All Vaults in a Region](#retrieve-vault-info-sdk-java-lowlevel-all-vaults)
-+ [Example: Retrieving Vault Metadata Using the AWS SDK for Java](#retrieving-vault-info-sdk-java-example)
++ [Example: Retrieving Vault Metadata Using the Amazon SDK for Java](#retrieving-vault-info-sdk-java-example)
 
 ## Retrieve Vault Metadata for a Vault<a name="retrieve-vault-info-sdk-java-lowlevel-one-vault"></a>
 
-You can retrieve metadata for a specific vault or all the vaults in a specific AWS Region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the AWS SDK for Java\. 
+You can retrieve metadata for a specific vault or all the vaults in a specific AWS Region\. The following are the steps to retrieve vault metadata for a specific vault using the low\-level API of the Amazon SDK for Java\. 
 
  
 
@@ -87,6 +87,6 @@ Note that the information returned for each vault in the list is the same as the
 **Note**  
 The `listVaults` method calls the underlying REST API \(see [List Vaults \(GET vaults\)](api-vaults-get.md)\)\. 
 
-## Example: Retrieving Vault Metadata Using the AWS SDK for Java<a name="retrieving-vault-info-sdk-java-example"></a>
+## Example: Retrieving Vault Metadata Using the Amazon SDK for Java<a name="retrieving-vault-info-sdk-java-example"></a>
 
 For a working code example, see [Example: Creating a Vault Using the AWS SDK for Java](creating-vaults-sdk-java.md#creating-vaults-sdk-java-example)\. The Java code example creates a vault and retrieves the vault metadata\.

@@ -102,5 +102,5 @@ If the policy is successfully deleted S3 Glacier returns an `HTTP 204 No Content
 
 ## See Also<a name="api-AbortVaultLock-SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/abort-vault-lock.html) 

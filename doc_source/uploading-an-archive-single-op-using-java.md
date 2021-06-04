@@ -1,6 +1,6 @@
 # Uploading an Archive in a Single Operation Using the AWS SDK for Java<a name="uploading-an-archive-single-op-using-java"></a>
 
-Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for Java provide a method to upload an archive\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the Amazon SDK for Java provide a method to upload an archive\.
 
 **Topics**
 + [Uploading an Archive Using the High\-Level API of the AWS SDK for Java](#uploading-an-archive-single-op-high-level-using-java)

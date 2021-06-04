@@ -96,5 +96,5 @@ The following example deletes a vault named `examplevault`\. The example request
 
 ## See Also<a name="api-vault-delete-SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/delete-vault.html) 

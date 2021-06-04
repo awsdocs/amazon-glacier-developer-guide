@@ -3,19 +3,19 @@
 Before you can start with this exercise, you must sign up for an AWS account \(if you don't already have one\), and then download one of the AWS Software Development Kits \(SDKs\)\. The following sections provide instructions\.
 
 **Topics**
-+ [Set Up an AWS Account and an Administrator User](#setup)
-+ [Download the Appropriate AWS SDK](#getting-started-download-sdk)
++ [Set Up an AWS account and an Administrator User](#setup)
++ [Download the Appropriate Amazon SDK](#getting-started-download-sdk)
 
 **Important**  
-Amazon S3 Glacier \(S3 Glacier\) provides a management console, which you can use to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the AWS SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
+Amazon S3 Glacier \(S3 Glacier\) provides a management console, which you can use to create and delete vaults\. However, all other interactions with S3 Glacier require that you use the AWS Command Line Interface \(CLI\) or write code\. For example, to upload data, such as photos, videos, and other documents, you must either use the AWS CLI or write code to make requests, using either the REST API directly or by using the Amazon SDKs\. For more information about using S3 Glacier with the AWS CLI, go to [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, go to [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
 
-## Set Up an AWS Account and an Administrator User<a name="setup"></a>
+## Set Up an AWS account and an Administrator User<a name="setup"></a>
 
 If you have not already done so, you need to sign up for an AWS account and create an administrator user in the account\. 
 
 To complete the setup, follow the instructions in the following topics:
 
-### Set Up an AWS Account and Create an Administrator User<a name="setting-up"></a>
+### Set Up an AWS account and Create an Administrator User<a name="setting-up"></a>
 
 #### Sign up for AWS<a name="setting-up-signup"></a>
 
@@ -91,7 +91,7 @@ You can use this same process to create more groups and users and to give your u
    https://aws_account_number.signin.aws.amazon.com/console/
    ```
 
-   The *aws\_account\_number* is your AWS account ID without hyphen\. For example, if your AWS account ID is `1234-5678-9012`, your AWS account number is `123456789012`\. For information about how to find your account number, see [Your AWS Account ID and Its Alias](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) in the *IAM User Guide*\.
+   The *aws\_account\_number* is your AWS account ID without hyphen\. For example, if your AWS account ID is `1234-5678-9012`, your AWS account number is `123456789012`\. For information about how to find your account number, see [Your AWS account ID and Its Alias](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) in the *IAM User Guide*\.
 
 1. Enter the IAM user name and password that you just created\. When you're signed in, the navigation bar displays *your\_user\_name* @ *your\_aws\_account\_id*\.
 
@@ -124,9 +124,9 @@ For more information about IAM, see the following:
 
 For information about using IAM with S3 Glacier, see [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)\.
 
-## Download the Appropriate AWS SDK<a name="getting-started-download-sdk"></a>
+## Download the Appropriate Amazon SDK<a name="getting-started-download-sdk"></a>
 
-To try the getting started exercise, you must decide which programming language you want to use and download the appropriate AWS SDK for your development platform\.
+To try the getting started exercise, you must decide which programming language you want to use and download the appropriate Amazon SDK for your development platform\.
 
 The getting started exercise provides examples in Java and C\#\. 
 
@@ -139,5 +139,5 @@ To test the Java examples in this developer guide, you need the AWS SDK for Java
 ### Downloading the AWS SDK for \.NET<a name="getting-started-download-sdk-dotnet"></a>
 
 To test the C\# examples in this developer guide, you need the AWS SDK for \.NET\. You have the following download options:
-+ If you are using Visual Studio, you can install both the AWS SDK for \.NET and the AWS Toolkit for Visual Studio\. The toolkit provides AWS Explorer for Visual Studio and project templates that you can use for development\. To download the AWS SDK for \.NET go to [http://aws\.amazon\.com/sdkfornet](http://aws.amazon.com/sdkfornet/)\. By default, the installation script installs both the AWS SDK and the AWS Toolkit for Visual Studio\. To learn more about the toolkit, go to [AWS Toolkit for Visual Studio User Guide](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/)\. 
++ If you are using Visual Studio, you can install both the AWS SDK for \.NET and the AWS Toolkit for Visual Studio\. The toolkit provides AWS Explorer for Visual Studio and project templates that you can use for development\. To download the AWS SDK for \.NET go to [http://aws\.amazon\.com/sdkfornet](http://aws.amazon.com/sdkfornet/)\. By default, the installation script installs both the Amazon SDK and the AWS Toolkit for Visual Studio\. To learn more about the toolkit, go to [AWS Toolkit for Visual Studio User Guide](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/)\. 
 + If you are using any other IDE to create your application, you can use the same link provided in the preceding step and install only the AWS SDK for \.NET\. 

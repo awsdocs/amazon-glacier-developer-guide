@@ -6,7 +6,7 @@ You can create one vault access policy for each vault to manage *permissions*\. 
 
 
 
-You can use the Glacier API, AWS SDKs, AWS CLI, or the S3 Glacier console to create and manage vault access policies\. For a list of operations allowed for vault access resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
+You can use the Glacier API, Amazon SDKs, AWS CLI, or the S3 Glacier console to create and manage vault access policies\. For a list of operations allowed for vault access resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
 **Topics**
 + [Example 1: Grant Cross\-Account Permissions for Specific Amazon S3 Glacier Actions](#vault-access-policy-example-multiple-accounts)

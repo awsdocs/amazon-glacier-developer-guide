@@ -4,7 +4,7 @@ An Amazon S3 Glacier \(S3 Glacier\) vault can have one resource\-based vault acc
 
 As an example of a Vault Lock policy, suppose that you are required to retain archives for one year before you can delete them\. To implement this requirement, you can create a Vault Lock policy that denies users permissions to delete an archive until the archive has existed for one year\. You can test this policy before locking it down\. After you lock the policy, the policy becomes immutable\. For more information about the locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\. If you want to manage other user permissions that can be changed, you can use the vault access policy \(see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\)\.
 
-You can use the S3 Glacier API, AWS SDKs, AWS CLI, or the S3 Glacier console to create and manage Vault Lock policies\. For a list of S3 Glacier actions allowed for vault resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
+You can use the S3 Glacier API, Amazon SDKs, AWS CLI, or the S3 Glacier console to create and manage Vault Lock policies\. For a list of S3 Glacier actions allowed for vault resource\-based policies, see [Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference](glacier-api-permissions-ref.md)\.
 
 **Topics**
 + [Example 1: Deny Deletion Permissions for Archives Less Than 365 Days Old](#vault-lock-policy-example-deny-delete-archive-age)

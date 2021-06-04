@@ -1,6 +1,6 @@
 # Retrieving S3 Glacier Archives<a name="downloading-an-archive-two-steps"></a>
 
-Retrieving an archive from Amazon S3 Glacier \(S3 Glacier\) is an asynchronous operation in which you first initiate a job, and then download the output after the job completes\. To initiate an archive retrieval job you use the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API or the equivalent in the AWS CLI, or AWS SDKS\.
+Retrieving an archive from Amazon S3 Glacier \(S3 Glacier\) is an asynchronous operation in which you first initiate a job, and then download the output after the job completes\. To initiate an archive retrieval job you use the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API or the equivalent in the AWS CLI, or Amazon SDKS\.
 
 **Topics**
 + [Archive Retrieval Options](#api-downloading-an-archive-two-steps-retrieval-options)
@@ -44,7 +44,7 @@ You can specify one of the following when initiating a job to retrieve an archiv
 + **Standard —** Standard retrievals allow you to access any of your archives within several hours\. Standard retrievals typically complete within 3–5 hours\. This is the default option for retrieval requests that do not specify the retrieval option\.
 + **Bulk —** Bulk retrievals are S3 Glacier’s lowest\-cost retrieval option, which you can use to retrieve large amounts, even petabytes, of data inexpensively in a day\. Bulk retrievals typically complete within 5–12 hours\.
 
-To make an Expedited, Standard, or Bulk retrieval, set the `Tier` parameter in the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API request to the option you want, or the equivalent in the AWS CLI or AWS SDKs\. If you have purchased provisioned capacity, then all expedited retrievals are automatically served through your provisioned capacity\. 
+To make an Expedited, Standard, or Bulk retrieval, set the `Tier` parameter in the [Initiate Job \(POST jobs\)](api-initiate-job-post.md) REST API request to the option you want, or the equivalent in the AWS CLI or Amazon SDKs\. If you have purchased provisioned capacity, then all expedited retrievals are automatically served through your provisioned capacity\. 
 
 ### Provisioned Capacity<a name="api-downloading-an-archive-two-steps-retrieval-expedited-capacity"></a>
 
@@ -54,7 +54,7 @@ You should purchase provisioned retrieval capacity if your workload requires hig
 
 #### Purchasing Provisioned Capacity<a name="downloading-an-archive-purchase-provisioned-capacity"></a>
 
-You can purchase provisioned capacity units by using the S3 Glacier console, the [Purchase Provisioned Capacity \(POST provisioned\-capacity\)](api-PurchaseProvisionedCapacity.md) REST API, the AWS SDKs, or the AWS CLI\. For provisioned capacity pricing information, see [S3 Glacier Pricing](http://aws.amazon.com/glacier/pricing/)\. 
+You can purchase provisioned capacity units by using the S3 Glacier console, the [Purchase Provisioned Capacity \(POST provisioned\-capacity\)](api-PurchaseProvisionedCapacity.md) REST API, the Amazon SDKs, or the AWS CLI\. For provisioned capacity pricing information, see [S3 Glacier Pricing](http://aws.amazon.com/glacier/pricing/)\. 
 
 A provisioned capacity unit lasts for one month starting at the date and time of purchase, which is the start date\. The unit expires on the expiration date, which is exactly one month after the start date to the nearest second\. 
 

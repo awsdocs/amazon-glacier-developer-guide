@@ -77,7 +77,7 @@ You can also create your own custom IAM policies to allow permissions for S3 Gla
 
 ## Customer Managed Policy Examples<a name="access-policy-examples-for-sdk-cli"></a>
 
-In this section, you can find example user policies that grant permissions for various S3 Glacier actions\. These policies work when you are using S3 Glacier REST API, the AWS SDKs, the AWS CLI, or, if applicable, the S3 Glacier management console\. 
+In this section, you can find example user policies that grant permissions for various S3 Glacier actions\. These policies work when you are using S3 Glacier REST API, the Amazon SDKs, the AWS CLI, or, if applicable, the S3 Glacier management console\. 
 
 **Note**  
 All examples use the US West \(Oregon\) Region \(`us-west-2`\) and contain fictitious account IDs\.

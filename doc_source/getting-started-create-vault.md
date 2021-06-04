@@ -26,7 +26,7 @@ You can create vaults programmatically or by using the S3 Glacier console\. This
 
 1. Select **Do not enable notifications**\. For this getting started exercise, you will not configure notifications for the vault\.
 
-   If you wanted to have notifications sent to you or your application whenever certain S3 Glacier jobs complete, you would select **Enable notifications and create a new SNS topic** or **Enable notifications and use an existing SNS topic** to set up Amazon Simple Notification Service \(Amazon SNS\) notifications\. In subsequent steps, you upload an archive and then download it using the high\-level API of the AWS SDK\. Using the high\-level API does not require that you configure vault notification to retrieve your data\.
+   If you wanted to have notifications sent to you or your application whenever certain S3 Glacier jobs complete, you would select **Enable notifications and create a new SNS topic** or **Enable notifications and use an existing SNS topic** to set up Amazon Simple Notification Service \(Amazon SNS\) notifications\. In subsequent steps, you upload an archive and then download it using the high\-level API of the Amazon SDK\. Using the high\-level API does not require that you configure vault notification to retrieve your data\.
 
       
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault-set-notifications.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)

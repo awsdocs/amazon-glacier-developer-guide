@@ -1,6 +1,6 @@
 # Using the AWS SDK for \.NET with Amazon S3 Glacier<a name="using-aws-sdk-for-dot-net"></a>
 
-The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
+The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
 
 **Note**  
 The low\-level API and high\-level API provide thread\-safe clients for accessing S3 Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
@@ -37,7 +37,7 @@ All the low\-level samples in the guide use this pattern\.
  
 
 **Note**  
-The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case S3 Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
+The preceding code segment specifies `AccountId` when creating the request\. However, when using the AWS SDK for \.NET, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can specify either the AWS account ID or optionally a '\-', in which case S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for \.NET, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
 ## Using the High\-Level API<a name="about-high-level-dotnet-api"></a>
 
@@ -64,7 +64,7 @@ The high\-level `ArchiveTransferManager` class still needs the low\-level `Amazo
 
 ## Running Code Examples<a name="setting-up-and-testing-sdk-dotnet"></a>
 
-The easiest way to get started with the \.NET code examples is to install the AWS SDK for \.NET\. For more information, go to [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/)\.  
+The easiest way to get started with the \.NET code examples is to install the AWS SDK for \.NET\. For more information, go to [Amazon SDK for \.NET](http://aws.amazon.com/sdkfornet/)\.  
 
 The following procedure outlines steps for you to test the code examples provided in this guide\.
 
@@ -73,7 +73,7 @@ The following procedure outlines steps for you to test the code examples provide
 
 |  |  | 
 | --- |--- |
-| 1 | Create a credentials profile for your AWS credentials as described in the AWS SDK for \.NET topic [Configuring AWS Credentials](http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html)\.  | 
+| 1 | Create a credentials profile for your AWS credentials as described in the Amazon SDK for \.NET topic [Configuring AWS Credentials](http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html)\.  | 
 | 2 |  Create a new Visual Studio project using the *AWS Empty Project* template\.   | 
 | 3 | Replace the code in the project file, `Program.cs`, with the code in the section you are reading\.  | 
 | 4 |   Run the code\. Verify that the object is created using the AWS Management Console\. For more information about AWS Management Console, go to [http://aws\.amazon\.com/console/](http://aws.amazon.com/console/)\.  | 

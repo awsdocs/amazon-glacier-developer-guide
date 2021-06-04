@@ -106,5 +106,5 @@ If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns a `HTTP 
 
 ## See Also<a name="api-SetVaultAccessPolicy_SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/set-vault-access-policy.html) 

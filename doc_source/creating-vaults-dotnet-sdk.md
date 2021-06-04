@@ -1,6 +1,6 @@
 # Creating a Vault in Amazon S3 Glacier Using the AWS SDK for \.NET<a name="creating-vaults-dotnet-sdk"></a>
 
-Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the AWS SDK for \.NET provide a method to create a vault\.
+Both the [high\-level and low\-level APIs](using-aws-sdk.md) provided by the Amazon SDK for \.NET provide a method to create a vault\.
 
 **Topics**
 + [Creating a Vault Using the High\-Level API of the AWS SDK for \.NET](#create-vault-dotnet-highlevel)

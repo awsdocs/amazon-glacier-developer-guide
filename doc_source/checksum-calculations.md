@@ -53,7 +53,7 @@ The process of computing the tree hash when uploading an archive using multipart
 
 ## Computing the Tree Hash of a File<a name="checksum-calculations-examples"></a>
 
-The algorithms shown here are selected for demonstration purposes\. You can optimize the code as needed for your implementation scenario\. If you are using an AWS SDK to program against Amazon S3 Glacier \(S3 Glacier\), the tree hash calculation is done for you and you only need to provide the file reference\.
+The algorithms shown here are selected for demonstration purposes\. You can optimize the code as needed for your implementation scenario\. If you are using an Amazon SDK to program against Amazon S3 Glacier \(S3 Glacier\), the tree hash calculation is done for you and you only need to provide the file reference\.
 
 **Example 1: Java Example**  
 The following example shows how to calculate the SHA256 tree hash of a file using Java\. You can run this example by either supplying a file location as an argument or you can use the `TreeHashExample.computeSHA256TreeHash` method directly from your code\.  

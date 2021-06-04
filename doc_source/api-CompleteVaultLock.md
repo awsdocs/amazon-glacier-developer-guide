@@ -100,5 +100,5 @@ If the request was successful, Amazon S3 Glacier \(S3 Glacier\) returns an `HTTP
 
 ## See Also<a name="api-CompleteVaultLock-SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/complete-vault-lock.html) 

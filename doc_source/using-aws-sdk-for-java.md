@@ -1,6 +1,6 @@
 # Using the AWS SDK for Java with Amazon S3 Glacier<a name="using-aws-sdk-for-java"></a>
 
-The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon S3 Glacier \(S3 Glacier\) as described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [AWS SDK for Java](http://aws.amazon.com/sdkforjava/)\.
+The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon S3 Glacier \(S3 Glacier\) as described in [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [Amazon SDK for Java](http://aws.amazon.com/sdkforjava/)\.
 
 **Note**  
 The AWS SDK for Java provides thread\-safe clients for accessing S3 Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
@@ -34,7 +34,7 @@ All the low\-level samples in the guide use this pattern\.
  
 
 **Note**  
-The preceding code segment specifies `AccountID` when creating the request\. However, when using the AWS SDK for Java, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS Account ID\. This value must match the AWS Account ID associated with the credentials used to sign the request\. You can specify either the AWS Account ID or optionally a '\-', in which case S3 Glacier uses the AWS Account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for Java, if you don't provide the account ID, the library sets the account ID to '\-'\. 
+The preceding code segment specifies `AccountID` when creating the request\. However, when using the AWS SDK for Java, the `AccountId` in the request is optional, and therefore all the low\-level examples in this guide don't set this value\. The `AccountId` is the AWS account ID\. This value must match the AWS account ID associated with the credentials used to sign the request\. You can specify either the AWS account ID or optionally a '\-', in which case S3 Glacier uses the AWS account ID associated with the credentials used to sign the request\. If you specify your Account ID, do not include hyphens in it\. When using AWS SDK for Java, if you don't provide the account ID, the library sets the account ID to '\-'\. 
 
 ## Using the High\-Level API<a name="about-high-level-java-api"></a>
 
@@ -70,7 +70,7 @@ The easiest way to get started with the Java code examples is to install the lat
 
 |  |  | 
 | --- |--- |
-| 1 |  Create a default credentials profile for your AWS credentials as described in the AWS SDK for Java topic [Providing AWS Credentials in the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html)\.   | 
+| 1 |  Create a default credentials profile for your AWS credentials as described in the AWS SDK for Java topic [Providing AWS Credentials in the Amazon SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html)\.   | 
 | 2 | Create a new AWS Java project in Eclipse\. The project is pre\-configured with the AWS SDK for Java\. | 
 | 3 | Copy the code from the section you are reading to your project\.  | 
 | 4 | Update the code by providing any required data\. For example, if uploading a file, provide the file path and the bucket name\. | 

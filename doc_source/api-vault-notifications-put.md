@@ -125,5 +125,5 @@ A successful response returns a `204 No Content`\.
 
 ## See Also<a name="api-vault-notifications-put_SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/set-vault-notifications.html) 

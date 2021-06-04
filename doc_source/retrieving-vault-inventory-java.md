@@ -60,7 +60,7 @@ Note that if an inventory has not been completed for the vault an error is retur
 **Note**  
 For information about the job related underlying REST API, see [Job Operations](job-operations.md)\.
 
-## Example: Retrieving a Vault Inventory Using the AWS SDK for Java<a name="retrieving-vault-inventory-java-example"></a>
+## Example: Retrieving a Vault Inventory Using the Amazon SDK for Java<a name="retrieving-vault-inventory-java-example"></a>
 
 The following Java code example retrieves the vault inventory for the specified vault\.
 

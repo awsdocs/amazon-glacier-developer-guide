@@ -6,7 +6,7 @@ You can use any programming library that can send HTTP requests to send your RES
 
 If an error occurs, you need to know what S3 Glacier sends in an error response so that you can process it\. This section provides all this information, in addition to documenting the REST operations, so that you can make REST API calls directly\. 
 
-You can either use the REST API calls directly or use the AWS SDKs that provide wrapper libraries to simplify your coding task\. These libraries sign each request you send and compute the checksum of the payload in your request\. Therefore, using the AWS SDKs simplifies your coding task\. This developer guide provides working examples of basic S3 Glacier operations using the AWS SDK for Java and \.NET\. For more information see, [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\.
+You can either use the REST API calls directly or use the Amazon SDKs that provide wrapper libraries to simplify your coding task\. These libraries sign each request you send and compute the checksum of the payload in your request\. Therefore, using the Amazon SDKs simplifies your coding task\. This developer guide provides working examples of basic S3 Glacier operations using the AWS SDK for Java and \.NET\. For more information see, [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md)\.
 
 **Topics**
 + [Common Request Headers](api-common-request-headers.md)

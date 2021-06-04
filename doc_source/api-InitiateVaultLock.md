@@ -130,5 +130,5 @@ If the request was successful, S3 Glacier returns an `HTTP 201 Created` response
 
 ## See Also<a name="api-InitiateVaultLock_SeeAlso"></a>
 
-For more information about using this API in one of the language\-specific AWS SDKs, see the following:
+For more information about using this API in one of the language\-specific Amazon SDKs, see the following:
 +  [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/glacier/initiate-vault-lock.html) 
