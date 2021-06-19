@@ -112,9 +112,10 @@ S3 Glacier deletes a vault only if there are no archives in the vault as of the 
    ```
 
 1. Use the `delete-archive` command to delete each archive from a vault until none remain\.
+The archiveid can start with a "-" this confuses the argument parser if the normal form of --archive-id "-asdfasdf" is used.  using the form --archive-id="-asdfasdf" seems to work reliably
 
    ```
-   aws glacier delete-archive --vault-name awsexamplevault --account-id 111122223333 --archive-id *** archiveid ***
+   aws glacier delete-archive --vault-name awsexamplevault --account-id 111122223333 --archive-id="*** archiveid ***"
    ```
 
 1. Use the `initiate-job` command to start a new inventory retrieval job\.
