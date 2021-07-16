@@ -101,7 +101,7 @@ When you grant permissions to create a vault using the `glacier:CreateVault` ope
 
 For more information about using identity\-based policies with S3 Glacier, see [Using Identity\-Based Policies for Amazon S3 Glacier \(IAM Policies\)](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
- 
+ 
 
 ### Resource\-Based Policies \(Amazon S3 Glacier Vault Policies\)<a name="access-control-manage-access-intro-resource-policies"></a>
 
