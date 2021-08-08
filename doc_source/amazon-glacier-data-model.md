@@ -68,7 +68,7 @@ In addition, the S3 Glacier data model includes job and notification\-configurat
 
 ## Job<a name="data-model-job"></a>
 
-S3 Glacier jobs can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job providing a SQL query and list of S3 Glacier archive objects\. S3 Glacier Select runs the query in place and writes the output results to Amazon S3\.
+A S3 Glacier job can perform a select query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job by providing a SQL query and list of S3 Glacier archive objects\. S3 Glacier Select runs the query in place and writes the output results to Amazon S3\.
 
 Retrieving an archive and vault inventory \(list of archives\) are asynchronous operations in S3 Glacier in which you first initiate a job, and then download the job output after S3 Glacier completes the job\. 
 
