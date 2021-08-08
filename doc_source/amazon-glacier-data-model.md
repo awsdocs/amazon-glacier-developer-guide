@@ -1,6 +1,6 @@
 # Amazon S3 Glacier Data Model<a name="amazon-glacier-data-model"></a>
 
-The Amazon S3 Glacier \(S3 Glacier\) data model core concepts include vaults and archives\. S3 Glacier is a REST\-based web service\. In terms of REST, vaults and archives are the resources\. In addition, the S3 Glacier data model includes job and notification\-configuration resources\. These resources complement the core resources\.
+The Amazon S3 Glacier \(S3 Glacier\) data model core components include vaults and archives\. S3 Glacier is a REST\-based web service\. In terms of REST, vaults and archives are the resources\. In addition, the S3 Glacier data model includes job and notification\-configuration resources\. These resources complement the core resources\.
 
 **Topics**
 + [Vault](#data-model-vault)
