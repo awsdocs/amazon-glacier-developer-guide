@@ -97,7 +97,7 @@ For each job, S3 Glacier maintains information such as job type, description, cr
 
 ## Notification Configuration<a name="data-model-notification-config"></a>
 
-Because jobs take time to complete, S3 Glacier supports a notification mechanism to notify you when a job is complete\. You can configure a vault to send notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when jobs complete\. You can specify one SNS topic per vault in the notification configuration\.
+Because jobs take time to complete, S3 Glacier supports a notification mechanism to notify you when a job is complete\. You can configure a vault to send a notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when a job completes\. You can specify one SNS topic per vault in the notification configuration\.
 
 S3 Glacier stores the notification configuration as a JSON document\. The following is an example vault notification configuration:
 
