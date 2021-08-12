@@ -26,7 +26,7 @@ import com.amazonaws.services.glacier.transfer.UploadResult;
 
 public class AmazonGlacierUploadArchive_GettingStarted {
 
-    public static String vaultName = "examplevault2";
+    public static String vaultName = "examplevault";
     public static String archiveToUpload = "*** provide name of file to upload ***";
     
     public static AmazonGlacierClient client;
