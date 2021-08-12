@@ -1,6 +1,6 @@
 # API Reference for Amazon S3 Glacier<a name="amazon-glacier-api"></a>
 
-Amazon S3 Glacier \(S3 Glacier\) supports a set of operations—specifically, a set of RESTful API calls—that enable you to interact with the service\. 
+Amazon S3 Glacier supports a set of operations—specifically, a set of RESTful API calls—that enable you to interact with the service\. 
 
 You can use any programming library that can send HTTP requests to send your REST requests to S3 Glacier\. When sending a REST request, S3 Glacier requires that you authenticate every request by signing the request\. Additionally, when uploading an archive, you must also compute the checksum of the payload and include it in your request\. For more information, see [Signing Requests](amazon-glacier-signing-requests.md)\.
 

@@ -1,9 +1,9 @@
 # Amazon S3 Glacier Data Retrieval Policies<a name="data-retrieval-policy"></a>
 
- With Amazon S3 Glacier \(S3 Glacier\) data retrieval policies, you can easily set data retrieval quotas and manage the data retrieval activities across your AWS account in each AWS Region\. For more information about S3 Glacier data retrieval charges, see [S3 Glacier pricing](https://aws.amazon.com/glacier/pricing/)\.
+ With Amazon S3 Glacier data retrieval policies, you can easily set data retrieval quotas and manage the data retrieval activities across your AWS account in each AWS Region\. For more information about S3 Glacier data retrieval charges, see [S3 Glacier pricing](https://aws.amazon.com/glacier/pricing/)\.
 
 **Important**  
-A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to S3 Glacier\. It does not manage data restore requests for the Amazon Simple Storage Service \(Amazon S3\) S3 Glacier storage class\. For more information about the S3 Glacier storage class, see [S3 Glacier Storage Class](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to S3 Glacier\. For more information about the S3 Glacier storage class, see [S3 Glacier Storage Class](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 **Topics**
 + [Choosing an Amazon S3 Glacier Data Retrieval Policy](#data-retrieval-policy-details)
@@ -36,7 +36,7 @@ You can switch to a Free Tier Only policy after you have incurred data retrieval
 
 You can set your data retrieval policy to Max Retrieval Rate to control the peak retrieval rate by specifying a data retrieval quota that has a bytes\-per\-hour maximum\. When you set the data retrieval policy to Max Retrieval Rate, a new retrieval request will be rejected if it would cause the peak retrieval rate of the in progress jobs to exceed the bytes\-per\-hour quota specified by the policy\. If a retrieval job request is rejected, you will receive an error message stating that the request has been denied by the current data retrieval policy\. 
 
-Setting your data retrieval policy to the Max Retrieval Rate policy can affect how much free tier you can use in a day\. For example, suppose you set Max Retrieval Rate to 1 MB per hour\. This is less than the free tier policy rate of 14 MB per hour\. To ensure you make good use of the daily free tier allowance, you can first set your policy to Free Tier Only and then switch to the Max Retrieval Rate policy later if you need to\. or more information on how your retrieval allowance is calculated, go to [S3 Glacier FAQs](https://aws.amazon.com/glacier/faqs/)\.
+Setting your data retrieval policy to the Max Retrieval Rate policy can affect how much free tier you can use in a day\. For example, suppose you set Max Retrieval Rate to 1 MB per hour\. This is less than the free tier policy rate of 14 MB per hour\. To ensure you make good use of the daily free tier allowance, you can first set your policy to Free Tier Only and then switch to the Max Retrieval Rate policy later if you need to\. For more information on how your retrieval allowance is calculated, go to [S3 Glacier FAQs](https://aws.amazon.com/glacier/faqs/)\.
 
 ### No Retrieval Limit Policy<a name="data-retrieval-policy-no-retrieval-policy"></a>
 
