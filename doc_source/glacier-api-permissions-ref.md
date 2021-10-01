@@ -9,7 +9,7 @@ To specify an action, use the `glacier:` prefix followed by the API operation na
 The following table lists actions that can be used with identity\-based policies and resource\-based policies\. 
 
 **Note**  
-Some actions can only be used with identity\-based policies\. These actions are marked by a red asterisk \(*\**\) after the name of the API operation in the first column\.
+Some actions can only be used with identity\-based policies\. These actions are marked by an asterisk \(\*\) after the name of the API operation in the first column\.
 
 Use the scroll bars to see the rest of the table\.
 

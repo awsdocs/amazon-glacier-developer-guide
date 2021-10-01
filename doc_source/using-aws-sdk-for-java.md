@@ -1,6 +1,6 @@
 # Using the AWS SDK for Java with Amazon S3 Glacier<a name="using-aws-sdk-for-java"></a>
 
-The AWS SDK for Java provides both high\-level and low\-leve APIs for Amazon S3 Glacier \(S3 Glacier\) as described in [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [Amazon SDK for Java](http://aws.amazon.com/sdkforjava/)\.
+The AWS SDK for Java provides both high\-level and low\-level APIs for Amazon S3 Glacier \(S3 Glacier\) as described in [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md)\. For information about downloading the AWS SDK for Java, see [Amazon SDK for Java](http://aws.amazon.com/sdkforjava/)\.
 
 **Note**  
 The AWS SDK for Java provides thread\-safe clients for accessing S3 Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.
