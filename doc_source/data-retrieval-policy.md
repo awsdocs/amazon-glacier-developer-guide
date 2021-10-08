@@ -3,7 +3,7 @@
  With Amazon S3 Glacier data retrieval policies, you can easily set data retrieval quotas and manage the data retrieval activities across your AWS account in each AWS Region\. For more information about S3 Glacier data retrieval charges, see [S3 Glacier pricing](https://aws.amazon.com/glacier/pricing/)\.
 
 **Important**  
-A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to S3 Glacier\. For more information about the S3 Glacier storage class, see [S3 Glacier Storage Class](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+A data retrieval policy applies to standard retrievals only and manages retrieval requests made directly to S3 Glacier\. For more information about the S3 Glacier storage class, see [S3 Glacier Storage Class](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service User Guide*\. 
 
 **Topics**
 + [Choosing an Amazon S3 Glacier Data Retrieval Policy](#data-retrieval-policy-details)

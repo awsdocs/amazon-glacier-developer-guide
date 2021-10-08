@@ -20,8 +20,8 @@ You use a S3 Glacier Select job to perform SQL queries on archive objects\. The 
 When initiating a select job, you do the following:
 + Define an output location for the output of your select query\. This location must be an Amazon S3 bucket in the same AWS Region as the vault containing the archive object being queried\. The AWS account that initiates the job must have permissions to write to the S3 bucket\. You can specify the storage class and encryption for the output objects stored in Amazon S3\. When setting [S3Location](api-S3Location.md), it might be helpful to read the following topics in the Amazon S3 documentation:
   + [PUT Object](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html) in the *Amazon Simple Storage Service API Reference*
-  + [Managing Access with ACLs](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) in the *Amazon Simple Storage Service Developer Guide*
-  + [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*
+  + [Managing Access with ACLs](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) in the *Amazon Simple Storage Service User Guide*
+  + [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service User Guide*
 + Define the SQL expression to use for the SELECT for your query in [SelectParameters](api-SelectParameters.md)\. For example, you can use expressions like the following examples:
   + The following example expression returns all records from the specified object\.
 

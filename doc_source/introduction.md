@@ -4,7 +4,7 @@ Amazon S3 Glacier is a secure, durable, and extremely low\-cost Amazon S3 storag
 
 With S3 Glacier, customers can store their data cost effectively for months, years, or even decades\. S3 Glacier enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure detection and recovery, or time\-consuming hardware migrations\. For more service highlights and pricing information, go to the [S3 Glacier detail page](https://aws.amazon.com/glacier)\.
 
-S3 Glacier is one of the many different storage classes for Amazon S3\. For a general overview of Amazon S3 core concepts, such as buckets, access points, storage classes and objects, see [What is Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/introduction.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+S3 Glacier is one of the many different storage classes for Amazon S3\. For a general overview of Amazon S3 core concepts, such as buckets, access points, storage classes and objects, see [What is Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/introduction.html) in the *Amazon Simple Storage Service User Guide*\. 
 
 **Topics**
 + [Are You a First\-Time S3 Glacier User?](#are-you-a-firsttime-glacier-user)
@@ -40,4 +40,4 @@ Beyond the getting started section, you'll probably want to learn more about S3 
 
 Amazon Simple Storage Service \(Amazon S3\) supports lifecycle configuration on an S3 bucket, which enables you to transition objects to the S3 Glacier storage class for archival\. When you transition Amazon S3 objects to the S3 Glacier storage class, Amazon S3 internally uses S3 Glacier for durable storage at lower cost\. Although the objects are stored in S3 Glacier, they remain Amazon S3 objects that you manage in Amazon S3, and you cannot access them directly through S3 Glacier\.
 
-For more information about Amazon S3 lifecycle configuration and transitioning objects to the S3 Glacier storage class, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service Developer Guide*\.
+For more information about Amazon S3 lifecycle configuration and transitioning objects to the S3 Glacier storage class, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) and [Transitioning Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html) in the *Amazon Simple Storage Service User Guide*\.

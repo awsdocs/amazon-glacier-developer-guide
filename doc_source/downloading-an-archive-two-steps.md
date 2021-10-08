@@ -22,7 +22,7 @@ For Standard retrievals only, a data retrieval policy can cause your initiate re
 
    When required, you can restore large segments of the data stored in S3 Glacier\. For example, you might want to restore data for a secondary copy\. However, if you need to restore a large amount of data, keep in mind that S3 Glacier is designed for 35 random restore requests per pebibyte \(PiB\) stored per day\. 
 
-   For more information about restoring data from these storage classes, see [ Amazon S3 Storage Classes for Archiving Objects]( https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) in the *Amazon Simple Storage Service Developer Guide*\.
+   For more information about restoring data from these storage classes, see [ Amazon S3 Storage Classes for Archiving Objects]( https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-glacier) in the *Amazon Simple Storage Service User Guide*\.
 
 1. After the job completes, download the bytes using the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 
