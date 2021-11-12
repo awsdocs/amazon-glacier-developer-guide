@@ -3,30 +3,18 @@
 Amazon Web Services provides SDKs for you to develop applications for Amazon S3 Glacier \(S3 Glacier\)\. The SDK libraries wrap the underlying S3 Glacier API, simplifying your programming tasks\. For example, for each request sent to S3 Glacier, you must include a signature to authenticate your requests\. When you use the SDK libraries, you need to provide only your AWS security credentials in your code and the libraries compute the necessary signature and include it in the request sent to S3 Glacier\. The Amazon SDKs provide libraries that map to the underlying REST API and provide objects that you can use to easily construct requests and process responses\. 
 
 **Topics**
-+ [Amazon SDKs that Support S3 Glacier](#using-aws-sdk-with-glacier)
 + [Amazon SDK Libraries for Java and \.NET](#java-.net-sdk-libraries)
++ [Using S3 Glacier with an AWS SDK](sdk-general-information-section.md)
 + [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)
 + [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)
-
-## Amazon SDKs that Support S3 Glacier<a name="using-aws-sdk-with-glacier"></a>
-
-S3 Glacier is supported by the following Amazon SDKs: 
-+ [Amazon SDK for C\+\+](https://aws.amazon.com/sdk-for-cpp/) 
-+  [Amazon SDK for Go](https://aws.amazon.com/sdk-for-go/)
-+ [Amazon SDK for Java](https://aws.amazon.com/sdk-for-java/) 
-+ [Amazon SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-node-js/) 
-+ [Amazon SDK for \.NET](https://aws.amazon.com/sdk-for-net/) 
-+ [Amazon SDK for PHP](https://aws.amazon.com/sdk-for-php/) 
-+ [Amazon SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/) 
-+ [Amazon SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) 
-
-You can find examples of working with S3 Glacier using the Java and \.NET SDKs throughout this developer guide\. For libraries and sample code in all languages, see [Sample Code & Libraries](https://aws.amazon.com/code/)\. 
 
 The AWS Command Line Interface \(AWS CLI\) is a unified tool to manage your AWS services, including S3 Glacier\. For information about downloading the AWS CLI, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\. For a list of the S3 Glacier CLI commands, see [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. 
 
 ## Amazon SDK Libraries for Java and \.NET<a name="java-.net-sdk-libraries"></a>
 
 The Amazon SDKs for Java and \.NET offer high\-level and low\-level wrapper libraries\. 
+
+You can find examples of working with S3 Glacier using the Java and \.NET SDKs throughout this developer guide\. 
 
 ### What Is the Low\-Level API?<a name="what-is-low-level-api"></a>
 
