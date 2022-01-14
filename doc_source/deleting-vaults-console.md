@@ -1,6 +1,7 @@
 # Deleting an Empty Vault Using the Amazon S3 Glacier Console<a name="deleting-vaults-console"></a>
 
-Amazon S3 Glacier \(S3 Glacier\) deletes a vault only if there are no archives in the vault as of the last inventory it computed and there have been no writes to the vault since the last inventory\. For information about deleting archives, see [Deleting an Archive in Amazon S3 Glacier](deleting-an-archive.md)\. For information about downloading a vault inventory, [Downloading a Vault Inventory in Amazon S3 Glacier](vault-inventory.md)\. 
+**Note**  
+You must delete all exiting archives before deleting a vault\. This can be done by writing code to make a delete archive request using either the REST API, the Amazon SDK for Java, the Amazon SDK for \.NET or by using the AWS CLI\. For information about deleting archives, see [Step 5: Delete an Archive from a Vault in Amazon S3 Glacier](getting-started-delete-archive.md)
 
 The following are the steps to delete an empty vault using the S3 Glacier console\.
 

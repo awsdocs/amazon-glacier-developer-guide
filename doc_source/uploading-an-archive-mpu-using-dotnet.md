@@ -14,7 +14,7 @@ For more information about the high\-level and low\-level APIs, see [Using the A
 
 ## Uploading Large Archives in Parts Using the High\-Level API of the AWS SDK for \.NET<a name="uploading-an-archive-in-parts-highlevel-using-dotnet"></a>
 
-You use the same methods of the high\-level API to upload small or large archives\. Based on the archive size, the high\-level API methods decide whether to upload the archive in a single operation or use the multipart upload API provided by S3 Glacier\. For more information, see [Uploading an Archive Using the High\-Level API of the AWS SDK for \.NET ](uploading-an-archive-single-op-using-dotnet.md#uploading-an-archive-single-op-highlevel-using-dotnet)\.
+You use the same methods of the high\-level API to upload small or large archives\. Based on the archive size, the high\-level API methods decide whether to upload the archive in a single operation or use the multipart upload API provided by S3 Glacier\. For more information, see [Uploading an Archive Using the High\-Level API of the AWS SDK for \.NET](uploading-an-archive-single-op-using-dotnet.md#uploading-an-archive-single-op-highlevel-using-dotnet)\.
 
 ## Uploading Large Archives in Parts Using the Low\-Level API of the AWS SDK for \.NET<a name="uploading-an-archive-in-parts-lowlevel-using-dotnet"></a>
 

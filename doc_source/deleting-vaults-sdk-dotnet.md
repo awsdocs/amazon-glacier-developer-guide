@@ -12,7 +12,7 @@ The `ArchiveTransferManager` class of the high\-level API provides the `DeleteVa
 
 ### Example: Deleting a Vault Using the High\-Level API of the AWS SDK for \.NET<a name="deleting-vaults-sdk-dotnet-high-level-example"></a>
 
-For a working code example, see [Example: Vault Operations Using the High\-Level API of the AWS SDK for \.NET ](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-highlevel)\. The C\# code example shows basic vault operations including create and delete vault\. 
+For a working code example, see [Example: Vault Operations Using the High\-Level API of the AWS SDK for \.NET](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-highlevel)\. The C\# code example shows basic vault operations including create and delete vault\. 
 
 ## Deleting a Vault Using the Low\-Level API of the AWS SDK for \.NET<a name="deleting-vault-sdk-dotnet-low-level"></a>
 
@@ -51,4 +51,4 @@ For information about the underlying REST API, see [Delete Vault \(DELETE vault\
 
 ### Example: Deleting a Vault Using the Low\-Level API of the AWS SDK for \.NET<a name="creating-vaults-sdk-dotnet-low-level-example"></a>
 
-For a working code example, see [Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET ](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-lowlevel)\. The C\# code example shows basic vault operations including create and delete vault\. 
+For a working code example, see [Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-lowlevel)\. The C\# code example shows basic vault operations including create and delete vault\. 

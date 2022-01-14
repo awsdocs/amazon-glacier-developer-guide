@@ -103,7 +103,5 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
 1. Use the `delete-archive` command to delete each archive from a vault until none remain\.
 
    ```
-   aws glacier delete-archive --vault-name awsexamplevault --account-id 111122223333 --archive-id *** archiveid ***
+   aws glacier delete-archive --vault-name awsexamplevault --account-id 111122223333 --archive-id="*** archiveid ***"
    ```
-**Note**  
-If your Archive ID starts with a hyphen or another special character you will need to put it in quotes in order to run this command\.

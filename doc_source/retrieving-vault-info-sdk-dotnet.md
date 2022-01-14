@@ -92,4 +92,4 @@ The `ListVaults` method calls the underlying REST API \(see [List Vaults \(GET v
 
 ## Example: Retrieving Vault Metadata Using the Low\-Level API of the AWS SDK for \.NET<a name="creating-vaults-sdk-dotnet-example"></a>
 
-For a working code example, see [Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET ](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-lowlevel)\. The C\# code example creates a vault and retrieves the vault metadata\.
+For a working code example, see [Example: Vault Operations Using the Low\-Level API of the AWS SDK for \.NET](creating-vaults-dotnet-sdk.md#vault-operations-example-dotnet-lowlevel)\. The C\# code example creates a vault and retrieves the vault metadata\.

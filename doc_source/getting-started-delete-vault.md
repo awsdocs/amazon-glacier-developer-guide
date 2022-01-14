@@ -14,11 +14,6 @@ You can delete a vault programmatically or by using the S3 Glacier console\. For
 
 1. Select the empty vault that you want to delete\. If the vault is not empty you must delete all achives before deleting the vault, see [Deleting an Archive in Amazon S3 Glacier](deleting-an-archive.md) 
 
-   In this getting started exercise, we've been using a vault named **examplevault**\. 
-
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault-list.png)
-
 1. Click **Delete Vault**\. 
 
 **To delete a nonempty vault**

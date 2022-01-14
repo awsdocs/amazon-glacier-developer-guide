@@ -9,16 +9,17 @@ The following code examples show how to delete an Amazon S3 Glacier archive\.
   
 
 ```
-    public static void deleteGlacierVault(GlacierClient glacier, String vaultName) {
+    public static void deleteGlacierArchive(GlacierClient glacier, String vaultName, String accountId, String archiveId) {
 
         try {
-            DeleteVaultRequest delVaultRequest = DeleteVaultRequest.builder()
+            DeleteArchiveRequest delArcRequest = DeleteArchiveRequest.builder()
                     .vaultName(vaultName)
+                    .accountId(accountId)
+                    .archiveId(archiveId)
                     .build();
 
-            glacier.deleteVault(delVaultRequest);
+            glacier.deleteArchive(delArcRequest);
             System.out.println("The vault was deleted!");
-
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
