@@ -1,6 +1,8 @@
-# API examples for S3 Glacier<a name="service_code_examples_api"></a>
+# Actions for S3 Glacier<a name="service_code_examples_actions"></a>
 
-The following code examples show how to use S3 Glacier with AWS SDKs\.
+The following code examples demonstrate how to perform individual S3 Glacier actions with AWS SDKs\. These excerpts call the S3 Glacier API and are not intended to be run in isolation\. Each example includes a link to GitHub, where you can find instructions on how to set up and run the code in context\.
+
+ The following examples include only the most commonly used actions\. For a complete list, see the *S3 Glacier API Reference*\.
 
 **Topics**
 + [Create a multipart upload](example_glacier_UploadMultipartPart_section.md)

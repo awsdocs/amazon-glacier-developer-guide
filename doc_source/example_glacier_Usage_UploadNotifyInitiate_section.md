@@ -6,6 +6,9 @@ The following code example shows how to:
 + Upload an archive file to the vault\.
 + Initiate an archive retrieval job\.
 
+**Note**  
+The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
+
 ------
 #### [ Python ]
 

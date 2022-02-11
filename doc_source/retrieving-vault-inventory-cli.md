@@ -36,7 +36,7 @@ Follow these steps to download a vault inventory in Amazon S3 Glacier \(S3 Glaci
 1. Use the `initiate-job` command to start an inventory retrieval job\.
 
    ```
-   aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters '{"Type": "inventory-retrieval"}'
+   aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters='{"Type": "inventory-retrieval"}'
    ```
 
     Expected output:
