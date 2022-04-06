@@ -1,4 +1,4 @@
-# Actions for S3 Glacier<a name="service_code_examples_actions"></a>
+# Actions for S3 Glacier using AWS SDKs<a name="service_code_examples_actions"></a>
 
 The following code examples demonstrate how to perform individual S3 Glacier actions with AWS SDKs\. These excerpts call the S3 Glacier API and are not intended to be run in isolation\. Each example includes a link to GitHub, where you can find instructions on how to set up and run the code in context\.
 

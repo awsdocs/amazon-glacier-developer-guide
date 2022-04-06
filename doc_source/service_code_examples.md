@@ -1,4 +1,4 @@
-# Code examples for S3 Glacier<a name="service_code_examples"></a>
+# Code examples for S3 Glacier using AWS SDKs<a name="service_code_examples"></a>
 
 The following code examples show how to use S3 Glacier with an AWS software development kit \(SDK\)\. 
 

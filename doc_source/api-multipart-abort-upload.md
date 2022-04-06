@@ -2,7 +2,7 @@
 
 ## Description<a name="api-multipart-abort-upload-description"></a>
 
-This multipart upload operation stops a multipart upload identified by the upload ID\.
+This command for multipart upload operation stops a multipart upload identified by the upload ID\.
 
 After the Abort Multipart Upload request succeeds, you cannot use the upload ID to upload any more parts or perform any other operations\. Stopping a completed multipart upload fails\. However, stopping an already\-stopped upload will succeed, for a short time\. 
 

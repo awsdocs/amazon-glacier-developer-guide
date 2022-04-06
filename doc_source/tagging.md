@@ -41,7 +41,7 @@ Tag value restrictions are as follows:
 
 ## Tracking Costs Using Tagging<a name="tagging-billing"></a>
 
-You can use tags to categorize and track your AWS costs\. When you apply tags to any AWS resources, including vaults, your AWS cost allocation report includes usage and costs aggregated by tags\. You can apply tags that represent business categories \(such as cost centers, application names, and owners\) to organize your costs across multiple services\. For more information, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
+You can use tags to categorize and track your AWS costs\. When you apply tags to any AWS resources, including vaults, your AWS cost allocation report includes usage and costs aggregated by tags\. You can apply tags that represent business categories \(such as cost centers, application names, and owners\) to organize your costs across multiple services\. For more information, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing User Guide*\.
 
 ## Managing Access Control with Tagging<a name="tagging-access-control"></a>
 
