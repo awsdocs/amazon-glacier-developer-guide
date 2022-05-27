@@ -6,6 +6,9 @@ This operation adds an archive to a vault\. For a successful upload, your data i
 
 You must provide a SHA256 tree hash of the data you are uploading\. For information about computing a SHA256 tree hash, see [Computing Checksums](checksum-calculations.md)\. 
 
+**Note**  
+The SHA256 tree hash is only required for the Upload Archive \(POST archive\) action when using the API\. It is not required when using the AWS CLI\.
+
 When uploading an archive, you can optionally specify an archive description of up to 1,024 printable ASCII characters\. S3 Glacier returns the archive description when you either retrieve the archive or get the vault inventory\. S3 Glacier does not interpret the description in any way\. An archive description does not need to be unique\. You cannot use the description to retrieve or sort the archive list\. 
 
 Except for the optional archive description, S3 Glacier does not support any additional metadata for the archives\. The archive ID is an opaque sequence of characters from which you cannot infer any meaning about the archive\. So you might maintain metadata about the archives on the client\-side\. For more information, see [Working with Archives in Amazon S3 Glacier](working-with-archives.md)\.

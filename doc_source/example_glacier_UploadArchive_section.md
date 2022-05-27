@@ -14,10 +14,8 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 ```
     public static String uploadContent(GlacierClient glacier, Path path, String vaultName, File myFile) {
 
-        // Get an SHA-256 tree hash value
+        // Get an SHA-256 tree hash value.
         String checkVal = computeSHA256(myFile);
-
-
         try {
             UploadArchiveRequest uploadRequest = UploadArchiveRequest.builder()
                     .vaultName(vaultName)
@@ -69,7 +67,6 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             NoSuchAlgorithmException {
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-
         long numChunks = file.length() / ONE_MB;
         if (file.length() % ONE_MB > 0) {
             numChunks++;
@@ -132,10 +129,10 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             int j = 0;
             for (int i = 0; i < prevLvlHashes.length; i = i + 2, j++) {
 
-                // If there are at least two elements remaining
+                // If there are at least two elements remaining.
                 if (prevLvlHashes.length - i > 1) {
 
-                    // Calculate a digest of the concatenated nodes
+                    // Calculate a digest of the concatenated nodes.
                     md.reset();
                     md.update(prevLvlHashes[i]);
                     md.update(prevLvlHashes[i + 1]);
@@ -157,12 +154,11 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
      */
     public static String toHex(byte[] data) {
         StringBuilder sb = new StringBuilder(data.length * 2);
-
-        for (int i = 0; i < data.length; i++) {
-            String hex = Integer.toHexString(data[i] & 0xFF);
+        for (byte datum : data) {
+            String hex = Integer.toHexString(datum & 0xFF);
 
             if (hex.length() == 1) {
-                // Append leading zero
+                // Append leading zero.
                 sb.append("0");
             }
             sb.append(hex);

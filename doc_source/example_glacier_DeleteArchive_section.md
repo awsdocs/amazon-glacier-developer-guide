@@ -12,17 +12,16 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    public static void deleteGlacierArchive(GlacierClient glacier, String vaultName, String accountId, String archiveId) {
+    public static void deleteGlacierVault(GlacierClient glacier, String vaultName) {
 
         try {
-            DeleteArchiveRequest delArcRequest = DeleteArchiveRequest.builder()
+            DeleteVaultRequest delVaultRequest = DeleteVaultRequest.builder()
                     .vaultName(vaultName)
-                    .accountId(accountId)
-                    .archiveId(archiveId)
                     .build();
 
-            glacier.deleteArchive(delArcRequest);
+            glacier.deleteVault(delVaultRequest);
             System.out.println("The vault was deleted!");
+
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);

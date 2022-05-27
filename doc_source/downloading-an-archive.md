@@ -9,3 +9,4 @@ For information about using S3 Glacier with the AWS CLI, see [AWS CLI Reference 
 + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for Java](downloading-an-archive-using-java.md)
 + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for \.NET](downloading-an-archive-using-dotnet.md)
 + [Downloading an Archive Using the REST API](downloading-an-archive-using-rest.md)
++ [Downloading an Archive in Amazon S3 Glacier Using the AWS CLI](downloading-an-archive-using-cli.md)

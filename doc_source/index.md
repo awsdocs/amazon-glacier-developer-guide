@@ -79,6 +79,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for Java](downloading-an-archive-using-java.md)
       + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for .NET](downloading-an-archive-using-dotnet.md)
       + [Downloading an Archive Using the REST API](downloading-an-archive-using-rest.md)
+      + [Downloading an Archive in Amazon S3 Glacier Using the AWS CLI](downloading-an-archive-using-cli.md)
    + [Deleting an Archive in Amazon S3 Glacier](deleting-an-archive.md)
       + [Deleting an Archive in Amazon S3 Glacier Using the AWS SDK for Java](deleting-an-archive-using-java.md)
       + [Deleting an Archive in Amazon S3 Glacier Using the AWS SDK for .NET](deleting-an-archive-using-dot-net.md)

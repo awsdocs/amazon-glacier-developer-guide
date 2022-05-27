@@ -45,18 +45,17 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
        try{
             Boolean finished = false;
-            String jobStatus = "";
+            String jobStatus;
             int yy=0;
 
             while (!finished) {
-
                 DescribeJobRequest jobRequest = DescribeJobRequest.builder()
                         .jobId(jobId)
                         .accountId(account)
                         .vaultName(name)
                         .build();
 
-                DescribeJobResponse response  = glacier.describeJob(jobRequest);
+                DescribeJobResponse response = glacier.describeJob(jobRequest);
                 jobStatus = response.statusCodeAsString();
 
                if (jobStatus.compareTo("Succeeded") == 0)
