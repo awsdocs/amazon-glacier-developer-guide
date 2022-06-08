@@ -55,6 +55,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Configuring Vault Notifications in Amazon S3 Glacier Using the AWS SDK for .NET](configuring-notifications-sdk-dotnet.md)
       + [Configuring Vault Notifications in S3 Glacier Using the REST API](configuring-notifications-rest-api.md)
       + [Configuring Vault Notifications Using the Amazon S3 Glacier Console](configuring-notifications-console.md)
+      + [Configuring Vault Notifications Using the AWS Command Line Interface](configuring-notifications-cli.md)
    + [Deleting a Vault in Amazon S3 Glacier](deleting-vaults.md)
       + [Deleting a Vault in Amazon S3 Glacier Using the AWS SDK for Java](deleting-vaults-sdk-java.md)
       + [Deleting a Vault in Amazon S3 Glacier Using the AWS SDK for .NET](deleting-vaults-sdk-dotnet.md)

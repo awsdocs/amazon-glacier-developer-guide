@@ -8,15 +8,9 @@ This section describes how to configure vault notifications using the Amazon S3 
 
 1. Select a vault in the vault list\.
 
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications05.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
-
 1. Select the **Notifications** tab\.
 
-1. Select the **enabled** in the **Notifications** field\.
-
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications10.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
+1. Select **Enabled** in the **Notifications** field\.
 
 1. On the **Notifications** tab, do one of the following:    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications-console.html)
@@ -24,9 +18,6 @@ This section describes how to configure vault notifications using the Amazon S3 
 1. Select the events that trigger notification\.
 
    For example, to trigger notification when only archive retrieval jobs are complete, check only **Get Archive Job Complete**\. 
-
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/EnableNotifications30.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
 
 1. Click **Save**\.
 

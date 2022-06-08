@@ -16,6 +16,7 @@ You can set a notification configuration on a vault so that when a job completes
 + [Configuring Vault Notifications in Amazon S3 Glacier Using the AWS SDK for \.NET](configuring-notifications-sdk-dotnet.md)
 + [Configuring Vault Notifications in S3 Glacier Using the REST API](configuring-notifications-rest-api.md)
 + [Configuring Vault Notifications Using the Amazon S3 Glacier Console](configuring-notifications-console.md)
++ [Configuring Vault Notifications Using the AWS Command Line Interface](configuring-notifications-cli.md)
 
 ## Configuring Vault Notifications in S3 Glacier: General Concepts<a name="configuring-notifications.general"></a>
 
@@ -27,7 +28,7 @@ S3 Glacier defines events specifically related to job completion \(`ArchiveRetri
 
 ```
 {    
-   "Topic": "arn:aws:sns:us-west-2:012345678901:mytopic",    
+   "SNSTopic": "arn:aws:sns:us-west-2:012345678901:mytopic",    
    "Events": ["ArchiveRetrievalCompleted", "InventoryRetrievalCompleted"] 
 }
 ```
