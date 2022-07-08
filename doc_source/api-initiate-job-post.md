@@ -59,7 +59,7 @@ Retrieving an archive or a vault inventory are asynchronous operations that requ
 
 1. Initiate a retrieval job by using the [Initiate Job \(POST jobs\)](#api-initiate-job-post) operation\.
 **Important**  
-A data retrieval policy can cause your initiate retrieval job request to fail with a `PolicyEnforcedException`\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. For more information about the `PolicyEnforcedException` exception, see [Error Responses](api-error-responses.md)\.
+A data retrieval policy can cause your initiate retrieval job request to fail with a `PolicyEnforcedException`\. For more information about data retrieval policies, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. For more information about the `PolicyEnforcedException` exception, see [Error Responses](api-error-responses.md)\.
 
 1. After the job completes, download the bytes using the [Get Job Output \(GET output\)](api-job-output-get.md) operation\. 
 

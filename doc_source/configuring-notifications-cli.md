@@ -38,7 +38,7 @@ Follow these steps to configure vault notification using the AWS CLI\.
 1. Use the `set-vault-notifications` command to configure notifications that will be sent when specific events happen to a vault\. By default, you don't get any notifications\.
 
    ```
-   aws glacier set-vault-notifications --vault-name awsexamplevault --account-id 111122223333 --vault-notification-config file://notificationconfig.json
+   aws glacier set-vault-notifications --vault-name examplevault --account-id 111122223333 --vault-notification-config file://notificationconfig.json
    ```
 
 1.  The notification configuration is a JSON document as shown in the following example\. 

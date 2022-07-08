@@ -1,6 +1,6 @@
 # Using the AWS SDK for \.NET with Amazon S3 Glacier<a name="using-aws-sdk-for-dot-net"></a>
 
-The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the Amazon SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
+The AWS SDK for \.NET API is available in `AWSSDK.dll`\. For information about downloading the AWS SDK for \.NET, go to [Sample Code Libraries](http://aws.amazon.com/sdkfornet/)\. As described in [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md), the AWS SDK for \.NET provides both the high\-level and low\-level APIs\. 
 
 **Note**  
 The low\-level API and high\-level API provide thread\-safe clients for accessing S3 Glacier\. As a best practice, your applications should create one client and reuse the client between threads\.

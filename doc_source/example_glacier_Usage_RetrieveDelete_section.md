@@ -13,6 +13,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
 Create a class that wraps S3 Glacier operations\.  
 
 ```
@@ -173,7 +174,6 @@ def retrieve_demo(glacier, vault_name):
     print(f"\nDeleting {vault.name}.")
     glacier.delete_vault(vault)
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
 
 ------
 

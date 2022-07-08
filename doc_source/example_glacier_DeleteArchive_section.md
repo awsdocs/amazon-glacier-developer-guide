@@ -9,19 +9,21 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
   
 
 ```
-    public static void deleteGlacierVault(GlacierClient glacier, String vaultName) {
+    public static void deleteGlacierArchive(GlacierClient glacier, String vaultName, String accountId, String archiveId) {
 
         try {
-            DeleteVaultRequest delVaultRequest = DeleteVaultRequest.builder()
+            DeleteArchiveRequest delArcRequest = DeleteArchiveRequest.builder()
                     .vaultName(vaultName)
+                    .accountId(accountId)
+                    .archiveId(archiveId)
                     .build();
 
-            glacier.deleteVault(delVaultRequest);
+            glacier.deleteArchive(delArcRequest);
             System.out.println("The vault was deleted!");
-
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
@@ -29,13 +31,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         }
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
 +  For API details, see [DeleteArchive](https://docs.aws.amazon.com/goto/SdkForJavaV2/glacier-2012-06-01/DeleteArchive) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
   
 
 ```
@@ -63,7 +65,6 @@ class GlacierWrapper:
             logger.exception("Couldn't delete archive %s.", archive.id)
             raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
 +  For API details, see [DeleteArchive](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/DeleteArchive) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

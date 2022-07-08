@@ -1,42 +1,34 @@
-# Step 2: Create a Vault in Amazon S3 Glacier<a name="getting-started-create-vault"></a>
+# Step 2: Create a Vault in S3 Glacier<a name="getting-started-create-vault"></a>
 
-A vault is a container for storing archives\. Your first step is to create a vault in one of the supported AWS Regions\. In this getting started exercise, you create a vault in the US West \(Oregon\) Region\. For a list of the AWS Regions supported by Amazon S3 Glacier \(S3 Glacier\), go to [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#glacier_region) in the *AWS General Reference*\.
+A vault is a container for storing archives\. Your first step is to create a vault in one of the supported AWS Regions\. For a list of the AWS Regions that are supported by Amazon S3 Glacier, see [ Amazon S3 Glacier endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/glacier-service.html) in the *AWS General Reference*\.
 
-You can create vaults programmatically or by using the S3 Glacier console\. This section uses the console to create a vault\. In a later step, you will upload an archive to the vault\.
+You can create vaults programmatically or by using the S3 Glacier console\. This section uses the console to create a vault\.
 
 **To create a vault**
 
-1. Sign into the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/](https://console.aws.amazon.com/glacier/)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/](https://console.aws.amazon.com/glacier/)\.
 
-1. Select an AWS Region from the Region selector\.
+1. In the left navigation pane, choose **Vaults**\.
 
-   In this getting started exercise, we use the US West \(Oregon\) Region\.
+1. Choose **Create vault**\.
 
-1. If you are using S3 Glacier for the first time, click **Get started**\. \(Otherwise, you would click **Create Vault**\.\)
+   The **Create vault** page opens\.
 
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-first-run.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
+1. Under **Select a Region**, select an AWS Region from the Region selector\. Your vault will be located in the Region that you select\.
 
-1. Enter **examplevault** as the vault name in the **Vault Name** field and then click **Next Step**\.
+1. For **Vault name**, enter a name for your vault\.
 
-   There are guidelines for naming a vault\. For more information, see [Creating a Vault in Amazon S3 Glacier](creating-vaults.md)\. 
+   The following are the vault\-naming requirements:
+   + A vault name must be unique within an AWS account and the AWS Region in which the vault is created\.
+   + A vault name must be between 1 and 255 characters long\.
+   + A vault name can contain only the following characters: **a–z**, **A–Z**, **0–9**, **\_** \(underscore\), **\-** \(hyphen\), and **\.** \(period\)\.
 
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
+1. Under **Event notifications**, to turn on or off notifications on a vault for when a job is completed, choose one of the following settings:
+   + **Turn off notifications** – Notifications are turned off, and notifications are not sent to an Amazon Simple Notification Service \(Amazon SNS\) topic when a specified job is completed\. 
+   + **Turn on notifications** – Notifications are turned on, and notifications are sent to the provided Amazon SNS topic when a specified job is completed\. 
 
-1. Select **Do not enable notifications**\. For this getting started exercise, you will not configure notifications for the vault\.
+     If you chose **Turn on notifications**, see [Configuring Vault Notifications by Using the Amazon S3 Glacier Console](https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications-console.html)\.
 
-   If you wanted to have notifications sent to you or your application whenever certain S3 Glacier jobs complete, you would select **Enable notifications and create a new SNS topic** or **Enable notifications and use an existing SNS topic** to set up Amazon Simple Notification Service \(Amazon SNS\) notifications\. In subsequent steps, you upload an archive and then download it using the high\-level API of the Amazon SDK\. Using the high\-level API does not require that you configure vault notification to retrieve your data\.
+1. If the AWS Region and vault name are correct, then choose **Create vault**\. 
 
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault-set-notifications.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
-
-1. If the AWS Region and vault name are correct, then click **Submit**\. 
-
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault-review.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
-
-1. Your new vault is listed on the **S3 Glacier Vaults** page\.
-
-      
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/images/glacier-create-vault-list.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/amazonglacier/latest/dev/)
+Your new vault is now listed on the **Vaults** page in the S3 Glacier console\.

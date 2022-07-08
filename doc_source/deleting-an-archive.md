@@ -18,7 +18,7 @@ Archive retrievals that are in progress for an archive ID when you delete the ar
 + If the archive retrieval job is actively preparing the data for download when S3 Glacier receives the delete archive request, then the archival retrieval operation might fail\. 
 + If the archive retrieval job has successfully prepared the archive for download when S3 Glacier receives the delete archive request, then you will be able to download the output\. 
 
-For more information about archive retrieval, see [Downloading an Archive in Amazon S3 Glacier](downloading-an-archive.md)\. 
+For more information about archive retrieval, see [Downloading an Archive in S3 Glacier](downloading-an-archive.md)\. 
 
 This operation is idempotent\. Deleting an already\-deleted archive does not result in an error\. 
 

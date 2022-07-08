@@ -17,7 +17,7 @@ S3 Glacier provides a management console\. You can use the console to create and
 + [Archive Operations in Amazon S3 Glacier](#archive-operations-quick-intro)
 + [Maintaining Client\-Side Archive Metadata](#client-side-key-map-concept)
 + [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)
-+ [Downloading an Archive in Amazon S3 Glacier](downloading-an-archive.md)
++ [Downloading an Archive in S3 Glacier](downloading-an-archive.md)
 + [Deleting an Archive in Amazon S3 Glacier](deleting-an-archive.md)
 + [Querying an Archives in Amazon S3 Glacier](querying-archives.md)
 
@@ -40,7 +40,7 @@ You can get the archive ID by downloading the vault inventory for the vault that
 
 ### Downloading an Archive in Amazon S3 Glacier<a name="downloading-an-archive-quick-intro"></a>
 
-Downloading an archive is an asynchronous operation\. You must first initiate a job to download a specific archive\. After receiving the job request, S3 Glacier prepares your archive for download\. After the job completes, you can download your archive data\. Because of the asynchronous nature of the job, you can request S3 Glacier to send a notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when the job completes\. You can specify an SNS topic for each individual job request or configure your vault to send a notification when specific events occur\. For more information about downloading an archive, see [Downloading an Archive in Amazon S3 Glacier](downloading-an-archive.md)\.
+Downloading an archive is an asynchronous operation\. You must first initiate a job to download a specific archive\. After receiving the job request, S3 Glacier prepares your archive for download\. After the job completes, you can download your archive data\. Because of the asynchronous nature of the job, you can request S3 Glacier to send a notification to an Amazon Simple Notification Service \(Amazon SNS\) topic when the job completes\. You can specify an SNS topic for each individual job request or configure your vault to send a notification when specific events occur\. For more information about downloading an archive, see [Downloading an Archive in S3 Glacier](downloading-an-archive.md)\.
 
 ### Deleting an Archive in Amazon S3 Glacier<a name="deleting-an-archive-quick-intro"></a>
 

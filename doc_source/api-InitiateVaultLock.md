@@ -14,7 +14,7 @@ You must complete the vault locking process within 24 hours after the vault lock
 **Note**  
 After a vault lock is in the `Locked` state, you cannot initiate a new vault lock for the vault\.
 
-You can stop the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. You can get the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [Amazon S3 Glacier Vault Lock](vault-lock.md)\.
+You can stop the vault locking process by calling [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)\. You can get the state of the vault lock by calling [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)\. For more information about the vault locking process, see [S3 Glacier Vault Lock](vault-lock.md)\.
 
 If this operation is called when the vault lock is in the `InProgress` state, the operation returns an `AccessDeniedException` error\. When the vault lock is in the `InProgress` state you must call [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md) before you can initiate a new vault lock policy\. 
 

@@ -1,10 +1,10 @@
-# Deleting an Archive in Amazon S3 Glacier Using the AWS Command Line Interface<a name="getting-started-delete-archive-cli"></a>
+# Delete an Archive in S3 Glacier by Using the AWS CLI<a name="getting-started-delete-archive-cli"></a>
 
-You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Command Line Interface \(AWS CLI\)\.
+You can delete archives in Amazon S3 Glacier by using the AWS Command Line Interface \(AWS CLI\)\.
 
 **Topics**
 + [\(Prerequisite\) Setting Up the AWS CLI](#Creating-Vaults-CLI-Setup)
-+ [Example: Deleting an Archive Using the AWS CLI](#getting-started-Deleting-Archives-CLI-Implementation)
++ [Example: Deleting an Archive by Using the AWS CLI](#getting-started-Deleting-Archives-CLI-Implementation)
 
 ## \(Prerequisite\) Setting Up the AWS CLI<a name="Creating-Vaults-CLI-Setup"></a>
 
@@ -31,9 +31,9 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
      aws configure list
      ```
 
-## Example: Deleting an Archive Using the AWS CLI<a name="getting-started-Deleting-Archives-CLI-Implementation"></a>
+## Example: Deleting an Archive by Using the AWS CLI<a name="getting-started-Deleting-Archives-CLI-Implementation"></a>
 
-1. Use the `initiate-job` command to start an inventory retrieval job\.
+1. Use the `initiate-job` command to start an inventory retrieval job\. For more information on the `initiate-job` command, see [Initiate Job](https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html)\.
 
    ```
    aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters '{"Type": "inventory-retrieval"}'
@@ -48,7 +48,7 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
    }
    ```
 
-1. Use the `describe-job` command to check status of the previous retrieval job\.
+1. Use the `describe-job` command to check the status of the previous retrieval job\. For more information on the `describe-job` command, see [Describe Job](https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html)\.
 
    ```
    aws glacier describe-job --vault-name awsexamplevault --account-id 111122223333 --job-id *** jobid ***
@@ -70,13 +70,13 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
    }
    ```
 
-1. Wait for the job to complete\.
+1. Wait for the job to be completed\.
 
    You must wait until the job output is ready for you to download\. If you set a notification configuration on the vault or specified an Amazon Simple Notification Service \(Amazon SNS\) topic when you initiated the job, S3 Glacier sends a message to the topic after it completes the job\. 
 
-   You can set notification configuration for specific events on the vault\. For more information, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\. S3 Glacier sends a message to the specified SNS topic anytime the specific event occurs\.
+   You can set notification configuration for specific events on the vault\. For more information, see [Configuring Vault Notifications in Amazon S3 Glacier](configuring-notifications.md)\. S3 Glacier sends a message to the specified Amazon SNS topic anytime the specific event occurs\.
 
-1. When it's complete, use the `get-job-output` command to download the retrieval job to the file `output.json`\.
+1. When the job is complete, use the `get-job-output` command to download the retrieval job to the file `output.json`\. For more information on the `get-job-output` command, see [Get Job Output](https://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html)\.
 
    ```
    aws glacier get-job-output --vault-name awsexamplevault --account-id 111122223333 --job-id *** jobid *** output.json
@@ -87,17 +87,17 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
    ```
    {
    "VaultARN":"arn:aws:glacier:region:111122223333:vaults/awsexamplevault",
-   "InventoryDate":"*** job completion date ***",
-   "ArchiveList":[
-   {"ArchiveId":"*** archiveid ***",
-   "ArchiveDescription":*** archive description (if set) ***,
-   "CreationDate":"*** archive creation date ***",
-   "Size":"*** archive size (in bytes) ***",
+   "InventoryDate":""*** job completion date ***"",
+   "ArchiveList":[{
+   {"ArchiveId":""*** archiveid ***"",
+   "ArchiveDescription":"*** archive description (if set) ***",
+   "CreationDate":""*** archive creation date ***"",
+   "Size":""*** archive size (in bytes) ***"",
    "SHA256TreeHash":"*** archive hash ***"
+   }],
+   "ArchiveId": 123456789
+   
    }
-   {"ArchiveId":
-   ...
-   ]}
    ```
 
 1. Use the `delete-archive` command to delete each archive from a vault until none remain\.
@@ -105,3 +105,5 @@ You can delete archives in Amazon S3 Glacier \(S3 Glacier\) using the AWS Comman
    ```
    aws glacier delete-archive --vault-name awsexamplevault --account-id 111122223333 --archive-id="*** archiveid ***"
    ```
+
+ For more information on the `delete-archive` command, see [Delete Archive](https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html)\.

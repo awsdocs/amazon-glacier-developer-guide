@@ -16,7 +16,7 @@ You use the S3 Glacier console, AWS Command Line Interface \(AWS CLI\), or S3 Gl
 + Listing the tags for a vault
 + Removing tags from a vault
 
-For information about how to add, list, and remove tags, see [Tagging Your Amazon S3 Glacier Vaults](tagging-vaults.md)\.
+For information about how to add, list, and remove tags, see [Tagging Your S3 Glacier Vaults](tagging-vaults.md)\.
 
 You can use tags to categorize your vaults\. For example, you can categorize vaults by purpose, owner, or environment\. Because you define the key and value for each tag, you can create a custom set of categories to meet your specific needs\. For example, you might define a set of tags that helps you track vaults by owner and purpose for the vault\. Following are a few examples of tags:
 + Owner: Name
@@ -50,4 +50,4 @@ You can use tags as a condition in an access policy statement\. For example, you
 ## Related Sections<a name="related-sections-tagging"></a>
 
  
-+ [Tagging Your Amazon S3 Glacier Vaults](tagging-vaults.md)
++ [Tagging Your S3 Glacier Vaults](tagging-vaults.md)

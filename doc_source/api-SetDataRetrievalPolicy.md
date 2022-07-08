@@ -4,7 +4,7 @@
 
 This operation sets and then enacts a data retrieval policy in the AWS Region specified in the `PUT` request\. You can set one policy per AWS Region for an AWS account\. The policy is enacted within a few minutes of a successful `PUT` operation\. 
 
- The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. 
+ The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted\. For more information about data retrieval policies, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. 
 
 ## Requests<a name="api-SetDataRetrievalPolicy-requests"></a>
 
@@ -68,7 +68,7 @@ The policy rule\. Although this is a list type, currently there must be only one
 The type of data retrieval policy to set\.  
 *Type*: String  
 *Required*: Yes  
-Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Responses<a name="api-SetDataRetrievalPolicy-responses"></a>
 

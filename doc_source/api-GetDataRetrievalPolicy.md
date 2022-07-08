@@ -2,7 +2,7 @@
 
 ## Description<a name="api-GetDataRetrievalPolicy-description"></a>
 
-This operation returns the current data retrieval policy for the AWS account and AWS Region specified in the `GET` request\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+This operation returns the current data retrieval policy for the AWS account and AWS Region specified in the `GET` request\. For more information about data retrieval policies, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ## Requests<a name="api-GetDataRetrievalPolicy-requests"></a>
 
@@ -80,7 +80,7 @@ The policy rule\. Although this is a list type, currently there will be only one
 **Strategy**  
 The type of data retrieval policy\.  
 *Type*: String  
-Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
+Valid values: `BytesPerHour`\|`FreeTier`\|`None`\. `BytesPerHour` is equivalent to selecting **Max Retrieval Rate** in the console\. `FreeTier` is equivalent to selecting **Free Tier Only** in the console\. `None` is equivalent to selecting **No Retrieval Policy** in the console\. For more information about selecting data retrieval policies in the console, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\.
 
 ### Errors<a name="api-GetDataRetrievalPolicy-responses-errors"></a>
 

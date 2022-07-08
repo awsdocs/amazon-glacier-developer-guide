@@ -1,20 +1,20 @@
-# Using the Amazon SDKs with Amazon S3 Glacier<a name="using-aws-sdk"></a>
+# Using the AWS SDKs with Amazon S3 Glacier<a name="using-aws-sdk"></a>
 
-Amazon Web Services provides SDKs for you to develop applications for Amazon S3 Glacier \(S3 Glacier\)\. The SDK libraries wrap the underlying S3 Glacier API, simplifying your programming tasks\. For example, for each request sent to S3 Glacier, you must include a signature to authenticate your requests\. When you use the SDK libraries, you need to provide only your AWS security credentials in your code and the libraries compute the necessary signature and include it in the request sent to S3 Glacier\. The Amazon SDKs provide libraries that map to the underlying REST API and provide objects that you can use to easily construct requests and process responses\. 
+AWS provides SDKs for you to develop applications for Amazon S3 Glacier\. The SDK libraries wrap the underlying S3 Glacier API, simplifying your programming tasks\. For example, for each request sent to S3 Glacier, you must include a signature to authenticate your requests\. When you use the SDK libraries, you need to provide only your AWS security credentials in your code and the libraries compute the necessary signature and include it in the request sent to S3 Glacier\. The AWS SDKs provide libraries that map to the underlying REST API and provide objects that you can use to easily construct requests and process responses\. 
 
 **Topics**
-+ [Amazon SDK Libraries for Java and \.NET](#java-.net-sdk-libraries)
++ [AWS SDK Libraries for Java and \.NET](#java-.net-sdk-libraries)
 + [Using S3 Glacier with an AWS SDK](sdk-general-information-section.md)
 + [Using the AWS SDK for Java with Amazon S3 Glacier](using-aws-sdk-for-java.md)
 + [Using the AWS SDK for \.NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)
 
-The AWS Command Line Interface \(AWS CLI\) is a unified tool to manage your AWS services, including S3 Glacier\. For information about downloading the AWS CLI, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\. For a list of the S3 Glacier CLI commands, see [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. 
+The AWS Command Line Interface \(AWS CLI\) is a unified tool to manage your AWS services, including S3 Glacier\. For information about downloading the AWS CLI, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\. For a list of the S3 Glacier CLI commands, see the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. 
 
-## Amazon SDK Libraries for Java and \.NET<a name="java-.net-sdk-libraries"></a>
+## AWS SDK Libraries for Java and \.NET<a name="java-.net-sdk-libraries"></a>
 
-The Amazon SDKs for Java and \.NET offer high\-level and low\-level wrapper libraries\. 
+The AWS SDKs for Java and \.NET offer high\-level and low\-level wrapper libraries\. 
 
-You can find examples of working with S3 Glacier using the Java and \.NET SDKs throughout this developer guide\. 
+You can find examples of working with Amazon S3 Glacier by using the AWS SDK for Java and the AWS SDK for \.NET throughout this developer guide\. 
 
 ### What Is the Low\-Level API?<a name="what-is-low-level-api"></a>
 
@@ -24,9 +24,7 @@ For information about these SDK libraries, see [Using the AWS SDK for Java with 
 
 ### What Is the High\-Level API?<a name="what-is-high-level-api"></a>
 
-To further simplify application development, these libraries offer a higher\-level abstraction for some of the operations\. For example, 
-
- 
+To further simplify application development, these libraries offer a higher\-level abstraction for some of the operations\. For example: 
 + Uploading an archive—To upload an archive using the low\-level API in addition to the file name and the vault name where you want to save the archive, You need to provide a checksum \(SHA\-256 tree hash\) of the payload\. However, the high\-level API computes the checksum for you\.
 + Downloading an archive or vault inventory—To download an archive using the low\-level API you first initiate a job, wait for the job to complete, and then get the job output\. You need to write additional code to set up an Amazon Simple Notification Service \(Amazon SNS\) topic for S3 Glacier to notify you when the job is complete\. You also need some polling mechanism to check if a job completion message was posted to the topic\. The high\-level API provides a method to download an archive that takes care of all these steps\. You only specify an archive ID and a folder path where you want to save the downloaded data\. 
 

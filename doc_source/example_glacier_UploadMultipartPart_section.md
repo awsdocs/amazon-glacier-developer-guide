@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ JavaScript ]
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/glacier#code-examples)\. 
 Create a multipart upload of 1 megabyte chunks of a Buffer object\.  
 
 ```
@@ -72,7 +73,6 @@ glacier.initiateMultipartUpload(params, function (mpErr, multipart) {
     }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/glacier#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/glacier-example-multipart-upload.html)\. 
 +  For API details, see [UploadMultipartPart](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/glacier-2012-06-01/UploadMultipartPart) in *AWS SDK for JavaScript API Reference*\. 
 

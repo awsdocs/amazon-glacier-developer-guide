@@ -1,18 +1,17 @@
-# Upload an Archive to a Vault in Amazon S3 Glacier Using the AWS SDK for Java<a name="getting-started-upload-archive-java"></a>
+# Upload an Archive to a Vault in S3 Glacier by Using the AWS SDK for Java<a name="getting-started-upload-archive-java"></a>
 
-The following Java code example uses the high\-level API of the AWS SDK for Java to upload a sample archive to the vault\. In the code example, note the following:
-
- 
+The following Java code example uses the high\-level API of the AWS SDK for Java to upload a sample archive to the vault\. In the code example, note the following: 
 + The example creates an instance of the `AmazonGlacierClient` class\. 
-+ The example uses the `upload` method of the `ArchiveTransferManager` class from the high\-level API of the AWS SDK for Java\. 
-+ The example uses the US West \(Oregon\) Region \(`us-west-2`\) to match the location where you created the vault previously in [Step 2: Create a Vault in Amazon S3 Glacier](getting-started-create-vault.md)\.
++ The example uses the `upload` API operation of the `ArchiveTransferManager` class from the high\-level API of the AWS SDK for Java\. 
++ The example uses the US West \(Oregon\) Region \(`us-west-2`\)\.
 
-For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You need to update the code as shown with the name of the archive file you want to upload\.
+For step\-by\-step instructions on how to run this example, see [Running Java Examples for Amazon S3 Glacier Using Eclipse](using-aws-sdk-for-java.md#setting-up-and-testing-sdk-java)\. You must update the code as shown with the name of the archive file that you want to upload\.
 
 **Note**  
-Amazon S3 Glacier \(S3 Glacier\) keeps an inventory of all the archives in your vaults\. When you upload the archive in the following example, it will not appear in a vault in the management console until the vault inventory has been updated\. This update usually happens once a day\. 
+Amazon S3 Glacier keeps an inventory of all the archives in your vaults\. When you upload the archive in the following example, it will not appear in a vault in the management console until the vault inventory has been updated\. This update usually happens once a day\. 
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
   
 
 ```
@@ -170,5 +169,4 @@ Amazon S3 Glacier \(S3 Glacier\) keeps an inventory of all the archives in your 
         return sb.toString().toLowerCase();
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
 +  For API details, see [UploadArchive](https://docs.aws.amazon.com/goto/SdkForJavaV2/glacier-2012-06-01/UploadArchive) in *AWS SDK for Java 2\.x API Reference*\. 

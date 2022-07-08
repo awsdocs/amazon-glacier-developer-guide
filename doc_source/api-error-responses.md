@@ -14,7 +14,7 @@ In the event of an error, the API returns one of the following exceptions:
 | LimitExceededException | Returned if the request results in one of the following limits being exceeded, a vault limit, a tags limit, or the provisioned capacity limit\. | 400 Bad Request | Client | 
 | MissingAuthenticationTokenException | Returned if no authentication data is found for the request\. | 400 Bad Request | Client | 
 | MissingParameterValueException | Returned if a required header or parameter is missing from the request\. | 400 Bad Request | Client | 
-| PolicyEnforcedException | Returned if a retrieval job will exceed the current data policy's retrieval rate limit\. For more information about data retrieval policies, see [Amazon S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. | 400 Bad Request | Client | 
+| PolicyEnforcedException | Returned if a retrieval job will exceed the current data policy's retrieval rate limit\. For more information about data retrieval policies, see [S3 Glacier Data Retrieval Policies](data-retrieval-policy.md)\. | 400 Bad Request | Client | 
 | ResourceNotFoundException | Returned if the specified resource such as a vault, upload ID, or job ID does not exist\. | 404 Not Found | Client | 
 | RequestTimeoutException | Returned if uploading an archive and Amazon S3 Glacier \(S3 Glacier\) times out while receiving the upload\. | 408 Request Timeout | Client | 
 | SerializationException | Returned if the body of the request is invalid\. If including a JSON payload, check that it is well\-formed\. | 400 Bad Request | Client | 

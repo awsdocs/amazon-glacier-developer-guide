@@ -1,14 +1,22 @@
-# Deleting an Empty Vault Using the Amazon S3 Glacier Console<a name="deleting-vaults-console"></a>
+# Deleting an Empty Vault by Using the S3 Glacier Console<a name="deleting-vaults-console"></a>
 
 **Note**  
-You must delete all exiting archives before deleting a vault\. This can be done by writing code to make a delete archive request using either the REST API, the Amazon SDK for Java, the Amazon SDK for \.NET or by using the AWS CLI\. For information about deleting archives, see [Step 5: Delete an Archive from a Vault in Amazon S3 Glacier](getting-started-delete-archive.md)
+Before deleting a vault, you must delete all existing archives within the vault\. You can do this by writing code to make a delete archive request by using either the REST API, the AWS SDK for Java, the AWS SDK for \.NET, or by using the AWS Command Line Interface \(AWS CLI\)\. For information about deleting archives, see [Step 5: Delete an Archive from a Vault in S3 Glacier](getting-started-delete-archive.md)\.
 
-The following are the steps to delete an empty vault using the S3 Glacier console\.
+After your vault is empty, you can delete it by using the following steps\.
 
-1. Sign into the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+**To delete an empty vault by using the Amazon S3 Glacier console**
 
-1. From the AWS Region selector, select the AWS Region where the vault exists\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
 
-1. Select the vault\. 
+1. Under **Select a Region**, choose the AWS Region where the vault exists\.
 
-1. Click **Delete Vault**\. 
+1. In the left navigation pane, choose **Vaults**\.
+
+1. In the **Vaults** list, select the option button next to the name of the vault that you want to delete, and then choose **Delete** at the top of the page\.
+
+1. In the **Delete vault** dialog box, confirm that you want to delete the vault by choosing **Delete**\. 
+**Important**  
+Deleting a vault can't be undone\.
+
+1. To verify that you've deleted the vault, open the **Vaults** list and enter the name of the vault that you deleted\. If the vault can't be found, your deletion was successful\. 
