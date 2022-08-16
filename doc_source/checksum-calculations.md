@@ -153,11 +153,13 @@ static final int ONE_MB = 1024 * 1024;
 
             int bytesRead;
             int idx = 0;
+            int offset = 0;
 
-            while ((bytesRead = fileStream.read(buff, 0, ONE_MB)) > 0) {
+            while ((bytesRead = fileStream.read(buff, offset, ONE_MB)) > 0) {
                 md.reset();
                 md.update(buff, 0, bytesRead);
                 chunkSHA256Hashes[idx++] = md.digest();
+                offset += bytesRead;
             }
 
             return chunkSHA256Hashes;
