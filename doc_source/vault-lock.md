@@ -5,6 +5,7 @@ The following topics describe how to lock a vault in Amazon S3 Glacier and how t
 **Topics**
 + [Vault Locking Overview](#vault-lock-overview)
 + [Locking a Vault by Using the S3 Glacier API](vault-lock-how-to-api.md)
++ [Locking a Vault using the AWS Command Line Interface](vault-lock-how-to-cli.md)
 + [Locking a Vault by Using the S3 Glacier Console](vault-lock-walkthrough.md)
 
 ## Vault Locking Overview<a name="vault-lock-overview"></a>

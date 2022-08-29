@@ -6,6 +6,42 @@ The following code examples show how to create an Amazon S3 Glacier vault\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/Glacier#code-examples)\. 
+  
+
+```
+    using System;
+    using System.Threading.Tasks;
+    using Amazon.Glacier;
+    using Amazon.Glacier.Model;
+
+    public class CreateVault
+    {
+        static async Task Main(string[] args)
+        {
+            string vaultName = "example-vault";
+            var client = new AmazonGlacierClient();
+            var request = new CreateVaultRequest
+            {
+                // Setting the AccountId to "-" means that
+                // the account associated with the default
+                // client will be used.
+                AccountId = "-",
+                VaultName = vaultName,
+            };
+
+            var response = await client.CreateVaultAsync(request);
+
+            Console.WriteLine($"Created {vaultName} at: {response.Location}");
+        }
+    }
+```
++  For API details, see [CreateVault](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/CreateVault) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
@@ -17,15 +53,15 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             CreateVaultRequest vaultRequest = CreateVaultRequest.builder()
-                    .vaultName(vaultName)
-                    .build();
+                .vaultName(vaultName)
+                .build();
 
             CreateVaultResponse createVaultResult = glacier.createVault(vaultRequest);
             System.out.println("The URI of the new vault is " + createVaultResult.location());
+
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-
         }
     }
 ```

@@ -6,6 +6,41 @@ The following code examples show how to list Amazon S3 Glacier vaults\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/Glacier#code-examples)\. 
+  
+
+```
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Amazon.Glacier;
+    using Amazon.Glacier.Model;
+
+    public class ListVaults
+    {
+        public static async Task Main(string[] args)
+        {
+            var client = new AmazonGlacierClient();
+            var request = new ListVaultsRequest
+            {
+                AccountId = "-",
+                Limit = 5,
+            };
+
+            var response = await client.ListVaultsAsync(request);
+
+            List<DescribeVaultOutput> vaultList = response.VaultList;
+
+            vaultList.ForEach(v => { Console.WriteLine($"{v.VaultName} ARN: {v.VaultARN}");  });
+        }
+    }
+```
++  For API details, see [ListVaults](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/ListVaults) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
@@ -24,15 +59,15 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
             while (!listComplete) {
                 ListVaultsResponse response = null;
-
                 if (newMarker != null) {
                     ListVaultsRequest request = ListVaultsRequest.builder()
-                            .marker(newMarker)
-                            .build();
+                        .marker(newMarker)
+                        .build();
+
                     response = glacier.listVaults(request);
                 } else {
                     ListVaultsRequest request = ListVaultsRequest.builder()
-                            .build();
+                        .build();
                     response = glacier.listVaults(request);
                 }
 
@@ -41,6 +76,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
                     totalVaults += 1;
                     System.out.println("* " + v.vaultName());
                 }
+
                 // Check for further results.
                 newMarker = response.marker();
                 if (newMarker == null) {
@@ -51,6 +87,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             if (totalVaults == 0) {
                 System.out.println("No vaults found.");
             }
+
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);

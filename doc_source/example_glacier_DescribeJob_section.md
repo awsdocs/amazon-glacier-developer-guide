@@ -1,9 +1,48 @@
 # Describe an Amazon S3 Glacier job using an AWS SDK<a name="example_glacier_DescribeJob_section"></a>
 
-The following code example shows how to describe an Amazon S3 Glacier job\.
+The following code examples show how to describe an Amazon S3 Glacier job\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
+
+------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/Glacier#code-examples)\. 
+  
+
+```
+    using System;
+    using System.Threading.Tasks;
+    using Amazon.Glacier;
+    using Amazon.Glacier.Model;
+
+    public class DescribeVault
+    {
+        public static async Task Main(string[] args)
+        {
+            string vaultName = "example-vault";
+            var client = new AmazonGlacierClient();
+            var request = new DescribeVaultRequest
+            {
+                AccountId = "-",
+                VaultName = vaultName,
+            };
+
+            var response = await client.DescribeVaultAsync(request);
+
+            // Display the information about the vault.
+            Console.WriteLine($"{response.VaultName}\tARN: {response.VaultARN}");
+            Console.WriteLine($"Created on: {response.CreationDate}\tNumber of Archives: {response.NumberOfArchives}\tSize (in bytes): {response.SizeInBytes}");
+            if (response.LastInventoryDate != DateTime.MinValue)
+            {
+                Console.WriteLine($"Last inventory: {response.LastInventoryDate}");
+            }
+        }
+    }
+```
++  For API details, see [DescribeJob](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/DescribeJob) in *AWS SDK for \.NET API Reference*\. 
 
 ------
 #### [ Python ]

@@ -18,17 +18,16 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         try {
 
             JobParameters job = JobParameters.builder()
-                    .type("inventory-retrieval")
-                    .build();
+                .type("inventory-retrieval")
+                .build();
 
             InitiateJobRequest initJob = InitiateJobRequest.builder()
-                    .jobParameters(job)
-                    .accountId(accountId)
-                    .vaultName(vaultName)
-                    .build();
+                .jobParameters(job)
+                .accountId(accountId)
+                .vaultName(vaultName)
+                .build();
 
             InitiateJobResponse response = glacier.initiateJob(initJob);
-
             System.out.println("The job ID is: " +response.jobId()) ;
             System.out.println("The relative URI path of the job is: " +response.location()) ;
             return response.jobId();
@@ -45,16 +44,16 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     public static void checkJob(GlacierClient glacier, String jobId, String name, String account, String path) {
 
        try{
-            Boolean finished = false;
-            String jobStatus;
-            int yy=0;
+           boolean finished = false;
+           String jobStatus;
+           int yy=0;
 
-            while (!finished) {
-                DescribeJobRequest jobRequest = DescribeJobRequest.builder()
-                        .jobId(jobId)
-                        .accountId(account)
-                        .vaultName(name)
-                        .build();
+           while (!finished) {
+               DescribeJobRequest jobRequest = DescribeJobRequest.builder()
+                   .jobId(jobId)
+                   .accountId(account)
+                   .vaultName(name)
+                   .build();
 
                 DescribeJobResponse response = glacier.describeJob(jobRequest);
                 jobStatus = response.statusCodeAsString();
@@ -70,13 +69,12 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
            System.out.println("Job has Succeeded");
            GetJobOutputRequest jobOutputRequest = GetJobOutputRequest.builder()
-                   .jobId(jobId)
-                   .vaultName(name)
-                   .accountId(account)
-                   .build();
+               .jobId(jobId)
+               .vaultName(name)
+               .accountId(account)
+               .build();
 
            ResponseBytes<GetJobOutputResponse> objectBytes = glacier.getJobOutputAsBytes(jobOutputRequest);
-
            // Write the data to a local file.
            byte[] data = objectBytes.asByteArray();
            File myFile = new File(path);

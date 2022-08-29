@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -65,6 +65,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Tagging Your S3 Glacier Vaults](tagging-vaults.md)
    + [S3 Glacier Vault Lock](vault-lock.md)
       + [Locking a Vault by Using the S3 Glacier API](vault-lock-how-to-api.md)
+      + [Locking a Vault using the AWS Command Line Interface](vault-lock-how-to-cli.md)
       + [Locking a Vault by Using the S3 Glacier Console](vault-lock-walkthrough.md)
 + [Working with Archives in Amazon S3 Glacier](working-with-archives.md)
    + [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)
@@ -94,15 +95,18 @@ Amazon's trademarks and trade dress may not be used in
    + [Using the AWS SDK for .NET with Amazon S3 Glacier](using-aws-sdk-for-dot-net.md)
 + [Code examples for S3 Glacier using AWS SDKs](service_code_examples.md)
    + [Actions for S3 Glacier using AWS SDKs](service_code_examples_actions.md)
+      + [Add tags to an Amazon S3 Glacier vault using an AWS SDK](example_glacier_AddTagsToVault_section.md)
       + [Create a multipart upload to an Amazon S3 Glacier vault using an AWS SDK](example_glacier_UploadMultipartPart_section.md)
       + [Create an Amazon S3 Glacier vault using an AWS SDK](example_glacier_CreateVault_section.md)
       + [Delete an Amazon S3 Glacier vault using an AWS SDK](example_glacier_DeleteVault_section.md)
       + [Delete an Amazon S3 Glacier archive using an AWS SDK](example_glacier_DeleteArchive_section.md)
       + [Delete Amazon S3 Glacier vault notifications using an AWS SDK](example_glacier_DeleteVaultNotifications_section.md)
       + [Describe an Amazon S3 Glacier job using an AWS SDK](example_glacier_DescribeJob_section.md)
+      + [Download an Amazon S3 Glacier archive using an AWS SDK](example_glacier_DownloadArchive_section.md)
       + [Get Amazon S3 Glacier job output using an AWS SDK](example_glacier_GetJobOutput_section.md)
       + [Get Amazon S3 Glacier vault notification configuration using an AWS SDK](example_glacier_GetVaultNotifications_section.md)
       + [List Amazon S3 Glacier jobs using an AWS SDK](example_glacier_ListJobs_section.md)
+      + [List tags for an Amazon S3 Glacier vault using an AWS SDK](example_glacier_ListTagsForVault_section.md)
       + [List Amazon S3 Glacier vaults using an AWS SDK](example_glacier_ListVaults_section.md)
       + [Retrieve an Amazon S3 Glacier vault inventory using an AWS SDK](example_glacier_InitiateJob_InventoryRetrieval_section.md)
       + [Retrieve an archive from an Amazon S3 Glacier vault using an AWS SDK](example_glacier_InitiateJob_ArchiveRetrieval_section.md)

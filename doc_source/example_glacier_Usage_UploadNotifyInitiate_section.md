@@ -206,6 +206,13 @@ def upload_demo(glacier, vault_name, topic_arn):
               f"when the archive retrieval completes so wait a few hours.")
     print("\nRetrieve your job output by running this script with the --retrieve flag.")
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [CreateVault](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/CreateVault)
+  + [InitiateJob](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/InitiateJob)
+  + [ListJobs](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/ListJobs)
+  + [ListVaults](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/ListVaults)
+  + [SetVaultNotifications](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/SetVaultNotifications)
+  + [UploadArchive](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/UploadArchive)
 
 ------
 

@@ -1,9 +1,56 @@
 # List Amazon S3 Glacier jobs using an AWS SDK<a name="example_glacier_ListJobs_section"></a>
 
-The following code example shows how to list Amazon S3 Glacier jobs\.
+The following code examples show how to list Amazon S3 Glacier jobs\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
+
+------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/Glacier#code-examples)\. 
+  
+
+```
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Amazon.Glacier;
+    using Amazon.Glacier.Model;
+
+    class ListJobs
+    {
+        static async Task Main(string[] args)
+        {
+            var client = new AmazonGlacierClient();
+            var vaultName = "example-vault";
+
+            var request = new ListJobsRequest
+            {
+                // Using a hyphen "=" for the Account Id will
+                // cause the SDK to use the Account Id associated
+                // with the default user.
+                AccountId = "-",
+                VaultName = vaultName,
+            };
+
+            var response = await client.ListJobsAsync(request);
+
+            if (response.JobList.Count > 0)
+            {
+                response.JobList.ForEach(job => {
+                    Console.WriteLine($"{job.CreationDate} {job.JobDescription}");
+                });
+            }
+            else
+            {
+                Console.WriteLine($"No jobs were found for {vaultName}.");
+            }
+        }
+    }
+```
++  For API details, see [ListJobs](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/ListJobs) in *AWS SDK for \.NET API Reference*\. 
 
 ------
 #### [ Python ]

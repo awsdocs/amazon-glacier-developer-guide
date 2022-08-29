@@ -174,6 +174,11 @@ def retrieve_demo(glacier, vault_name):
     print(f"\nDeleting {vault.name}.")
     glacier.delete_vault(vault)
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [DeleteArchive](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/DeleteArchive)
+  + [DeleteVault](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/DeleteVault)
+  + [GetJobOutput](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/GetJobOutput)
+  + [ListJobs](https://docs.aws.amazon.com/goto/boto3/glacier-2012-06-01/ListJobs)
 
 ------
 

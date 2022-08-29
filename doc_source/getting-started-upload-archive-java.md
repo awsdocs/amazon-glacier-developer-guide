@@ -21,9 +21,9 @@ Amazon S3 Glacier keeps an inventory of all the archives in your vaults\. When y
         String checkVal = computeSHA256(myFile);
         try {
             UploadArchiveRequest uploadRequest = UploadArchiveRequest.builder()
-                    .vaultName(vaultName)
-                    .checksum(checkVal)
-                    .build();
+                .vaultName(vaultName)
+                .checksum(checkVal)
+                .build();
 
             UploadArchiveResponse res = glacier.uploadArchive(uploadRequest, path);
             return res.archiveId();
@@ -43,13 +43,11 @@ Amazon S3 Glacier keeps an inventory of all the archives in your vaults\. When y
             return toHex(treeHash);
 
         } catch (IOException ioe) {
-            System.err.format("Exception when reading from file %s: %s", inputFile,
-                    ioe.getMessage());
+            System.err.format("Exception when reading from file %s: %s", inputFile, ioe.getMessage());
             System.exit(-1);
 
         } catch (NoSuchAlgorithmException nsae) {
-            System.err.format("Cannot locate MessageDigest algorithm for SHA-256: %s",
-                    nsae.getMessage());
+            System.err.format("Cannot locate MessageDigest algorithm for SHA-256: %s", nsae.getMessage());
             System.exit(-1);
         }
         return "";
@@ -117,18 +115,14 @@ Amazon S3 Glacier keeps an inventory of all the archives in your vaults\. When y
             throws NoSuchAlgorithmException {
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-
         byte[][] prevLvlHashes = chunkSHA256Hashes;
-
         while (prevLvlHashes.length > 1) {
-
             int len = prevLvlHashes.length / 2;
             if (prevLvlHashes.length % 2 != 0) {
                 len++;
             }
 
             byte[][] currLvlHashes = new byte[len][];
-
             int j = 0;
             for (int i = 0; i < prevLvlHashes.length; i = i + 2, j++) {
 

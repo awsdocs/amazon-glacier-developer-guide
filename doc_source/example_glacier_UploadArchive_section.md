@@ -6,6 +6,48 @@ The following code examples show how to upload an archive to an Amazon S3 Glacie
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/Glacier#code-examples)\. 
+  
+
+```
+    using System;
+    using System.Threading.Tasks;
+    using Amazon;
+    using Amazon.Glacier;
+    using Amazon.Glacier.Transfer;
+
+    public class UploadArchiveHighLevel
+    {
+        private static readonly string VaultName = "example-vault";
+        private static readonly string ArchiveToUpload = "*** Provide file name (with full path) to upload ***";
+
+        public static async Task Main()
+        {
+            try
+            {
+                var manager = new ArchiveTransferManager(RegionEndpoint.USWest2);
+
+                // Upload an archive.
+                var response = await manager.UploadAsync(VaultName, "upload archive test", ArchiveToUpload);
+
+                Console.WriteLine("Copy and save the ID for use in other examples.");
+                Console.WriteLine($"Archive ID: {response.ArchiveId}");
+                Console.WriteLine("To continue, press Enter");
+                Console.ReadKey();
+            }
+            catch (AmazonGlacierException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+```
++  For API details, see [UploadArchive](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/UploadArchive) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
@@ -19,9 +61,9 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         String checkVal = computeSHA256(myFile);
         try {
             UploadArchiveRequest uploadRequest = UploadArchiveRequest.builder()
-                    .vaultName(vaultName)
-                    .checksum(checkVal)
-                    .build();
+                .vaultName(vaultName)
+                .checksum(checkVal)
+                .build();
 
             UploadArchiveResponse res = glacier.uploadArchive(uploadRequest, path);
             return res.archiveId();
@@ -41,13 +83,11 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             return toHex(treeHash);
 
         } catch (IOException ioe) {
-            System.err.format("Exception when reading from file %s: %s", inputFile,
-                    ioe.getMessage());
+            System.err.format("Exception when reading from file %s: %s", inputFile, ioe.getMessage());
             System.exit(-1);
 
         } catch (NoSuchAlgorithmException nsae) {
-            System.err.format("Cannot locate MessageDigest algorithm for SHA-256: %s",
-                    nsae.getMessage());
+            System.err.format("Cannot locate MessageDigest algorithm for SHA-256: %s", nsae.getMessage());
             System.exit(-1);
         }
         return "";
@@ -115,18 +155,14 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             throws NoSuchAlgorithmException {
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-
         byte[][] prevLvlHashes = chunkSHA256Hashes;
-
         while (prevLvlHashes.length > 1) {
-
             int len = prevLvlHashes.length / 2;
             if (prevLvlHashes.length % 2 != 0) {
                 len++;
             }
 
             byte[][] currLvlHashes = new byte[len][];
-
             int j = 0;
             for (int i = 0; i < prevLvlHashes.length; i = i + 2, j++) {
 

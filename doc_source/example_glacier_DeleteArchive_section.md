@@ -17,17 +17,17 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DeleteArchiveRequest delArcRequest = DeleteArchiveRequest.builder()
-                    .vaultName(vaultName)
-                    .accountId(accountId)
-                    .archiveId(archiveId)
-                    .build();
+                .vaultName(vaultName)
+                .accountId(accountId)
+                .archiveId(archiveId)
+                .build();
 
             glacier.deleteArchive(delArcRequest);
             System.out.println("The vault was deleted!");
+
         } catch(GlacierException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-
         }
     }
 ```
