@@ -105,7 +105,7 @@ In order to download your archives you must know your archive ids\. Steps 1\-4 w
 1. Use the `initiate-job` command to start the retrieval process each archive from a vault\. You will need to specify the job parameter as `archive-retrieval` as seen below\.
 
    ```
-   aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters "{\"Type\":\"archive-retrieval\"}" --archiveId *** archiveId ***
+   aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters "{\"Type\":\"archive-retrieval\",\"ArchiveId\":\"*** archiveId ***\"}"
    ```
 
 1. Wait for the `archive-retrieval` job to complete\. Use the `describe-job` command to check status of the previous command\.
