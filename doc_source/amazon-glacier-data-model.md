@@ -56,16 +56,16 @@ You can store an unlimited number of archives in a vault\.
 
 ## Job<a name="data-model-job"></a>
 
-An S3 Glacier job can perform a `SELECT` query on an archive, retrieve an archive, or get an inventory of a vault\. When performing a query on an archive, you initiate a job by providing a SQL query and a list of S3 Glacier archive objects\. S3 Glacier Select runs the query in place and writes the output results to Amazon S3\.
+An S3 Glacier job can retrieve an archive, or get an inventory of a vault\.
 
 Retrieving archives and vault inventories \(lists of archives\) are asynchronous operations in S3 Glacier, in which you first initiate a job, and then download the job output after S3 Glacier completes the job\. 
 
 **Note**  
 S3 Glacier offers a cold\-storage data\-archival solution\. If your application needs a storage solution that requires real\-time data retrieval, you might consider using Amazon S3\. For more information, see [Amazon Simple Storage Service \(Amazon S3\)](http://aws.amazon.com/s3)\.
 
-To initiate a vault inventory job, you provide a vault name\. Select and archive retrieval jobs require both the vault name and the archive ID\. You can also provide an optional job description to help identify the jobs\. 
+To initiate a vault inventory job, you provide a vault name\. Archive retrieval jobs require both the vault name and the archive ID\. You can also provide an optional job description to help identify the jobs\. 
 
-Select, archive retrieval, and vault inventory jobs are associated with a vault\. A vault can have multiple jobs in progress at any point in time\. When you send a job request \(initiate a job\), S3 Glacier returns to you a job ID to track the job\. Each job is uniquely identified by a URI of the form: 
+Archive retrieval and vault inventory jobs are associated with a vault\. A vault can have multiple jobs in progress at any point in time\. When you send a job request \(initiate a job\), S3 Glacier returns to you a job ID to track the job\. Each job is uniquely identified by a URI of the form: 
 
 ```
 https://region-specific-endpoint/account-id/vaults/vault-name/jobs/job-id

@@ -1,57 +1,15 @@
 # Initiate Job \(POST jobs\)<a name="api-initiate-job-post"></a>
 
 This operation initiates the following types of Amazon S3 Glacier \(S3 Glacier\) jobs: 
-+ `select`— Perform a select query on an archive
 + `archive-retrieval`— Retrieve an archive
 + `inventory-retrieval`— Inventory a vault
 
 **Topics**
-+ [Working with Amazon S3 Glacier Select Jobs](#api-initiate-select-job)
 + [Initializing an Archive or Vault Inventory Retrieval Job](#api-initiate-job-post-description)
 + [Requests](#api-initiate-job-post-requests)
 + [Responses](#api-initiate-job-post-responses)
 + [Examples](#api-initiate-job-post-examples)
 + [Related Sections](#more-info-api-initiate-job-post)
-
-## Working with Amazon S3 Glacier Select Jobs<a name="api-initiate-select-job"></a>
-
-You use a S3 Glacier Select job to perform SQL queries on archive objects\. The archive objects being queried by the select job must be formatted as uncompressed comma\-separated values \(CSV\) files\. For overview information about S3 Glacier Select jobs, see [Querying Archives with S3 Glacier Select](glacier-select.md)\.
-
-When initiating a select job, you do the following:
-+ Define an output location for the output of your select query\. This location must be an Amazon S3 bucket in the same AWS Region as the vault containing the archive object being queried\. The AWS account that initiates the job must have permissions to write to the S3 bucket\. You can specify the storage class and encryption for the output objects stored in Amazon S3\. When setting [S3Location](api-S3Location.md), it might be helpful to read the following topics in the Amazon S3 documentation:
-  + [PUT Object](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html) in the *Amazon Simple Storage Service API Reference*
-  + [Managing Access with ACLs](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) in the *Amazon Simple Storage Service User Guide*
-  + [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service User Guide*
-+ Define the SQL expression to use for the SELECT for your query in [SelectParameters](api-SelectParameters.md)\. For example, you can use expressions like the following examples:
-  + The following example expression returns all records from the specified object\.
-
-    ```
-    SELECT * FROM archive
-    ```
-  + Assuming you are not using any headers for data stored in the object, you can specify columns using positional headers\.
-
-    ```
-    SELECT s._1, s._2 FROM archive s WHERE s._3 > 100
-    ```
-  + If you have headers and you set the `fileHeaderInfo` in [CSVInput](api-CSVInput.md) to `Use`, you can specify headers in the query\. \(If you set the `fileHeaderInfo` field to `Ignore`, the first row is skipped for the query\.\) You cannot mix ordinal positions with header column names\. 
-
-    ```
-    SELECT s.Id, s.FirstName, s.SSN FROM archive s
-    ```
-
-For more information about using SQL with S3 Glacier Select, see [SQL Reference for Amazon S3 Select and S3 Glacier Select](s3-glacier-select-sql-reference.md)\.
-
-When initiating a select job, you can also do the following:
-+ Specify the `Expedited` tier to expedite your queries\. For more information, see [Expedited, Standard, and Bulk Tiers](#api-initiate-job-expedited-bulk)\.
-+ Specify details about the data serialization format of both the input object being queried and the serialization of the CSV\-encoded query results\.
-+ Specify an Amazon Simple Notification Service \(Amazon SNS\) topic to which S3 Glacier can post a notification after the job is completed\. You can specify an SNS topic for each job request\. The notification is sent only after S3 Glacier completes the job\.
-+ You can use [Describe Job \(GET JobID\)](api-describe-job-get.md) to obtain job status information while a job is in progress\. However, it is more efficient to use an Amazon SNS notification to determine when a job is complete\.
-
-When working with a select job, you cannot do the following:
-+  Call the **GetJobOutput** operation\. Job output is written to the output location\.
-+  Use ranged selection\.
-
-For an example of initiating a select job, see [Example Request: Initiate a select job](#api-initiate-job-post-example-select-request)\.
 
 ## Initializing an Archive or Vault Inventory Retrieval Job<a name="api-initiate-job-post-description"></a>
 
@@ -104,7 +62,7 @@ You can initiate archive retrieval for the whole archive or a range of the archi
 
 ### Expedited, Standard, and Bulk Tiers<a name="api-initiate-job-expedited-bulk"></a>
 
-When initiating a select or an archive retrieval job, you can specify one of the following options in the `Tier` field of the request body: 
+When initiating an archive retrieval job, you can specify one of the following options in the `Tier` field of the request body: 
 + **`Expedited`** – Expedited allows you to quickly access your data when occasional urgent requests for a subset of archives are required\. For all but the largest archives \(250 MB\+\), data accessed using the Expedited tier is typically made available within 1–5 minutes\.
 + **`Standard`** – Standard allows you to access any of your archives within several hours\. Data accessed using the Standard tier typically made available within 3–5 hours\. This option is the default one for job requests that don't specify the tier option\.
 + **`Bulk`** – Bulk is the lowest\-cost tier for S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively in a day\. Data accessed using the Bulk tier is typically made available within 5–12 hours\.
@@ -238,7 +196,7 @@ S3 Glacier creates the job\. In the response, it returns the URI of the job\.
 | --- | --- | 
 | Location |  The relative URI path of the job\. You can use this URI path to find the job status\. For more information, see [Describe Job \(GET JobID\)](api-describe-job-get.md)\. Type: String Default: None  | 
 | x\-amz\-job\-id |  The ID of the job\. This value is also included as part of the `Location` header\.  Type: String Default: None  | 
-| x\-amz\-job\-output\-path |  This header is only returned for select job types\. The path to the location of where the select results are stored\.  Type: String Default: None  | 
+| x\-amz\-job\-output\-path |  The path to the location of where the select results are stored\.  Type: String Default: None  | 
 
 ### Response Body<a name="api-initiate-job-post-responses-elements"></a>
 
@@ -367,64 +325,6 @@ The following request is an example of a subsequent request to retrieve the next
 14. }
 ```
 
-### Example Request: Initiate a select job<a name="api-initiate-job-post-example-select-request"></a>
-
-The following request initiates a select job\.
-
-```
- 1. POST /-/vaults/examplevault/jobs HTTP/1.1
- 2. Host: glacier.us-west-2.amazonaws.com
- 3. x-amz-Date: 20170210T120000Z
- 4. Content-Type: application/x-www-form-urlencoded
- 5. x-amz-glacier-version: 2012-06-01
- 6. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20141123/us-west-2/glacier/aws4_request,SignedHeaders=host;x-amz-date;x-amz-glacier-version,Signature=9257c16da6b25a715ce900a5b45b03da0447acf430195dcb540091b12966f2a2
- 7. 
- 8. {
- 9.    
-10.   
-11.     "Type": "select",
-12.     "ArchiveId": "NkbByEejwEggmBz2fTHgJrg0XBoDfjP4q6iu87-TjhqG6eGoOY9Z8i1_AUyUsuhPAdTqLHy8pTl5nfCFJmDl2yEZONi5L26Omw12vcs01MNGntHEQL8MBfGlqrEXAMPLEArchiveId",
-13.     "Description": null,
-14.     "SNSTopic": null,
-15. 
-16.     "Tier": "Bulk",
-17.     "SelectParameters": {
-18.         "Expression": "select * from archive",
-19.         "ExpressionType": "SQL",
-20.         "InputSerialization": {
-21.             "csv": {
-22.                 "Comments": null,
-23.                 "FileHeaderInfo": "None",
-24.                 "QuoteEscapeCharacter": "\"",
-25.                 "RecordDelimiter": "\n",
-26.                 "FieldDelimiter": ",",
-27.                 "QuoteCharacter": "\""
-28.             }
-29.         },
-30.         "OutputSerialization": {
-31.             "csv": {
-32.                 "QuoteFields": "AsNeeded",
-33.                 "QuoteEscapeCharacter": null,
-34.                 "RecordDelimiter": "\n",
-35.                 "FieldDelimiter": ",",
-36.                 "QuoteCharacter": "\""
-37.             }
-38.         }
-39.     },
-40.     "OutputLocation": {
-41.         "S3": {
-42.             "BucketName": "bucket-name",
-43.             "Prefix": "test",
-44.             "Encryption": {
-45.                 "EncryptionType": "AES256"
-46.             },
-47.             "CannedACL": "private",
-48.             "StorageClass": "STANDARD"
-49.         }
-50.     }
-51. }
-```
-
 ### Example Response<a name="api-initiate-job-post-example-select-response"></a>
 
 ```
@@ -441,5 +341,4 @@ The following request initiates a select job\.
  
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-+ [SQL Reference for Amazon S3 Select and S3 Glacier Select](s3-glacier-select-sql-reference.md)
 + [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)

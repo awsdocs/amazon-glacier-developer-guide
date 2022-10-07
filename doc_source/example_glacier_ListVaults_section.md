@@ -34,7 +34,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
             List<DescribeVaultOutput> vaultList = response.VaultList;
 
-            vaultList.ForEach(v => { Console.WriteLine($"{v.VaultName} ARN: {v.VaultARN}");  });
+            vaultList.ForEach(v => { Console.WriteLine($"{v.VaultName} ARN: {v.VaultARN}"); });
         }
     }
 ```

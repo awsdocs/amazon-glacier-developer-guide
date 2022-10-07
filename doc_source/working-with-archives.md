@@ -19,7 +19,6 @@ S3 Glacier provides a management console\. You can use the console to create and
 + [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md)
 + [Downloading an Archive in S3 Glacier](downloading-an-archive.md)
 + [Deleting an Archive in Amazon S3 Glacier](deleting-an-archive.md)
-+ [Querying an Archives in Amazon S3 Glacier](querying-archives.md)
 
 ## Archive Operations in Amazon S3 Glacier<a name="archive-operations-quick-intro"></a>
 

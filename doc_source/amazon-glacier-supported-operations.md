@@ -16,12 +16,9 @@ S3 Glacier provides operations for you to upload and delete archives\. You canno
 
 ## Jobs<a name="job-ops-intro"></a>
 
-You can initiate an S3 Glacier job to perform a `SELECT` query on an archive, retrieve an archive, or get an inventory of a vault\.
+You can initiate an S3 Glacier job to perform a retrieval on an archive or get an inventory of a vault\.
 
 The following are the types of S3 Glacier jobs: 
-+ `select` – Perform a `SELECT` query on an archive\.
-
-  For more information, see [Querying Archives with S3 Glacier Select](glacier-select.md)\.
 + `archive-retrieval` – Retrieve an archive\. 
 
   For more information, see [Downloading an Archive in S3 Glacier](downloading-an-archive.md)\.
