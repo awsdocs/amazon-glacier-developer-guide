@@ -9,20 +9,18 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Java ]
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
   
 
 ```
-    public static void deleteGlacierArchive(GlacierClient glacier, String vaultName, String accountId, String archiveId) {
+    public static void deleteGlacierVault(GlacierClient glacier, String vaultName) {
 
         try {
-            DeleteArchiveRequest delArcRequest = DeleteArchiveRequest.builder()
+            DeleteVaultRequest delVaultRequest = DeleteVaultRequest.builder()
                 .vaultName(vaultName)
-                .accountId(accountId)
-                .archiveId(archiveId)
                 .build();
 
-            glacier.deleteArchive(delArcRequest);
+            glacier.deleteVault(delVaultRequest);
             System.out.println("The vault was deleted!");
 
         } catch(GlacierException e) {
@@ -37,7 +35,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glacier#code-examples)\. 
   
 
 ```

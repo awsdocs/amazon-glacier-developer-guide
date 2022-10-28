@@ -11,7 +11,7 @@ For step\-by\-step instructions on how to run this example, see [Running Java Ex
 Amazon S3 Glacier keeps an inventory of all the archives in your vaults\. When you upload the archive in the following example, it will not appear in a vault in the management console until the vault inventory has been updated\. This update usually happens once a day\. 
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/glacier#readme)\. 
   
 
 ```
