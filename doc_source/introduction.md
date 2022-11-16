@@ -10,7 +10,7 @@ Amazon Simple Storage Service \(Amazon S3\) also provides three Amazon S3 Glacie
 + **S3 Glacier Deep Archive** – Use for archiving data that rarely needs to be accessed\. Data stored in the S3 Glacier Deep Archive storage class has a default retrieval time of 12 hours\. 
 
 **Important**  
-S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects are not available for real\-time access\. You must first restore S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects before you can access them\.  
+S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects are not available for real\-time access\. You must first restore S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects before you can access them\. For these storage classes, Amazon S3 supports restore requests at a rate of up to 1,000 transactions per second, per AWS account\.  
 When you choose the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage class, your objects remain in Amazon S3\. You can't access them directly through the Amazon S3 Glacier service\.
 
 For more information about the Amazon S3 Glacier storage classes, see [ Storage classes for archiving objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-infreq-data-access) in the *Amazon Simple Storage Service User Guide*\. 
