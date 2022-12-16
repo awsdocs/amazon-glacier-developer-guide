@@ -86,7 +86,7 @@ For more information about tag restrictions, see [Tagging Amazon S3 Glacier Reso
 
 Follow these steps to add, list, or remove tags by using the AWS Command Line Interface \(AWS CLI\)\.
 
-Each tag is composed of a key and a value\. Each vault can have up to 10 tags\.
+Each tag is composed of a key and a value\. Each vault can have up to 50 tags\.
 
 1. To add tags to a vault, use the `add-tags-to-vault` command\. 
 
