@@ -4,7 +4,7 @@ Amazon S3 Glacier \(S3 Glacier\) provides highly durable cloud storage for data 
 
 For more information about the AWS global cloud infrastructure, see [Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
 
-For data protection purposes, we recommend that you protect AWS account credentials and set up individual user accounts with AWS Identity and Access Management \(IAM\), so that each user is given only the permissions necessary to fulfill their job duties\.
+For data protection purposes, we recommend that you protect AWS account credentials and give individual users, groups, or roles only the permissions necessary to fulfill their job duties\.
 
 If you require FIPS 140\-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint\. For more information about the available FIPS endpoints, see [Federal Information Processing Standard \(FIPS\) 140\-2](http://aws.amazon.com/compliance/fips/)\.
 

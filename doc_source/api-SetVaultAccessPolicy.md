@@ -2,7 +2,7 @@
 
 ## Description<a name="api-SetVaultAccessPolicy-description"></a>
 
-This operation configures an access policy for a vault and will overwrite an existing policy\. To configure a vault access policy, send a `PUT` request to the `access-policy` subresource of the vault\. You can set one access policy per vault and the policy can be up to 20 KB in size\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\. 
+This operation configures an access policy for a vault and will overwrite an existing policy\. To configure a vault access policy, send a `PUT` request to the `access-policy` subresource of the vault\. You can set one access policy per vault and the policy can be up to 20 KB in size\. For more information about vault access policies, see [Vault Access Policies](vault-access-policy.md)\. 
 
 ## Requests<a name="api-SetVaultAccessPolicy-requests"></a>
 

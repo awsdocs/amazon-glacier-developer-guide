@@ -103,7 +103,7 @@ S3 Glacier creates the vault and returns the relative URI path of the vault in t
  
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)
 
 ## See Also<a name="vault-put-SeeAlso"></a>
 

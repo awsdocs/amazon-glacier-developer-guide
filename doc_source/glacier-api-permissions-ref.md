@@ -1,10 +1,10 @@
-# Amazon S3 Glacier API Permissions: Actions, Resources, and Conditions Reference<a name="glacier-api-permissions-ref"></a>
+# API Permissions Reference<a name="glacier-api-permissions-ref"></a>
 
-When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing a permissions policy that you can attach to an IAM identity \(identity\-based policies\) or a resource \(resource\-based policies\), you can use the following table as a reference\. The table lists each S3 Glacier API operation, the corresponding actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\.
+When you are setting up [How Amazon S3 Glacier works with IAM](security_iam_service-with-iam.md) and writing a permissions policy that you can attach to an IAM identity \(identity\-based policies\) or a resource \(resource\-based policies\), you can use the following table as a reference\. The table lists each S3 Glacier API operation, the corresponding actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\.
 
 You specify the actions in the policy's `Action` element, and you specify the resource value in the policy's `Resource` element\. Also, you can use the IAM policy language `Condition` element to specify when a policy should take effect\.
 
-To specify an action, use the `glacier:` prefix followed by the API operation name \(for example, `glacier:CreateVault`\)\. For most S3 Glacier actions, `Resource` is the vault on which you want to grant the permissions\. You specify a vault as the `Resource` value by using the vault ARN\. To express conditions, you use predefined condition keys\. For more information, see [Overview of Managing Access Permissions to Your Amazon S3 Glacier Resources](access-control-overview.md)\.
+To specify an action, use the `glacier:` prefix followed by the API operation name \(for example, `glacier:CreateVault`\)\. For most S3 Glacier actions, `Resource` is the vault on which you want to grant the permissions\. You specify a vault as the `Resource` value by using the vault ARN\. To express conditions, you use predefined condition keys\. For more information, see [Resource\-based policies within S3 Glacier](security_iam_service-with-iam.md#security_iam_service-with-iam-resource-based-policies)\.
 
 The following table lists actions that can be used with identity\-based policies and resource\-based policies\. 
 

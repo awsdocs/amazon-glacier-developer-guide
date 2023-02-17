@@ -15,7 +15,7 @@ S3 Glacier Vault Lock helps you to easily deploy and enforce compliance controls
 **Important**  
 After a Vault Lock policy is locked, the policy can no longer be changed or deleted\.
 
-S3 Glacier enforces the controls set in the Vault Lock policy to help achieve your compliance objectives\. For example, you can use Vault Lock policies to enforce data retention\. You can deploy a variety of compliance controls in a Vault Lock policy by using the AWS Identity and Access Management \(IAM\) policy language\. For more information about Vault Lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
+S3 Glacier enforces the controls set in the Vault Lock policy to help achieve your compliance objectives\. For example, you can use Vault Lock policies to enforce data retention\. You can deploy a variety of compliance controls in a Vault Lock policy by using the AWS Identity and Access Management \(IAM\) policy language\. For more information about Vault Lock policies, see [Vault Lock Policies](vault-lock-policy.md)\.
 
 A Vault Lock policy is different from a vault access policy\. Both policies govern access controls to your vault\. However, a Vault Lock policy can be locked to prevent future changes, which provides strong enforcement for your compliance controls\. You can use the Vault Lock policy to deploy regulatory and compliance controls, which typically require tight controls on data access\. 
 

@@ -7,7 +7,7 @@ This operation initiates the vault locking process by doing the following:
 + Setting the lock state of vault lock to `InProgress`\.
 + Returning a lock ID, which is used to complete the vault locking process\. 
 
-You can set one vault lock policy for each vault and this policy can be up to 20 KB in size\. For more information about vault lock policies, see [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)\.
+You can set one vault lock policy for each vault and this policy can be up to 20 KB in size\. For more information about vault lock policies, see [Vault Lock Policies](vault-lock-policy.md)\.
 
 You must complete the vault locking process within 24 hours after the vault lock enters the `InProgress` state\. After the 24 hour window ends, the lock ID expires, the vault automatically exits the `InProgress` state, and the vault lock policy is removed from the vault\. You call [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md) to complete the vault locking process by setting the state of the vault lock to `Locked`\. 
 

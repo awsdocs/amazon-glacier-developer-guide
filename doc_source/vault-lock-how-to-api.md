@@ -15,7 +15,7 @@ After you validate the Vault Lock policy, you can call [Complete Vault Lock \(PO
 ## Related Sections<a name="related-sections-vault-lock-how-to-api"></a>
 
  
-+ [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)
++ [Vault Lock Policies](vault-lock-policy.md)
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)

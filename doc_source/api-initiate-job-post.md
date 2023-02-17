@@ -341,4 +341,4 @@ The following request is an example of a subsequent request to retrieve the next
  
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)

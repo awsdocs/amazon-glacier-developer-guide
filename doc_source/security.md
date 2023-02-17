@@ -10,7 +10,7 @@ This documentation will help you understand how to apply the shared responsibili
 
 **Topics**
 + [Data Protection in Amazon S3 Glacier](DataDurability.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)
 + [Logging and Monitoring in Amazon S3 Glacier](glacier-incident-response.md)
 + [Compliance Validation for Amazon S3 Glacier](glacier-compliance.md)
 + [Resilience in Amazon S3 Glacier](disaster-recovery-resiliency.md)

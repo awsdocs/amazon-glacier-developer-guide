@@ -8,7 +8,7 @@ To install the AWS CLI, see [AWS Command Line Interface](http://aws.amazon.com/c
 
 Delete the sample archive by following one of these SDKs or the AWS CLI: 
 + [Delete an Archive from a Vault in S3 Glacier by Using the AWS SDK for Java](getting-started-delete-archive-java.md)
-+ [Delete an Archive from a Vault in S3 Glacierby Using the AWS SDK for \.NET](getting-started-delete-archive-dotnet.md)
++ [Delete an Archive from a Vault in S3 Glacier by Using the AWS SDK for \.NET](getting-started-delete-archive-dotnet.md)
 + [Delete an Archive in S3 Glacier by Using the AWS CLI](getting-started-delete-archive-cli.md)
 
 ## Related Sections<a name="getting-started-delete-archive-related-sections"></a>

@@ -121,7 +121,7 @@ A successful response returns a `204 No Content`\.
  
 + [Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)
 + [Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)
 
 ## See Also<a name="api-vault-notifications-put_SeeAlso"></a>
 

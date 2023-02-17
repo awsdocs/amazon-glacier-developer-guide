@@ -2,7 +2,7 @@
 
 ## Description<a name="api-GetVaultAccessPolicy-description"></a>
 
-This operation retrieves the `access-policy` subresource set on the vault—for more information on setting this subresource, see [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)\. If there is no access policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
+This operation retrieves the `access-policy` subresource set on the vault—for more information on setting this subresource, see [Set Vault Access Policy \(PUT access\-policy\)](api-SetVaultAccessPolicy.md)\. If there is no access policy set on the vault, the operation returns a `404 Not found` error\. For more information about vault access policies, see [Vault Access Policies](vault-access-policy.md)\.
 
 ## Requests<a name="api-GetVaultAccessPolicy-requests"></a>
 

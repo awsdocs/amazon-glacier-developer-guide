@@ -9,7 +9,7 @@ You can use the [Describe Vault \(GET vault\)](api-vault-get.md) operation that 
 This operation is idempotent\.
 
 **Note**  
-When you delete a vault, the vault access policy attached to the vault is also deleted\. For more information about vault access policies, see [Amazon S3 Glacier Access Control with Vault Access Policies](vault-access-policy.md)\.
+When you delete a vault, the vault access policy attached to the vault is also deleted\. For more information about vault access policies, see [Vault Access Policies](vault-access-policy.md)\.
 
 ## Requests<a name="api-vault-delete-requests"></a>
 
@@ -92,7 +92,7 @@ The following example deletes a vault named `examplevault`\. The example request
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [List Vaults \(GET vaults\)](api-vaults-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)
 
 ## See Also<a name="api-vault-delete-SeeAlso"></a>
 

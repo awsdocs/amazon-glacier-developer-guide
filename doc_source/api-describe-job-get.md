@@ -362,4 +362,4 @@ The following is an example response for a completed inventory retrieval job tha
 
  
 + [Get Job Output \(GET output\)](api-job-output-get.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)

@@ -228,7 +228,7 @@ Two vaults are returned in the list\. The `Marker` contains the vault ARN to con
 + [Create Vault \(PUT vault\)](api-vault-put.md)
 + [Delete Vault \(DELETE vault\)](api-vault-delete.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)
 
 ## See Also<a name="api-vaults-get_SeeAlso"></a>
 

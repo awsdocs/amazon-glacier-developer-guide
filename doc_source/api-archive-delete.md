@@ -100,4 +100,4 @@ If the request is successful, S3 Glacier responds with `204 No Content` to indic
  
 + [Initiate Multipart Upload \(POST multipart\-uploads\)](api-multipart-initiate-upload.md)
 + [Upload Archive \(POST archive\)](api-archive-post.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)

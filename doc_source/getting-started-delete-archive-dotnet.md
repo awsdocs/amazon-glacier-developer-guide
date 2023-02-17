@@ -1,4 +1,4 @@
-# Delete an Archive from a Vault in S3 Glacierby Using the AWS SDK for \.NET<a name="getting-started-delete-archive-dotnet"></a>
+# Delete an Archive from a Vault in S3 Glacier by Using the AWS SDK for \.NET<a name="getting-started-delete-archive-dotnet"></a>
 
 The following C\# code example uses the high\-level API of the AWS SDK for \.NET to delete the archive that you uploaded in the previous step\. In the code example, note the following: 
 + The example creates an instance of the `ArchiveTransferManager` class for the specified Amazon S3 Glacier Region endpoint\.

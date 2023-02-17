@@ -325,4 +325,4 @@ The following response shows two jobs returned and the `Marker` field set to a n
 
  
 +  [Describe Job \(GET JobID\)](api-describe-job-get.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md) 
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md) 

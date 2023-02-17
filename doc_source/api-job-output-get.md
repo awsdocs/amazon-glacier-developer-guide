@@ -239,4 +239,4 @@ The following successful response shows the `206 Partial Content` response\. In 
  
 + [Describe Job \(GET JobID\)](api-describe-job-get.md)
 + [Initiate Job \(POST jobs\)](api-initiate-job-post.md)
-+ [Identity and Access Management in Amazon S3 Glacier](auth-and-access-control.md)
++ [Identity and Access Management for Amazon S3 Glacier](security-iam.md)

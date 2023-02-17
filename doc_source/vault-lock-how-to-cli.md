@@ -33,17 +33,33 @@ You can lock your vault using the AWS Command Line Interface\. This will install
    aws glacier initiate-vault-lock --vault-name examplevault --account-id 111122223333 --policy file://lockconfig.json
    ```
 
-1.  The lock configuration is a JSON document as shown in the following example\. 
+1. The lock configuration is a JSON document as shown in the following example\. Before using this command, replace the *VAULT\_ARN* and *Principal* with the appropriate values for your use case\. 
+
+   To find the ARN of the vault you wish to lock, you can use the `list-vaults` command\. 
 
    ```
+   {"Policy":"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Define-vault-lock\",\"Effect\":\"Deny\",\"Principal\":{\"AWS\":\"arn:aws:iam::111122223333:root\"},\"Action\":\"glacier:DeleteArchive\",\"Resource\":\"VAULT_ARN\",\"Condition\":{\"NumericLessThanEquals\":{\"glacier:ArchiveAgeinDays\":\"365\"}}}]}"}
    ```
 
-   For more information about using Amazon SNS topics for Glacier see, [Configuring Vault Notifications in S3 Glacier: General Concepts](configuring-notifications.html#configuring-notifications.general)
+1. After initiating the vault lock you should see the `lockId` returned\. 
 
-   For more information about Amazon SNS, see [Getting Started with Amazon SNS](https://docs.aws.amazon.com/sns/latest/gsg/Welcome.html)\.
+   ```
+   {
+       "lockId": "LOCK_ID"
+   }
+   ```
+
+To complete the vault lock You must run `complete-vault-lock` within 24 hours else the vault lock policy is removed from the vault\.
+
+```
+aws glacier complete-vault-lock --vault-name examplevault --account-id 111122223333 --lock-id LOCK_ID
+```
 
 ## Related Sections<a name="related-sections-vault-lock-how-to-cli"></a>
-+ [Amazon S3 Glacier Access Control with Vault Lock Policies](vault-lock-policy.md)
++ [initiate\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/initiate-vault-lock.html) in the AWS CLI Command Reference
++ [list\-vaults](https://docs.aws.amazon.com/cli/latest/reference/glacier/list-vaults.html) in the AWS CLI Command Reference
++ [complete\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/complete-vault-lock.html) in the AWS CLI Command Reference
++ [Vault Lock Policies](vault-lock-policy.md)
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)
 + [Get Vault Lock \(GET lock\-policy\)](api-GetVaultLock.md)

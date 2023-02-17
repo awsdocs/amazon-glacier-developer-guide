@@ -19,7 +19,7 @@ For an ongoing record of events in your AWS account, including events for S3 Gla
 All S3 Glacier actions are logged by CloudTrail and are documented in the [API Reference for Amazon S3 Glacier](amazon-glacier-api.md)\. For example, calls to the [Create Vault \(PUT vault\)](api-vault-put.md), [Delete Vault \(DELETE vault\)](api-vault-delete.md), and [List Vaults \(GET vaults\)](api-vaults-get.md) actions generate entries in the CloudTrail log files\. 
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials\.
++ Whether the request was made with root user or other credentials\.
 + Whether the request was made with temporary security credentials for a role or federated user\.
 + Whether the request was made by another AWS service\.
 
