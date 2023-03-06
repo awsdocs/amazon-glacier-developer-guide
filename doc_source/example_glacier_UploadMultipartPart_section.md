@@ -8,7 +8,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/glacier#code-examples)\. 
 Create a multipart upload of 1 megabyte chunks of a Buffer object\.  
 

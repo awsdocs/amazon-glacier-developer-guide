@@ -25,7 +25,7 @@ You compute the SHA\-256 tree hash as follows:
 
    1. Concatenate two consecutive child node hash values and compute the SHA\-256 hash of the concatenated hash values\. This concatenation and generation of the SHA\-256 hash produces a parent node for the two child nodes\.
 
-   1. When only one child node remains, you promote that hash value to the next level in the tree\.
+   1. If only one child node remains, promote that hash value to the next level in the tree\.
 
 1. Repeat step 2 until the resulting tree has a root\. The root of the tree provides a hash of the entire archive and a root of the appropriate subtree provides the hash for the part in a multipart upload\. 
 
