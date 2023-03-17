@@ -56,9 +56,9 @@ aws glacier complete-vault-lock --vault-name examplevault --account-id 111122223
 ```
 
 ## Related Sections<a name="related-sections-vault-lock-how-to-cli"></a>
-+ [initiate\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/initiate-vault-lock.html) in the AWS CLI Command Reference
-+ [list\-vaults](https://docs.aws.amazon.com/cli/latest/reference/glacier/list-vaults.html) in the AWS CLI Command Reference
-+ [complete\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/complete-vault-lock.html) in the AWS CLI Command Reference
++ [initiate\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/initiate-vault-lock.html) in the *AWS CLI Command Reference*
++ [list\-vaults](https://docs.aws.amazon.com/cli/latest/reference/glacier/list-vaults.html) in the *AWS CLI Command Reference*
++ [complete\-vault\-lock](https://docs.aws.amazon.com/cli/latest/reference/glacier/complete-vault-lock.html) in the *AWS CLI Command Reference*
 + [Vault Lock Policies](vault-lock-policy.md)
 + [Abort Vault Lock \(DELETE lock\-policy\)](api-AbortVaultLock.md)
 + [Complete Vault Lock \(POST lockId\)](api-CompleteVaultLock.md)

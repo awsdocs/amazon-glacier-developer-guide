@@ -63,7 +63,7 @@ You can initiate archive retrieval for the whole archive or a range of the archi
 ### Expedited, Standard, and Bulk Tiers<a name="api-initiate-job-expedited-bulk"></a>
 
 When initiating an archive retrieval job, you can specify one of the following options in the `Tier` field of the request body: 
-+ **`Expedited`** – Expedited allows you to quickly access your data when occasional urgent requests for a subset of archives are required\. For all but the largest archives \(250 MB\+\), data accessed using the Expedited tier is typically made available within 1–5 minutes\.
++ **`Expedited`** – Expedited allows you to quickly access your data when occasional urgent requests for restoring archives are required\. For all but the largest archives \(250 MB\+\), data accessed using the Expedited tier is typically made available within 1–5 minutes\.
 + **`Standard`** – Standard allows you to access any of your archives within several hours\. Data accessed using the Standard tier typically made available within 3–5 hours\. This option is the default one for job requests that don't specify the tier option\.
 + **`Bulk`** – Bulk is the lowest\-cost tier for S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively in a day\. Data accessed using the Bulk tier is typically made available within 5–12 hours\.
 

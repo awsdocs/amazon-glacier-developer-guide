@@ -4,9 +4,9 @@
 
 This operation initiates a multipart upload \(see [Uploading Large Archives in Parts \(Multipart Upload\)](uploading-archive-mpu.md)\)\. Amazon S3 Glacier \(S3 Glacier\) creates a multipart upload resource and returns its ID in the response\. You use this Upload ID in subsequent multipart upload operations\.
 
-When you initiate a multipart upload, you specify the part size in number of bytes\. The part size must be a megabyte \(1024 KB\) multiplied by a power of 2—for example, 1048576 \(1 MB\), 2097152 \(2 MB\), 4194304 \(4 MB\), 8388608 \(8 MB\), and so on\. The minimum allowable part size is 1 MB, and the maximum is 4 GB\.
+When you initiate a multipart upload, you specify the part size in number of bytes\. The part size must be a mebibyte \(MiB\) \(1024 kibibytes \[KiB\]\) multiplied by a power of 2—for example, 1048576 \(1 MiB\), 2097152 \(2 MiB\), 4194304 \(4 MiB\), 8388608 \(8 MiB\), and so on\. The minimum allowable part size is 1 MiB, and the maximum is 4 gibibytes \(GiB\)\.
 
-Every part you upload using this upload ID, except the last one, must have the same size\. The last one can be the same size or smaller\. For example, suppose you want to upload a 16\.2 MB file\. If you initiate the multipart upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part of 0\.2 MB\. 
+Every part you upload using this upload ID, except the last one, must have the same size\. The last one can be the same size or smaller\. For example, suppose you want to upload a 16\.2 MiB file\. If you initiate the multipart upload with a part size of 4 MiB, you will upload four parts of 4 MiB each and one part of 0\.2 MiB\. 
 
  
 
@@ -47,7 +47,7 @@ This operation uses the following request headers, in addition to the request he
 
 |  Name  |  Description  |  Required  | 
 | --- | --- | --- | 
-|  x\-amz\-part\-size  |  The size of each part except the last, in bytes\. The last part can be smaller than this part size\. Type: String Default: None Constraints: The part size must be a megabyte \(1024 KB\) multiplied by a power of 2—for example, 1048576 \(1 MB\), 2097152 \(2 MB\), 4194304 \(4 MB\), 8388608 \(8 MB\), and so on\. The minimum allowable part size is 1 MB, and the maximum is 4 GB \(4096 MB\)\.  |  Yes | 
+|  x\-amz\-part\-size  |  The size of each part except the last, in bytes\. The last part can be smaller than this part size\. Type: String Default: None Constraints: The part size must be a mebibyte \(1024 KiB\) multiplied by a power of 2—for example, 1048576 \(1 MiB\), 2097152 \(2 MiB\), 4194304 \(4 MiB\), 8388608 \(8 MiB\), and so on\. The minimum allowable part size is 1 MiB, and the maximum is 4 GiB \(4096 MiB\)\.  |  Yes | 
 | x\-amz\-archive\-description  |  Archive description you are uploading in parts\. It can be a plain\-language description or some unique identifier you choose to assign\. When you retrieve a vault inventory \(see [Initiate Job \(POST jobs\)](api-initiate-job-post.md) \), the inventory includes this description for each of the archives it returns in response\. Leading spaces in archive descriptions are removed\. Type: String Default: None Constraints: The description must be less than or equal to 1024 bytes\. The allowable characters are 7 bit ASCII without control codes, specifically ASCII values 32\-126 decimal or 0x20\-0x7E hexadecimal\.  |  No  | 
 
 ### Request Body<a name="api-multipart-initiate-upload-requests-elements"></a>
@@ -90,7 +90,7 @@ For information about Amazon S3 Glacier exceptions and error messages, see [Erro
 
 ### Example Request<a name="api-multipart-initiate-upload-example-request"></a>
 
-The following example initiates a multipart upload by sending an HTTP `POST` request to the URI of the `multipart-uploads` subresource of a vault named `examplevault`\. The request includes headers to specify the part size of 4 MB \(4194304 bytes\) and the optional archive description\.
+The following example initiates a multipart upload by sending an HTTP `POST` request to the URI of the `multipart-uploads` subresource of a vault named `examplevault`\. The request includes headers to specify the part size of 4 MiB \(4194304 bytes\) and the optional archive description\.
 
 ```
 1. POST /-/vaults/examplevault/multipart-uploads 

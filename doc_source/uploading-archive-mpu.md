@@ -9,7 +9,7 @@
 
 ## Multipart Upload Process<a name="MPUprocess"></a>
 
-As described in [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md), we encourage Amazon S3 Glacier \(S3 Glacier\) customers to use Multipart Upload to upload archives greater than 100 MB\. 
+As described in [Uploading an Archive in Amazon S3 Glacier](uploading-an-archive.md), we encourage Amazon S3 Glacier \(S3 Glacier\) customers to use Multipart Upload to upload archives greater than 100 mebibytes \(MiB\)\. 
 
 1. **Initiate Multipart Upload** 
 
@@ -46,8 +46,8 @@ The following table provides multipart upload core specifications\.
 
 | Item | Specification | 
 | --- | --- | 
-| Maximum archive size | 10,000 x 4 GB  | 
+| Maximum archive size | 10,000 x 4 gibibytes \(GiB\)  | 
 | Maximum number of parts per upload | 10,000 | 
-| Part size | 1 MB to 4 GB, last part can be < 1 MB\. You specify the size value in bytes\. The part size must be a megabyte \(1024 KB\) multiplied by a power of 2\. For example, `1048576` \(1 MB\), `2097152` \(2 MB\), `4194304` \(4 MB\), `8388608` \(8 MB\)\.   | 
+| Part size | 1 MiB to 4 GiB, last part can be < 1 MiB\. You specify the size value in bytes\. The part size must be a mebibyte \(1024 kibibytes \[KiB\]\) multiplied by a power of 2\. For example, `1048576` \(1 MiB\), `2097152` \(2 MiB\), `4194304` \(4 MiB\), `8388608` \(8 MiB\)\.   | 
 | Maximum number of parts returned for a list parts request | 1,000  | 
 | Maximum number of multipart uploads returned in a list multipart uploads request | 1,000  | 
