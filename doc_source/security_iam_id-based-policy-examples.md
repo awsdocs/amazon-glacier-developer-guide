@@ -1,6 +1,6 @@
 # Identity\-based policy examples for Amazon S3 Glacier<a name="security_iam_id-based-policy-examples"></a>
 
-By default, users and roles don't have permission to create or modify S3 Glacier resources\. They also can't perform tasks by using the AWS Management Console, AWS Command Line Interface \(AWS CLI\), or AWS API\. An IAM administrator must create IAM policies that grant users and roles permission to perform actions on the resources that they need\. The administrator must then attach those policies for users that require them\.
+By default, users and roles don't have permission to create or modify S3 Glacier resources\. They also can't perform tasks by using the AWS Management Console, AWS Command Line Interface \(AWS CLI\), or AWS API\. To grant users permission to perform actions on the resources that they need, an IAM administrator can create IAM policies\. The administrator can then add the IAM policies to roles, and users can assume the roles\.
 
 To learn how to create an IAM identity\-based policy by using these example JSON policy documents, see [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html) in the *IAM User Guide*\.
 
@@ -51,7 +51,7 @@ For more information about best practices in IAM, see [Security best practices i
 
 To access the Amazon S3 Glacier console, you must have a minimum set of permissions\. These permissions must allow you to list and view details about the S3 Glacier resources in your AWS account\. If you create an identity\-based policy that is more restrictive than the minimum required permissions, the console won't function as intended for entities \(users or roles\) with that policy\.
 
-You don't need to allow minimum console permissions for users that are making calls only to the AWS CLI or the AWS API\. Instead, allow access to only the actions that match the API operation that you're trying to perform\.
+You don't need to allow minimum console permissions for users that are making calls only to the AWS CLI or the AWS API\. Instead, allow access to only the actions that match the API operation that they're trying to perform\.
 
 The S3 Glacier console provides an integrated environment for you to create and manage S3 Glacier vaults\. At a minimum IAM identities that you create must be granted permissions for the `glacier:ListVaults` action to view the S3 Glacier console as shown in the following example\. 
 
