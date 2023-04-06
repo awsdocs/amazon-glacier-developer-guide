@@ -2,7 +2,7 @@
 
 The following code example shows how to:
 + Create an Amazon S3 Glacier vault\.
-+ Configure the vault to publish notifications to an Amazon Simple Notification Service \(Amazon SNS\) topic\.
++ Configure the vault to publish notifications to an Amazon SNS topic\.
 + Upload an archive file to the vault\.
 + Initiate an archive retrieval job\.
 
