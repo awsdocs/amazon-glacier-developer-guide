@@ -4,24 +4,24 @@ You can lock your vault using the AWS Command Line Interface\. This will install
 
 ## \(Prerequisite\) Setting Up the AWS CLI<a name="Creating-Vaults-CLI-Setup"></a>
 
-1. Download and configure the AWS CLI\. For instructions, see the following topics in the *AWS Command Line Interface User Guide*\. 
+1. Download and configure the AWS CLI\. For instructions, see the following topics in the *AWS Command Line Interface User Guide*: 
 
     [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) 
 
    [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 
-1. Verify the setup by entering the following commands at the command prompt\. These commands don't provide credentials explicitly, so the credentials of the default profile are used\.
+1. Verify your AWS CLI setup by entering the following commands at the command prompt\. These commands don't provide credentials explicitly, so the credentials of the default profile are used\.
    + Try using the help command\.
 
      ```
      aws help
      ```
-   + Use `aws s3 ls` to get a list of buckets on the configured account\.
+   + To get a list of S3 Glacier vaults on the configured account, use the `list-vaults` command\. Replace *123456789012* with your AWS account ID\.
 
      ```
-     aws s3 ls
+     aws glacier list-vaults --account-id 123456789012
      ```
-   + Use `aws configure list` to see the current configuration data\.
+   + To see the current configuration data for the AWS CLI, use the `aws configure list` command\.
 
      ```
      aws configure list

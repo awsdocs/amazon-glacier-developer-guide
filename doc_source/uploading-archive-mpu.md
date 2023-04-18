@@ -3,6 +3,7 @@
 **Topics**
 + [Multipart Upload Process](#MPUprocess)
 + [Quick Facts](#qfacts)
++ [Uploading Large Archives by Using the AWS CLI](uploading-an-archive-mpu-using-cli.md)
 + [Uploading Large Archives in Parts Using the Amazon SDK for Java](uploading-an-archive-mpu-using-java.md)
 + [Uploading Large Archives Using the AWS SDK for \.NET](uploading-an-archive-mpu-using-dotnet.md)
 + [Uploading Large Archives in Parts Using the REST API](uploading-an-archive-mpu-using-rest.md)
