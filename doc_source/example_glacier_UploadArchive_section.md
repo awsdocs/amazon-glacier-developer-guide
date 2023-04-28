@@ -13,35 +13,27 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Threading.Tasks;
-    using Amazon;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Transfer;
-
-    public class UploadArchiveHighLevel
+    /// <summary>
+    /// Upload an object to an Amazon S3 Glacier vault.
+    /// </summary>
+    /// <param name="vaultName">The name of the Amazon S3 Glacier vault to upload
+    /// the archive to.</param>
+    /// <param name="archiveFilePath">The file path of the archive to upload to the vault.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<string> UploadArchiveWithArchiveManager(string vaultName, string archiveFilePath)
     {
-        private static readonly string VaultName = "example-vault";
-        private static readonly string ArchiveToUpload = "*** Provide file name (with full path) to upload ***";
-
-        public static async Task Main()
+        try
         {
-            try
-            {
-                var manager = new ArchiveTransferManager(RegionEndpoint.USWest2);
+            var manager = new ArchiveTransferManager(_glacierService);
 
-                // Upload an archive.
-                var response = await manager.UploadAsync(VaultName, "upload archive test", ArchiveToUpload);
-
-                Console.WriteLine("Copy and save the ID for use in other examples.");
-                Console.WriteLine($"Archive ID: {response.ArchiveId}");
-                Console.WriteLine("To continue, press Enter");
-                Console.ReadKey();
-            }
-            catch (AmazonGlacierException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            // Upload an archive.
+            var response = await manager.UploadAsync(vaultName, "upload archive test", archiveFilePath);
+            return response.ArchiveId;
+        }
+        catch (AmazonGlacierException ex)
+        {
+            Console.WriteLine(ex.Message);
+            return string.Empty;
         }
     }
 ```

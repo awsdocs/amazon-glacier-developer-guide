@@ -12,6 +12,7 @@ The following code examples demonstrate how to perform individual S3 Glacier act
 + [Delete an archive](example_glacier_DeleteArchive_section.md)
 + [Delete vault notifications](example_glacier_DeleteVaultNotifications_section.md)
 + [Describe a job](example_glacier_DescribeJob_section.md)
++ [Describe a vault](example_glacier_DescribeVault_section.md)
 + [Download an archive](example_glacier_DownloadArchive_section.md)
 + [Get job output](example_glacier_GetJobOutput_section.md)
 + [Get vault notification configuration](example_glacier_GetVaultNotifications_section.md)

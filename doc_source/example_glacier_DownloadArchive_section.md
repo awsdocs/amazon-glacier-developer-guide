@@ -13,56 +13,56 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using Amazon;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Transfer;
-    using Amazon.Runtime;
-
-    class DownloadArchiveHighLevel
+    /// <summary>
+    /// Download an archive from an Amazon S3 Glacier vault using the Archive
+    /// Transfer Manager.
+    /// </summary>
+    /// <param name="vaultName">The name of the vault containing the object.</param>
+    /// <param name="archiveId">The Id of the archive to download.</param>
+    /// <param name="localFilePath">The local directory where the file will
+    /// be stored after download.</param>
+    /// <returns>Async Task.</returns>
+    public async Task<bool> DownloadArchiveWithArchiveManagerAsync(string vaultName, string archiveId, string localFilePath)
     {
-        private static readonly string VaultName = "examplevault";
-        private static readonly string ArchiveId = "*** Provide archive ID ***";
-        private static readonly string DownloadFilePath = "*** Provide the file name and path to where to store the download ***";
-        private static int currentPercentage = -1;
-
-        static void Main()
+        try
         {
-            try
+            var manager = new ArchiveTransferManager(_glacierService);
+
+            var options = new DownloadOptions
             {
-                var manager = new ArchiveTransferManager(RegionEndpoint.USEast2);
+                StreamTransferProgress = Progress,
+            };
 
-                var options = new DownloadOptions
-                {
-                    StreamTransferProgress = Progress,
-                };
+            // Download an archive.
+            Console.WriteLine("Initiating the archive retrieval job and then polling SQS queue for the archive to be available.");
+            Console.WriteLine("When the archive is available, downloading will begin.");
+            await manager.DownloadAsync(vaultName, archiveId, localFilePath, options);
 
-                // Download an archive.
-                Console.WriteLine("Intiating the archive retrieval job and then polling SQS queue for the archive to be available.");
-                Console.WriteLine("Once the archive is available, downloading will begin.");
-                manager.DownloadAsync(VaultName, ArchiveId, DownloadFilePath, options);
-                Console.WriteLine("To continue, press Enter");
-                Console.ReadKey();
-            }
-            catch (AmazonGlacierException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            Console.WriteLine("To continue, press Enter");
-            Console.ReadKey();
+            return true;
         }
-
-        static void Progress(object sender, StreamTransferProgressArgs args)
+        catch (AmazonGlacierException ex)
         {
-            if (args.PercentDone != currentPercentage)
-            {
-                currentPercentage = args.PercentDone;
-                Console.WriteLine("Downloaded {0}%", args.PercentDone);
-            }
+            Console.WriteLine(ex.Message);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Event handler to track the progress of the Archive Transfer Manager.
+    /// </summary>
+    /// <param name="sender">The object that raised the event.</param>
+    /// <param name="args">The argument values from the object that raised the
+    /// event.</param>
+    static void Progress(object sender, StreamTransferProgressArgs args)
+    {
+        if (args.PercentDone != _currentPercentage)
+        {
+            _currentPercentage = args.PercentDone;
+            Console.WriteLine($"Downloaded {_currentPercentage}%");
         }
     }
 ```
++  For API details, see [DownloadArchive](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/DownloadArchive) in *AWS SDK for \.NET API Reference*\. 
 
 ------
 

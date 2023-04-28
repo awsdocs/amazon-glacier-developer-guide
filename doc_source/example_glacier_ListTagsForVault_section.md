@@ -13,42 +13,26 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Model;
-
-    class ListTagsForVault
+    /// <summary>
+    /// List tags for an Amazon S3 Glacier vault.
+    /// </summary>
+    /// <param name="vaultName">The name of the vault to list tags for.</param>
+    /// <returns>A dictionary listing the tags attached to each object in the
+    /// vault and its tags.</returns>
+    public async Task<Dictionary<string, string>> ListTagsForVaultAsync(string vaultName)
     {
-        static async Task Main(string[] args)
+        var request = new ListTagsForVaultRequest
         {
-            var client = new AmazonGlacierClient();
-            var vaultName = "example-vault";
+            // Using a hyphen "-" for the Account Id will
+            // cause the SDK to use the Account Id associated
+            // with the default user.
+            AccountId = "-",
+            VaultName = vaultName,
+        };
 
-            var request = new ListTagsForVaultRequest
-            {
-                // Using a hyphen "=" for the Account Id will
-                // cause the SDK to use the Account Id associated
-                // with the default user.
-                AccountId = "-",
-                VaultName = vaultName,
-            };
+        var response = await _glacierService.ListTagsForVaultAsync(request);
 
-            var response = await client.ListTagsForVaultAsync(request);
-
-            if (response.Tags.Count > 0)
-            {
-                foreach (KeyValuePair<string, string> tag in response.Tags)
-                {
-                    Console.WriteLine($"Key: {tag.Key}, value: {tag.Value}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"{vaultName} has no tags.");
-            }
-        }
+        return response.Tags;
     }
 ```
 +  For API details, see [ListTagsForVault](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/ListTagsForVault) in *AWS SDK for \.NET API Reference*\. 

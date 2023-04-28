@@ -13,41 +13,25 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Model;
-
-    class ListJobs
+    /// <summary>
+    /// List Amazon S3 Glacier jobs.
+    /// </summary>
+    /// <param name="vaultName">The name of the vault to list jobs for.</param>
+    /// <returns>A list of Amazon S3 Glacier jobs.</returns>
+    public async Task<List<GlacierJobDescription>> ListJobsAsync(string vaultName)
     {
-        static async Task Main(string[] args)
+        var request = new ListJobsRequest
         {
-            var client = new AmazonGlacierClient();
-            var vaultName = "example-vault";
+            // Using a hyphen "-" for the Account Id will
+            // cause the SDK to use the Account Id associated
+            // with the current account.
+            AccountId = "-",
+            VaultName = vaultName,
+        };
 
-            var request = new ListJobsRequest
-            {
-                // Using a hyphen "=" for the Account Id will
-                // cause the SDK to use the Account Id associated
-                // with the default user.
-                AccountId = "-",
-                VaultName = vaultName,
-            };
+        var response = await _glacierService.ListJobsAsync(request);
 
-            var response = await client.ListJobsAsync(request);
-
-            if (response.JobList.Count > 0)
-            {
-                response.JobList.ForEach(job => {
-                    Console.WriteLine($"{job.CreationDate} {job.JobDescription}");
-                });
-            }
-            else
-            {
-                Console.WriteLine($"No jobs were found for {vaultName}.");
-            }
-        }
+        return response.JobList;
     }
 ```
 +  For API details, see [ListJobs](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/ListJobs) in *AWS SDK for \.NET API Reference*\. 

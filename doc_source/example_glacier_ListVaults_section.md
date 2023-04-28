@@ -13,29 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Model;
-
-    public class ListVaults
+    /// <summary>
+    /// List the Amazon S3 Glacier vaults associated with the current account.
+    /// </summary>
+    /// <returns>A list containing information about each vault.</returns>
+    public async Task<List<DescribeVaultOutput>> ListVaultsAsync()
     {
-        public static async Task Main(string[] args)
+        var glacierVaultPaginator = _glacierService.Paginators.ListVaults(
+            new ListVaultsRequest { AccountId = "-" });
+        var vaultList = new List<DescribeVaultOutput>();
+
+        await foreach (var vault in glacierVaultPaginator.VaultList)
         {
-            var client = new AmazonGlacierClient();
-            var request = new ListVaultsRequest
-            {
-                AccountId = "-",
-                Limit = 5,
-            };
-
-            var response = await client.ListVaultsAsync(request);
-
-            List<DescribeVaultOutput> vaultList = response.VaultList;
-
-            vaultList.ForEach(v => { Console.WriteLine($"{v.VaultName} ARN: {v.VaultARN}"); });
+            vaultList.Add(vault);
         }
+
+        return vaultList;
     }
 ```
 +  For API details, see [ListVaults](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/ListVaults) in *AWS SDK for \.NET API Reference*\. 

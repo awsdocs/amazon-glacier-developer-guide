@@ -103,6 +103,7 @@ sponsored by Amazon.
       + [Delete an Amazon S3 Glacier archive using an AWS SDK](example_glacier_DeleteArchive_section.md)
       + [Delete Amazon S3 Glacier vault notifications using an AWS SDK](example_glacier_DeleteVaultNotifications_section.md)
       + [Describe an Amazon S3 Glacier job using an AWS SDK](example_glacier_DescribeJob_section.md)
+      + [Describe an Amazon S3 Glacier vault using an AWS SDK](example_glacier_DescribeVault_section.md)
       + [Download an Amazon S3 Glacier archive using an AWS SDK](example_glacier_DownloadArchive_section.md)
       + [Get Amazon S3 Glacier job output using an AWS SDK](example_glacier_GetJobOutput_section.md)
       + [Get Amazon S3 Glacier vault notification configuration using an AWS SDK](example_glacier_GetVaultNotifications_section.md)

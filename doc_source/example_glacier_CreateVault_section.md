@@ -13,30 +13,27 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Threading.Tasks;
-    using Amazon.Glacier;
-    using Amazon.Glacier.Model;
-
-    public class CreateVault
+    /// <summary>
+    /// Create an Amazon S3 Glacier vault.
+    /// </summary>
+    /// <param name="vaultName">The name of the vault to create.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> CreateVaultAsync(string vaultName)
     {
-        static async Task Main(string[] args)
+        var request = new CreateVaultRequest
         {
-            string vaultName = "example-vault";
-            var client = new AmazonGlacierClient();
-            var request = new CreateVaultRequest
-            {
-                // Setting the AccountId to "-" means that
-                // the account associated with the default
-                // client will be used.
-                AccountId = "-",
-                VaultName = vaultName,
-            };
+            // Setting the AccountId to "-" means that
+            // the account associated with the current
+            // account will be used.
+            AccountId = "-",
+            VaultName = vaultName,
+        };
 
-            var response = await client.CreateVaultAsync(request);
+        var response = await _glacierService.CreateVaultAsync(request);
 
-            Console.WriteLine($"Created {vaultName} at: {response.Location}");
-        }
+        Console.WriteLine($"Created {vaultName} at: {response.Location}");
+
+        return response.HttpStatusCode == HttpStatusCode.Created;
     }
 ```
 +  For API details, see [CreateVault](https://docs.aws.amazon.com/goto/DotNetSDKV3/glacier-2012-06-01/CreateVault) in *AWS SDK for \.NET API Reference*\. 
