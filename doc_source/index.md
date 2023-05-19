@@ -80,7 +80,7 @@ sponsored by Amazon.
          + [Uploading Large Archives Using the AWS SDK for .NET](uploading-an-archive-mpu-using-dotnet.md)
          + [Uploading Large Archives in Parts Using the REST API](uploading-an-archive-mpu-using-rest.md)
    + [Downloading an Archive in S3 Glacier](downloading-an-archive.md)
-      + [Retrieving S3 Glacier Archives](downloading-an-archive-two-steps.md)
+      + [Retrieving S3 Glacier Archives Using AWS Console](downloading-an-archive-two-steps.md)
       + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for Java](downloading-an-archive-using-java.md)
       + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for .NET](downloading-an-archive-using-dotnet.md)
       + [Downloading an Archive by Using the REST API](downloading-an-archive-using-rest.md)

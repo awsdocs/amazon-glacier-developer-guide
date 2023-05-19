@@ -142,7 +142,7 @@ All examples use the US West \(Oregon\) Region \(`us-west-2`\) and contain ficti
 
 To download an archive, you first initiate a job to retrieve the archive\. After the retrieval job is complete, you can download the data\. The following example policy grants permissions for the `glacier:InitiateJob` action to initiate a job \(which allows the user to retrieve an archive or a vault inventory from the vault\), and permissions for the `glacier:GetJobOutput` action to download the retrieved data\. The policy also grants permissions to perform the `glacier:DescribeJob` action so that the user can get the job status\. For more information, see [Initiate Job \(POST jobs\)](api-initiate-job-post.md)\.
 
-The policy grants these permissions on a vault named `examplevault`\. You can get the vault ARN from the [Amazon S3 Glacier console](https://console.aws.amazon.com/glacier), or programmatically by calling either the [Describe Vault \(GET vault\)](api-vault-get.md) or the [List Vaults \(GET vaults\)](api-vaults-get.md) API actions\.
+The policy grants these permissions on a vault named `examplevault`\. You can get the vault ARN from the [Amazon S3 Glacier console](https://console.aws.amazon.com/glacier/home), or programmatically by calling either the [Describe Vault \(GET vault\)](api-vault-get.md) or the [List Vaults \(GET vaults\)](api-vaults-get.md) API actions\.
 
 ```
 {

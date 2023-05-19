@@ -16,7 +16,7 @@ You can add, list, and remove tags using the S3 Glacier console, as described in
 
 **To view the tags for a vault**
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, select an AWS Region from the Region selector\.
 
@@ -32,7 +32,7 @@ You can associate up to 50 tags to a vault\. Tags that are associated with a vau
 
 For more information about tag restrictions, see [Tagging Amazon S3 Glacier Resources](https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html)\.
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, select an AWS Region from the Region selector\.
 
@@ -50,7 +50,7 @@ For more information about tag restrictions, see [Tagging Amazon S3 Glacier Reso
 
 **To edit a tag**
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, select an AWS Region from the Region selector\.
 
@@ -68,7 +68,7 @@ For more information about tag restrictions, see [Tagging Amazon S3 Glacier Reso
 
 **To remove a tag from a vault**
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, select an AWS Region from the Region selector\.
 

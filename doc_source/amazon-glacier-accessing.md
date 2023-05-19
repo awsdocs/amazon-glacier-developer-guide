@@ -4,7 +4,7 @@ Amazon S3 Glacier is a RESTful web service that uses HTTP and HTTPS as a transpo
 
 Alternatively, you can simplify application development by using the AWS SDKs that wrap the S3 Glacier REST API calls\. You provide your credentials, and these libraries take care of authentication and request signing\. For more information about using the AWS SDKs, see [Using the AWS SDKs with Amazon S3 Glacier](using-aws-sdk.md)\.
 
-S3 Glacier also provides a console\. However, all archive and job operations require you to write code and make requests by using either the REST API directly or the AWS SDK wrapper libraries\. To access the S3 Glacier console, go to [S3 Glacier Console](https://console.aws.amazon.com/glacier/)\. 
+S3 Glacier also provides a console\. However, all archive and job operations require you to write code and make requests by using either the REST API directly or the AWS SDK wrapper libraries\. To access the S3 Glacier console, go to [S3 Glacier Console](https://console.aws.amazon.com/glacier/home)\. 
 
 ## Regions and Endpoints<a name="regions-and-endpoints-intro"></a>
 

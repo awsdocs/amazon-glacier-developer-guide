@@ -67,7 +67,7 @@ When initiating an archive retrieval job, you can specify one of the following o
 + **`Standard`** – Standard allows you to access any of your archives within several hours\. Data accessed using the Standard tier typically made available within 3–5 hours\. This option is the default one for job requests that don't specify the tier option\.
 + **`Bulk`** – Bulk is the lowest\-cost tier for S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively in a day\. Data accessed using the Bulk tier is typically made available within 5–12 hours\.
 
-For more information about expedited and bulk retrievals, see [Retrieving S3 Glacier Archives](downloading-an-archive-two-steps.md)\.
+For more information about expedited and bulk retrievals, see [Retrieving S3 Glacier Archives Using AWS Console](downloading-an-archive-two-steps.md)\.
 
 ## Requests<a name="api-initiate-job-post-requests"></a>
 

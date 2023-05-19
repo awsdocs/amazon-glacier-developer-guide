@@ -10,7 +10,7 @@ After the Vault Lock policy is locked, it cannot be changed or deleted\.
 
 You initiate the lock by attaching a Vault Lock policy to your vault, which sets the lock to an in\-progress state and returns a lock ID\. While the policy is in the in\-progress state, you have 24 hours to validate your Vault Lock policy before the lock ID expires\. 
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, select an AWS Region from the Region selector\.
 

@@ -6,7 +6,7 @@ You can delete a vault programmatically or by using the S3 Glacier console\. For
 
 **To delete an empty vault**
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/](https://console.aws.amazon.com/glacier/)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. From the **Select a Region** menu, choose the AWS Region for the vault that you want to delete\.
 

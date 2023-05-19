@@ -14,7 +14,7 @@ In general, retrieving your data from S3 Glacier is a two\-step process:
 
 1. After the job is completed, download the bytes of data\. 
 
-To retrieve an archive from S3 Glacier, you first initiate a job\. After the job is completed, you download the data\. For more information about archive retrievals, see [Retrieving S3 Glacier Archives](downloading-an-archive-two-steps.md)\.
+To retrieve an archive from S3 Glacier, you first initiate a job\. After the job is completed, you download the data\. For more information about archive retrievals, see [Retrieving S3 Glacier Archives Using AWS Console](downloading-an-archive-two-steps.md)\.
 
 The access time of your request depends on the retrieval option that you choose: Expedited, Standard, or Bulk retrievals\. For all but the largest archives \(250 MB\+\), archives accessed by using Expedited retrievals are typically made available within 1–5 minutes\. Archives retrieved by using Standard retrievals typically are available between 3–5 hours\. Bulk retrievals typically are available within 5–12 hours\. For more information about the various retrieval options, see the [S3 Glacier FAQ](http://aws.amazon.com/glacier/faqs/#Data-retrievals)\. For information about data retrieval charges, see the [S3 Glacier pricing page](https://aws.amazon.com/s3/glacier/pricing/)\.
 

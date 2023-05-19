@@ -49,7 +49,7 @@ If your data retrieval policy is set to No Retrieval Limit, all valid data retri
 
 **To create a data retrieval policy by using the Amazon S3 Glacier console**
 
-1.  Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/](https://console.aws.amazon.com/glacier/)\.
+1.  Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. Under **Select a Region**, choose an AWS Region from the dropdown menu\. You can configure a data retrieval policy for each AWS Region\.
 

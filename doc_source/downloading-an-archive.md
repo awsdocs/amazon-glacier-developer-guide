@@ -5,7 +5,7 @@ Amazon S3 Glacier provides a management console, which you can use to create and
 For information about using S3 Glacier with the AWS CLI, see the [AWS CLI Reference for S3 Glacier](http://docs.aws.amazon.com/cli/latest/reference/glacier/index.html)\. To install the AWS CLI, see [AWS Command Line Interface](http://aws.amazon.com/cli/)\. The following topics describe how to download archives to S3 Glacier by using the AWS SDK for Java, the AWS SDK for \.NET, and the Amazon S3 Glacier REST API\.
 
 **Topics**
-+ [Retrieving S3 Glacier Archives](downloading-an-archive-two-steps.md)
++ [Retrieving S3 Glacier Archives Using AWS Console](downloading-an-archive-two-steps.md)
 + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for Java](downloading-an-archive-using-java.md)
 + [Downloading an Archive in Amazon S3 Glacier Using the AWS SDK for \.NET](downloading-an-archive-using-dotnet.md)
 + [Downloading an Archive by Using the REST API](downloading-an-archive-using-rest.md)

@@ -4,7 +4,7 @@ This section describes how to configure vault notifications by using the Amazon 
 
 **To configure a vault notification**
 
-1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier](https://console.aws.amazon.com/glacier)\.
+1. Sign in to the AWS Management Console and open the S3 Glacier console at [https://console\.aws\.amazon\.com/glacier/home](https://console.aws.amazon.com/glacier/home)\.
 
 1. In the left navigation pane, choose **Vaults**\.
 
