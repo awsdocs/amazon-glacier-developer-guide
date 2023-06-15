@@ -1,3 +1,0 @@
-# Configuring Vault Notifications in S3 Glacier Using the REST API<a name="configuring-notifications-rest-api"></a>
-
-To configure vault notifications using the REST API, see [Set Vault Notification Configuration \(PUT notification\-configuration\)](api-vault-notifications-put.md)\. Additionally, you can also get vault notifications \([Get Vault Notifications \(GET notification\-configuration\)](api-vault-notifications-get.md)\) and delete vault notifications \([Delete Vault Notifications \(DELETE notification\-configuration\)](api-vault-notifications-delete.md)\)\.
